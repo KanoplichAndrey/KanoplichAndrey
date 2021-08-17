@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+let fam=prompt("Введите фамилию")
+let name=prompt("Введите имя")
+let otc=prompt("Введите отчество")
+let fio=fam+name+otc
+let old=+prompt("Сколько вам лет")
+let god=365
+let day=old*365
+let day5=old+5
+let pol=confirm("Ваш пол мужской","или женский");
+(pol==true)? pol="Мужской": pol="Женский";
+
+
+
+let pensia=prompt("Вы на пенсии?","да или нет");
+(pensia.toLowerCase()=='да')? pensia="Да":
+(pensia.toLowerCase()=='нет')?pensia="Нет":pensia="Вы не правильно ответили на ответ"
+
+
+
+
+
+
+alert("Ваше ФИО: "+fio+"\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+pol+"\n"+"Вы на пенсии: "+pensia)
+</script>
+   
+</body>
+</html>

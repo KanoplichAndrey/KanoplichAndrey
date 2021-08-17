@@ -1,0 +1,43 @@
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>govnocod</title>
+</head>
+<body>
+   <script>
+      let fam=prompt("введите фамилию")
+      let name=prompt("введите имя")
+      let otc=prompt("введите отчество")
+      let old=+prompt("сколько вам лет")
+      let god=365
+      let day=old*365
+      let day5=old+5
+      let pol=confirm("ваш пол мужской","или женский")
+//let pol1
+   if(pol==true){
+   pol="мужской"
+   }
+   else{
+   pol = "женский"
+   }
+      let pensia=prompt('вы на пенсии?','да или нет')
+   if (pensia.toLowerCase()=='да'){
+   pensia="да"
+   }
+   else if(pensia.toLowerCase()=="нет"){
+   pensia="нет"
+   }
+   else {
+   pensia="вы не праильно ответили на ответ"
+   }
+      let fio=fam+" "+name+" "+otc
+
+
+
+
+   alert("ваше ФИО: "+fio+ "\n" +"ваш возраст в годах: "+old+"\n"+"ваш возраст в днях: "+day+"\n"+"через 5 лет вам будет: "+day5+"\n"+"ваш пол: "+pol+"\n"+"вы на пенсии: "+pensia)
+</script>
+</body>
+
+<script type="text/javascript" src="js_dz1.js"> </script>
+</html>
