@@ -17,7 +17,7 @@ let pensia=prompt('вы на пенсии?','да или нет')
 if (pensia=='да'){
    pensia="да"
 }
-else if(pensia=="нет"){
+else if(pensia=="не т"){
    pensia="нет"
 }
 else {
