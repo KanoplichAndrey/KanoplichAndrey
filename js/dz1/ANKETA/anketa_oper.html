@@ -16,14 +16,15 @@ let old=+prompt("Сколько вам лет")
 let god=365
 let day=old*365
 let day5=old+5
+//let pensia
 let pol=confirm("Ваш пол мужской","или женский");
-(pol==true)? pol="Мужской": pol="Женский";
+(pol == true)? pol="Мужской": pol="Женский";
+(pol == true && old >= 60)? pensia='да':pensia='нет';
+(pol != true && old >= 55)? pensia='да':pensia='нет';
 
-
-
-let pensia=prompt("Вы на пенсии?","да или нет");
-(pensia.toLowerCase()=='да')? pensia="Да":
-(pensia.toLowerCase()=='нет')?pensia="Нет":pensia="Вы не правильно ответили на ответ"
+//let pensia=prompt("Вы на пенсии?","да или нет");
+//(pensia.toLowerCase()=='да')? pensia="Да":
+//(pensia.toLowerCase()=='нет')?pensia="Нет":pensia="Вы не правильно ответили на ответ"
 
 
 
