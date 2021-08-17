@@ -14,14 +14,14 @@ else{
    pol = "женский"
 }
 let pensia=prompt('вы на пенсии?','да или нет')
-if (pensia=='да'){
+if (pensia.toLowerCase()=='да'){
    pensia="да"
 }
-else if(pensia=="не т"){
+else if(pensia.toLowerCase()=="нет"){
    pensia="нет"
 }
 else {
-pensia="вы не правильно ответили на ответ"
+pensia="вы не праильно ответили на ответ"
 }
 let fio=fam+" "+name+" "+otc
 
