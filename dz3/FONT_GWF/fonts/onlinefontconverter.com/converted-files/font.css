@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Caveat-Regular';
+  src: url('Caveat-Regular.svg#Caveat-Regular') format('svg'),
+       url('Caveat-Regular.ttf') format('truetype'),
+       url('Caveat-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Caveat-VariableFont_wght';
+  src: url('Caveat-VariableFont_wght.eot');
+  src: url('Caveat-VariableFont_wght.eot?#iefix') format('embedded-opentype'),
+       url('Caveat-VariableFont_wght.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
