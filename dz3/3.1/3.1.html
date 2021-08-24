@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+
+
+<body>
+<p>
+   Все некорректные 16-ричные символы будут заменены нулями. <br>
+   Сделаем длину этой строки кратной трем, дописав справа ноль <br>
+   Разделим на три равные группы, каждая из которых будет задавать один из цветов RGB <br>
+   Каждое из чисел уменьшим до длины в два разряда 
+   <br>
+   <br>
+   Посмотрим, почему BruceWillis представляет собой зеленый цвет. <br> 
+   Цепочка будет иметь следующий вид: BruceWillis → 000ce000000 → 000c e000 0000 → rgb(00,e0,00)
+ </p> 
+ <br> 
+ <p><font color="#BruceWillis">BruceWillis</font> </p>
+ 
+ <p><font color= rgb(00,e0,00)>BruceWillis</font></p> 
+<br>
+<hr>
+ <p><font color="#kanoplichandreygrigorevich">kanoplichandreygrigorevich</font> </p>  
+<p>
+   Цепочка будет иметь следующий вид: kanoplichandreygrigorevichkanopl →0000000c0 0000e0000 000e00000  →000000c0 000e0000 00e00000 → 0000 000e 00e0 → rgb(00,00,00)
+</p>
+<p><font color= rgb(00,00,00)>kanoplichandreygrigorevich</font></p>
+ <p>
+Однако, если длина отдельного значения цвета RGB превышает 8,<br> 
+то преобразование происходит иначе: сначала длина уменьшается до восьми<br>
+отбрасыванием символов слева, а потом уменьшается до двух отбрасыванием символов справа. 
+</p>
+<hr>
+
+
+
+
+
+  <p> <span><font color="#CANDY">CANDY</font></span>color="#CANDY" <span></span></p>
+  <p> <span><font color='c00000'>CANDY</font></span>color='c0000'<span></span></p> 
+  <p> <span><font color= rgb(c0,00,00)>CANDY</font></span><span>rgb(c0,00,00)</span></p>
+  <p>
+   Цепочка будет иметь следующий вид: CANDY →c0000   →c0 00 00  →  → rgb(c0,00,00)
+  </p>
+</body>
+</html>
