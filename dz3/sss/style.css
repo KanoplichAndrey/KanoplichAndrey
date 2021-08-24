@@ -1,0 +1,57 @@
+h1 {
+   border: dashed red;
+}
+
+.color {
+   color: black;
+   font-size: 8px;
+   border: solid green 1px;
+
+}
+ul {
+   font-size: 13px;
+   list-style-type: square;
+   font-family: monospace;
+   color: green;
+
+}
+p {
+   color:blue
+}
+
+.span {
+   text-decoration: underline;
+}
+
+.span1 {
+   color:red
+}
+div{
+   
+   font-style: normal;
+   l
+}
+
+.div1{
+   font-style: italic;
+   border:solid green ;
+   width: 15cm;
+}
+
+.div2{
+   border-left: solid blue 1px;
+   border-right: double red 3px;
+   border-top: dotted black 1px;
+   border-bottom: solid green 3px;
+}
+
+.a1 {
+font-family: serif;
+
+}
+.a2{
+   font-family: sans-serif;
+}
+.a3{
+   font-family: cursive;
+}
