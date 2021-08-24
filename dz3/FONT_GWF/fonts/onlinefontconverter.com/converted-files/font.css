@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'Caveat-Regular';
+  
   src: url('Caveat-Regular.svg#Caveat-Regular') format('svg'),
        url('Caveat-Regular.ttf') format('truetype'),
-       url('Caveat-Regular.woff') format('woff');
+       ufont-family: 'Caveat-Regular';rl('Caveat-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
