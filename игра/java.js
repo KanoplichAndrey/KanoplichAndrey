@@ -6,7 +6,7 @@ function game(){
 }
 
 function name() {
-let a=prompt('1. Угодалка \n 2. Считалка \n 3. Кликалка \n Для выхода введите exit' ).toLowerCase()
+let a=prompt('1. Угодалка \n 2. Считалка \n 3. Кликалка \n Для выхода введите exit' )
 
 //console.log(a)
 // (a==1)? fun1():
@@ -30,6 +30,7 @@ else if(a==null) {
   fun4()
 }
 else{
+  not()
   name()
 } 
 }
@@ -37,27 +38,24 @@ else{
 //////////////////////////// G A M E 1 ////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 function fun1(){
+ 
   game()
   alert('Игра угодалка')
   alert('Я случайным образом загадаю число от 1 до 10. \nтвоя задача угадать за минимальное количество \nпопыток.\n     после каждого твоего ввода я буду говорить болше твое\nчисло или меньше заданного. \n   начнем?')
   let random= Math.floor(Math.random() * 10) + 1
 
-let pop=1
-for(let result; result !== random;result){
+let count=0
+for(let result; result !== random;){
+  count= count+1
   if(result<random) alert('Слишком мало')
-  if(result>random)  alert('Слишком много')
-  
-  
+  if(result>random) alert('Слишком много')
   result= +prompt('Подтвердите действие \nПопробуй угадать?')
-
-if (result!=random) {
-    pop= pop+1
   }
-  }
-  alert('Угадал')
-  alert('Тебе удалось отгадать число '+random+' с '+pop+"-ой попытки")
+alert('Угадал')
+alert('Тебе удалось отгадать число '+random+' с '+count+"-ой попытки")
 
-  name1() 
+
+name1() 
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -78,12 +76,13 @@ function fun2(){
     let a=Math.floor(Math.random() * 10) + 1
     let b=Math.floor(Math.random() * 10) + 1
 
-    var items = Array('+','-','*')
-    var item = items[Math.floor(Math.random()*items.length)];
+    let items = Array('+','-','*')
+    let item = items[Math.floor(Math.random()*items.length)];
     //let c=((Math.random() < 0.5) ? -0 : +0)
 
 let sum=prompt(a+' '+item+' '+b)
-if(sum==sum==a+b||sum==a-b ||sum==a*b){
+
+if(sum==a+b||sum==a-b ||sum==a*b){
   m=m+1
   count=count+1
   if(count==3){
@@ -100,7 +99,7 @@ else
   if(count==3){
     result()
 } 
-else 
+  else 
   { 
   sum1()
   }
@@ -127,6 +126,28 @@ function result(){
 ////////////////////////// G A M E 3 ////////////////////////
 /////////////////////////////////////////////////////////////    
 function fun3(){
+
+game()
+alert('игра кликалка')
+alert('я случайным образом буду показывать 10 системных окон.\n твоя задача как можно скорее прокликать все.\n при этом в окне confirm нужно нажимать "отмена".\n начинаем?')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   document.write('кликалка')
 }
 /////////////////////////////////////////////////////////////
@@ -134,6 +155,9 @@ function fun3(){
 
 function fun4(){
   alert('досвидание')
+}
+function not() {
+  alert('неправильный ввод\n попробуй еще раз')
 }
 
 function name1(){
