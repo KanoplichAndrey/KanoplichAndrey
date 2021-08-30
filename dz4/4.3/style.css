@@ -1,0 +1,9 @@
+.bg {
+   background: url('ramka.png')   no-repeat ;
+   overflow: hidden;
+   background-size: cover;
+   
+   }
+   span {
+      padding: 2px;
+   }

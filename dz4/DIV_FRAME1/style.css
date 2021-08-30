@@ -4,15 +4,12 @@
    url('3.png') no-repeat right top,
    url('6.png') no-repeat left bottom,
    url('5.png') no-repeat right bottom,
-   url('4.png')  repeat-y ,
+   url('4.png')  repeat-y left,
    url('4.png') repeat-y right,
    url('2.png') repeat-x center bottom,
    url('2.png')  repeat-x;
    
    padding: 80px;
-   
-}
-div{
    font-size: 50px ;
    font-style: italic;
 }
