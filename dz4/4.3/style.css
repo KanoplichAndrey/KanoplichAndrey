@@ -1,0 +1,17 @@
+.container{
+   height: 100vh;
+   width: 100vw;
+   background: rgb(204, 176, 166);
+}
+
+.shaped{
+   
+   background:  url(https://pp.userapi.com/c849120/v849120857/cc331/XftS2mpmwHo.jpg) center top no-repeat;
+   height: 100vh;
+   width: 40vw;
+   background-size: cover;
+   float: right;
+   shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+   shape-margin: 20px;
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+}
