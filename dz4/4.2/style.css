@@ -1,0 +1,25 @@
+.a{
+  font-size: 30px;
+}
+h2{
+  font-size: 40px;
+}
+h1{ 
+  text-align: center;
+  font-size: 50px;
+}
+pre{
+  font-size: 15px;
+}
+.b{
+  font-weight: bold;
+}
+.f{
+  text-decoration: none;
+  font-weight: bold;
+}
+.v dt a{
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+}

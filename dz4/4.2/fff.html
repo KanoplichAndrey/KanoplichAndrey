@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>dz4</title>
+</head>
+<body>
+   <h1>Тег area</h1>
+   <div style="font-size: 30px" > <span class="b">Описание:&nbsp</span> Каждый элемент <area> определяет активные области изображения, которые являются ссылками. Рисунок с привязанными к нему активными областями называется в совокупности картой-изображением. Такая карта по внешнему виду ничем не отличается от обычного изображения, но при этом оно может быть разбито на невидимые зоны разной формы, где каждая из областей служит ссылкой. Тег <area> задает форму области, ее размеры, устанавливает адрес документа, на который следует сделать ссылку, а также имя окна или фрейма, куда браузер будет загружать документ. Этот тег всегда располагается в контейнере <a class="f" href="http://htmlbook.ru/html/map">map</a> , который связывает координаты областей с изображением.
+      
+      Несколько областей могут перекрывать друг друга, сверху будет та, которая в коде HTML располагается выше.</div>
+      <p>
+         <pre>
+   Синтаксис:
+            
+                 HTML	<br>
+                   map <br>
+                      area href="URL" <br>
+                   map <br>
+                   <br>
+         </pre>
+      </p>
+
+<div class="a"> <img align="left" src="img1.png" alt="" title="сковородка" usemap="#map"> 
+<div>Атрибуты:</div>
+<dl class="v">
+   <dt><a href="http://htmlbook.ru/html/area/accesskey">accesskey.&nbsp</a> Переход к области с помощью комбинации клавиш.</dt>
+   <dt><a href="http://htmlbook.ru/html/area/alt">alt.&nbsp</a>Альтернативный текст для области изображения. </dt>
+   <dt><a href="http://htmlbook.ru/html/area/coords">coords.&nbsp</a>Координаты активной области.</dt>
+   <dt><a href="http://htmlbook.ru/html/area/href">href.&nbsp</a> Задает адрес документа, на который следует перейти.</dt>
+   <dt><a href="http://htmlbook.ru/html/area/hreflang">hreflang.&nbsp</a> Указывает язык документа, на который ведет ссылка.</dt>
+   <dt><a href="http://htmlbook.ru/html/area/nohref">nohref.&nbsp</a>Область без ссылки на другой документ.</dt>
+   <dt><a href="http://htmlbook.ru/html/area/shape">shape.&nbsp</a>Форма области.</dt>
+   <dt><a href="http://htmlbook.ru/html/area/tabindex">tabindex.&nbsp</a>Задает последовательность перехода между элементами с помощью клавиши Tab.</dt>
+   <dt><a href="http://htmlbook.ru/html/area/target">target.&nbsp</a>Имя окна или фрейма, куда браузер будет загружать документ.</dt>
+   <dt><a href="http://htmlbook.ru/html/area/type">type.&nbsp</a>Устанавливает MIME-тип документа, на который ведёт ссылка.</dt>
+   <dt>Также для этого тега доступны.&nbsp <a href="http://htmlbook.ru/html/attr/common">универсальные атрибуты</a>&nbsp и &nbsp<a href="http://htmlbook.ru/html/attr/event">события.</a></dt>
+</dl>
+
+   <div>
+</div>
+
+   <map name="map">  
+<area shape="rect" coords="100,56,425,200" href="https://kanoplichandrey.github.io/KanoplichAndrey/" alt="hhhh" title="домашнее задание">
+<area shape="rect" coords="50,250,500,400" href="http://htmlbook.ru/html/area" alt="hhhhhhhh" title="http://htmlbook.ru/">
+   </map>  
+</div>
+<br>
+<h2>Оределение координат для разных форм облсти.</h2>
+<div><img src="rect.png" alt="1"></div>
+<div><img src="circle.png" alt="2"></div>
+
+<div><img src="poly.png" alt="3"></div>
+</body>
+</html>
