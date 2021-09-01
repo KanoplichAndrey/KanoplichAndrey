@@ -2,7 +2,6 @@
 .a{
    border: solid 100px; 
    border-image: url('ramka.png') 40;
-   
    padding: 30px;
    font-size: 30px ;
    font-style: italic;
