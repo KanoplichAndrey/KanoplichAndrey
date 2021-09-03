@@ -5,7 +5,7 @@ let chet = 1;
 			if (chet>2) {chet=0;}
 				switch(chet) {
 				case 1:
-					div.style.cssText=` background:  url('cuba.jpg') center top no-repeat;`
+					div.style.cssText=` background:  url('cuba.jpg') center top no-repeat ;`
 					break;
 				case 2:
 					div.style.cssText=` background:  url('gavana-i-znamenitiy-retro-avtomobil.jpg') center top no-repeat;`

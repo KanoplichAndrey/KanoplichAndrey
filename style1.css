@@ -1,6 +1,6 @@
 .menu ul {
   margin: 0;
-  list-style: none;
+  list-style-type: decimal;
   padding-left: 20px;
   display: none;
 }
