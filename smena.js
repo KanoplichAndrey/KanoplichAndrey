@@ -1,5 +1,5 @@
 let chet = 1;
-			window.onload = function () { setTimeout(frout, 3000); }
+			window.onload = function () { setTimeout(frout, 4000); }
 			function frout() {
 			chet++;
 			if (chet>5) {chet=0;}
@@ -21,7 +21,7 @@ let chet = 1;
                break;      
 
 				}
-			setTimeout(frout, 3000);
+			setTimeout(frout, 4000);
 			}
 
 
