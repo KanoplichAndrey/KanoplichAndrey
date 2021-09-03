@@ -10,14 +10,16 @@
   cursor: pointer;
 }
 
+
 .menu .title::before {
   content: '► ';
   font-size: 80%;
-  color: green;
+  color: rgb(155, 4, 4);
 }
 
 .menu.open .title::before {
   content: '▼ ';
+  color: green;
 }
 
 .menu.open ul {
