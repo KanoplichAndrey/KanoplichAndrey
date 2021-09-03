@@ -1,0 +1,42 @@
+
+.container{
+   padding-left: 30px;
+   background: rgb(204, 176, 166);
+}
+
+#div{
+   background:  url('gavana-i-znamenitiy-retro-avtomobil.jpg') center top no-repeat;
+   height: 100vh;
+   width: 40vw;
+   background-size: cover;
+   float: right;
+   shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+   shape-margin: 20px;
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+}
+.container1{
+   
+   background: rgb(241, 237, 234);
+}
+
+.shaped1{
+   background:  url('cuba.jpg') right top no-repeat;
+   height: 100vh;
+   width: 40vw;
+   background-size: cover;
+   float: left;
+   shape-outside: polygon(0 0, 70% 0, 100% 100%, 30% 100%);
+   shape-margin: 20px;
+   clip-path: polygon(0 0, 70% 0, 100% 100%, 30% 10000% );
+}
+
+.article{
+   background:  url('cuba.jpg') center top no-repeat;
+   height: 100vh;
+   width: 40vw;
+   background-size: cover;
+   float: right;
+   shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+   shape-margin: 20px;
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+}
