@@ -24,5 +24,9 @@
 
 .menu.open ul {
   display: block;
-  
+
+}
+#a:after {
+  color: chartreuse;
+  content: '  \2713';
 }
