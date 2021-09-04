@@ -20,6 +20,7 @@
 .menu.open .title::before {
   content: '▼ ';
   color: green;
+  
 }
 
 .menu.open ul {
