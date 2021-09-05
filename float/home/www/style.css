@@ -1,0 +1,24 @@
+.a{
+    float: left;
+    margin-left: 20px;
+}
+.b{
+    float: right;
+    margin-left: 10px;
+}
+.c{
+    float: left;
+    clear: both;
+    margin-left: 20px;
+    margin-top: 10px;
+
+}
+.d{
+    float: right;
+    margin-left: 20px;
+    margin-top: 10px;
+
+}
+p{
+    background-color: aqua;
+}
