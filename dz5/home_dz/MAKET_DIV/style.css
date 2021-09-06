@@ -1,47 +1,49 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- }
- .header{
-     
-     text-align: center;
-     font-size: 42px;
-     background-color: yellow;
-     padding: 20px;
- }
- .footer{
-     text-align: center;
-     font-size: 42px;
-     background-color: rgba(231, 125, 83, 0.966);
-     padding: 20px;
-     clear: both;
- }
- .menu{
+.wrapper{
+    
+}
+.header{
+    font-size: 25px;
+    height: 2cm;
+    background-color: #ADD8E6;
+    color: #0F0EE7;
+    padding-top: 1cm;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.menu{
+    width: 250px;
      float: left;
-     width: 200px;
-     overflow: hidden;
-     /* background-color: lightblue; */
- }
- .content{
-     margin-left: 200px;
-     margin-right: 202px;
-     background-color: indianred; 
- }
- .baner{
-    background-color:#008000;
+    /* background-color: rgb(183, 183, 209); */
      
-     
-      
-     
-     
- }
- .a{
-     
- }
- .menu{
-     background-image: url('12.png') ;
-     background-repeat: no-repeat;
-     background-repeat: repeat-y;
- }
- 
+}
+.content{
+    
+    background: url('bol.png') right top repeat-y;
+    padding-left: 250px;
+}
+
+
+.footer{
+    font-size: 25px;
+    height: 2cm;
+    font-weight: bold;
+    background-color: #ADD8E6;
+    color: #0F0EE7;
+    padding-top: 1cm;
+    text-align: center;
+}
+img{
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+.ca{
+    font-weight: bold;
+    padding: 20px;
+}
+.cb{
+    margin-left: 30px;
+}

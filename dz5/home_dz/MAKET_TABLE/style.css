@@ -1,49 +1,53 @@
-.wrapper{
-    
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
-.header{
+.a {
     font-size: 25px;
-    height: 2cm;
+    height: 3cm;
     background-color: #ADD8E6;
     color: #0F0EE7;
-    padding-top: 1cm;
-    text-align: center;
-    font-weight: bold;
 }
-
-
-.menu{
+.b {
     width: 250px;
-     float: left;
-    /* background-color: rgb(183, 183, 209); */
-     
-}
-.content{
+    background-color:#F0E68C ;
+    color: black;
+    padding: 10px;
+    padding-right: 20px;
+
     
-    background: url('bol.png') right top repeat-y;
-    padding-left: 250px;
 }
+.b div{
 
-
-.footer{
-    font-size: 25px;
-    height: 2cm;
+    margin-top: 20px;
+    margin-left: 14px;
     font-weight: bold;
-    background-color: #ADD8E6;
-    color: #0F0EE7;
-    padding-top: 1cm;
-    text-align: center;
+    color: black;
 }
-img{
+.c {
+    
+    background: 
+    url('bol.png') repeat-y right top;
+    
+   
+   margin: 10px;
+}
+.tr {
+    vertical-align: top; 
+    font-size: 1em; 
+}
+.ca{ 
+    margin-top: 30px;
+    font-weight: bold;
+    /* margin-bottom: 30px;  */
+
+}
+.c img{
     float: left;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-}
-.ca{
-    font-weight: bold;
-    padding: 20px;
+    margin: 18px;
+    padding: 0px;
+    margin-right: 40px;
 }
 .cb{
-    margin-left: 30px;
+    margin: 15px; 
 }
