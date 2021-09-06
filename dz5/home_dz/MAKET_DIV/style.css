@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ .header{
+     
+     text-align: center;
+     font-size: 42px;
+     background-color: yellow;
+     padding: 20px;
+ }
+ .footer{
+     text-align: center;
+     font-size: 42px;
+     background-color: rgba(231, 125, 83, 0.966);
+     padding: 20px;
+     clear: both;
+ }
+ .menu{
+     float: left;
+     width: 200px;
+     overflow: hidden;
+     /* background-color: lightblue; */
+ }
+ .content{
+     margin-left: 200px;
+     margin-right: 202px;
+     background-color: indianred; 
+ }
+ .baner{
+    background-color:#008000;
+     
+     
+      
+     
+     
+ }
+ .a{
+     
+ }
+ .menu{
+     background-image: url('12.png') ;
+     background-repeat: no-repeat;
+     background-repeat: repeat-y;
+ }
+ 

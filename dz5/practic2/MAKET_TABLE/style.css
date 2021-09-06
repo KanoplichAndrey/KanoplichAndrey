@@ -1,0 +1,53 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.a {
+    font-size: 25px;
+    height: 3cm;
+    background-color: #ADD8E6;
+    color: #0F0EE7;
+}
+.b {
+    width: 250px;
+    background-color:#F0E68C ;
+    color: black;
+    padding: 10px;
+    padding-right: 20px;
+
+    
+}
+.b div{
+
+    margin-top: 20px;
+    margin-left: 14px;
+    font-weight: bold;
+    color: black;
+}
+.c {
+    
+    background: 
+    url('bol.png') repeat-y right top;
+    
+   
+   margin: 10px;
+}
+.tr {
+    vertical-align: top; 
+    font-size: 1em; 
+}
+.ca{ 
+    margin-top: 30px;
+    font-weight: bold;
+    /* margin-bottom: 30px;  */
+
+}
+.c img{
+    float: left;
+    margin: 18px;
+    padding: 0px;
+    margin-right: 40px;
+}
+.cb{
+    margin: 15px; 
+}
