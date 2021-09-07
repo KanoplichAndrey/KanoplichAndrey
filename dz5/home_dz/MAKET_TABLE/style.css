@@ -44,10 +44,13 @@ table {
 }
 .c img{
     float: left;
+    
     margin: 18px;
     padding: 0px;
     margin-right: 40px;
 }
 .cb{
+    
     margin: 15px; 
+    
 }

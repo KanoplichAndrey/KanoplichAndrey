@@ -20,6 +20,9 @@
     float: left;
     width: 200px;
     
+    background: url('bol.png') right top no-repeat;
+    background: url('bol.png') right bottom no-repeat;
+    
     /* background-color: lightblue; */
 }
 .content{

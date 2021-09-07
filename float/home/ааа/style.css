@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+.a{
+background-color: rgb(121, 202, 226);
+width: 20%;
+float: left;
+
+
+
+}
+
+
+.c{
+    background-color: rgb(183, 129, 207);
+    width: 200px;
+    float: right;
+    
+}
+.content{
+    background-color: rgb(189, 87, 47);
+    
+    
+    margin-right: 200px;
+    
+    }
+    

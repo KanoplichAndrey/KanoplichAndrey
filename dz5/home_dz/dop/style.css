@@ -1,0 +1,41 @@
+.wrapper {
+width: 900px;
+outline: 1px solid red;
+padding: 10px;
+margin: 0 auto;
+}
+.header{
+/* height: 80px; */
+background-color: royalblue;
+margin-bottom: 15px;
+}
+.menu1{
+	/* height: 80px; */
+	background-color: rgb(44, 163, 44);
+	margin-bottom: 15px;
+	float: left;
+	width: 150px;
+}
+.menu2{
+	/* height: 80px; */
+	background-color: rgb(44, 163, 44);
+	margin-bottom: 15px;
+	float: right;
+	width: 150px;
+}
+.content{
+	/* height: 80px; */
+	background-color: rgb(221, 190, 216);
+	margin-bottom: 15px;
+	width: 580px;
+	margin-left: 160px;
+}
+.footer{
+	/* height: 80px; */
+	background-color: rgb(128, 18, 104);
+	margin-bottom: 15px;
+	height: 2cm;
+}
+.clear{
+	clear: both;
+}
