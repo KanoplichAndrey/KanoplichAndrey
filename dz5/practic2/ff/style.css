@@ -1,24 +1,14 @@
-body, html {
-    margin:0px;
-    padding:0px;
-    }
-    #maket {
-    width:800px;
-    margin:0 auto;
-    }
-    #header{
-    background-color:#C0C000;
-    }
-    #left{
-    background-color:#00C0C0;
-    width:200px;
-    float:left;
-    }
-    #content{
-    background-color:#8080FF;
-    margin-left:202px;
-    }
-    #footer{
-    background-color:#FFC0FF;
-    clear:both;
-    }
+*{
+    box-sizing: border-box;
+}
+.a{
+    background-color: chartreuse;
+}
+.b{
+    
+    width: 20%;
+}
+.f{
+    float: left;
+    clear: both;
+}

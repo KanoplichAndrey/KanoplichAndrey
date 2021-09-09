@@ -6,7 +6,7 @@
 }
 
 #div{
-   background:  url('cuba.jpg') center top no-repeat;
+   /* background:  url('cuba.jpg') center top no-repeat; */
    height: 100vh;
    width: 40vw;
    background-size: cover;
@@ -22,7 +22,7 @@
 }
 
 .shaped1{
-   background:  url('cuba.jpg') right top no-repeat;
+   /* background:  url('cuba.jpg') right top no-repeat; */
    height: 100vh;
    width: 40vw;
    background-size: cover;
@@ -33,7 +33,7 @@
 }
 
 .article{
-   background:  url('gavana-i-znamenitiy-retro-avtomobil.jpg') center top no-repeat;
+   /* background:  url('gavana-i-znamenitiy-retro-avtomobil.jpg') center top no-repeat; */
    height: 100vh;
    width: 40vw;
    background-size: cover;

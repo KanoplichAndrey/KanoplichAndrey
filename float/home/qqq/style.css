@@ -1,0 +1,32 @@
+.a{
+background-color: blue;
+float: left;
+width: 20%;
+
+}
+.c{
+background-color: chartreuse;
+float: right;
+width: 200px;
+
+}
+.content{
+background-color: chocolate;
+
+}
+
+/* .one, .two, .three {
+    display:table-cell;
+    width:30%;
+}
+/* Для демонстрации, можно удалить */
+ /* .one, .two, .three {
+    border:1px solid red;
+    margin-right:2px;
+}
+.two {
+    border:1px solid blue
+}
+.three {
+    border:1px solid green
+}  */
