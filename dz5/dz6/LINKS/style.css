@@ -1,0 +1,8 @@
+a {
+color: green;
+}
+/* a::before 
+{ content: '|'; color: red } */
+a::after {
+     content: '|'; color: red }
+

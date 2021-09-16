@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.contaner{
+    width: 1140px;
+    /* background: red;
+    height: 300px; */
+    margin: 0 auto;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+
+}
+p.small{
+    font-size: 12px;
+}
+/* header */
+
+.header{
+/* background-color: rgb(43, 226, 180); */
+/* padding-top: 32px; */
+height: 40px;
+margin-top: 32px;
+
+}
+.logo{
+float: left;
+height: 100%;
+float: left;
+/* border:solid 1px red; */
+}
+.logo img{
+    
+    vertical-align: -11px;
+}
+.logo span{
+    display: inline-block;
+    margin-top: 9px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin-left: 12px;
+}
+
+
+.header_right{
+
+    float: right;
+}
+.seach{
+    
+    width: 464px;
+    height: 40px;
+    float: left;
+margin-right: 16px;
+border: 1px solid #69767C;
+
+border-radius: 4px;
+}
+.seach img{
+    float: right;
+}
+.seach span{
+   
+
+font-weight: 300;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: 0.03em;
+display: inline-block;
+margin-top: 11px;
+margin-left: 12px;
+}
+.header_right .phone{
+font-size: 16px;
+line-height: 19px;
+}
+.header_right a{
+    vertical-align: 14px;
+    margin-left: 4px;
+    margin-right: 51px;
+}
+
+/*  catalog_menu  */
+
+.catalog_menu{
+    margin-top: 32px;
+    
+}
+
+.catalog_menu ul{
+    /* background-color: red; */
+    float: left;
+    width: 236px;
+}
+.catalog_menu ul li{
+    
+    
+  padding-top: 12px;
+    font-size: 16px;
+    line-height: 20px;
+    height: 44px;
+   border-bottom:0.2px solid #69767C ;
+  
+    
+    
+    
+}
+
+
+.catalog_menu .canalog_menu_right{
+    
+    float: right;
+    width: 848px;
+
+}
+.canalog_menu_right .slider{
+height: 344px;
+background: url('../img/catalog-menu-bg.png')
+no-repeat center center;
+margin-bottom: 10px;
+padding-top: 116px;
+padding-left: 44px;
+}
+.canalog_menu_right .slider h1{
+    
+font-size: 36px;
+line-height: 40px;
+font-weight: normal;
+letter-spacing: 0.03em;
+margin-bottom: 32px;
+}
+.canalog_menu_right .slider  button{
+    
+
+    background: #DFEA1C;
+    border-radius: 4px;
+    width: 160px;
+    height: 44px;
+
+font-size: 18px;
+line-height: 20px;
+border: none;
+
+}
+
+
+.blocks-wrap .block{
+    width: 272px;
+    height: 80px;
+   
+    background-color: #F7F7F7;
+    /* float: left; */
+   
+    
+}
+.blocks-wrap .block .title{
+   
+   
+    font-size: 16px;
+    line-height: 16px;
+   margin-bottom: 8px;
+   margin-top: 12px;
+}
+.blocks-wrap .block .small{
+    line-height: 16px;
+    
+}
+
+.blocks-wrap .block img{
+   
+    float: left;
+    margin: 16px 24px 16px 28px ;
+
+   
+    
+}
+
+.block-left{
+float: left;
+}
+
+.block-center{
+margin: 0 auto;
+/* padding-top: 1px; */
+
+}
+
+.block-right{
+    float: right;
+}
