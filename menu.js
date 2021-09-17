@@ -33,3 +33,10 @@ titleElem5.onclick = function() {
 menuElem5.classList.toggle('open');
 };
 
+let menuElem6 = document.getElementById('sweeties6');
+let titleElem6 = menuElem6.querySelector('.title');
+
+titleElem6.onclick = function() {
+menuElem6.classList.toggle('open');
+};
+
