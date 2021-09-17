@@ -1,0 +1,22 @@
+.font{
+    font-weight: bold;
+    font-size: 24px;
+}
+.pod{
+    color: green;
+}
+.pod1{
+    color: red; 
+    font-weight: bold;
+}
+.font1{
+    font-style: italic;  
+    color: blue;
+}
+p a::before{
+    content: url(../extref.png);
+
+}
+p a {
+    text-decoration: none;
+}

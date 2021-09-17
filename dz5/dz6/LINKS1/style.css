@@ -3,6 +3,9 @@ color: green;
 }
 /* a::before 
 { content: '|'; color: red } */
-a::after {
+.a  ::after {
      content: '|'; color: red }
 
+.c{
+    color: red 
+}
