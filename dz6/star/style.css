@@ -1,16 +1,22 @@
-.a :hover{
-float: left;
+.star0{
+display: table;
+margin-right: 10px;
+}
 
-}
-.b{
+
+
+.star1 {
+background: url('star0.png') no-repeat center center;
+/* display: inline-block; */
+width: 76px;
+height: 78px;
 float: left;
 }
-.c{
-float: left;
-}
-.d{
-float: left;
-}
-.e{
+
+.star0 .star1:hover  {
+    background: url('star1.png') no-repeat center center;
+display: inline-block;
+width: 76px;
+height: 78px;
 float: left;
 }

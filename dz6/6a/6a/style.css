@@ -1,0 +1,33 @@
+
+a {
+    color: green;
+}
+
+.cont1 a{
+/* color:green; */
+border-right: 2px solid red;
+background-color: white;
+padding: 0px 10px 5px 10px;
+}
+a:hover {
+    color: red;
+}
+
+
+
+.cont3{
+    display: inline-block;
+    margin-top: 5px;
+}
+.cont3 img{
+    height: 13px;
+    padding-left: 5px;
+}
+.cont4{
+    margin-top: 20px;
+}
+.cont4 a::after{
+    content: "|";
+    color: red;
+    padding-left: 5px;
+}
