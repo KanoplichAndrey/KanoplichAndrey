@@ -2,10 +2,10 @@
     font-weight: bold;
     font-size: 24px;
 }
-.pod{
+.as{
     color: green;
 }
-.pod1{
+.as2{
     color: red; 
     font-weight: bold;
 }
@@ -13,10 +13,10 @@
     font-style: italic;  
     color: blue;
 }
-p a::before{
-    content: url(../extref.png);
-
-}
-p a {
+p a{
+    background-image: url(extref.png);
+    background-repeat: no-repeat;
+    padding-left: 15px;
+    background-position: left;
     text-decoration: none;
 }
