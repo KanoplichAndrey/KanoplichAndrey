@@ -1,22 +1,16 @@
-.star0{
-display: table;
-margin-right: 10px;
+
+.star0 {
+float: left;
 }
-
-
-
 .star1 {
-background: url('star0.png') no-repeat center center;
-/* display: inline-block; */
-width: 76px;
-height: 78px;
-float: left;
+    background: url('star0.png');
+    float: right;
+    width: 76px;
+    height: 78px;
 }
+.star0  .star1:hover {
+    background: url("star1.png");
+}
+.star1:hover ~:after{ content: url('star1.png');
 
-.star0 .star1:hover  {
-    background: url('star1.png') no-repeat center center;
-display: inline-block;
-width: 76px;
-height: 78px;
-float: left;
 }
