@@ -40,3 +40,10 @@ titleElem6.onclick = function() {
 menuElem6.classList.toggle('open');
 };
 
+let menuElem7 = document.getElementById('sweeties7');
+let titleElem7 = menuElem7.querySelector('.title');
+
+titleElem7.onclick = function() {
+menuElem7.classList.toggle('open');
+};
+
