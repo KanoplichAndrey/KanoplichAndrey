@@ -47,3 +47,4 @@ titleElem7.onclick = function() {
 menuElem7.classList.toggle('open');
 };
 
+
