@@ -1,0 +1,77 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    height: 40px;
+    background-color: rgb(125, 205, 236);
+    text-align: center;
+    padding-top: 12px;
+    color: blue;
+}
+
+.wr{
+background: url('bol.png') repeat-y right;
+background-color: chartreuse;
+background: url('S1.png') repeat-y left; 
+}
+.menu{
+
+width: 185px;
+float: left;
+
+}
+.content{
+    margin-left: 200px;
+    padding: 1px 0 1px 0;
+
+}
+.footer{
+    height: 40px;
+    background-color: rgb(125, 205, 236);
+    text-align: center;
+    padding-top: 12px;
+    color: blue;
+}
+ img{
+   float: left;
+   margin-right: 20px ;
+   margin-bottom: 10px;
+}
+p{
+    
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+@media all and (min-width: 650px)
+    {
+      .content
+      {
+        background-image: url('bol.png');
+        background-repeat: repeat-y;
+        background-position: right top;
+      }
+    }
+
+    @media all and (max-width: 434px)
+    {
+       img 
+      {
+       float: none;
+    
+      }
+
+    } 
+    @media all and (max-width: 850px)  
+    {
+.content{
+    background-color: chartreuse;
+}
+    } 
