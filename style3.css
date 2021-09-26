@@ -4,296 +4,213 @@
     box-sizing: border-box;
 }
 body{
+   
     font-family: 'Noto Sans Display', sans-serif;
 }
-
-.container {
+.conteiner{
     width: 1296px;
-    /* background-color: coral; */
-    /* height: 300px; */
     margin: 0 auto;
+    
 }
 
+/* header */
 
-
- ul li{
-    list-style-type: none;
-    font-family: Noto Sans;
+.header{
+    width: 1296px;
+    height: 231px;
+}
+.header-info{
+    float: left;
+    width: 430px;
+    height: 16px;
+    margin-top: 29px;
+    margin-left: 80px;
+}
+.header-info span{
+    margin-right: 21px;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 16px;
-
 }
-.menu li{
+.phone{
     float: left;
-    padding-right: 26px;
-   
-
-    
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 106px;
+    margin-top: 25px;
 }
-a{
+.phone a{
     text-decoration: none;
     color: black;
 }
-.header1-right{
-    float: left;
-    padding-top: 29px;
-    padding-left: 80px;
-
-}
-.header1-left img{
-    vertical-align: text-bottom;
-}
-.a{
-    margin-top: 24px;
-    margin-right: 24px;
-}
-
-.s{
-    margin-top: 24px;
-    margin-right: 24px;
-}
-
-.d{
-    margin-top: 24px;
-    margin-right: 24px;
-}
-
-
-.header1-left{
+.header-right{
     float: right;
-    
+    margin-left: 90px;
+    margin-top: 30px;
+    margin-right: 151px;
 }
-.f{
-  
+.header-right img:nth-child(1),
+.header-right img:nth-child(2),
+.header-right img:nth-child(3){
+    margin-right: 24px;
 }
- .cal{
-  margin-left:  45px;
-margin-top: 24px;
-   
+.header-right img:nth-child(3){
+    margin-right: 45px;
 }
-
-.clear{
-    clear: both;
+img{
+    height: 25px;
+    width: 25px;
 }
-.serch{
-float: left;
-margin-right: 90px;
-
-}
-.serch img{
-    margin-top: 25px;
-    margin-left: 106px;
-    margin-right: 8px;
-    vertical-align: text-bottom
-}
-a .tel{
-    margin-top: 25px;
-    font-family: Noto Sans;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 22px;
-
-
-
-color: #000000;
-
-}
-.span{
-font-family: Noto Sans;
-font-style: normal;
-font-weight: 600;
-/* font-size: 16px; */
-line-height: 22px;
-margin-right: 20px;
-margin-top: 27px;
-padding-left: 8px;
-float: right;
+.header-right span{
+    display: inline-block;
+    vertical-align: 5px;
+    margin-left: 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
 }
 
+/* second-head */
 
-.serch1 {
+.second-head{
     float: left;
 }
-
-.serch1 img:first-child {
+.second-head img:first-child{
     float: left;
-    margin-bottom: 65px;
-    margin-left: 80px ;
+    height: 25px;
+    width: 25px;
+    margin-left: 80px;
     margin-top: 63px;
-
 }
-.serch1 img:nth-child(2) {
-float: left;
-margin-left: 33px;
-margin-top: 36px;
-}
-
-.serch1 div.search2  {
+.second-head img:nth-child(2){
     float: left;
-    
+    height: 82px;
+    width: 118px;
+    margin-left: 33px;
+    margin-top: 36px;
+}
+.second-head div.search{
+    float: left;
     width: 702px;
     height: 52px;
-    background: #F9F9F9;
+    background-color: #F9F9F9;
     border-radius: 8px;
     margin-left: 45px;
     margin-top: 51px;
-    background-image: url(img/poisk.png);
+    background-image: url(img/search.png);
     background-repeat: no-repeat;
     background-position: left;
     background-size: 4%;
 }
-
-.serch1 div.search2 span{
+.second-head div.search span{
     display: inline-block;
     vertical-align: -15px;
-    padding-left: 40px;
+    padding-left: 35px;
     color: #00000080;
+
 }
-    
-
-
-
-.cap{
-    float: left;
+div.cap{
     width: 156px;
     height: 52px;
-    margin-top: 65px;
+    float: left;
     background: #81B43F;
     border-radius: 8px;
     text-align: center;
     margin-left: 45px;
-    margin-top: 50px;
+    margin-top: 47px;
     margin-right: 79px;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
     color: white;
-
-
 }
-
-
-.cap .corz{
+.second-head div.inner-cap{
     float: left;
     border-right: 1px solid white;
     margin: 15px 15px 24px;
     padding-right: 20px;
     
-    
-    
-    color: #FFFFFF;
 }
-
-.cap span{
+.second-head div.cap span{
     display: inline-block;
     margin-top: 15px;
     margin-right: 24px;
 }
+
+/* header-menu */
+
 .header-menu{
     width: 697px;
     height: 22px;
     margin: 24px 283px 37px 315px;
-    
-
 }
-.header-menu span {
-    margin-right: 21px;
+.header-menu span{
+    margin-right: 22px;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
 }
-.header-menu span:last-of-type {
+.header-menu span:last-of-type{
     color: #FF715B;
-float: right;
 }
 
-.foto{
+/* cover */
+
+.cover{
     width: 1296px;
     height: 381px;
-    background-image: url(img/elka.png);
+    background-image: url(img/background.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    /* margin: 0 auto; */
 }
 .hit{
+    float: right;
     width: 511px;
     height: 226px;
-    background: #FF715B;
-    text-align: center;
-    float: right;
     margin-top: 77px;
+    margin-bottom: 78px;
+    background-color: #FF715B;
+    text-align: center;
 }
-.foto_text{
-    margin-top: 46px;
+.hit p:first-child{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    color: #FFFFFF;
 }
-
-.foto_text h1{
-    font-family: Noto Sans;
+.hit h1{
     font-style: normal;
     font-weight: bold;
     font-size: 44px;
     line-height: 60px;
     color: #FFFFFF;
-
 }
-
-.foto_text p{
-    font-family: Noto Sans;
+.hit p:last-child{
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 22px;
     line-height: 30px;
     color: #FFFFFF;
 }
-.menu2{
+.cover-text{
+    margin-top: 46px
+}
+
+/* menu */
+
+.menu{
     width: 1296px;
     height: 83px;
-   
 }
-
-/* .icon{
-    float: left;
-    margin-left: 80px;
-    border: 1px solid #F5F5F5;
-    width: 272px;
-    height: 77px;
-    text-align: center;
-} */
-/* .menu2 span{
-    font-family: Noto Sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-
-} */
-
-.menu2 span:first-of-type {
-    margin-left: 46px;
-}
-.menu2 .icon {
-    
-    
-        float: left;
-        margin-left: 80px;
-        border: 1px solid #F5F5F5;
-        width: 272px;
-        height: 77px;
-        text-align: center;     
-}
-
- .icon  img {
-    width: 25px;
-    height: 21px;
-    vertical-align: bottom;
-}
-.menu2 span {
+.menu span{
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -302,132 +219,102 @@ float: right;
     margin-top: 27px;
     margin-right: 64px;
 }
+.menu div.filters{
+    float: left;
+    margin-left: 80px;
+    border: 1px solid #F5F5F5;
+    width: 272px;
+    height: 77px;
+    text-align: center;
+}
+.menu span:first-of-type{
+    margin-left: 46px;
+}
+.menu div.filters span img{
+    width: 25px;
+    height: 21px;
+    vertical-align: bottom;
+}
 
-.menu3 .dddd{
+/* goods */
+
+div.goods{
+    width: 1296px;
+    height: 2562px;
+    background: #F9F9F9;
+    margin-top: -6px;
+}
+.goods div.window-goods{
+    width: 1139px;
+    margin: auto auto;
+}
+.direction{
     float: left;
     height: 19px;
     margin-top: 66px;
-   
 }
-
-/* .ico{
+.sorting{
     float: right;
-} */
-.sorting span:first-of-type {
+    width: 410px;
+    height: 19px;
+    
+    margin-top: 66px;
+    color: #00000080;
+}
+.sorting-info{
+    height: 100px;
+}
+.sorting span:first-of-type{
     color: black;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 19px;
 }
-.sorting span {
+.sorting span{
     display: inline-block;
     margin-right: 13px;
-    font-family: Noto Sans;
-
-font-size: 14px;
-
-color: rgba(0, 0, 0, 0.5);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
 }
-.menu3{
-    width: 1296px;
-    height: 2562px;
-    background: #F9F9F9;
-    margin-top: -6px;
+.sorting span:last-of-type{
+    margin-right: 0;
 }
-.menu3 .sorting{
+
+/* window of goods */
+
+div.name{
+    float: left;
+}
+div.name h2, div.name div{
+    float: left;
+}
+div.sort-icon{
     float: right;
-    
-    height: 19px;
-    margin-top: 66px;
-    
+    margin-top: 20px;
 }
-.menu3 .dref{
-    width: 1139px;
-    margin: auto auto;
-}
-.menu3 .dref .info{
-    height: 100px;
-}
-
-.dddd span:last-of-type {
-    font-family: Noto Sans;
+div.name div{
+    margin-top: 23px;
+    margin-left: 24px;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 19px;
-   
-    color: #000000;
-}
-.dddd span{
-    font-family: Noto Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 19px;
-margin-right: 4px;
-
-
-color: rgba(0, 0, 0, 0.5);
-}
-
-.ly{
-    height: 49px;
-}
-.right{
-float: right;
-}
-.left{
-float: left;
-}
-.left span:last-of-type{
-    font-family: Noto Sans;
-    font-size: 14px;
     color: rgba(0, 0, 0, 0.5);
 }
-.left span:first-of-type{
-    /* font-family: Noto Sans; */
-    margin-right: 19px;
+div.name h2{
+    font-style: normal;
     font-weight: bold;
     font-size: 36px;
     line-height: 49px;
-    color: #000000;
 }
-.right{
-    margin-right: 12px;
-    margin-top: 12px ;
-}
-/* div.goods {
-width: 1296px;
-height: 2562px;
-background: #F9F9F9;
-margin-top: -6px;
-
+div.sorting-view{
+    height: 49px;
 }
 
-.goods div.window-goods {
-    width: 1139px;
-    margin: auto auto;
-} */
-
-
-
-.sorting-info {
-    height: 100px;
-}
-.direction {
-    float: left;
-    height: 19px;
-    margin-top: 66px;
-}
-
-.sorting {
-    float: right;
-    width: 410px;
-    height: 19px;
-    margin-top: 66px;
-    color: #00000080;
-}
+/* cards */
 
 div.window-goods div.card:nth-child(3){
     margin-top: 28px;
@@ -466,7 +353,7 @@ div.name-of-card img:last-child{
     margin-right: -8px;
 }
 
-
+/* artikul */
 
 div.artikul{
     margin-right: 717px;
@@ -566,14 +453,15 @@ div.basket img{
     width: 18px;
     float: left;
 }
-* other goods */
 
-.other-goods {
+/* other goods */
+
+.other-goods{
     margin-top: 16px;
     border-radius: 8px;
     width: 1136px;
     height: 209px;
-    background-image: url(img/shriki.png);
+    background-image: url(img/back_toys.png);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -707,7 +595,7 @@ ul li{
     opacity: .9;
 }
 ul li:first-child{
-    /* margin-top: 12px; */
+    margin-top: 12px;
 }
 div.social-network span{
     display: inline-block;

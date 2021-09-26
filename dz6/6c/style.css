@@ -1,3 +1,19 @@
+@media print{
+    a{
+        content: attr(alt="инф");
+    }
+     a{
+        display: none;
+    }
+}
+@media screen {
+     .g{
+        display: none;
+    }
+}
+
+
+
 .font{
     font-weight: bold;
     font-size: 24px;
@@ -20,3 +36,4 @@ p a{
     background-position: left;
     text-decoration: none;
 }
+
