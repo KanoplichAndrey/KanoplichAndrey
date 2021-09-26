@@ -336,7 +336,7 @@ color: rgba(0, 0, 0, 0.5);
     margin-top: -6px;
 }
 .menu3 .sorting{
-    float: right;
+    /* float: right; */
     
     height: 19px;
     margin-top: 66px;
@@ -424,9 +424,10 @@ margin-top: -6px;
 .sorting {
     float: right;
     width: 410px;
-    height: 19px;
-    margin-top: 66px;
+    /* height: 19px;
+    margin-top: 66px; */
     color: #00000080;
+    padding-left: 16px;
 }
 
 div.window-goods div.card:nth-child(3){

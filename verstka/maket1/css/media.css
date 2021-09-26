@@ -1,0 +1,69 @@
+@media all and (max-width: 1178px){
+    body{
+        
+    }
+    .contaner{
+        width: 890px;
+    }
+
+.seach{
+    width: 294px;
+}
+.catalog_menu .canalog_menu_right {
+    
+    width: 628px;
+}
+.blocks-wrap .block {
+    width: 200px;
+   
+}
+.blocks-wrap .block img {
+    
+    margin: 16px 24px 16px 10px;
+}
+.news img, .news div{
+    width: 238px;
+}
+
+.hits {
+    
+    margin-left: 261px;
+}
+
+.hits > ul > li {
+    width: 200px;
+   
+}
+
+.hits > ul > li img {
+    
+    width: 100%;
+}
+
+.hits_kits ul li {
+    width: 306px;
+    
+    
+}
+
+.hits_kits ul li:first-child {
+    background-size: 180px;
+}
+
+.hits_kits ul li:last-child {
+    background-size: 180px;
+}
+
+.footer ul:last-of-type {
+    margin-bottom: 60px;
+}
+.markets {
+   clear: both;
+   float: none;
+   width: 150px;
+   margin: 0 auto;
+   
+}
+
+
+}

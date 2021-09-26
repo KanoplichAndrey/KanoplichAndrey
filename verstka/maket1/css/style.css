@@ -5,6 +5,8 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+
 }
 .clearfix:after { 
     content: ""; 
@@ -448,9 +450,7 @@ margin-bottom: 8px;
      float: left;
     margin-right: 16px;
 }
-.markets{
-    float: right;
-}
+
 .footer .logo{
     margin-bottom: 16px;
 } 
