@@ -67,3 +67,208 @@
 
 
 }
+
+@media all and (max-width: 930px){
+   
+    .contaner{
+        width: 560px;
+    }
+
+.logo {
+    float: none;
+    height: 100%;
+    width: 160px;
+    margin: 0 auto 20px;
+}
+
+.seach {
+    width: 100%;
+    margin-right: 0;
+}
+
+.header_right .phone {
+    margin-left: 90px;
+}
+
+.catalog_menu {
+   width: 100%;
+}
+
+.catalog_menu ul {
+   
+    /* width: 236px; */
+    width: 100%;
+    float: none;
+}
+
+.catalog_menu .canalog_menu_right {
+    
+    width: 100%;
+}
+
+.canalog_menu_right .slider {
+    text-align: center;
+    padding-left: 0px;
+}
+.blocks-wrap .block {
+    width: 270px;
+   margin-bottom: 15px;
+}
+.news {
+    float: none;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.news img{
+    float: left;
+    width: 49%;
+}
+.news button {
+    display: none;
+}
+
+.news div{
+    float: right;
+    width: 49%;
+    height: 387px;
+}
+
+.hits{
+    margin-left: 0;
+    width: 100%; 
+}
+
+.hits > ul > li {
+    width: 49%;
+    margin-right: 0; 
+    height: 412px; 
+    margin-bottom: 12px;
+}
+.hits > ul > li:nth-last-child(2) {
+  
+   float: right;
+}
+
+.hits > ul > li:nth-last-child() {
+  float: none;
+  margin: 0 auto;
+   clear: both; 
+ }
+ .hits_kits > ul > li {
+    width: 100%;
+  margin-bottom: 12px;
+}
+
+.bottom-email {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+}
+.bottom-email p{
+   float: none;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+
+.bottom-email .subscribe {
+   float: none;
+    height: 40px;
+    margin: 0 auto;
+   
+}
+.first-block {
+    margin-right: 0;
+}
+
+.footer > .container > ul:first-of-type {
+    float: right;
+}
+.second_block {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    width: 160px;
+}
+
+.footer .logo + ul {
+
+    margin-bottom: 0;
+}
+.markets {
+    clear: none;
+    float: right;
+    width: 150px;
+    margin: 0 auto;
+}
+}
+
+@media all and (max-width: 590px){
+    
+        
+    
+    .contaner{
+        width: 345px;
+    }
+
+    .header_right img:nth-of-type(2){
+        margin-left: 110px;
+    }
+
+    .blocks-wrap .block {
+        width: 100%;
+        
+    }
+
+    .news img{
+    float: none;
+    width: 100%;
+}
+
+.news img div{
+    float: none;
+    width: 100%;
+    background-size: cover;
+    margin-top: 17px;
+}
+
+
+.hits > ul > li {
+    width: 100%;
+  float: none;
+}
+
+.hits > ul > li img{
+  width: 80%;
+}
+.bottom-email .subscribe {
+    width: 100%;
+}
+.first-block, .footer > .container > ul, .second_block {
+    float: none;
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.footer > .container > ul:first-of-type {
+    float: none;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+
+.second_block > ul + p + ul{
+    width: 130px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.markets {
+   float: none;
+}
+
+
+
+}
