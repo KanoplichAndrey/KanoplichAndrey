@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        input[type=radio]{
+            float: left;
+        }
+        .block1{
+            float: left;
+            width: 200px;
+            margin-left: 10px;
+        }
+        .block2{
+            float: none;
+            overflow: hidden;
+            padding: 0 10px 0 10px;
+        }
+        .block3{
+            width: 200px;
+            margin-left: 10px; float: left;
+        }
+        .block4{
+            width: 200px;
+            margin-left: 10px;  
+        }
+        .block5{
+        width: 200px;
+        margin-left: 10px; float: left;
+        }
+        .block6{
+            float: left;
+        }
+
+        .block7{
+            float: left;
+        }
+        .block8{
+            /* float: left; */
+        }
+        .block9{
+            width: 200px;
+            margin-left: 10px; 
+            float: left;
+        }
+
+        .block10{
+            float: none;
+            overflow: hidden;
+            padding: 0 10px 0 10px;
+        }
+        .block11{
+            width: 99%;
+            margin-left: 10px;
+        }
+        .block12{
+            margin-left: 10px; 
+        }
+
+
+  
+
+
+        @media screen and (max-width: 574px) {
+            .block1{
+               float: none;
+            }
+            .block2{
+            float: none;
+            overflow: hidden;
+            padding: 0 10px 0 10px;
+            }
+            .block3{
+            float: none;
+            }
+            .block4{
+                width: 200px;
+                margin-left: 10px;  
+            }
+            .block5{
+        float: none;
+            }
+            .block6{
+                float: none;
+            }
+
+            .block7{
+                float: none;
+            }
+            .block8{
+                /* float: left; */
+            }
+            .block9{
+                width: 200px;
+                margin-left: 10px; 
+                float: left;
+            }
+
+            .block10{
+                /* float: none; */
+                /* overflow: hidden; */
+                padding: 0 10px 0 10px;
+            }
+            .block11{
+                /* width: 99%; */
+                margin-left: 10px;
+            }
+            .block12{
+                margin-left: 10px; 
+            }
+
+
+        }
+    </style>
+    
+</head>
+<body>
+    <form action='http://fe.it-academy.by/TestForm.php' method=post и enctype="multipart/form-data" target='_blank'>
+    <legend style="margin-left: 10px;">Для публикации вашей статьи заполните, пожалуйста, следующую форму:</legend><br><br>
+<div>
+
+    <div class="block1" >
+        Название статьи:
+    </div>
+
+    <div class="block2">
+        <input style="width: 100%">
+    </div>
+
+
+    <div class="block3"  > Рубрика: </div> 
+
+<div>
+    <select name="select" class="block4" >
+               
+                    <option value=программирование>программирование</option>
+                    <option value=графика и дизайн>графика и дизайн</option>
+                    <option value=компьютерная техника >компьютерная техника</option>
+    </select>  
+</div>
+    <div class="block5" > Публикация: </div>
+<div class="block6" >
+    <input  type='radio' name='checked[]' value='Вход'> на сайте
+</div>
+            
+<div class="block7" >
+    <input  type='radio' name='checked[]' value="andrey1"  >в журнале
+</div>
+            
+<div class="block8" >
+    <input type='radio' name='checked[]' value="andrey2">на сайте и в журнале 
+</div>
+            
+   
+  
+            <div class="block9" >Разрешить комментарии:</div>
+            <div>
+            <input type='checkbox' name='checked[]' value=""> 
+            </div>
+            
+            <div class="block10" >
+            Текст статьи: </div>
+            <div>
+            <textarea name="text" id=""class="block11 "></textarea> 
+            </div>
+            <!-- <br> -->
+            <div class="block12" style="width: 100%;">
+            <input type='submit' value='опубликовать' >
+            </div>
+
+
+</div>
+</form>
+
+</body>
+</html>

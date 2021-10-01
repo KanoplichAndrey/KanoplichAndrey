@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+            input[type=text], input[type=password] {
+    width: 100%;
+    
+    /* padding: 15px; */
+    /* margin: 5px 0 22px 0; */
+    display: inline-block;
+    
+    
+
+
+        }
+    </style>
+</head>
+<body>
+    <!-- <form action="" method="GET"></form> -->
+
+    <!-- <form action='http://fe.it-academy.by/TestForm.php' method=post и enctype="multipart/form-data" target='_blank'>
+        Ваше имя: <input type='text' name='fio'><br>
+        Ваш пароль: <input type='password' name='age' ><br>
+        Запомнить меня: <input type='checkbox' name='FOREVER' ><br>
+        <input type='submit' value='Вход'>
+        <input type='checkbox' name='checked[]' value="andrey1" checked >
+        <input type='checkbox' name='checked[]' value="andrey2">
+        <input type='checkbox' name='checked[]' value="andrey3">
+        <input type='checkbox' name='checked[]' value="andrey4" checked >
+        <input type='checkbox' name='checked[]' value="andrey5">
+        <input type='checkbox' name='checked[]' value="andrey6">
+        <input type='checkbox' name='checked[]' value="andrey7">
+        <input type='checkbox' name='checked[]' value="andrey8">
+        <input type='checkbox' name='checked[]' value="andrey9">
+        <input type='checkbox' name='checked[]]' value="andrey10">
+        <br>
+        <input type='radio' name='radio' value="andrey4"  >
+        <input type='radio' name='radio' value="andrey5">
+        <input type='radio' name='radio' value="andrey6">
+        <input type='radio' name='radio' value="andrey7">
+        <input type='radio' name='radio' value="andrey8">
+        <input type='radio' name='radio' value="andrey9">
+        <input type='radio' name='radio' value="andrey10">
+        <br>
+        <input type='radio' name='radio1' value="andrey4"  >
+        <input type='radio' name='radio1' value="andrey5">
+        <input type='radio' name='radio1' value="andrey6">
+        <br>
+        <input type='file' name='file' >
+        <input type='hidden' name='formType' value="form1" >
+
+        </form>
+        http://fe.it-academy.by/TestForm.php?fio=ssss&PAROL=&FOREVER=on -->
+
+ <form action='http://fe.it-academy.by/TestForm.php' method=post и enctype="multipart/form-data" target='_blank'>
+        <div class="container">
+            <p>
+                Для публикации вашей статьи заполните,
+                пожалуйста, следующую форму:
+            </p>
+
+            <label for="name"></label> Название статьи: 
+            <input type='text' name='name'><br>
+        
+           <span style="width: 116px;
+           display: inline-block; " > Рубрика: </span> <select name="select"  style="    margin-top: 10px; 
+            margin-left: 60px;"  >
+                <!-- <optgroup label="програмирование"> -->
+                    <option value=1>компьютерная техника</option>
+                    <option value=2>графика и дизайн</option>
+                    <option value=3 selected>программирование</option>
+                <!-- </optgroup> -->
+               
+               
+            </select>
+            <br> Публикация:
+            <input type='radio' value='Вход'> на сайте
+            <input type='radio' name='checked[]' value="andrey1"  >в журнале
+            <input type='radio' name='checked[]' value="andrey2">на сайте и в журнале <br>
+            
+            Разрешить комментарии:
+            <input type='checkbox' name='checked[]' value="andrey2"> <br>
+            Текст статьи: <br>
+            <textarea name="text" id="" style="width: 100%;"></textarea> <br>
+            <input type='submit' value='send' >
+        
+        
+        </div>
+</form>    
+<hr>
+
+<!-- <form action='http://fe.it-academy.by/TestForm.php' method=post и enctype="multipart/form-data" target='_blank'>
+    Ваше имя: <input type='text' name='fio'><br>
+    Ваш пароль: <input type='password' name='age'><br>
+    Запомнить меня: <input type='checkbox' name='FOREVER' ><br>
+    <input type='submit' value='Вход'>
+    <input type='checkbox' name='checked[]' value="andrey1" checked >
+    <input type='checkbox' name='checked[]' value="andrey2">
+    <input type='checkbox' name='checked[]' value="andrey3">
+    <input type='checkbox' name='checked[]' value="andrey4" checked >
+    <input type='checkbox' name='checked[]' value="andrey5">
+    <input type='checkbox' name='checked[]' value="andrey6">
+    <input type='checkbox' name='checked[]' value="andrey7">
+    <input type='checkbox' name='checked[]' value="andrey8">
+    <input type='checkbox' name='checked[]' value="andrey9">
+    <input type='checkbox' name='checked[]]' value="andrey10">
+    <br>
+    <input type='radio' name='radio' value="andrey4"  >
+    <input type='radio' name='radio' value="andrey5">
+    <input type='radio' name='radio' value="andrey6">
+    <input type='radio' name='radio' value="andrey7">
+    <input type='radio' name='radio' value="andrey8">
+    <input type='radio' name='radio' value="andrey9">
+    <input type='radio' name='radio' value="andrey10">
+    <br>
+    <input type='radio' name='radio1' value="andrey4" autofocus >
+    <input type='radio' name='radio1' value="andrey5">
+    <input type='radio' name='radio1' value="andrey6">
+    <br>
+    <input type='file' name='file' >
+    <input type='hidden' name='formType' value="form2" >
+    <hr>
+
+
+
+
+
+
+    
+    <select name="city[]"   >
+        <optgroup label="belarus">
+            <option value="minsk">minsk</option>
+            <option value="moscow">moscow</option>
+        </optgroup>
+        <optgroup label="belarus3">
+            <option value="minsk">minsk</option>
+            <option value="moscow">moscow</option>
+        </optgroup>
+        <optgroup label="belarus4">
+            <option value="minsk">minsk</option>
+            <option value="moscow">moscow</option>
+        </optgroup>
+
+       
+    </select>
+<textarea name="text" id="" >test</textarea>
+    <input type='submit' value='send' >
+    <input type='reset' value='reset' >
+    <input type='button' value='button' disabled>
+    </form>
+<button type="submit">submit</button>
+<button type="reset">reset</button>
+<button type="button">button</button> -->
+</body>
+</html>
