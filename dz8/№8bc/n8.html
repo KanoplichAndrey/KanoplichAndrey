@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-image: url(https://photocasa.ru/uploads/posts/2019-10/1570656317_kmr_1109.jpg);
+    height: 10000px;
+    }
+.first{
+width: 50px;
+height: 50px;
+background-color: crimson;
+/* float: right; */
+/* position: absolute; */
+right: 0;
+top: 0;
+}
+.second{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(33, 20, 220);
+    /* float: right; */
+    /* margin-top: 350px;
+    margin-right: -50px; */
+    /* margin-top: -200px;
+    opacity: 0; */
+}
+/* .second:hover{
+
+    opacity: 1;
+} */
+.tree{
+width: 50px;
+height: 50px;
+background-color: rgb(37, 220, 20);
+}
+
+.parent {
+    padding: 1px;
+    width: 500px;
+    height: 300px;
+    background-color: darkgoldenrod;
+    margin: 100px auto;
+    /* position: relative; */
+}
+
+.parent > div{
+    padding: 1px;
+    width: 400px;
+    height: 250px;
+    background-color: rgb(11, 184, 126);
+    margin: 20px auto;
+    /* position: relative; */
+}
+.parent > div > div  {
+    padding: 1px;
+    width: 300px;
+    height: 200px;
+    background-color: rgb(73, 160, 55);
+    margin: 20px auto;
+    /* margin: 50px auto;
+    position: relative; */
+} 
+/* .parent > div > div > div {
+    width: 500px;
+    height: 400px;
+    background-color: darkgoldenrod;
+   
+}  */
+.header{
+    height: 50px;
+    background-color: darkgreen;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.header ul{
+    width: 500px;
+    margin: 0 auto;
+}
+.header ul li{
+  display: inline-block;
+}
+.phone{
+    width: 50px;
+    height: 50px;
+    background-color: darkmagenta;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+</style>
+
+
+<body>
+    <div class="header">
+    <ul>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+    </ul>
+</div>
+<div class="parent">
+    <div>
+        <div>
+          
+                <div class="first"></div>
+                <div class="second"></div>
+                <div class="tree"></div>
+            
+        </div>
+    </div>
+    <div class="phone"></div>
+    
+</div>
+
+</body>
+
+</html>
