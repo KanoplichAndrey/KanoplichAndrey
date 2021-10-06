@@ -7,19 +7,38 @@
     <title>Document</title>
 </head>
 <style>
+.dd{
+
+    width: 419px;
+    height: 362px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+
+
  img:first-child:hover {
  z-index: 1;
  }
  img:nth-child(3):hover{
-    z-index: 2;
+    z-index: 1;
  }
  img:nth-child(2):hover{
-    z-index: 3;
+    z-index: 1;
  }
- img:nth-child(2):hover img:first-child  {
+ /* img:first-child:hover  ~  img{
+    
+    opacity: 20%;
+ }
+ .block2:hover + .block3{
+    opacity: 20%;
+ }
+ .block2:hover + .block1{
+    opacity: 20%;
+ } */
 
-    opacity: 20;
- }
+
 </style>
 <body>
     <div style="position: relative;" class="container">
@@ -30,23 +49,15 @@
          Сначала я молчать хотела; Поверьте: моего стыда Вы не узнали б 
          никогда, Когда б надежду я имела Хоть редко, хоть в неделю раз 
          В деревне нашей видеть вас.
-<div style="
-/* border: solid 1px black; */
-/* width: 100wh; */
-width: 419px;
-  height: 362px;
-  /* 362px */
- margin-left: auto;
- margin-right: auto;
-  position: relative;">
+<div class="dd" >
 
-        <img class="g" style="position: absolute; left: 25px;top:10px;" src="biohazard.png" alt="">
-        <img style="position: absolute;left: 195px;" src="Man-and-woman.png" alt="">
+        <img class="block1" style="position: absolute; left: 25px;top:10px;" src="biohazard.png" alt="">
+        <img class="block2" style="position: absolute;left: 195px;" src="Man-and-woman.png" alt="">
         
-        <img style="position: absolute; left: 111px; top: 170px;" src="Yin_and_Yang.png" alt="">
-        <img style="position: absolute; left: 70px; top: 52px;" src="No_smoking.png" alt="">
+        <img class="block3" style="position: absolute; left: 111px; top: 170px;" src="Yin_and_Yang.png" alt="">
+        <img class="block4" style="position: absolute; left: 70px; top: 52px;" src="No_smoking.png" alt="">
 </div>
-        <div class="">Чтоб только слышать ваши речи, 
+        <div  style="text-align: center;">Чтоб только слышать ваши речи, 
             Вам слово молвить, и потом Все думать, думать 
             об одном И день и ночь до новой встречи.
         </div>
