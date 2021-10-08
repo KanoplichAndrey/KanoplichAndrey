@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    input{
+        width: 30px;
+        height: 30px;
+    position: absolute ;
+    /* left: 0; */
+    
+    
+    }
+    input + :before{
+        content: '';
+        width: 19px;
+        height: 15px;
+        background:url(a196617864cc0bcf40e6319588e721ab.png);
+
+        background-position: -506px -273px;
+         background-size: 312px;
+         border: solid 1px ;
+         border-radius: 10px;
+        position: absolute;
+        left: 6px;
+        top: 6px;
+        /* left: 10;
+        top: 10; */
+        
+    }
+    input:checked + :before{
+        content: "";
+        width: 19px;
+        height: 15px;
+        background-size: 310px;
+        /* background: url(a196617864cc0bcf40e6319588e721ab.png); */
+        background-position: -487px -465px;
+        position: absolute;
+        left: 6px;
+        top: 6px;
+    }
+    input{
+        display: none;
+    }
+    label{
+      /* margin-bottom: 25px;   */
+    }
+
+</style>
+<body>
+    <div style="position: relative;
+        margin: 0 auto;
+        border: solid 1px;
+        width: 250px; height: 250px;
+        background-color: darkgoldenrod;">
+    <form action="" >
+    <input type="checkbox" id="one">
+    <label for="one"></label>
+
+</form>
+</div>
+</body>
+</html>
