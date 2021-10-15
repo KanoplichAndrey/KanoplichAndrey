@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        /* border: solid 1px ; */
+       
+    }
+    @keyframes MyAnimation1
+{
+    from { background-color: red;
+        color: white;
+    padding: 1px;
+    text-align: center;
+    font-size: 2px;
+    animation: MyAnimation1 3s infinite; }
+    to { background-color: blue;
+        color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    animation: MyAnimation1 3s infinite; }
+}
+@keyframes MyAnimation2
+{
+    from { border: solid 1px;
+        background-color: blue;
+        color: white;
+    animation: MyAnimation2 8s infinite ; }
+    to { 
+        border: solid 20px;
+        background-color: rgb(202, 158, 12);
+    color: white;
+    animation: MyAnimation2 8s infinite ; }
+    
+ 
+}
+
+.a{
+    position: absolute;
+    color: white;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    animation: MyAnimation1 3s infinite;
+    transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms;
+    
+    transition: transform 8s ease-in-out;
+}
+
+.b{
+    position: absolute;
+    margin: 0 auto;
+    background-color: rgb(202, 158, 12);
+    color: white;
+    padding: 10px;
+
+    text-align: center;
+    font-size: 20px;
+    transition-duration: 2s;
+    transition-property: background-color;
+    transition-delay: 1s;
+    /* transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms; */
+    transition: transform 8s ease-in-out;
+    transform: rotate(-25deg);
+    
+    /* animation: MyAnimation2; */
+    
+  
+    
+    
+}
+.container:hover .b {
+  
+    transform: rotate(-25deg);
+    transform: translate3d(200px, 0px, 0px);  
+    /* border-width: 30px; */
+    transition: transform 8s ease-in-out;
+    /* border-radius: 10px; */
+    
+    
+}
+
+
+
+.c{
+    position: absolute;
+    background-color:white;
+    margin: 0 auto;
+        
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms;
+    top: 350px;
+    transition: transform 8s ease-in-out;
+    color: rgb(206, 8, 18);
+}
+
+
+.container:hover .c { 
+    transform: translate3d(200px, 0px, 0px);
+   
+}
+
+.container {
+    width: 600px;
+        height: 600px;
+    border: 1px solid rgba(56, 233, 11, 0.7);
+    
+    border-radius: 50px;
+    
+   opacity:1;
+   
+   
+   transition:all 8s ease-in-out;
+   overflow: hidden;
+}
+
+.container:hover {
+   opacity: 0.3;
+   border:0px solid rgba(54, 2, 121, 0.7);
+   
+}
+
+
+ 
+</style>
+<body>
+    <div class="container" style="position: relative;">
+        <div><p class="a" style='border:solid red 1px; border-radius: 10px;top: 80px; width: 200px; font-size: 20px; transform: rotate(-25deg)'>
+            CSS3 <br>анимация</p></div>
+        <div><p class="b" style='border:solid red 1px; border-radius: 70px 30px; width: 200px;top: 200px; font-size: 20px; '>
+            CSS3 <br>анимация</p></div>
+        <div class="c"><i class="fas fa-ambulance"></i></div>
+
+    </div>
+
+</body>
+</html>
