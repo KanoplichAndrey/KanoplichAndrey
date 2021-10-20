@@ -93,8 +93,8 @@
       }
       .menu{
         order: 3;
-        font-size: large;
-        font-weight: bold;
+        /* font-size: large;
+        font-weight: bold; */
         background: none;
         padding-left: 0px;
         margin-left: 11px;
