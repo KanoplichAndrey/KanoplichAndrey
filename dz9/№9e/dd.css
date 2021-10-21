@@ -61,7 +61,7 @@
     /* flex-direction: column; */
    }
 
-   @media all and (max-width: 300px)
+   @media all and (max-width: 600px)
     {
       p{
         width: 165px;
