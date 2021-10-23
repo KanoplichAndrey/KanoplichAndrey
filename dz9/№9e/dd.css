@@ -2,7 +2,6 @@
 .header{
     display: flex;
     background-color: rgb(132, 210, 241);
-    /* flex-basis: 100px;  */
     height: 50px;
     justify-content: space-evenly;
     align-items: center;
@@ -11,32 +10,18 @@
 .aa{
     
     display: flex;
-     /* border: solid red 1px; */
-     background: url(bol.png) repeat-y right top;
+    background: url(bol.png) repeat-y right top;
 }
 .menu{
 
- flex: 0 0 213px;
-  /* margin: 2px; */
+  flex: 0 0 213px;
    background-color: #F0E78D;
 }
 .content{
     margin-left: 20px;
     padding: 1px 0 1px 0;
     padding-bottom: 1px;
-
-    /* flex: 1 0; */
-     /* margin: 2px; */
-      /* background-color: rgb(0, 255, 115); */
-      /* background: url(bol.png) repeat-y right top; */
    }
-
-   /* .content p:first-child{
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-  } */
 
   .im{
     margin: 0cm 0.5cm 0.5cm 0cm;
@@ -50,18 +35,16 @@
   }
 
    .footer{
-       /* flex: 1 1 auto; */
-       background-color: rgb(132, 210, 241);
-       height: 50px;
-       /* text-align: center; */
+      background-color: rgb(132, 210, 241);
+      height: 50px;
       display: flex;
-       justify-content: space-evenly;
-       align-items: center;
-       color: blue;
-    /* flex-direction: column; */
+      justify-content: space-evenly;
+      align-items: center;
+      color: blue;
+    
    }
 
-   @media all and (max-width: 420px)
+   @media all and (max-width: 500px)
     {
       p{
         width: 165px;
@@ -78,23 +61,14 @@
         justify-content: space-evenly;
         width: 165px;
         margin: 0,0.0.0;
-        
-        /* position: relative; */
-       
-        
       }
       .aa{
         display: flex;
         flex-direction: column;
         background-image: none;
-        /* justify-content: space-evenly; */
-         
-         
       }
       .menu{
         order: 3;
-        /* font-size: large;
-        font-weight: bold; */
         background: none;
         padding-left: 0px;
         margin-left: 11px;
@@ -113,7 +87,7 @@
       .im {
        
         margin: 10px -20px 20px;
-        display: block;
+        /* display: block; */
          float: none;
          justify-content: space-evenly;
          display: flex;
@@ -121,69 +95,6 @@
         li{
           margin-left: -50px;
         }
-
-      /* .menu
-      {
-        position: absolute;
-        flex: 0 0 213px;
-margin: 2px;
-background-color: #F0E78D;
-font-size: large;
-font-weight: bold;
-padding-left: 10px;
-bottom: -265px;
-left: 216px;
-      }
-      .header{
-          display: none;
-      }
-      .footer
-      {
-        display: none;
-      }
-      .im {
-       
-        margin: 10px auto 20px;
-        display: block;
-         float: none;
-         justify-content: space-evenly;
-         display: flex;
-        }
-        .aa{
-            width: 165px;
-            background-image: none;
-            justify-content: space-evenly;
-            display: flex;
-           }
-           .wrqp{
-            justify-content: space-evenly;
-            display: flex; 
-            position: relative;
-            background-color: rosybrown;
-           }
-           .gg{
-               position: relative;
-               top: 10px;
-               flex: 0 0 213px;
-               background: none;
-              margin: 16px;
-              font-size: large;
-              font-weight: bold;
-           }
-         
-        .menu p:first-child {
-          font-size: large;
-          font-weight: bold;
-          padding-left: 26px;}
-
-          ul li{
-           
-            margin-left: -10px;
-          }
-          div menu .gg{
-            width: 165px;
-           
-          } */
 
     }
 
