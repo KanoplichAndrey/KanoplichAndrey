@@ -320,7 +320,10 @@ a {
 .catalog4{
         display: flex;
         flex-direction: column;
-        padding-left: 85px;
+        // padding-left: 85px;
+        ul{
+            width: 387px;
+        }
         ul:nth-child(3) > li:nth-child(4){
             font-family: Open Sans;
             font-size: 24px;
@@ -369,10 +372,10 @@ a {
         }
         li:nth-child(3){
             font-family: Open Sans;
-            font-style: normal;
-            font-weight: normal;
-            font-weight: 600;
-            font-size: 18px;
+            // font-style: normal;
+            // font-weight: normal;
+            // font-weight: 600;
+            font-size: 16px;
             line-height: 22px;
             color: #000000;
             margin-top: 12px;
@@ -385,8 +388,8 @@ a {
             margin-top: 0px;
         }
         ul > li img{
-            width: 368px;
-            height: 190px;
+            // width: 368px;
+            // height: 190px;
             margin-bottom: 50px;
             margin-top: 60px;
             
@@ -404,6 +407,16 @@ a {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        ul{
+            // width: 387px;
+        }
+        ul > li:nth-child(4){
+            font-family: Open Sans;
+            font-size: 16px;
+            line-height: 22px;
+            
+            color: #000000;
+        }
         ul:nth-child(4) > li:nth-child(4){
             position: absolute;
             font-family: Open Sans;
@@ -437,14 +450,14 @@ a {
             font-family: Open Sans;
             font-style: normal;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 25px;
             color: #000000;
         }
         li:nth-child(3){
             font-family: Open Sans;
-            font-style: normal;
-            font-weight: normal;
+            // font-style: normal;
+            // font-weight: normal;
             font-weight: 600;
             font-size: 18px;
             line-height: 22px;
@@ -455,8 +468,8 @@ a {
             margin-top: 0px;
         }
         ul > li img{
-            width: 368px;
-            height: 190px;
+            // width: 368px;
+            // height: 190px;
             margin-bottom: 50px;
             margin-top: 60px;
             

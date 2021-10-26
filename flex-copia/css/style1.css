@@ -290,8 +290,9 @@ body li {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column;
-  padding-left: 85px; }
+          flex-direction: column; }
+  .catalog4 ul {
+    width: 387px; }
   .catalog4 ul:nth-child(3) > li:nth-child(4) {
     font-family: Open Sans;
     font-size: 24px;
@@ -327,18 +328,13 @@ body li {
     color: #000000; }
   .catalog4 li:nth-child(3) {
     font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 22px;
     color: #000000;
     margin-top: 12px; }
   .catalog4 ul:first-child > li img {
     margin-top: 0px; }
   .catalog4 ul > li img {
-    width: 368px;
-    height: 190px;
     margin-bottom: 50px;
     margin-top: 60px; }
 
@@ -354,6 +350,11 @@ body li {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end; }
+  .catalog5 ul > li:nth-child(4) {
+    font-family: Open Sans;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000; }
   .catalog5 ul:nth-child(4) > li:nth-child(4) {
     position: absolute;
     font-family: Open Sans;
@@ -382,13 +383,11 @@ body li {
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 25px;
     color: #000000; }
   .catalog5 li:nth-child(3) {
     font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
@@ -397,8 +396,6 @@ body li {
   .catalog5 ul:first-child > li img {
     margin-top: 0px; }
   .catalog5 ul > li img {
-    width: 368px;
-    height: 190px;
     margin-bottom: 50px;
     margin-top: 60px; }
 
