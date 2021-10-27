@@ -224,27 +224,21 @@ body li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-  .container3 .wr {
-    width: 1135px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    margin: 0 auto;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
+  .container3 label {
+    display: block; }
   .container3 p {
     font-family: Roboto;
     font-size: 18px;
     line-height: 21px;
     color: #000000;
-    margin-bottom: 22px; }
+    margin-bottom: 22px;
+    margin-top: 32px; }
+  .container3 p:first-child {
+    margin-top: 0px;
+    margin-bottom: 24px; }
   .container3 span {
     font-family: Open Sans;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 19px;
     color: #000000; }
   .container3 .catalog3 {
@@ -254,10 +248,19 @@ body li {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column; }
+            flex-direction: column;
+    width: 715px; }
     .container3 .catalog3 span {
       vertical-align: 5px;
       margin-right: 16px; }
+  .container3 .ddd span {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #000000; }
   .container3 .n {
     margin-right: 12px;
     margin-bottom: 22px; }
@@ -283,134 +286,128 @@ body li {
     margin-right: 12px;
     margin-bottom: 22px; }
 
-.catalog4 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-  .catalog4 ul {
-    width: 387px; }
-  .catalog4 ul:nth-child(3) > li:nth-child(4) {
-    font-family: Open Sans;
-    font-size: 24px;
-    line-height: 33px;
-    color: #C10404; }
-  .catalog4 ul:nth-child(3) > li:nth-child(4)::after {
-    font-family: Open Sans;
-    font-size: 16px;
-    line-height: 22px;
-    -webkit-text-decoration-line: line-through;
-            text-decoration-line: line-through;
-    color: #000000;
-    margin-left: 10px;
-    content: '19990 р'; }
-  .catalog4 ul:nth-child(3) > img:nth-child(1) {
-    position: absolute;
-    left: 608.63px;
-    top: 1117px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    color: #FFFFFF;
-    -webkit-transform: rotate(-11.36deg);
-            transform: rotate(-11.36deg); }
-  .catalog4 li:nth-child(2) {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    color: #000000; }
-  .catalog4 li:nth-child(3) {
-    font-family: Open Sans;
-    font-size: 16px;
-    line-height: 22px;
-    color: #000000;
-    margin-top: 12px; }
-  .catalog4 ul:first-child > li img {
-    margin-top: 0px; }
-  .catalog4 ul > li img {
-    margin-bottom: 50px;
-    margin-top: 60px; }
-
-.catalog5 {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end; }
-  .catalog5 ul > li:nth-child(4) {
-    font-family: Open Sans;
-    font-size: 16px;
-    line-height: 22px;
-    color: #000000; }
-  .catalog5 ul:nth-child(4) > li:nth-child(4) {
-    position: absolute;
-    font-family: Open Sans;
-    font-size: 24px;
-    line-height: 33px;
-    color: #C10404; }
-  .catalog5 ul:nth-child(4) > li:nth-child(4)::after {
-    font-family: Open Sans;
-    font-size: 16px;
-    line-height: 22px;
-    -webkit-text-decoration-line: line-through;
-            text-decoration-line: line-through;
-    color: #000000;
-    margin-left: 12px;
-    content: '13999 р'; }
-  .catalog5 ul:nth-child(4) > img:nth-child(1) {
-    position: absolute;
-    left: 80px;
-    top: 1129px;
-    width: 35px;
-    height: 27px;
-    background: #E13F36;
-    -webkit-transform: rotate(-11.36deg);
-            transform: rotate(-11.36deg); }
-  .catalog5 li:nth-child(2) {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 25px;
-    color: #000000; }
-  .catalog5 li:nth-child(3) {
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    color: #000000;
-    margin-top: 12px; }
-  .catalog5 ul:first-child > li img {
-    margin-top: 0px; }
-  .catalog5 ul > li img {
-    margin-bottom: 50px;
-    margin-top: 60px; }
+.container-produrn {
+  margin-top: -52px; }
+  .container-produrn ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .container-produrn ul li {
+      width: 395px;
+      height: 286px;
+      margin-left: 94px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      margin-bottom: 94px;
+      position: relative; }
+      .container-produrn ul li .sale {
+        position: absolute;
+        width: 35px;
+        height: 27px;
+        left: 74px;
+        top: 81px;
+        background: #E13F36;
+        -webkit-transform: rotate(-11.36deg);
+                transform: rotate(-11.36deg); }
+      .container-produrn ul li .sale1 {
+        position: absolute;
+        width: 35px;
+        height: 27px;
+        left: 90px;
+        top: 80px;
+        background: #E13F36;
+        -webkit-transform: rotate(-11.36deg);
+                transform: rotate(-11.36deg); }
+      .container-produrn ul li:nth-child(1) {
+        background: url(../img2/Air-Jordan-Zoom-92-Sail-Flash-Crimson-Electric-Green\ 1.png) center no-repeat; }
+      .container-produrn ul li:nth-child(2) {
+        background: url(../img2/Air-Jordan-Max-200-Black-Gym-Red\ 1.png) center no-repeat; }
+      .container-produrn ul li:nth-child(3) {
+        background: url(../img2/Jordan\ delta\ 1.png) center no-repeat; }
+      .container-produrn ul li:nth-child(4) {
+        background: url(../img2/krossovki-jordan-air-cadence-j6rzf2.png) center no-repeat; }
+      .container-produrn ul li:nth-child(5) {
+        background: url(../img2/Air\ Jordan\ XXXIII\ SE\ 1.png) center no-repeat; }
+      .container-produrn ul li:nth-child(6) {
+        background: url(../img2/Air\ Jordan\ 6\ Retro\ 1.png) center no-repeat; }
+      .container-produrn ul li:nth-child(7) {
+        background: url(../img2/Air\ Jordan\ XXXV\ “Sisterhood”\ 1.png) center no-repeat; }
+      .container-produrn ul li:nth-child(8) {
+        background: url(../img2/air\ jordan\ 1\ 1.png) center no-repeat; }
+      .container-produrn ul li:nth-child(9) {
+        background: url(../img2/Jordan\ Max\ Aura\ 2\ 1.png) center no-repeat; }
+      .container-produrn ul li:nth-child(10) {
+        background: url(../img2/Air\ Jordan\ 7\ Retro\ GC\ 2.png) center no-repeat; }
+      .container-produrn ul li:nth-child(5) > p span:first-child {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 33px;
+        margin-right: 10px;
+        color: #C10404; }
+      .container-produrn ul li:nth-child(8) > p span:first-child {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 33px;
+        margin-right: 10px;
+        color: #C10404; }
+      .container-produrn ul li:nth-child(5) > p span:last-child {
+        font-family: Open Sans;
+        font-size: 16px;
+        line-height: 22px;
+        -webkit-text-decoration-line: line-through;
+                text-decoration-line: line-through;
+        color: #000000; }
+      .container-produrn ul li:nth-child(8) > p span:last-child {
+        font-family: Open Sans;
+        font-size: 16px;
+        line-height: 22px;
+        -webkit-text-decoration-line: line-through;
+                text-decoration-line: line-through;
+        color: #000000; }
+      .container-produrn ul li h5 {
+        font-family: Open Sans;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #000000;
+        margin-top: 305px; }
+      .container-produrn ul li p {
+        margin-top: 12px; }
+        .container-produrn ul li p spanspan {
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          font-family: Open Sans;
+          font-size: 16px;
+          line-height: 22px;
+          color: #000000; }
 
 .container-items {
-  width: 1135px;
+  width: 990px;
   margin: 0 auto; }
   .container-items ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-right: -227px;
+    margin-top: 152px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center;
-    margin-right: -324px;
-    margin-top: 152px; }
+            justify-content: center; }
     .container-items ul li {
       margin-right: 47px;
       display: -webkit-box;
@@ -432,14 +429,16 @@ body li {
       border-radius: 2px;
       width: 44px;
       height: 44px;
-      padding-top: 9px;
-      margin-right: -22px;
+      margin-right: -20px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: center;
           -ms-flex-pack: center;
-              justify-content: center; }
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
     .container-items ul li:nth-child(2),
     .container-items ul li:nth-child(3),
     .container-items ul li:nth-child(4),
@@ -457,7 +456,7 @@ body li {
   width: 100%;
   height: 270px;
   background: #E1E1E1;
-  margin-top: 110px;
+  margin-top: 105px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
@@ -480,13 +479,17 @@ body li {
   font-weight: bold;
   font-size: 16px;
   line-height: 22px;
-  color: #000000; }
+  color: #000000;
+  width: 197px;
+  margin-right: 91px; }
 
 .container-footer2 {
   font-family: Open Sans;
   font-size: 16px;
   line-height: 22px;
-  color: #000000; }
+  color: #000000;
+  width: 132px;
+  margin-right: 92px; }
   .container-footer2 ul li:first-child {
     font-family: Open Sans;
     font-weight: bold;
@@ -498,7 +501,9 @@ body li {
   font-family: Open Sans;
   font-size: 16px;
   line-height: 22px;
-  color: #000000; }
+  color: #000000;
+  width: 81px;
+  margin-right: 70px; }
   .container-footer3 ul li:first-child {
     font-family: Open Sans;
     font-weight: bold;
@@ -506,22 +511,27 @@ body li {
     line-height: 22px;
     color: #000000; }
 
-.container-footer5 ul li:last-child {
-  margin-left: 16px; }
-.container-footer5 div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end; }
-.container-footer5 ul li:first-child {
-  font-family: Open Sans;
-  font-size: 24px; }
-.container-footer5 ul li:last-child {
-  font-family: Open Sans;
-  font-size: 16px;
-  color: #000000;
-  margin-top: 5px; }
+.container-footer4 {
+  width: 146px;
+  margin-right: 134px; }
 
+.container-footer5 {
+  width: 192px; }
+  .container-footer5 ul li:last-child {
+    margin-left: 16px; }
+  .container-footer5 div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .container-footer5 ul li:first-child {
+    font-family: Open Sans;
+    font-size: 24px; }
+  .container-footer5 ul li:last-child {
+    font-family: Open Sans;
+    font-size: 16px;
+    color: #000000;
+    margin-top: 5px; }
 /*# sourceMappingURL=style1.css.map */

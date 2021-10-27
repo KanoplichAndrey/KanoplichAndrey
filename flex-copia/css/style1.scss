@@ -240,39 +240,67 @@ a {
 }
 
 .container3{
+  
     width: 1135px;
     margin: 0 auto;
     display: flex; 
     margin-top: 75px;
     justify-content: space-between;
-    .wr{
-        width: 1135px;
-        display: flex;
-        align-items: flex-start;
-        margin: 0 auto;
-        justify-content: space-between}
+    // justify-content: space-between;
+    label{
+        display: block;
+    }
+    // .wr{
+    //     width: 1135px;
+        // display: flex;
+        // align-items: flex-start;
+        // margin: 0 auto;
+        // justify-content: space-between
+    // }
     
     p{
         font-family: Roboto;
         font-size: 18px;
         line-height: 21px;
         color: #000000;  
-        margin-bottom: 22px
+        margin-bottom: 22px;
+        margin-top: 32px;
+       
+    }
+    p:first-child{
+       margin-top: 0px; 
+       margin-bottom: 24px;
     }
         span{
             font-family: Open Sans;
-            font-size: 14px;
+            font-size: 16px;
             line-height: 19px;
             color: #000000;
         }
     .catalog3{
         display: flex;
         flex-direction: column;
+        width: 715px;
         span{
             vertical-align: 5px;
             margin-right: 16px;
 
         }
+    }
+    .ddd{
+        span{
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 19px;
+            /* identical to box height */
+            
+            
+            color: #000000;
+
+        }
+        
     }
     
     input:checked {
@@ -313,200 +341,401 @@ a {
     .x{
         margin-right: 12px;
         margin-bottom: 22px;
+        
     }
 
 }
 
-.catalog4{
+.container-produrn{
+    margin-top: -52px;
+    // display: flex;
+    ul{
         display: flex;
-        flex-direction: column;
-        // padding-left: 85px;
-        ul{
-            width: 387px;
-        }
-        ul:nth-child(3) > li:nth-child(4){
-            font-family: Open Sans;
-            font-size: 24px;
-            line-height: 33px;
-            
-            color: #C10404;
-        }
-        ul:nth-child(3) > li:nth-child(4)::after{
-            font-family: Open Sans;
-            font-size: 16px;
-            line-height: 22px;
-            text-decoration-line: line-through;
-            color: #000000;
-            margin-left: 10px;
-            content: '19990 р';
+        flex-flow: wrap;
+        // justify-content: space-around;
+        justify-content: space-between;
+        li{
+            width: 395px;
+            height: 286px;
+            margin-left: 94px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 94px;
+            position: relative;
+                    .sale{
+                        position: absolute;
+                        width: 35px;
+                        height: 27px;
+                        left: 74px;
+                        top: 81px;
+                        background: #E13F36;
+                        transform: rotate(-11.36deg);
+                    }
+                    .sale1{
+                        position: absolute;
+                        width: 35px;
+                        height: 27px;
+                        left: 90px;
+                        top: 80px;
+                        background: #E13F36;
+                        transform: rotate(-11.36deg);
+                    }
+                   &:nth-child(1){
+                        background: url(../img2/Air-Jordan-Zoom-92-Sail-Flash-Crimson-Electric-Green\ 1.png) center no-repeat ;
+                    }
+                   &:nth-child(2){
+                        background: url(../img2/Air-Jordan-Max-200-Black-Gym-Red\ 1.png) center no-repeat ;
+                    }
+                    &:nth-child(3){
+                        background: url(../img2/Jordan\ delta\ 1.png) center no-repeat ;
+                    }
+                   &:nth-child(4){
+                        background: url(../img2/krossovki-jordan-air-cadence-j6rzf2.png) center no-repeat ;
+                    }
+                    &:nth-child(5){
+                        background: url(../img2/Air\ Jordan\ XXXIII\ SE\ 1.png) center no-repeat ;
+                    }
+                   &:nth-child(6){
+                        background: url(../img2/Air\ Jordan\ 6\ Retro\ 1.png) center no-repeat ;
+                    }
+                    &:nth-child(7){
+                        background: url(../img2/Air\ Jordan\ XXXV\ “Sisterhood”\ 1.png) center no-repeat ;
+                    }
+                   &:nth-child(8){
+                        background: url(../img2/air\ jordan\ 1\ 1.png) center no-repeat ;
+                    }
+                    &:nth-child(9){
+                        background: url(../img2/Jordan\ Max\ Aura\ 2\ 1.png) center no-repeat ;
+                    }
+                   &:nth-child(10){
+                        background: url(../img2/Air\ Jordan\ 7\ Retro\ GC\ 2.png) center no-repeat ;
+                    }
+                    &:nth-child(5) > p span:first-child{
+                        font-family: Open Sans;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 24px;
+                        line-height: 33px;
+                        margin-right: 10px;
+                        color: #C10404;
+                    }
+                    &:nth-child(8) > p span:first-child{
+                        font-family: Open Sans;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 24px;
+                        line-height: 33px;
+                        margin-right: 10px;
+                        color: #C10404;
+                    }
+                    &:nth-child(5) > p span:last-child{
+                        font-family: Open Sans;
+                        font-size: 16px;
+                        line-height: 22px;
+                        text-decoration-line: line-through;
+                        color: #000000;  
+                    }
+                    &:nth-child(8) > p span:last-child{
+                        font-family: Open Sans;
+                        font-size: 16px;
+                        line-height: 22px;
+                        text-decoration-line: line-through;
+                        color: #000000;
+                    }
+                     h5{
+                        // margin-top: 226px;
+                        font-family: Open Sans;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 25px;
+                        color: #000000;
+                        margin-top: 305px;
+                    }
+                    p{
+                        margin-top: 12px;
+                        // font-family: Open Sans;
+                        // font-size: 16px;
+                        // line-height: 22px;
+                        // color: $black;
                         
-            
+                         span{
+                            // display: inline-flex;
+                            // font-family: Open Sans;
+                            // font-size: 16px;
+                            // line-height: 22px;
+                            // color: $black;
+                            // // margin-top: 226px;
+                            &span{
+                                display: inline-flex;
+                                font-family: Open Sans;
+                                font-size: 16px;
+                                line-height: 22px;
+                                color: $black;
+                                // margin-top: 226px;  
+                            }
+                        }
+                    }
         }
-        ul:nth-child(3) > img:nth-child(1){
-            position: absolute;
-            left: 608.63px;
-            top: 1117px;
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 16px;
-            line-height: 19px;
-            color: #FFFFFF;
-            transform: rotate(-11.36deg);
-            // flex: none;
-            // order: 0;
-            // flex-grow: 0;
-            // margin: 0px 10px;
-            
-                        
-            
-        }
+      
+       
 
-        li:nth-child(2){
-            font-family: Open Sans;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 25px;
-            color: #000000;
-        }
-        li:nth-child(3){
-            font-family: Open Sans;
-            // font-style: normal;
-            // font-weight: normal;
-            // font-weight: 600;
-            font-size: 16px;
-            line-height: 22px;
-            color: #000000;
-            margin-top: 12px;
-        }
+    } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //     }     
+       
+               
+    //             &:nth-child(1){
+    //                 background: url("../img2/Air-Jordan-Zoom-92-Sail-Flash-Crimson-Electric-Green\ 1.png") no-repeat center;
+               
+    //             h5{
+    //                 font-family: Open Sans;
+    //                 font-weight: 600;
+    //                 font-size: 18px;
+    //                 line-height: 25px;
+    //                 color:$black;
+    //                 margin-top: 38px;
+    //             }
+    //          p{
+    //                      margin-top: 12px;
+    //                 }  
+    //                     p span{
+    //                             font-family: Open Sans;
+    //                             font-size: 16px;
+    //                             line-height: 22px;
+    //                             color: $black;
+                                
+    //                         }
+           
+    //                     }
+    //     }
         
-
-
-
-        ul:first-child > li img{
-            margin-top: 0px;
-        }
-        ul > li img{
-            // width: 368px;
-            // height: 190px;
-            margin-bottom: 50px;
-            margin-top: 60px;
-            
-        }
-        
-        // ul:nth-child(1) li:nth-child(1){
-        //     // margin-bottom: 40px;
-        //     margin-top: none;
-        // }
-        
-    }
-
-    .catalog5{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        ul{
-            // width: 387px;
-        }
-        ul > li:nth-child(4){
-            font-family: Open Sans;
-            font-size: 16px;
-            line-height: 22px;
-            
-            color: #000000;
-        }
-        ul:nth-child(4) > li:nth-child(4){
-            position: absolute;
-            font-family: Open Sans;
-            font-size: 24px;
-            line-height: 33px;
-            
-            color: #C10404;
-        }
-        ul:nth-child(4) > li:nth-child(4)::after{
-            font-family: Open Sans;
-            font-size: 16px;
-            line-height: 22px;
-            text-decoration-line: line-through;
-            color: #000000;
-            margin-left: 12px;
-            content: '13999 р';
-                        
-            
-        }
-        ul:nth-child(4) > img:nth-child(1){
-            position: absolute;
-            left: 80px;
-            top: 1129px;
-            width: 35px;
-            height: 27px;
-            background: #E13F36;
-            transform: rotate(-11.36deg);
-        }
-
-        li:nth-child(2){
-            font-family: Open Sans;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 25px;
-            color: #000000;
-        }
-        li:nth-child(3){
-            font-family: Open Sans;
-            // font-style: normal;
-            // font-weight: normal;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 22px;
-            color: #000000;
-            margin-top: 12px;
-        }
-        ul:first-child > li img{
-            margin-top: 0px;
-        }
-        ul > li img{
-            // width: 368px;
-            // height: 190px;
-            margin-bottom: 50px;
-            margin-top: 60px;
-            
-        }
-        // img:not(:nth-child(1)){
-        //     margin: none;
-        // }
-        // ul:nth-child(3) li:nth-child(3){
-        //     margin-bottom: 40px;
-            
-        // }
-    ul li img:nth-child(1){
-        
-        
-    }
+    // }
      
         
-    }
+   
+
+
+
+
+
+
+// .catalog4{
+//         display: flex;
+//         flex-direction: column;
+//         // padding-left: 85px;
+//         ul{
+//             width: 387px;
+//         }
+//         ul:nth-child(3) > li:nth-child(4){
+//             font-family: Open Sans;
+//             font-size: 24px;
+//             line-height: 33px;
+            
+//             color: #C10404;
+//         }
+//         ul:nth-child(3) > li:nth-child(4)::after{
+//             font-family: Open Sans;
+//             font-size: 16px;
+//             line-height: 22px;
+//             text-decoration-line: line-through;
+//             color: #000000;
+//             margin-left: 10px;
+//             content: '19990 р';
+                        
+            
+//         }
+//         ul:nth-child(3) > img:nth-child(1){
+//             position: absolute;
+//             left: 608.63px;
+//             top: 1117px;
+//             font-family: Roboto;
+//             font-style: normal;
+//             font-weight: bold;
+//             font-size: 16px;
+//             line-height: 19px;
+//             color: #FFFFFF;
+//             transform: rotate(-11.36deg);
+//             // flex: none;
+//             // order: 0;
+//             // flex-grow: 0;
+//             // margin: 0px 10px;
+            
+                        
+            
+//         }
+
+//         li:nth-child(2){
+//             font-family: Open Sans;
+//             font-style: normal;
+//             font-weight: 600;
+//             font-size: 18px;
+//             line-height: 25px;
+//             color: #000000;
+//         }
+//         li:nth-child(3){
+//             font-family: Open Sans;
+//             // font-style: normal;
+//             // font-weight: normal;
+//             // font-weight: 600;
+//             font-size: 16px;
+//             line-height: 22px;
+//             color: #000000;
+//             margin-top: 12px;
+//         }
+        
+
+
+
+//         ul:first-child > li img{
+//             margin-top: 0px;
+//         }
+//         ul > li img{
+//             // width: 368px;
+//             // height: 190px;
+//             margin-bottom: 50px;
+//             margin-top: 60px;
+            
+//         }
+        
+//         // ul:nth-child(1) li:nth-child(1){
+//         //     // margin-bottom: 40px;
+//         //     margin-top: none;
+//         // }
+        
+//     }
+
+    
+
+
+//     .catalog5{
+//         position: relative;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: flex-end;
+//         // ul{
+//         //    li > li:nth-child(3){
+//         //         font-family: Open Sans;
+               
+                
+//         //         font-size: 16px;
+//         //         line-height: 25px;
+//         //         color: #000000;
+//         //     }  
+//         //     }
+//         .catalog5 ul:nth-child(4) > li:nth-child(3) {
+//             font-family: Open Sans;
+//             font-style: normal;
+//             font-weight: 600;
+//             font-size: 18px;
+//             line-height: 25px;
+//             color: #000000;
+//         }
+//         // ul li > li:nth-child(4){
+//         //     font-family: Open Sans;
+//         //     font-size: 16px;
+//         //     line-height: 22px;
+            
+//         //     color: #000000;
+//         // }
+//         ul:nth-child(4) > li:nth-child(4){
+//             position: absolute;
+//             font-family: Open Sans;
+//             font-size: 24px;
+//             line-height: 33px;
+            
+//             color: #C10404;
+//         }
+//         ul:nth-child(4) > li:nth-child(4)::after{
+//             font-family: Open Sans;
+//             font-size: 16px;
+//             line-height: 22px;
+//             text-decoration-line: line-through;
+//             color: #000000;
+//             margin-left: 12px;
+//             content: '13999 р';
+                        
+            
+//         }
+//         ul:nth-child(4) > img:nth-child(1){
+//             position: absolute;
+//             left: 80px;
+//             top: 1129px;
+//             width: 35px;
+//             height: 27px;
+//             background: #E13F36;
+//             transform: rotate(-11.36deg);
+//         }
+
+//         li:nth-child(2){
+//             font-family: Open Sans;
+//             font-style: normal;
+//             font-weight: 600;
+//             font-size: 18px;
+//             line-height: 25px;
+//             color: #000000;
+//         }
+//         // li:nth-child(3)
+//         li:last-child
+//         {
+//             font-family: Open Sans;
+//             font-style: normal;
+//             font-weight: normal;
+//             font-weight: 600;
+//             font-size: 18px;
+//             line-height: 22px;
+//             color: #000000;
+//             margin-top: 12px;
+//         }
+//         ul:first-child > li img{
+//             margin-top: 0px;
+//         }
+//         ul > li img{
+//             // width: 368px;
+//             // height: 190px;
+//             margin-bottom: 50px;
+//             margin-top: 60px;
+            
+//         }
+       
+//     ul li img:nth-child(1){
+        
+        
+//     }
+     
+        
+//     }
     
 
     .container-items{
 
-        width: 1135px;
+        width: 990px;
         margin: 0 auto;
 
         ul{
             display: flex;
-            justify-content: center;
-            margin-right: -324px;
+            margin-right: -227px;
             margin-top: 152px;
+            justify-content: center;
             
         li {
             margin-right: 47px;
 
             display: flex;
             align-items: center;
-// }
+//  }
              
                
         
@@ -528,10 +757,11 @@ a {
         border-radius: 2px;
         width: 44px;
         height: 44px;
-        padding-top: 9px;
-        margin-right: -22px;
+        // padding-top: 9px;
+        margin-right: -20px;
         display: flex;
         justify-content: center;
+        align-items: center;
     }
        li:nth-child(2),
        li:nth-child(3),
@@ -546,6 +776,10 @@ a {
         font-size: 18px;
         line-height: 25px;
        }
+   
+       li:nth-child(6){
+      
+       }
        
         }
     
@@ -558,17 +792,18 @@ a {
         width: 100%;
         height: 270px;
         background: $gray;
-        margin-top: 110px;
+        margin-top: 105px;
         display: flex;
         
     
     }
     .foot-container{
         width: 1135px;
-        margin: 0 auto; 
+        margin: 0 auto;  
         display: flex;
         justify-content: space-between;
         margin-top: 48px;
+        
         ul li{
             margin-bottom: 16px;
         }
@@ -580,6 +815,8 @@ a {
     line-height: 22px;
     // text-align: center;
     color: $black;
+    width: 197px;
+    margin-right: 91px;
     
     }
     .container-footer2{
@@ -587,6 +824,8 @@ a {
         font-size: 16px;
         line-height: 22px;
         color:$black;
+        width: 132px;
+        margin-right: 92px;
         ul li:first-child {
             font-family: Open Sans;
             font-weight: bold;
@@ -601,6 +840,8 @@ a {
             font-size: 16px;
             line-height: 22px;
             color:$black;
+            width: 81px;
+            margin-right: 70px;
             ul li:first-child {
                 font-family: Open Sans;
                 font-weight: bold;
@@ -613,8 +854,12 @@ a {
         .container-footer4{
             // width: 146px;
             // width: 98;
+            width: 146px;
+            margin-right: 134px;
         }
         .container-footer5{
+            width: 192px;
+
             ul li:last-child {
                 margin-left: 16px;
             }
