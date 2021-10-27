@@ -419,7 +419,7 @@ a {
                         margin-right: 10px;
                         color: #C10404;
                     }
-                    &:nth-child(8) > p span:first-child{
+                    &:nth-child(8) > a p span:first-child{
                         font-family: Open Sans;
                         font-style: normal;
                         font-weight: normal;
@@ -435,7 +435,7 @@ a {
                         text-decoration-line: line-through;
                         color: #000000;  
                     }
-                    &:nth-child(8) > p span:last-child{
+                    &:nth-child(8) > a p span:last-child{
                         font-family: Open Sans;
                         font-size: 16px;
                         line-height: 22px;

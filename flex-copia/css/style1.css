@@ -356,7 +356,7 @@ body li {
         line-height: 33px;
         margin-right: 10px;
         color: #C10404; }
-      .container-produrn ul li:nth-child(8) > p span:first-child {
+      .container-produrn ul li:nth-child(8) > a p span:first-child {
         font-family: Open Sans;
         font-style: normal;
         font-weight: normal;
@@ -371,7 +371,7 @@ body li {
         -webkit-text-decoration-line: line-through;
                 text-decoration-line: line-through;
         color: #000000; }
-      .container-produrn ul li:nth-child(8) > p span:last-child {
+      .container-produrn ul li:nth-child(8) > a p span:last-child {
         font-family: Open Sans;
         font-size: 16px;
         line-height: 22px;
@@ -534,4 +534,5 @@ body li {
     font-size: 16px;
     color: #000000;
     margin-top: 5px; }
+
 /*# sourceMappingURL=style1.css.map */
