@@ -2,25 +2,36 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 body .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 1135px;
   margin: 0 auto;
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
   body .container ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center; }
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
 body li {
   list-style-type: none;
   text-decoration: none; }
 
 .container-left {
   height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
   .container-left ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; }
     .container-left ul li:first-child {
       width: 129px;
@@ -44,9 +55,13 @@ body li {
       text-decoration: none; }
 
 .container-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 80px; }
   .container-right ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; }
     .container-right ul li:first-child {
       width: 368px;
@@ -70,17 +85,29 @@ body li {
   height: 80px; }
 
 .catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
 
 .container-catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 1135px;
   margin: 0 auto;
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
   .container-catalog .catalog ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    align-items: baseline; }
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline; }
     .container-catalog .catalog ul li:first-child {
       width: 160px;
       height: 44px;
@@ -177,10 +204,14 @@ body li {
     background-color: transparent; }
 
 .container-catalog1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 1135px;
   margin: 0 auto;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 9px;
   margin-top: 94px;
   font-weight: 500;
@@ -199,11 +230,19 @@ body li {
   width: 1135px;
   margin: 0 auto;
   margin-top: 64px;
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
   .container-product .produkt {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline; }
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline; }
     .container-product .produkt ul li:nth-child(2) {
       font-family: Open Sans;
       font-weight: 600;
@@ -220,9 +259,15 @@ body li {
     .container-product .produkt .dd {
       margin-bottom: -18px; }
   .container-product .produkt1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline; }
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline; }
     .container-product .produkt1 ul li:nth-child(2) {
       font-family: Open Sans;
       font-weight: 600;
@@ -241,14 +286,20 @@ body li {
   width: 100%;
   height: 270px;
   background: #E1E1E1;
-  margin-top: 110px;
+  margin-top: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
 
 .foot-container {
   width: 1135px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 48px; }
   .foot-container ul li {
     margin-bottom: 16px; }
@@ -258,13 +309,17 @@ body li {
   font-weight: bold;
   font-size: 16px;
   line-height: 22px;
-  color: #000000; }
+  color: #000000;
+  width: 197px;
+  margin-right: 91px; }
 
 .container-footer2 {
   font-family: Open Sans;
   font-size: 16px;
   line-height: 22px;
-  color: #000000; }
+  color: #000000;
+  width: 132px;
+  margin-right: 92px; }
   .container-footer2 ul li:first-child {
     font-family: Open Sans;
     font-weight: bold;
@@ -276,7 +331,9 @@ body li {
   font-family: Open Sans;
   font-size: 16px;
   line-height: 22px;
-  color: #000000; }
+  color: #000000;
+  width: 81px;
+  margin-right: 70px; }
   .container-footer3 ul li:first-child {
     font-family: Open Sans;
     font-weight: bold;
@@ -284,18 +341,28 @@ body li {
     line-height: 22px;
     color: #000000; }
 
-.container-footer5 ul li:last-child {
-  margin-left: 16px; }
-.container-footer5 div {
-  display: flex;
-  justify-content: flex-end; }
-.container-footer5 ul li:first-child {
-  font-family: Open Sans;
-  font-size: 24px; }
-.container-footer5 ul li:last-child {
-  font-family: Open Sans;
-  font-size: 16px;
-  color: #000000;
-  margin-top: 5px; }
+.container-footer4 {
+  width: 146px;
+  margin-right: 134px; }
+
+.container-footer5 {
+  width: 192px; }
+  .container-footer5 ul li:last-child {
+    margin-left: 16px; }
+  .container-footer5 div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .container-footer5 ul li:first-child {
+    font-family: Open Sans;
+    font-size: 24px; }
+  .container-footer5 ul li:last-child {
+    font-family: Open Sans;
+    font-size: 16px;
+    color: #000000;
+    margin-top: 5px; }
 
 /*# sourceMappingURL=style.css.map */
