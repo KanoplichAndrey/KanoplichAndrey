@@ -233,6 +233,7 @@ a {
 
 
     .container2-column1{
+    
         & > p:nth-child(4){
             font-family: Roboto;
             font-style: normal;
@@ -261,9 +262,10 @@ a {
             line-height: 33px;
             color: #000000;
             margin-right: 12px;
+        }
 
-}
       
+
            .rating {
             // unicode-bidi: bidi-override;
             float: left;
@@ -282,13 +284,62 @@ a {
              
              position: absolute;
           }
+     
+       
+     
+       
+
+        // &  > div:first-child:hover{
+           
+            
+        //     content: url(../img3/11111.png) ;
+        //     background-size: cover;
+        //     width: 600px;
+        //     height: 400px;
+        //     position: absolute;
+        //     top: 300px;
+        //     display: inline-block;
+            // bottom: 500px;
+            // right: 580px;
+            
+
+           
+            
+        //  }
+        //  &  > div:nth-child(2):hover{
+        //     content: url(../img3/2222.png);
+        //     background-size: cover;
+        //     width: 600px;
+        //     height: 400px;
+        //     position: absolute;
+        //     top: 300px;
+        //     display: inline-block;
+        //     bottom: 500px;
+        //     right: 580px;
+        //  }
+
+        //   &  > div:nth-child(3):hover{
+        //     content:url(../img3/3333.png);
+        //     background-size: cover;
+        //     width: 600px;
+        //     height: 400px;
+        //     position: absolute;
+        //     top: 300px;
+        //     display: inline-block;
+        //     bottom: 500px;
+        //     right: 580px;
+        //     background-position: 0 -40px
+        //  }
         
+
           div{
-            // display: flex;
-            // justify-content: center;
+            position: relative;
             img{
                 margin-right: 40px;
                 margin-bottom: 30px;
+                width: 140px;
+                height: 100px;
+              
             }
         }
      
@@ -297,13 +348,15 @@ a {
 
     }
     
-
+    
 
 
 
     .container2-column2{
             
                     margin-right: 81px;
+                    width: 508px;
+                    height: 348px;
               div{
                     display: flex;
                     justify-content: center;
@@ -311,6 +364,7 @@ a {
                     img{
                         margin-right: 14px;
                         margin-top: 74px;
+                       
                     }
                 }
                 

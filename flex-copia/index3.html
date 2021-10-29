@@ -87,14 +87,30 @@
 <div class="container2">
 
 <div class="container2-column1">
-   <div><img src="img3/1.png" alt=""></div> 
-    <div><img src="img3/2.png" alt=""></div>
-   <div><img src="img3/3.png" alt=""></div> 
+
+   <div style="position: relative;">
+       <!-- <img id="asd" src="img3/1.png" alt=""> -->
+       <img src="img3/1.png" id="imag1" class="a" onmouseover="this.src='img3/111.png'"  onmouseout="this.src='img3/1111.png'" >
+    </div> 
+    
+    <div style="position: relative;">
+        <img src="img3/2.png" id="imag2" class="b" onmouseover="this.src='img3/222.png'"  onmouseout="this.src='img3/2222.png'" >
+    </div>
+   <div style="position: relative;">
+       <img src="img3/3.png" id="imag3" class="c" onmouseover="this.src='img3/333.png'"  onmouseout="this.src='img3/3333.png'" >
+</div> 
    
 </div>
+
+<!-- <div class="container2-column1">
+    <img src="img3/1.png" alt="">
+    <img src="img3/2.png" alt="">
+    <img src="img3/3.png" alt="">
+</div> -->
 <div class="container2-column2">
-    <img src="img3/air-jordan-i-ajko-high-1 2.png" alt="">
-        <div><img src="img3/Ellipse 9.png" alt="">
+    <img id="big" src="img3/air-jordan-i-ajko-high-1 2.png"alt="" >
+       
+    <div><img src="img3/Ellipse 9.png" alt="">
             <img src="img3/Ellipse 10.png" alt="">
             <img src="img3/Ellipse 10.png" alt="">
             <img src="img3/Ellipse 10.png" alt="">
@@ -102,7 +118,7 @@
 
 
 </div>
-<div class="container2-column3">
+<div id="out-test" class="container2-column3">
     <p>Air Jordan Classic</p>
     <div>
         <img src="img3/star2.png" alt="">
@@ -115,7 +131,7 @@
     <span>11199 р</span><span>13999 р</span></p> 
     <img src="img3/eclips groop.png" alt="">
     <div>
-    <p> В корзину </p>
+    <p><a href="index.html">В корзину</a>  </p>
     </div>
     <ul>
         <li><img src="img3/Group1.png" alt=""> </li>
@@ -285,4 +301,9 @@
 </div>
 </div>
 
+
+
+<script type="text/javascript" src="img.js"> </script>
+</body>
+</html>
 

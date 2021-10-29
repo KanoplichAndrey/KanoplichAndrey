@@ -242,11 +242,17 @@ body li {
   .container2 .container2-column1 .rating > span:hover ~ span:before {
     content: url(../img3/star2.png);
     position: absolute; }
-  .container2 .container2-column1 div img {
-    margin-right: 40px;
-    margin-bottom: 30px; }
+  .container2 .container2-column1 div {
+    position: relative; }
+    .container2 .container2-column1 div img {
+      margin-right: 40px;
+      margin-bottom: 30px;
+      width: 140px;
+      height: 100px; }
   .container2 .container2-column2 {
-    margin-right: 81px; }
+    margin-right: 81px;
+    width: 508px;
+    height: 348px; }
     .container2 .container2-column2 div {
       display: -webkit-box;
       display: -ms-flexbox;
