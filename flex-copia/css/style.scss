@@ -13,25 +13,12 @@ $black:#000000;
 }
 
 body{
-.container:before{
-    content: "";
-    display: block; 
-    height: 80px;
-    width: 100%;
-    background: $gray;
-    /* display: flex; */
-    /* margin: 0 auto; */
-    position: absolute;
-    left: 0;
-    z-index: -1;
-}
+    
     .container{
         display: flex;
         width: 1135px;
         margin: 0 auto;
         justify-content: space-between;
-        
-        
         ul{
             display: flex;
             align-items: center;
@@ -114,9 +101,9 @@ a {
     }
 }
 .header{
-    // background: $gray;
-    // height: 80px;
-    
+    background: $gray;
+    height: 80px;
+
 
     
     
@@ -254,7 +241,6 @@ a {
 
         
 }
-
 .container-catalog1{
     display: flex;
     width: 1135px;

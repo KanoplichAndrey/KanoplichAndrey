@@ -4,17 +4,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-body .container:before {
-  content: "";
-  display: block;
-  height: 80px;
-  width: 100%;
-  background: #E1E1E1;
-  /* display: flex; */
-  /* margin: 0 auto; */
-  position: absolute;
-  left: 0;
-  z-index: -1; }
 body .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90,6 +79,10 @@ body li {
       margin-right: 16px; }
     .container-right ul li:nth-child(2) {
       margin-right: 16px; }
+
+.header {
+  background: #E1E1E1;
+  height: 80px; }
 
 .catalog {
   display: -webkit-box;
