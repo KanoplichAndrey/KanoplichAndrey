@@ -273,55 +273,155 @@ a {
     margin-top: 64px;
     justify-content: space-between;
 
-    .produkt{
+    // .produkt{
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: baseline;
+        
+    // }
+        // ul li:nth-child(3){
+        // font-family: Open Sans;
+        // font-style: normal;
+        // font-weight: normal;
+    //     font-size: 16px;
+    //     line-height: 22px;
+    //     color: $black;
+    //     margin-top: 12px;
+    // }
+    ul{
         display: flex;
+        flex-flow: wrap;
+        // justify-content: space-around;
         justify-content: space-between;
-        align-items: baseline;
-        ul li:nth-child(2){
-        font-family: Open Sans;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 25px;
-        color: $black;
-        margin-top: 34px;
     }
-        ul li:nth-child(3){
+   
+
+    ul li:nth-child(1){
+        background: url(../img/air\ 270\ .png) no-repeat center;
+        width: 350px;
+        height: 257px;
         font-family: Open Sans;
         // font-style: normal;
         // font-weight: normal;
         font-size: 16px;
         line-height: 22px;
         color: $black;
-        margin-top: 12px;
+        // margin-top: 12px;
     }
-        .dd{
+    ul li:nth-child(2){
+        background: url(../img/Jordan\ delta\ 1.png) no-repeat center;
+        width: 350px;
+        height: 257px;
+        font-family: Open Sans;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: $black;
+        // margin-top: 34px;
+        // .dd{
             margin-bottom: -18px;
-        }
+        // }
     }
-        .produkt1{
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            ul li:nth-child(2){
-            font-family: Open Sans;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 25px;
-            color: $black;
-            margin-top: 36px;
-        }
-            ul li:nth-child(3){
-            font-family: Open Sans;
-            // font-style: normal;
-            // font-weight: normal;
-            font-size: 16px;
-            line-height: 22px;
-            color: $black;
-            margin-top: 12px;
-        }
+    ul li:nth-child(3){
+        background: url(../img/nike-flex.png) no-repeat center;
+        width: 350px;
+        height: 257px;
+        font-family: Open Sans;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: $black;
+        // margin-top: 34px;
+    }
+    ul li:nth-child(4){
+        background: url(../img/JordanX.png) no-repeat center;
+        width: 350px;
+        height: 257px;
+        font-family: Open Sans;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: $black;
+        // margin-top: 34px;
+    }
+    ul li:nth-child(5){
+        background: url(../img/Jordanm.png) no-repeat center;
+        width: 350px;
+        height: 257px;
+        font-family: Open Sans;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: $black;
+        // margin-top: 34px;
+    }
+    ul li:nth-child(6){
+        background: url(../img/Air\ Jordan\ 7\ Retro\ GC\ 2.png) no-repeat center;
+        width: 350px;
+        height: 257px;
+        font-family: Open Sans;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: $black;
+        // margin-top: 34px;
+    }
+
+    h5{
+        // margin-top: 226px;
+        font-family: Open Sans;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #000000;
+        margin-top: 305px;
+    }
+    p{
+        margin-top: 12px;
+        // font-family: Open Sans;
+        // font-size: 16px;
+        // line-height: 22px;
+        // color: $black;
+        
+         span{
+            // display: inline-flex;
+            // font-family: Open Sans;
+            // font-size: 16px;
+            // line-height: 22px;
+            // color: $black;
+            // // margin-top: 226px;
+            &span{
+                display: inline-flex;
+                font-family: Open Sans;
+                font-size: 16px;
+                line-height: 22px;
+                color: $black;
+                // margin-top: 226px;  
+            } }}
+        // .produkt1{
+        //     display: flex;
+        //     justify-content: space-between;
+        //     align-items: baseline;
+        //     ul li:nth-child(2){
+        //     font-family: Open Sans;
+        //     font-weight: 600;
+        //     font-size: 18px;
+        //     line-height: 25px;
+        //     color: $black;
+        //     margin-top: 36px;
+        // }
+        //     ul li:nth-child(3){
+        //     font-family: Open Sans;
+        //     // font-style: normal;
+        //     // font-weight: normal;
+        //     font-size: 16px;
+        //     line-height: 22px;
+        //     color: $black;
+        //     margin-top: 12px;
+        // }
 
 }
-}
+// }
 .footer{
     width: 100%;
     height: 270px;

@@ -2,25 +2,36 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 body .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 1135px;
   margin: 0 auto;
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
   body .container ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center; }
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
 body li {
   list-style-type: none;
   text-decoration: none; }
 
 .container-left {
   height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
   .container-left ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; }
     .container-left ul li:first-child {
       width: 129px;
@@ -44,9 +55,13 @@ body li {
       text-decoration: none; }
 
 .container-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 80px; }
   .container-right ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; }
     .container-right ul li:first-child {
       width: 368px;
@@ -70,17 +85,29 @@ body li {
   height: 80px; }
 
 .catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
 
 .container-catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 1135px;
   margin: 0 auto;
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
   .container-catalog .catalog ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    align-items: baseline; }
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline; }
     .container-catalog .catalog ul li:first-child {
       width: 160px;
       height: 44px;
@@ -177,10 +204,14 @@ body li {
     background-color: transparent; }
 
 .container-catalog1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 1135px;
   margin: 0 auto;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 9px;
   margin-top: 94px;
   font-weight: 500;
@@ -199,56 +230,108 @@ body li {
   width: 1135px;
   margin: 0 auto;
   margin-top: 64px;
-  justify-content: space-between; }
-  .container-product .produkt {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .container-product ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline; }
-    .container-product .produkt ul li:nth-child(2) {
-      font-family: Open Sans;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 25px;
-      color: #000000;
-      margin-top: 34px; }
-    .container-product .produkt ul li:nth-child(3) {
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .container-product ul li:nth-child(1) {
+    background: url(../img/air\ 270\ .png) no-repeat center;
+    width: 350px;
+    height: 257px;
+    font-family: Open Sans;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000; }
+  .container-product ul li:nth-child(2) {
+    background: url(../img/Jordan\ delta\ 1.png) no-repeat center;
+    width: 350px;
+    height: 257px;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+    margin-bottom: -18px; }
+  .container-product ul li:nth-child(3) {
+    background: url(../img/nike-flex.png) no-repeat center;
+    width: 350px;
+    height: 257px;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000; }
+  .container-product ul li:nth-child(4) {
+    background: url(../img/JordanX.png) no-repeat center;
+    width: 350px;
+    height: 257px;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000; }
+  .container-product ul li:nth-child(5) {
+    background: url(../img/Jordanm.png) no-repeat center;
+    width: 350px;
+    height: 257px;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000; }
+  .container-product ul li:nth-child(6) {
+    background: url(../img/Air\ Jordan\ 7\ Retro\ GC\ 2.png) no-repeat center;
+    width: 350px;
+    height: 257px;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000; }
+  .container-product h5 {
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+    margin-top: 305px; }
+  .container-product p {
+    margin-top: 12px; }
+    .container-product p spanspan {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
       font-family: Open Sans;
       font-size: 16px;
       line-height: 22px;
-      color: #000000;
-      margin-top: 12px; }
-    .container-product .produkt .dd {
-      margin-bottom: -18px; }
-  .container-product .produkt1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline; }
-    .container-product .produkt1 ul li:nth-child(2) {
-      font-family: Open Sans;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 25px;
-      color: #000000;
-      margin-top: 36px; }
-    .container-product .produkt1 ul li:nth-child(3) {
-      font-family: Open Sans;
-      font-size: 16px;
-      line-height: 22px;
-      color: #000000;
-      margin-top: 12px; }
+      color: #000000; }
 
 .footer {
   width: 100%;
   height: 270px;
   background: #E1E1E1;
   margin-top: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
 
 .foot-container {
   width: 1135px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 48px; }
   .foot-container ul li {
     margin-bottom: 16px; }
@@ -287,8 +370,12 @@ body li {
 .container-footer5 ul li:last-child {
   margin-left: 16px; }
 .container-footer5 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end; }
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
 .container-footer5 ul li:first-child {
   font-family: Open Sans;
   font-size: 24px; }
