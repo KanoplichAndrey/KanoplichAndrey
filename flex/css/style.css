@@ -1,388 +1,54 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+/*
+Error: File to import not found or unreadable: mixins.
+       Load path: D:/kurs/progect/KanoplichAndrey/flex/css
+        on line 3 of D:\kurs\progect\KanoplichAndrey\flex\css\style.scss
 
-body .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 1135px;
-  margin: 0 auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-  body .container ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-body li {
-  list-style-type: none;
-  text-decoration: none; }
+1: 
+2: 
+3: @import 'mixins';
+4: 
+5: 
+6: $gray: #E1E1E1;
+7: $red: #E13F36;
+8: $black:#000000;
 
-.container-left {
-  height: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  .container-left ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-    .container-left ul li:first-child {
-      width: 129px;
-      height: 40px;
-      left: 80px;
-      top: 19px;
-      margin-right: 36px;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 34px;
-      line-height: 40px;
-      color: #000000; }
-    .container-left ul a {
-      font-family: Open Sans;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 25px;
-      color: #000000;
-      text-decoration: none; }
-
-.container-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px; }
-  .container-right ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-    .container-right ul li:first-child {
-      width: 368px;
-      height: 44px;
-      font-family: 'Open Sans';
-      font-size: 18px;
-      line-height: 121.4%;
-      color: rgba(74, 70, 70, 0.5);
-      background: #FFFFFF;
-      border-radius: 63px;
-      padding: 11px 193px 11px 24px;
-      margin-right: 24px;
-      vertical-align: 5px; }
-    .container-right ul li:nth-child(3) {
-      margin-right: 16px; }
-    .container-right ul li:nth-child(2) {
-      margin-right: 16px; }
-
-.header {
-  background: #E1E1E1;
-  height: 80px; }
-
-.catalog {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.container-catalog {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 1135px;
-  margin: 0 auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-  .container-catalog .catalog ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline; }
-    .container-catalog .catalog ul li:first-child {
-      width: 160px;
-      height: 44px;
-      background: #EDEDED;
-      border-radius: 63px;
-      font-family: 'Open Sans';
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 22px;
-      padding: 10px 33px 12px 48px;
-      vertical-align: 10px;
-      text-align: 10px;
-      margin-top: 25px;
-      margin-right: 77px; }
-    .container-catalog .catalog ul li:nth-child(2) {
-      margin-right: 55px;
-      font-family: 'Open Sans';
-      font-size: 16px;
-      line-height: 22px; }
-    .container-catalog .catalog ul li:nth-child(3) {
-      margin-right: 55px;
-      font-family: 'Open Sans';
-      font-size: 16px;
-      line-height: 22px; }
-    .container-catalog .catalog ul li:nth-child(4) {
-      margin-right: 55px;
-      font-family: 'Open Sans';
-      font-size: 16px;
-      line-height: 22px; }
-    .container-catalog .catalog ul li:nth-child(5) {
-      margin-right: 55px;
-      font-family: 'Open Sans';
-      font-size: 16px;
-      line-height: 22px; }
-    .container-catalog .catalog ul li:nth-child(6) {
-      margin-right: 55px;
-      font-family: 'Open Sans';
-      font-size: 16px;
-      line-height: 22px;
-      color: #E13F36; }
-    .container-catalog .catalog ul li:nth-child(7) {
-      margin-right: 55px;
-      font-family: 'Open Sans';
-      font-size: 16px;
-      line-height: 22px;
-      color: #000000;
-      opacity: 0.5; }
-
-.banner {
-  width: 1135px;
-  height: 482px;
-  background: url(../img/a.png) center center;
-  margin-top: 96px;
-  position: relative; }
-  .banner img {
-    position: absolute;
-    left: 99px;
-    top: 112px; }
-  .banner li:nth-child(2) {
-    position: absolute;
-    left: 96px;
-    top: 154px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 45px;
-    line-height: 53px;
-    color: #E1E1E1; }
-  .banner li:nth-child(3) {
-    position: absolute;
-    left: 96px;
-    top: 228px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    color: #FFFFFF;
-    text-shadow: 0px 2px 30px rgba(0, 0, 0, 0.25); }
-  .banner li:nth-child(4) {
-    position: absolute;
-    left: 96px;
-    top: 288px; }
-  .banner button {
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    color: #E1E1E1;
-    border: 1px solid #E1E1E1;
-    border-radius: 63px;
-    width: 131px;
-    height: 49px;
-    background-color: transparent; }
-
-.container-catalog1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 1135px;
-  margin: 0 auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 9px;
-  margin-top: 94px;
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 35px;
-  color: #000000; }
-  .container-catalog1 p {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 35px;
-    color: #000000; }
-
-.container-product {
-  width: 1135px;
-  margin: 0 auto;
-  margin-top: 64px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-  .container-product ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: wrap;
-        flex-flow: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
-  .container-product ul li:nth-child(1) {
-    background: url(../img/air\ 270\ .png) no-repeat center;
-    width: 350px;
-    height: 257px;
-    font-family: Open Sans;
-    font-size: 16px;
-    line-height: 22px;
-    color: #000000; }
-  .container-product ul li:nth-child(2) {
-    background: url(../img/Jordan\ delta\ 1.png) no-repeat center;
-    width: 350px;
-    height: 257px;
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    color: #000000;
-    margin-bottom: -18px; }
-  .container-product ul li:nth-child(3) {
-    background: url(../img/nike-flex.png) no-repeat center;
-    width: 350px;
-    height: 257px;
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    color: #000000; }
-  .container-product ul li:nth-child(4) {
-    background: url(../img/JordanX.png) no-repeat center;
-    width: 350px;
-    height: 257px;
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    color: #000000; }
-  .container-product ul li:nth-child(5) {
-    background: url(../img/Jordanm.png) no-repeat center;
-    width: 350px;
-    height: 257px;
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    color: #000000; }
-  .container-product ul li:nth-child(6) {
-    background: url(../img/Air\ Jordan\ 7\ Retro\ GC\ 2.png) no-repeat center;
-    width: 350px;
-    height: 257px;
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    color: #000000; }
-  .container-product h5 {
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    color: #000000;
-    margin-top: 305px; }
-  .container-product p {
-    margin-top: 12px; }
-    .container-product p spanspan {
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
-      font-family: Open Sans;
-      font-size: 16px;
-      line-height: 22px;
-      color: #000000; }
-
-.footer {
-  width: 100%;
-  height: 270px;
-  background: #E1E1E1;
-  margin-top: 110px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.foot-container {
-  width: 1135px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-top: 48px; }
-  .foot-container ul li {
-    margin-bottom: 16px; }
-
-.container-footer1 {
-  font-family: Open Sans;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 22px;
-  color: #000000; }
-
-.container-footer2 {
-  font-family: Open Sans;
-  font-size: 16px;
-  line-height: 22px;
-  color: #000000; }
-  .container-footer2 ul li:first-child {
-    font-family: Open Sans;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 22px;
-    color: #000000; }
-
-.container-footer3 {
-  font-family: Open Sans;
-  font-size: 16px;
-  line-height: 22px;
-  color: #000000; }
-  .container-footer3 ul li:first-child {
-    font-family: Open Sans;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 22px;
-    color: #000000; }
-
-.container-footer5 ul li:last-child {
-  margin-left: 16px; }
-.container-footer5 div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end; }
-.container-footer5 ul li:first-child {
-  font-family: Open Sans;
-  font-size: 24px; }
-.container-footer5 ul li:last-child {
-  font-family: Open Sans;
-  font-size: 16px;
-  color: #000000;
-  margin-top: 5px; }
-
-/*# sourceMappingURL=style.css.map */
+Backtrace:
+D:\kurs\progect\KanoplichAndrey\flex\css\style.scss:3
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:67:in `rescue in import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:45:in `import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:28:in `imported_file'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:37:in `css_import?'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
+C:/Program Files (x86)/Koala/bin/sass:22:in `load'
+C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: mixins.\A        Load path: D:/kurs/progect/KanoplichAndrey/flex/css\A         on line 3 of D:\kurs\progect\KanoplichAndrey\flex\css\style.scss\A \A 1: \A 2: \A 3: @import 'mixins';\A 4: \A 5: \A 6: $gray: #E1E1E1;\A 7: $red: #E13F36;\A 8: $black:#000000;"; }
