@@ -143,6 +143,7 @@ body li {
   height: 80px; }
   @media all and (max-width: 765px) {
     .header {
+      background: #A7A7A7;
       height: 150px;
       margin: 0 auto; } }
 
@@ -244,13 +245,8 @@ body li {
           margin-left: -16px;
           width: 175px;
           height: 44px;
-          background: #EDEDED;
-          border-radius: 63px;
-          font-family: 'Open Sans';
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 22px;
-          padding: 10px 0px 0px 5px; } }
+          padding: 10px 0px 0px 5px;
+          opacity: 0.5; } }
     .container-catalog .catalog ul li:nth-child(3) {
       margin-right: 55px;
       font-family: 'Open Sans';
@@ -541,6 +537,9 @@ body li {
     line-height: 22px;
     color: #000000;
     margin-bottom: 140px; }
+    @media all and (max-width: 765px) {
+      .container-product ul li:nth-child(6) {
+        margin-bottom: 300px; } }
   .container-product h5 {
     font-family: Open Sans;
     font-weight: 600;
@@ -572,12 +571,11 @@ body li {
       .fff #fotofooter {
         background: url(../img/Airfooter.png) center no-repeat;
         background-size: cover;
-        width: 375px;
+        width: 100%;
         height: 300px;
         margin: 0 auto;
         position: absolute;
-        top: 0;
-        left: 0; } }
+        top: -91px; } }
 
 .footer {
   width: 100%;
@@ -589,6 +587,7 @@ body li {
   display: flex; }
   @media all and (max-width: 765px) {
     .footer {
+      background: #A7A7A7;
       -ms-flex-pack: distribute;
           justify-content: space-around;
       height: 100%;
