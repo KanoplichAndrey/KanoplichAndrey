@@ -856,4 +856,11 @@ body li {
     font-family: Open Sans;
     font-size: 24px; }
 
+#qqq li {
+  color: #000000; }
+
+#qqq li:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
+
 /*# sourceMappingURL=style1.css.map */

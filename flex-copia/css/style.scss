@@ -248,6 +248,26 @@ a {
 .header{
     background: $gray;
     height: 80px;
+
+    li {
+        // background: rgb(201, 137, 137);
+        // padding: .2rem .6rem .3rem;
+        font-size: 100%;
+        color: $black;
+      }
+      
+      li {
+        display: inline-block;
+      }
+      
+      li:hover {
+        transform: scale(1.2);
+      }
+
+
+
+
+
     @include media(765px){
         background:#A7A7A7;
         // width: 375px;
@@ -269,6 +289,46 @@ a {
         width: 1135px;
         margin: 0 auto;
         justify-content: space-between;
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+         li:nth-child(4) {
+            // background: rgb(201, 137, 137);
+            // padding: .2rem .6rem .3rem;
+            font-size: 100%;
+            color: $black;
+          }
+          
+          li:nth-child(4){
+            display: inline-block;
+          }
+          
+          li:nth-child(4):hover {
+            transform: scale(1.2);
+          }
+
+
+
+
+
+
+
+
+
+
+
+
 
          @include media(1200px){
 
@@ -305,7 +365,23 @@ a {
                position: relative;
             
                 
-              }       
+              }    
+              li {
+                // background: rgb(201, 137, 137);
+                // padding: .2rem .6rem .3rem;
+                font-size: 100%;
+                color: $black;
+              }
+              
+              li {
+                display: inline-block;
+              }
+              
+              li:hover {
+                transform: scale(1.2);
+              }
+            
+              //nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn/
 
             li:first-child {
                 width: 154px;
@@ -718,6 +794,32 @@ a {
     margin: 0 auto; 
     margin-top: 64px;
     justify-content: space-between;
+
+    li {
+        // background: rgb(201, 137, 137);
+        // padding: .2rem .6rem .3rem;
+        font-size: 100%;
+        color: $black;
+      }
+      
+      li {
+        display: inline-block;
+      }
+      
+      li:hover {
+        transform: scale(1.2);
+      }
+    
+
+
+
+
+
+
+
+
+
+
     @include media(1200px){
 
         width: 920px;
@@ -951,6 +1053,12 @@ a {
    
     #fotofooter {
      position: relative;
+
+
+
+
+
+
         @include media(765px){
 
 
@@ -979,6 +1087,25 @@ a {
     // background:#A7A7A7;
     margin-top: 208px;
     display: flex;
+
+
+    li {
+        // background: rgb(201, 137, 137);
+        // padding: .2rem .6rem .3rem;
+        font-size: 100%;
+        color: $black;
+      }
+      
+      li {
+        // display: inline-block;
+      }
+      
+      li:hover {
+        transform: scale(1.2);
+      }
+
+
+
     @include media(765px){
         background:#A7A7A7;
         justify-content: space-around;
@@ -1177,6 +1304,5 @@ color: $black;
 
 
 }
-
 
 

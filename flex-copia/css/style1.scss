@@ -15,6 +15,8 @@ $black:#000000;
 
 body{
     
+  
+
     .container{
         display: flex;
         width: 1135px;
@@ -32,7 +34,8 @@ body{
             margin: 0 auto;
           }  
 
-
+         
+    
 
 
 
@@ -233,6 +236,9 @@ a {
 .header{
     background: $gray;
     height: 80px;
+
+
+    
 ///////////////////////////////////////////////////////////////////////////////////
 @include media(765px){
     background:#A7A7A7;
@@ -280,7 +286,7 @@ a {
             display: flex;
             align-items: center;
             align-items: baseline;
-
+    
 
             /////////////////////////////////////////////////////////////////////////////
             @include media(765px){
@@ -1729,3 +1735,18 @@ a {
     
     }
       
+
+    #qqq li{
+        // background: rgb(201, 137, 137);
+        // padding: .2rem .6rem .3rem;
+        // font-size: 100%;
+        color: $black;
+      }
+      
+      #qqq li{
+        // display: inline-block;
+      }
+      
+      #qqq li:hover{
+        transform: scale(1.2);
+      }

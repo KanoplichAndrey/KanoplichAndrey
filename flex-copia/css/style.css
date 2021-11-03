@@ -138,6 +138,14 @@ body li {
 .header {
   background: #E1E1E1;
   height: 80px; }
+  .header li {
+    font-size: 100%;
+    color: #000000; }
+  .header li {
+    display: inline-block; }
+  .header li:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
   @media all and (max-width: 765px) {
     .header {
       background: #A7A7A7;
@@ -161,6 +169,14 @@ body li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+  .container-catalog li:nth-child(4) {
+    font-size: 100%;
+    color: #000000; }
+  .container-catalog li:nth-child(4) {
+    display: inline-block; }
+  .container-catalog li:nth-child(4):hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
   @media all and (max-width: 1200px) {
     .container-catalog {
       width: 920px; } }
@@ -194,6 +210,14 @@ body li {
                 flex-direction: row;
         width: 375px;
         position: relative; } }
+    .container-catalog .catalog ul li {
+      font-size: 100%;
+      color: #000000; }
+    .container-catalog .catalog ul li {
+      display: inline-block; }
+    .container-catalog .catalog ul li:hover {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2); }
     .container-catalog .catalog ul li:first-child {
       width: 154px;
       height: 44px;
@@ -453,6 +477,14 @@ body li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+  .container-product li {
+    font-size: 100%;
+    color: #000000; }
+  .container-product li {
+    display: inline-block; }
+  .container-product li:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
   @media all and (max-width: 1200px) {
     .container-product {
       width: 920px; } }
@@ -584,6 +616,12 @@ body li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+  .footer li {
+    font-size: 100%;
+    color: #000000; }
+  .footer li:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
   @media all and (max-width: 765px) {
     .footer {
       background: #A7A7A7;

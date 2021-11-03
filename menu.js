@@ -68,3 +68,9 @@ titleElem10.onclick = function() {
 menuElem10.classList.toggle('open');
 };
 
+let menuElem11 = document.getElementById('sweeties11');
+let titleElem11 = menuElem11.querySelector('.title');
+
+titleElem11.onclick = function() {
+menuElem11.classList.toggle('open');
+};
