@@ -17,7 +17,7 @@ $black:#000000;
 
             // margin: 0 auto;
           
-     padding: auto;
+    //  padding: auto;
       }  
 }
 
@@ -83,6 +83,21 @@ body{
 
     flex-direction: column;
     justify-content: center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
      
           } 
           @include media(765px){
@@ -514,9 +529,9 @@ a {
      @include media(765px){
 
         width: 375px;
-        margin-top: 160px;
+        // margin-top: 52px;
         margin-left: 0px;
-        // margin-top: 95px;
+        margin-top: 165px;
       }  
     img{
         position: absolute;
@@ -638,6 +653,22 @@ a {
 
         
 }
+
+// .hr1{
+//     opacity: 0.3;
+//     border-bottom: 1px solid rgba(80, 60, 60, 0.5);
+//     margin-top: 92px;
+//     width: 1135px;
+//     height: 92px;
+//     margin: 0 auto;
+
+//     @include media(765px){
+//         margin: 14px auto;
+//         width: 375px;
+//    }     
+// }
+
+    
 
 .container-catalog1{
     display: flex;
