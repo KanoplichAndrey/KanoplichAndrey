@@ -756,9 +756,14 @@ a {
         flex-flow: wrap;
         
         justify-content: space-between;
-        justify-content: center;
+        // justify-content: center;
        
+        @include media(1200px){
 
+            // justify-content: center;
+            justify-content: space-between;
+ 
+         }
 
     }
     #li{

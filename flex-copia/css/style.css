@@ -471,10 +471,12 @@ body li {
         flex-flow: wrap;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
+            justify-content: space-between; }
+    @media all and (max-width: 1200px) {
+      .container-product ul {
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; } }
   .container-product #li {
     vertical-align: auto; }
     @media all and (max-width: 765px) {
