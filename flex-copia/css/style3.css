@@ -161,8 +161,7 @@ body li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   margin-top: 92px;
   width: 1135px;
-  height: 92px;
-  margin: 0 auto; }
+  margin: 23px auto; }
 
 .container1 {
   display: -webkit-box;
@@ -240,7 +239,7 @@ body li {
     float: right; }
   .container2 .container2-column1 .rating > span:hover:before,
   .container2 .container2-column1 .rating > span:hover ~ span:before {
-    content: url(../img3/star2.png);
+    content: url(../img3/star22.png);
     position: absolute; }
   .container2 .container2-column1 div {
     position: relative; }
@@ -547,5 +546,4 @@ body li {
     font-size: 16px;
     color: #000000;
     margin-top: 5px; }
-
 /*# sourceMappingURL=style3.css.map */

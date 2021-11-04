@@ -185,8 +185,8 @@ a {
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     margin-top: 92px;
     width: 1135px;
-    height: 92px;
-    margin: 0 auto;
+    // height: 92px;
+    margin: 23px auto;
 }
 
 .container1{
@@ -280,7 +280,7 @@ a {
           }
           .rating > span:hover:before,
           .rating > span:hover ~ span:before {
-             content: url(../img3/star2.png);
+             content: url(../img3/star22.png);
              
              position: absolute;
           }

@@ -204,7 +204,8 @@ body li {
         .container-catalog .catalog ul li:first-child {
           width: 175px;
           height: 44px;
-          margin-right: -30px; } }
+          margin-right: -30px;
+          background: #A7A7A7; } }
     .container-catalog .catalog ul li:nth-child(2) {
       margin-right: 55px;
       font-family: 'Open Sans';
@@ -275,7 +276,7 @@ body li {
         .container-catalog .catalog ul li:nth-child(7) {
           position: absolute;
           left: 0px;
-          top: 120px; } }
+          top: 135px; } }
     @media all and (max-width: 1200px) {
       .container-catalog .catalog ul li:nth-child(1),
       .container-catalog .catalog ul li:nth-child(2), .container-catalog .catalog ul li:nth-child(3),
@@ -295,11 +296,16 @@ body li {
   border-bottom: 1px solid rgba(80, 60, 60, 0.5);
   margin-top: 92px;
   width: 1135px;
-  height: 92px;
-  margin: 0 auto; }
+  margin: 23px auto; }
+  @media all and (max-width: 1200px) {
+    .hr1 {
+      width: 920px; } }
+  @media all and (max-width: 934px) {
+    .hr1 {
+      width: 765px; } }
   @media all and (max-width: 765px) {
     .hr1 {
-      margin: 14px auto;
+      margin: 50px auto;
       width: 375px; } }
 
 .container1 {
@@ -523,7 +529,11 @@ body li {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
-                flex-direction: column; } }
+                flex-direction: column;
+        margin-left: 168px; } }
+    @media all and (max-width: 765px) {
+      .container-produrn ul {
+        margin: 0 auto; } }
     .container-produrn ul li {
       width: 395px;
       height: 286px;
@@ -634,6 +644,9 @@ body li {
 .container-items {
   width: 990px;
   margin: 0 auto; }
+  @media all and (max-width: 934px) {
+    .container-items {
+      width: 765px; } }
   @media all and (max-width: 765px) {
     .container-items {
       margin: 0 auto;
@@ -642,17 +655,20 @@ body li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-right: -227px;
     margin-top: 152px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
+    @media all and (max-width: 1200px) {
+      .container-items ul {
+        margin-left: 141px; } }
     @media all and (max-width: 934px) {
       .container-items ul {
         margin-right: 0px; } }
     @media all and (max-width: 765px) {
       .container-items ul {
-        margin-right: 23px; } }
+        margin-right: 158px;
+        margin-top: 0; } }
     .container-items ul li {
       margin-right: 47px;
       display: -webkit-box;
