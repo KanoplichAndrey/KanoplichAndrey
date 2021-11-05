@@ -6,18 +6,6 @@ document.querySelector('.button4').addEventListener('click', asr4 => deleteCount
 
 
 
-// function asr1(){
-//     addInf(prompt("Введите название страны:"), prompt("Введите её столицу:"))
-// }
-// function asr2(){
-//     getCountryInfo(prompt("Введите название страны:"))
-// }
-// function asr4(){
-//     deleteCountry(prompt("Назовите страну, которую вы хотите удалить из списка?"))
-// }
-
-
-
 
     function addInf(countyName, capitalName) {
         countriesH[countyName] = capitalName;
