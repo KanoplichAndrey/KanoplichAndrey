@@ -159,10 +159,8 @@ body li {
 .hr1 {
   opacity: 0.3;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  margin-top: 92px;
   width: 1135px;
-  height: 92px;
-  margin: 0 auto; }
+  margin: 23px auto; }
 
 .container1 {
   display: -webkit-box;
@@ -500,5 +498,4 @@ body li {
     font-size: 16px;
     color: #000000;
     margin-top: 5px; }
-
 /*# sourceMappingURL=style4.css.map */
