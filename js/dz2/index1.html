@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countries</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="bttn">
+        <input type='button' value='ввод информации о стране'
+           onclick='addInf(prompt("Введите название страны:"), prompt("Введите её столицу:"))'>
+        <br>
+        <input type='button' value='получение информации о стране' onclick='getCountryInfo(prompt("Назовите страну:"))'>
+        <br>
+        <input type='button' value='перечень всех стран' onclick='listCountrys()'>
+        <br>
+        <input type='button' value='удаление информации о стране'
+           onclick='deleteCountry(prompt("Назовите страну, которую вы хотите удалить из списка?"))'>
+     </div>  
+
+<script type='text/javascript' src='ds2(1).js'></script>
+</body>
+</html>
