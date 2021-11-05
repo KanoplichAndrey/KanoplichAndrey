@@ -1,20 +1,20 @@
-let countriesInf = {};
+let countriesH = {};
     function addInf(countyName, capitalName) {
-         countriesInf[countyName] = capitalName;
-         console.log(countriesInf)
+         countriesH[countyName] = capitalName;
+         console.log(countriesH)
     }
     function getCountryInfo(countryName) {
-         if (countryName in countriesInf)
-            return alert('страна: ' + countryName + ' столица: ' + countriesInf[countryName]);
+         if (countryName in countriesH)
+            return alert('страна: ' + countryName + ' столица: ' + countriesH[countryName]);
          else
             return alert('нет информации о стране ' + countryName + '!');
     }
     function listCountrys() {
          let list = "";
-         for (i in countriesInf)
-            list += 'страна: ' + i + ';' + ' столица: ' + countriesInf[i] + '\n';
+         for (i in countriesH)
+            list += 'страна: ' + i + ';' + ' столица: ' + countriesH[i] + '\n';
          alert(list)
     }
     function deleteCountry(countryName) {
-         delete countriesInf[countryName];
+         delete countriesH[countryName];
     }

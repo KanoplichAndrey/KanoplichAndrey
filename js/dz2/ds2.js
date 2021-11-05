@@ -1,8 +1,8 @@
 let countriesH = {};
-document.querySelector('.button1').addEventListener('click', asr1 => addInf(prompt("Введите название страны:"), prompt("Введите её столицу:")))
-document.querySelector('.button2').addEventListener('click', asr2 => getCountryInfo(prompt("Введите название страны:")))
+document.querySelector('.button1').addEventListener('click', () => addInf(prompt("Введите название страны:"), prompt("Введите её столицу:")))
+document.querySelector('.button2').addEventListener('click', () => getCountryInfo(prompt("Введите название страны:")))
 document.querySelector('.button3').addEventListener('click', listCountrys)
-document.querySelector('.button4').addEventListener('click', asr4 => deleteCountry(prompt("Назовите страну, которую вы хотите удалить из списка?")))
+document.querySelector('.button4').addEventListener('click', () => deleteCountry(prompt("Назовите страну, которую вы хотите удалить из списка?")))
 
 
 
