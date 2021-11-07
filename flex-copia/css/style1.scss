@@ -361,12 +361,6 @@ a {
     // padding: 0px 36px 0px 27px;
     padding: 10px 0px 0px 5px;
     opacity: 0.5
-
-//     @include media(765px){
-
-//         display: none;
-
-//        }     
       
     }    
 
@@ -510,22 +504,22 @@ a {
                        
                               }    
                               
-                              @include media(765px){
+                        //       @include media(765px){
                                
-                                li:nth-child(1),
-                        li:nth-child(2),li:nth-child(3),
-                        li:nth-child(4),li:nth-child(5),
-                        li:nth-child(6),li:nth-child(7)
-                        {
+                        //         li:nth-child(1),
+                        // li:nth-child(2),li:nth-child(3),
+                        // li:nth-child(4),li:nth-child(5),
+                        // li:nth-child(6),li:nth-child(7)
+                        // {
                         
                          
                          
                             
-                              }
+                        //       }
                                
                                
                                
-                           }      
+                        //    }      
         }
 }
 .hr1{
@@ -1206,13 +1200,14 @@ a {
         height: 270px;
         background: $gray;
         // background:#A7A7A7;
-        margin-top: 208px;
+        margin-top: 75px;
         display: flex;
         @include media(765px){
             background:#A7A7A7;
             justify-content: space-around;
             height: 100%;
             align-items: flex-start;
+            margin-top: 208px;
             // display: inline-block;
           }                
          
@@ -1232,7 +1227,7 @@ a {
                         @include media(934px){
     
                             width: 765px;
-                     
+                            margin: 0 auto;
                           }  
                           @include media(765px){
     
@@ -1373,7 +1368,10 @@ a {
             font-family: Open Sans;
             font-size: 16px;
             color: $black;
-               margin-top: 5px;
+            margin-top: 5px;
+            @include media(765px){
+                margin-left: 0px;
+              } 
             }
             div{
                 display: flex;
