@@ -507,6 +507,10 @@ a {
     display: flex;
     // width: 280px;
     img{
+        @include media(765px){
+            margin-left: 4px;
+            margin-right: 5px;
+          }
         margin-left: 12px;
         margin-right: 12px;
     }
@@ -555,11 +559,10 @@ a {
       }  
 
      
-
     .container2-column1{
         display: flex;
         align-items: flex-end;
-        margin-top: 399 px;
+        // margin-top: 399 px;/////////////////////////////////////////////////////////////////////////////////////////////
         flex-direction: column;
 
         @include media(934px){
@@ -575,14 +578,8 @@ a {
  @include media(765px){
 
         margin-bottom: -35px;
+        width: 365px;
       }  
-
-    
-
-
-
-
-
 
         
         & > p:nth-child(4){
@@ -616,7 +613,6 @@ a {
         }
 
       
-
            .rating {
             // unicode-bidi: bidi-override;
             float: left;
@@ -642,8 +638,7 @@ a {
             @include media(765px){
 
                        
-               
-              
+            
         
               }  
 
@@ -664,6 +659,7 @@ a {
                     width: 100px;
                     height: auto;
                     margin-right: 24px;
+                    margin-bottom: -268px;
                   }  
 
 
@@ -679,7 +675,13 @@ a {
                     width: 508px;
                     height: 348px;
 
-                   
+                    @include media(765px){
+
+                      
+                        width: 365px;
+                        margin-bottom: 80px;
+                
+                      }  
                 
 
 
@@ -1074,14 +1076,21 @@ a {
                 width: 765px;
                 margin: 0 auto;
               }  
-        
+              @include media(765px){
+
+                width: 365px;
+                margin: 0 auto;
+                // margin:21px 163px;
+                // flex-direction: column;
+              }  
+
           
             ul{ 
                 display: flex;
                 @include media(765px){
 
-                    width: 365px;
-                    margin:21px 163px;
+                    // width: 365px;
+                    // margin:21px 163px;
                     flex-direction: column;
                   }  
 
@@ -1110,7 +1119,7 @@ a {
                 @include media(765px){
 
                     width: 365px;
-                    margin:40px 170px;
+                    
                     flex-direction: column;
                     text-align: center;
                     // margin: 0 auto;
@@ -1150,6 +1159,11 @@ a {
                              display: flex;
                             flex-direction: column;
                             margin-bottom: 94px;
+                            @include media(765px){
+
+                               text-align: center;
+                               
+                              }  
                    &:nth-child(1){
                     background: url(../img3/hhh/jordan\ 32\ 1.png) no-repeat center ;
                     
