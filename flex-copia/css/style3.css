@@ -203,11 +203,19 @@ body li {
       font-weight: 600;
       font-size: 16px;
       line-height: 22px;
-      padding: 10px 33px 12px 48px;
+      padding: 10px 33px 12px 20px;
       vertical-align: 10px;
       text-align: 10px;
       margin-top: 25px;
       margin-right: 77px; }
+      .container-catalog .catalog ul li:first-child:before {
+        content: "";
+        width: 20px;
+        height: 12px;
+        background: url(../img/menuline.png) no-repeat center center;
+        padding-right: 19px; }
+      .container-catalog .catalog ul li:first-child a {
+        margin-left: 19px; }
       @media all and (max-width: 1150px) {
         .container-catalog .catalog ul li:first-child {
           margin-right: 23px; } }
@@ -1029,10 +1037,4 @@ body li {
     font-family: Open Sans;
     font-size: 24px; }
 
-#qqq li {
-  color: #000000; }
-
-#qqq li:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2); }
 /*# sourceMappingURL=style3.css.map */

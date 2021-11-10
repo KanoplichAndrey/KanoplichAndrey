@@ -28,7 +28,15 @@ $black:#000000;
 
 body{
     
-
+    // li:hover{
+    //     transform: scale(1.2);
+    //   }
+    // p:hover{
+    //     transform: scale(1.2);
+    //   } 
+    //   #photo1:hover , #visa:hover{
+    //     transform: scale(1.2);
+    //   }  
 
 
     .container{
@@ -265,11 +273,25 @@ a {
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 22px;
-                padding: 10px 33px 12px 48px;
+                padding: 10px 33px 12px 20px;
                 vertical-align: 10px;
                 text-align: 10px;
                 margin-top: 25px;
                 margin-right: 77px;
+
+                &:before{
+                    content: "";
+                    width: 20px;
+                    height: 12px;
+                    background: url(../img/menuline.png) no-repeat center center ;
+                    // display: block;
+                    padding-right: 19px;
+                   
+                   
+                }
+                a{
+                    margin-left: 19px;
+                }
                 @include media(1150px){
 
                  margin-right: 23px;
@@ -1467,20 +1489,20 @@ a {
     }
       
 
-    #qqq li{
-        // background: rgb(201, 137, 137);
-        // padding: .2rem .6rem .3rem;
-        // font-size: 100%;
-        color: $black;
-      }
+    // #qqq li{
+    //     // background: rgb(201, 137, 137);
+    //     // padding: .2rem .6rem .3rem;
+    //     // font-size: 100%;
+    //     color: $black;
+    //   }
       
-      #qqq li{
-        // display: inline-block;
-      }
+    //   #qqq li{
+    //     // display: inline-block;
+    //   }
       
-      #qqq li:hover{
-        transform: scale(1.2);
-      }
+    //   #qqq li:hover{
+    //     transform: scale(1.2);
+    //   }
 
 
 

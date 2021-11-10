@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #000000; }
 
 body .container {
   display: -webkit-box;
@@ -138,14 +140,6 @@ body li {
 .header {
   background: #E1E1E1;
   height: 80px; }
-  .header li {
-    font-size: 100%;
-    color: #000000; }
-  .header li {
-    display: inline-block; }
-  .header li:hover {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2); }
   @media all and (max-width: 765px) {
     .header {
       background: #A7A7A7;
@@ -169,14 +163,6 @@ body li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-  .container-catalog li:nth-child(4) {
-    font-size: 100%;
-    color: #000000; }
-  .container-catalog li:nth-child(4) {
-    display: inline-block; }
-  .container-catalog li:nth-child(4):hover {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2); }
   @media all and (max-width: 1200px) {
     .container-catalog {
       width: 920px; } }
@@ -210,14 +196,6 @@ body li {
                 flex-direction: row;
         width: 375px;
         position: relative; } }
-    .container-catalog .catalog ul li {
-      font-size: 100%;
-      color: #000000; }
-    .container-catalog .catalog ul li {
-      display: inline-block; }
-    .container-catalog .catalog ul li:hover {
-      -webkit-transform: scale(1.2);
-              transform: scale(1.2); }
     .container-catalog .catalog ul li:first-child {
       width: 154px;
       height: 44px;
@@ -227,13 +205,21 @@ body li {
       font-weight: 600;
       font-size: 16px;
       line-height: 22px;
-      padding: 10px 33px 12px 48px;
+      padding: 10px 33px 12px 20px;
       vertical-align: 10px;
       text-align: 10px;
       margin-top: 25px;
       margin-right: 77px;
       text-decoration: none;
       color: black; }
+      .container-catalog .catalog ul li:first-child:before {
+        content: "";
+        width: 20px;
+        height: 12px;
+        background: url(../img/menuline.png) no-repeat center center;
+        padding-right: 19px; }
+      .container-catalog .catalog ul li:first-child a {
+        margin-left: 19px; }
       @media all and (max-width: 1200px) {
         .container-catalog .catalog ul li:first-child {
           margin-bottom: 60px; } }
@@ -315,8 +301,9 @@ body li {
       margin-right: 55px;
       font-family: 'Open Sans';
       font-size: 16px;
-      line-height: 22px;
-      color: #E13F36; }
+      line-height: 22px; }
+      .container-catalog .catalog ul li:nth-child(6) a {
+        color: #E13F36; }
       @media all and (max-width: 765px) {
         .container-catalog .catalog ul li:nth-child(6) {
           position: absolute;
@@ -478,14 +465,6 @@ body li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-  .container-product li {
-    font-size: 100%;
-    color: #000000; }
-  .container-product li {
-    display: inline-block; }
-  .container-product li:hover {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2); }
   @media all and (max-width: 1200px) {
     .container-product {
       width: 920px; } }
@@ -523,7 +502,8 @@ body li {
     font-size: 16px;
     line-height: 22px;
     color: #000000;
-    margin-bottom: 140px; }
+    margin-bottom: 140px;
+    cursor: pointer; }
   .container-product ul li:nth-child(2) {
     background: url(../img/Jordan\ delta\ 1.png) no-repeat center;
     width: 350px;
@@ -532,7 +512,8 @@ body li {
     font-size: 16px;
     line-height: 22px;
     color: #000000;
-    margin-bottom: 140px; }
+    margin-bottom: 140px;
+    cursor: pointer; }
   .container-product ul li:nth-child(3) {
     background: url(../img/nike-flex.png) no-repeat center;
     width: 350px;
@@ -541,7 +522,8 @@ body li {
     font-size: 16px;
     line-height: 22px;
     color: #000000;
-    margin-bottom: 140px; }
+    margin-bottom: 140px;
+    cursor: pointer; }
   .container-product ul li:nth-child(4) {
     background: url(../img/JordanX.png) no-repeat center;
     width: 350px;
@@ -550,7 +532,8 @@ body li {
     font-size: 16px;
     line-height: 22px;
     color: #000000;
-    margin-bottom: 140px; }
+    margin-bottom: 140px;
+    cursor: pointer; }
   .container-product ul li:nth-child(5) {
     background: url(../img/Jordanm.png) no-repeat center;
     width: 350px;
@@ -559,7 +542,8 @@ body li {
     font-size: 16px;
     line-height: 22px;
     color: #000000;
-    margin-bottom: 140px; }
+    margin-bottom: 140px;
+    cursor: pointer; }
   .container-product ul li:nth-child(6) {
     background: url(../img/Air\ Jordan\ 7\ Retro\ GC\ 2.png) no-repeat center;
     width: 350px;
@@ -568,7 +552,8 @@ body li {
     font-size: 16px;
     line-height: 22px;
     color: #000000;
-    margin-bottom: 140px; }
+    margin-bottom: 140px;
+    cursor: pointer; }
     @media all and (max-width: 765px) {
       .container-product ul li:nth-child(6) {
         margin-bottom: 300px; } }
@@ -617,12 +602,6 @@ body li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-  .footer li {
-    font-size: 100%;
-    color: #000000; }
-  .footer li:hover {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2); }
   @media all and (max-width: 765px) {
     .footer {
       background: #A7A7A7;
@@ -687,16 +666,12 @@ body li {
       font-family: 'Times New Roman', Times, serif;
       font-weight: normal; }
       .container-footer2 ul li:nth-child(2) {
-        color: brown;
         display: none; }
       .container-footer2 ul li:nth-child(3) {
-        color: brown;
         display: none; }
       .container-footer2 ul li:nth-child(4) {
-        color: brown;
         display: none; }
       .container-footer2 ul li:nth-child(5) {
-        color: brown;
         display: none; } }
   .container-footer2 ul li:first-child {
     font-family: Open Sans;
@@ -721,18 +696,14 @@ body li {
         line-height: 22px;
         color: #000000; }
       .container-footer3 ul li:nth-child(2) {
-        color: brown;
         display: none; }
       .container-footer3 ul li:nth-child(3) {
-        color: brown;
         display: none; }
       .container-footer3 ul li:nth-child(4) {
-        color: brown;
         display: none; } }
 
 @media all and (max-width: 765px) {
   .container-footer4 ul li:nth-child(1) {
-    color: brown;
     display: none; } }
 
 .container-footer5 ul li:nth-child(3) {
