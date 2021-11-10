@@ -698,7 +698,8 @@ body li {
     @media all and (max-width: 934px) {
       .container-items ul {
         width: 765px;
-        margin-right: 0px; } }
+        margin-right: 0px;
+        padding-left: 86px; } }
     @media all and (max-width: 765px) {
       .container-items ul {
         width: 365px;
