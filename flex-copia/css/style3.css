@@ -10,6 +10,10 @@
 @media all and (max-width: 934px) {
   .circle {
     display: block; } }
+body a {
+  color: #000000; }
+body a:not(.review) {
+  text-decoration: none; }
 body .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -325,9 +329,12 @@ body li {
           margin-right: 23px; } }
     @media all and (max-width: 934px) {
       .container-catalog .catalog ul li:nth-child(1),
-      .container-catalog .catalog ul li:nth-child(2), .container-catalog .catalog ul li:nth-child(3),
-      .container-catalog .catalog ul li:nth-child(4), .container-catalog .catalog ul li:nth-child(5),
-      .container-catalog .catalog ul li:nth-child(6), .container-catalog .catalog ul li:nth-child(7) {
+      .container-catalog .catalog ul li:nth-child(2),
+      .container-catalog .catalog ul li:nth-child(3),
+      .container-catalog .catalog ul li:nth-child(4),
+      .container-catalog .catalog ul li:nth-child(5),
+      .container-catalog .catalog ul li:nth-child(6),
+      .container-catalog .catalog ul li:nth-child(7) {
         margin-right: 9px;
         font-size: 14px; } }
 
@@ -504,7 +511,8 @@ body li {
         margin-right: 40px;
         margin-bottom: 47px;
         width: 140px;
-        height: 100px; }
+        height: 100px;
+        cursor: pointer; }
         @media all and (max-width: 1150px) {
           .container2 .container2-column1 div img {
             margin-right: 0; } }
@@ -554,6 +562,8 @@ body li {
           .container2 .container2-column2 div img {
             width: 365px; } }
 
+.container2-column3 img {
+  cursor: pointer; }
 .container2-column3 > div:nth-child(2) {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -868,7 +878,7 @@ body li {
         margin-top: 228px; }
       .container5-catalog5 .catalog5 ul li p {
         margin-top: 12px; }
-        .container5-catalog5 .catalog5 ul li p spanspan {
+        .container5-catalog5 .catalog5 ul li p span {
           font-family: Open Sans;
           font-size: 16px;
           color: #000000; }
@@ -1008,10 +1018,14 @@ body li {
         .footer .container-footer3 ul li:nth-child(4) {
           color: brown;
           display: none; } }
+  .footer .container-footer4 li {
+    cursor: pointer; }
   @media all and (max-width: 765px) {
     .footer .container-footer4 ul li:nth-child(1) {
       color: brown;
       display: none; } }
+  .footer .container-footer5 img {
+    cursor: pointer; }
   .footer .container-footer5 ul li:nth-child(3) {
     margin-left: 14px;
     font-family: Open Sans;
