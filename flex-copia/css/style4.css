@@ -413,7 +413,6 @@ body li {
   @media all and (max-width: 765px) {
     .p {
       width: 365px;
-      margin: 0 193px;
       text-align: center;
       margin-top: 20px; } }
 
