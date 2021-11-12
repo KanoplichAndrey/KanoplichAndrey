@@ -1217,10 +1217,10 @@ body {
 
         @include media(765px) {
             width: 375px;
-            // margin-right: 158px;
-            // margin-top: 0;
-            // padding-right: 0px;
-            margin: 0 163px;
+            margin-right: 158px;
+            margin-top: 0;
+            padding-right: 0px;
+            // margin: 0 163px;
         }
 
 
@@ -1239,7 +1239,11 @@ body {
             font-weight: 600;
             font-size: 18px;
             padding-left: 53px;
-
+            @include media(765px) {
+             
+                padding-left: 0px;
+              
+            }
 
         }
 

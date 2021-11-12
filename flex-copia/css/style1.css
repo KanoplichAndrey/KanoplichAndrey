@@ -707,7 +707,9 @@ body li {
     @media all and (max-width: 765px) {
       .container-items ul {
         width: 375px;
-        margin: 0 163px; } }
+        margin-right: 158px;
+        margin-top: 0;
+        padding-right: 0px; } }
     .container-items ul li {
       margin-right: 47px;
       display: -webkit-box;
@@ -721,6 +723,9 @@ body li {
       font-weight: 600;
       font-size: 18px;
       padding-left: 53px; }
+      @media all and (max-width: 765px) {
+        .container-items ul li:nth-child(1) {
+          padding-left: 0px; } }
     .container-items ul span {
       border: 1px solid #898989;
       -webkit-box-sizing: border-box;
