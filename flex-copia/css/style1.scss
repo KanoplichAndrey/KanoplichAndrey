@@ -947,9 +947,9 @@ body {
     }
 
     @include media(765px) {
-
+        width: 375px;
         margin: 0 auto;
-        margin-left: -106px;
+        margin-left: -65px;
     }
 
 
@@ -1007,6 +1007,12 @@ body {
 
 
             }
+            
+        @include media(765px) {
+            width: 375px;
+
+        }
+
 
             .sale {
                 position: absolute;
@@ -1210,7 +1216,7 @@ body {
         }
 
         @include media(765px) {
-            width: 365px;
+            width: 375px;
             // margin-right: 158px;
             // margin-top: 0;
             // padding-right: 0px;
