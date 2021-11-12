@@ -196,7 +196,7 @@ body {
 
             @include media(1200px) {
 
-                width: 368px;
+                width: 375px;
                 margin-right: 12px;
 
             }
@@ -1192,7 +1192,7 @@ body {
         justify-content: center;
         padding-right: 150px;
         justify-content: flex-end;
-
+        // margin: 0 163px;
 
         @include media(1200px) {
             width: 920px;
@@ -1211,9 +1211,10 @@ body {
 
         @include media(765px) {
             width: 365px;
-            margin-right: 158px;
-            margin-top: 0;
-            padding-right: 0px;
+            // margin-right: 158px;
+            // margin-top: 0;
+            // padding-right: 0px;
+            margin: 0 163px;
         }
 
 

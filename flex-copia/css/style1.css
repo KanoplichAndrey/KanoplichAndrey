@@ -119,7 +119,7 @@ body li {
       vertical-align: 5px; }
       @media all and (max-width: 1200px) {
         .container-right ul li:first-child {
-          width: 368px;
+          width: 375px;
           margin-right: 12px; } }
       @media all and (max-width: 765px) {
         .container-right ul li:first-child {
@@ -703,9 +703,7 @@ body li {
     @media all and (max-width: 765px) {
       .container-items ul {
         width: 365px;
-        margin-right: 158px;
-        margin-top: 0;
-        padding-right: 0px; } }
+        margin: 0 163px; } }
     .container-items ul li {
       margin-right: 47px;
       display: -webkit-box;

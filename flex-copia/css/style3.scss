@@ -177,7 +177,7 @@ body {
         }
 
         li:first-child {
-            width: 368px;
+            width: 370px;
             height: 44px;
             font-family: 'Open Sans';
             font-size: 18px;
@@ -185,7 +185,7 @@ body {
             color: rgba(74, 70, 70, 0.5);
             background: #FFFFFF;
             border-radius: 63px;
-            padding: 11px 193px 11px 24px;
+            padding: 11px 193px 11px 18px;
             margin-right: 24px;
             vertical-align: 5px;
 
@@ -643,8 +643,8 @@ body {
 
         flex-direction: column;
         width: 360px;
-        margin: auto;
-        margin-bottom: -35px;
+        // margin: auto;
+        // margin-bottom: -35px;
     }
 
 
@@ -766,16 +766,6 @@ body {
         width: 508px;
         height: 348px;
 
-        @include media(765px) {
-
-
-            width: 365px;
-            margin-bottom: 80px;
-
-        }
-
-
-
 
 
         @include media(1150px) {
@@ -784,6 +774,19 @@ body {
             height: 348px;
 
         }
+
+        @include media(765px) {
+
+            width: 365px;
+            height: 348px;
+            margin-bottom: 80px;
+
+        }
+
+
+
+
+
 
         img {
 
