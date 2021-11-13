@@ -10,6 +10,15 @@
 @media all and (max-width: 934px) {
   .circle {
     display: block; } }
+body li:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
+body p:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
+body #photo1:hover, body #visa:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
 body a {
   color: #000000; }
 body a:not(.review) {

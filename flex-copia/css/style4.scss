@@ -17,15 +17,15 @@ $black:#000000;
 
 body {
 
-    // li:hover{
-    //     transform: scale(1.2);
-    //   }
-    // p:hover{
-    //     transform: scale(1.2);
-    //   } 
-    //   #photo1:hover , #visa:hover{
-    //     transform: scale(1.2);
-    //   }  
+    li:hover{
+        transform: scale(1.2);
+      }
+    p:hover{
+        transform: scale(1.2);
+      } 
+      #photo1:hover , #visa:hover{
+        transform: scale(1.2);
+      }  
 
     a {
         color: $black;
@@ -168,7 +168,7 @@ body {
             color: rgba(74, 70, 70, 0.5);
             background: #FFFFFF;
             border-radius: 63px;
-            padding: 11px 193px 11px 24px;
+            padding: 11px 193px 11px 19px;
             margin-right: 24px;
             vertical-align: 5px;
 
@@ -282,7 +282,7 @@ body {
             vertical-align: 10px;
             text-align: 10px;
             margin-top: 25px;
-            margin-right: 77px;
+            margin-right: 71px;
 
 
             &:before {
@@ -496,7 +496,8 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     margin-top: 92px;
     width: 1135px;
-    margin: 23px auto;
+    margin: 0px auto;
+    margin-top: 24px;
 
     @include media(1150px) {
 
@@ -526,7 +527,7 @@ body {
     width: 1135px;
     margin: 0 auto;
     justify-content: space-between;
-    margin-top: 18px;
+    margin-top: 8px;
 
     font-family: Open Sans;
     font-size: 14px;
@@ -1158,7 +1159,7 @@ body {
     height: 270px;
     background: $gray;
     // background:#A7A7A7;
-    margin-top: 75px;
+    margin-top: 196px;
     display: flex;
 
     @include media(765px) {

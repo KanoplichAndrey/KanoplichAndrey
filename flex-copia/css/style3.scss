@@ -29,15 +29,15 @@ $black:#000000;
 
 body {
 
-    // li:hover{
-    //     transform: scale(1.2);
-    //   }
-    // p:hover{
-    //     transform: scale(1.2);
-    //   } 
-    //   #photo1:hover , #visa:hover{
-    //     transform: scale(1.2);
-    //   }  
+    li:hover{
+        transform: scale(1.2);
+      }
+    p:hover{
+        transform: scale(1.2);
+      } 
+      #photo1:hover , #visa:hover{
+        transform: scale(1.2);
+      }  
     a {
         color: $black;
     }

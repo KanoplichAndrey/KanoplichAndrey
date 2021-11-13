@@ -4,6 +4,15 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+body li:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
+body p:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
+body #photo1:hover, body #visa:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
 body a {
   color: #000000;
   text-decoration: none; }
@@ -115,7 +124,7 @@ body li {
       color: rgba(74, 70, 70, 0.5);
       background: #FFFFFF;
       border-radius: 63px;
-      padding: 11px 193px 11px 24px;
+      padding: 11px 193px 11px 19px;
       margin-right: 24px;
       vertical-align: 5px; }
       @media all and (max-width: 920px) {
@@ -204,7 +213,7 @@ body li {
       vertical-align: 10px;
       text-align: 10px;
       margin-top: 25px;
-      margin-right: 77px; }
+      margin-right: 71px; }
       .container-catalog .catalog ul li:first-child:before {
         content: "";
         width: 20px;
@@ -336,7 +345,8 @@ body li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   margin-top: 92px;
   width: 1135px;
-  margin: 23px auto; }
+  margin: 0px auto;
+  margin-top: 24px; }
   @media all and (max-width: 1150px) {
     .hr1 {
       width: 920px;
@@ -359,7 +369,7 @@ body li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 18px;
+  margin-top: 8px;
   font-family: Open Sans;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.7); }
@@ -734,7 +744,7 @@ body li {
   width: 100%;
   height: 270px;
   background: #E1E1E1;
-  margin-top: 75px;
+  margin-top: 196px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }

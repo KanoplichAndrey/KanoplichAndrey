@@ -6,6 +6,15 @@
   box-sizing: border-box;
   text-decoration: none; }
 
+body li:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
+body p:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
+body #photo1:hover, body #visa:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
 body a {
   color: #000000; }
 body .container {

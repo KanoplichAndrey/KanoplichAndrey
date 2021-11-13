@@ -22,8 +22,17 @@ $black:#000000;
 }
 
 body{
-
-
+    .not:hover { transform: scale(1); }
+   
+    li:hover{
+        transform: scale(1.2);
+      }
+    p:hover{
+        transform: scale(1.2);
+      } 
+      #photo1:hover , #visa:hover{
+        transform: scale(1.2);
+      }  
      
     
     .container{

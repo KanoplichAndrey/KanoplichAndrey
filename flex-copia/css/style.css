@@ -6,6 +6,18 @@
   text-decoration: none;
   color: #000000; }
 
+body .not:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1); }
+body li:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
+body p:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
+body #photo1:hover, body #visa:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
 body .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -724,4 +736,5 @@ body li {
 .container-footer5 ul li:nth-child(1) {
   font-family: Open Sans;
   font-size: 24px; }
+
 /*# sourceMappingURL=style.css.map */
