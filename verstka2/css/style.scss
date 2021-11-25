@@ -1921,8 +1921,199 @@ body {
                 }
 
         }
+       .footer{
+           background: #0e0d0c;
+            height: 400px;
+            margin-top: 200px;
+        .footer-wrap {
+           margin-top: 139px;
+            width: 1216px;
+            margin: 0 auto;
+            justify-content: flex-start;
+            
+            
+            display: flex;
+           
+            .footer-left {
+                display: flex;
+                margin-top: 139px;
+                .one {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    ul{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin-bottom: 52px;
+                        li:nth-child(1){
+                            a{
+                                font-family: Forum;
+                                font-size: 30px;
+                                line-height: 130%;
+                                text-transform: uppercase;
+                                color: #BB8C5F; 
+                            }
+                        }
+                    }
+                    ul{
+                        li:nth-child(3){
+                            a{
+                                font-family: Jost;
+                                font-weight: 300;
+                                font-size: 14px;
+                                line-height: 150%;
+                                letter-spacing: 0.25em;
+                                text-transform: uppercase;
+                                color: #BB8C5F;
+                            }
+                        }
+                    }
+                    .ul{
+                    margin-right: 71px;
+                            a{
+                                font-family: Montserrat;
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 150%;
+                                color: #FAF6F2;
+                            }
+                        
+                    }
+
+
+
+                }
+
+                .two {
+                    display: flex;
+                    margin-right: 50px;
+                    ul{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                        li:nth-child(1){
+                            a{
+                                font-family: Montserrat;
+                                font-weight: 500;
+                                font-size: 20px;
+                                line-height: 133.5%;
+                                color: #E9ECF1;
+                            }
+                        }
+                    }
+                    ul{
+                        li:nth-child(2){
+                            a{
+                                font-family: Montserrat;
+                                font-weight: 500;
+                                font-size: 20px;
+                                line-height: 133.5%;
+                                color: #E9ECF1; 
+                            }
+                        }
+                    }
+                    ul{
+                        li:nth-child(3){
+                            a{
+                                font-family: Montserrat;
+                                font-weight: 500;
+                                font-size: 20px;
+                                line-height: 133.5%;
+                                color: #E9ECF1;
+                            }
+                        }
+                    }
+                }
+
+                .three {
+                    margin-right: 213px;
+                    ul{
+                        li{
+                            margin-bottom: 36px;
+                            a{
+                                font-family: Montserrat;
+                                font-weight: 500;
+                                font-size: 20px;
+                                line-height: 133.5%;
+                                color: #E9ECF1;
+                            }
+                        }
+                    }
+                   
+                }
+            }
+
+            .footer-right {
+                margin-top: 139px;
+                .right-one {
+                    display: flex;
+                    ul:nth-child(1){
+                        display: flex;
+                    }
+                    ul{
+                        li:nth-child(1){
+                            margin-right: 10px;
+                        }
+                        li:nth-child(2){
+                            a{
+                            font-family: Jost;
+                            font-size: 20px;
+                            line-height: 150%;
+                            color: #FAF6F2;
+                            
+                            }
+                            
+                            margin-right: 25px;
+                        }
+                        li:nth-child(3){
+                           margin-right: 12px; 
+                           margin-bottom: 12px;
+                        }
+                        li:nth-child(4){
+                                margin-right: 12px;
+                        }
+                        li:nth-child(5){
+                            
+                        }
+                    }
+                }
+
+
+                .right-two { 
+                    ul{
+                        margin-bottom: 32px;
+                        li{
+                            a{
+                                font-family: Jost;
+                                font-size: 17px;
+                                line-height: 150%;
+                                color: #636B78;
+                            }
+                            
+                        }
+                    }
+                }
+                .right-three {
+                  ul{
+                    display: flex;
+                    align-items: center;
+                    li:last-child{
+                        a{
+                            font-family: Jost;
+                            font-size: 20px;
+                            line-height: 150%;
+                            color: #FAF6F2;
+                            
+                        }
+                    }
+                  }
+                 }
+            }
+
+        }
        
-             
+    }       
 
 
 
