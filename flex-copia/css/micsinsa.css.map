@@ -1,7 +1,9 @@
 {
-"version": 3,
-"mappings": "",
-"sources": [],
-"names": [],
-"file": "micsinsa.css"
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "micsinsa.scss"
+    ],
+    "names": [],
+    "file": "micsinsa.css"
 }

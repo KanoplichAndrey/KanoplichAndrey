@@ -1,7 +1,9 @@
 {
-"version": 3,
-"mappings": "",
-"sources": [],
-"names": [],
-"file": "mixinsc.css"
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "mixinsc.scss"
+    ],
+    "names": [],
+    "file": "mixinsc.css"
 }

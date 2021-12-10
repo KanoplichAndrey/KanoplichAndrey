@@ -1,7 +1,9 @@
 {
-"version": 3,
-"mappings": "",
-"sources": [],
-"names": [],
-"file": "normolaiz.css"
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "normolaiz.scss"
+    ],
+    "names": [],
+    "file": "normolaiz.css"
 }
