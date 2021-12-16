@@ -87,7 +87,7 @@ body img {
 }
 
 .wrapper {
-  max-width: 1440px;
+  width: 1440px;
   background: white;
   margin: 0 auto;
 }
@@ -644,7 +644,7 @@ body img {
 }
 
 .contaner {
-  max-width: 1440px;
+  width: 1440px;
   margin: 0 auto;
   background: white;
 }
