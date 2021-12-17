@@ -104,7 +104,7 @@ body img {
   }
 }
 
-@media all and (max-width: 720px) {
+@media all and (max-width: 970px) {
   .wrapper .nav-flex {
     position: relative;
     top: -500px;
