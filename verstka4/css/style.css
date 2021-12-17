@@ -88,14 +88,7 @@ body img {
   margin: 0 auto;
 }
 
-@media all and (max-width: 1440px) {
-  .wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
-
-@media all and (max-width: 320px) {
+@media all and (max-width: 1350px) {
   .wrapper {
     max-width: 100%;
     margin: 0 auto;

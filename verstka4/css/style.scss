@@ -127,16 +127,16 @@ body {
     // padding-left: 15px;
     // padding-right: 15px;
     margin: 0 auto;
-    @include media(1440px) {
+    // @include media(1440px) {
 
-        max-width: 1200px;
-        margin: 0 auto;
-        // background: #a30c0c;
+    //     max-width: 1200px;
+    //     margin: 0 auto;
+    //     // background: #a30c0c;
     
     
     
-    }
-    @include media(320px) {
+    // }
+    @include media( 1350px) {
 
         max-width: 100%;
         margin: 0 auto;
