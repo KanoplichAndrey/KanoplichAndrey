@@ -95,7 +95,7 @@ body img {
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 320px) {
   .wrapper {
     max-width: 100%;
     margin: 0 auto;
