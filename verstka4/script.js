@@ -234,7 +234,7 @@ $('.slide3').slick({
 //   })
 
 //   $(document).ready(function() {
-	$('.logo1').click(function(event){
+	$('.logo1,.menu-burger').click(function(event){
         $('.logo1,.nav-flex').toggleClass('active');
      
 	});
