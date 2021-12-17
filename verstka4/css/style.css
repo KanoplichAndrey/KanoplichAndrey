@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Tinos&display=swap");
-@media all and (max-width: 1200px) {
-  width: 920px;
+@media all and (max-width: 1450px) {
+  width: 1200px;
   background: #E5E5E5;
 }
 
@@ -65,10 +65,6 @@ body ul {
   margin-bottom: 0rem;
 }
 
-body .nav {
-  display: block;
-}
-
 body .btn {
   padding: 0rem 0rem;
 }
@@ -87,14 +83,52 @@ body img {
 }
 
 .wrapper {
-  width: 1440px;
+  max-width: 1440px;
   background: white;
   margin: 0 auto;
 }
 
+@media all and (max-width: 1440px) {
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .wrapper .nav-flex {
+    position: relative;
+    top: -500px;
+    z-index: -1;
+    margin-top: 0px !important;
+    width: 100%;
+  }
+  .wrapper .nav-flex .border {
+    display: none;
+  }
+  .wrapper .nav-flex.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 1;
+    background: navajowhite;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+    -webkit-transition: all 0.8s ease 0s;
+    transition: all 0.8s ease 0s;
+    top: 0px;
+  }
+}
+
 .wrapper .header-img {
   background: url("../img/hero image.png") no-repeat;
-  width: 1440px;
   height: 100%;
 }
 
@@ -107,6 +141,13 @@ body img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media all and (max-width: 600px) {
+  .wrapper .header-img .header {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .wrapper .header-img .header .logo {
@@ -367,7 +408,7 @@ body img {
   background: #FFFFFF;
   -webkit-box-shadow: 10px 10px 40px 20px rgba(0, 0, 0, 0.1);
           box-shadow: 10px 10px 40px 20px rgba(0, 0, 0, 0.1);
-  width: 349px;
+  max-width: 349px;
   height: 328px;
 }
 
@@ -599,7 +640,7 @@ body img {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../img/delicious.png") center no-repeat;
   margin-top: 182px;
   height: 357px;
-  width: 1440px;
+  max-width: 1440px;
 }
 
 .wrapper .wrap41 .wrap444 {

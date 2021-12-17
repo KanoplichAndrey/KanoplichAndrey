@@ -216,5 +216,26 @@ $('.slide3').slick({
 		// 	}
 		// ]
 	});
-});; 
+}); 
 
+
+// $('.slide3').slick({
+//     infinite: true,
+//     arrows:true,
+//     slidesToShow: 2,
+//     slidesToScroll: 1,
+//     // autoplay:true,
+//     // speed:1000,
+//     // autoplaySpeed:30000,
+    
+//     // transform: true,
+//     // arrows:true,
+//     variableWidth: true,
+//   })
+
+//   $(document).ready(function() {
+	$('.logo1').click(function(event){
+        $('.logo1,.nav-flex').toggleClass('active');
+     
+	});
+// }); 
