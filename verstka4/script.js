@@ -136,25 +136,25 @@ $(document).ready(function(){
 		// autoplay:true,
 		// speed:1000,
 		// autoplaySpeed:800,
-		// responsive:[
-		// 	{
-		// 		breakpoint: 768,
-		// 		settings: {
-        //             slidesToShow: 3,
-        //             infinite: true,
-        //             slidesToScroll: 1,
-        //             variableWidth: true
-		// 		}
-		// 	},
-		// 	{
-		// 		breakpoint: 550,
-		// 		settings: {
-		// 			slidesToShow:1,
-        //              arrows: true,
-        //             variableWidth: true,
-		// 		}
-		// 	}
-		// ]
+		responsive:[
+			{
+				breakpoint: 970,
+				settings: {
+                    slidesToShow: 2,
+                    infinite: true,
+                    slidesToScroll: 1,
+                    variableWidth: true
+				},
+			},
+			// {
+			// 	breakpoint: 550,
+			// 	settings: {
+			// 		slidesToShow:1,
+            //          arrows: true,
+            //         variableWidth: true,
+			// 	}
+			// }
+		]
 	});
 });; 
 
@@ -171,6 +171,10 @@ $('.slide3').slick({
     // transform: true,
     // arrows:true,
     variableWidth: true,
+
+
+
+
   });
 
   $(document).ready(function(){
@@ -198,9 +202,9 @@ $('.slide3').slick({
 		autoplaySpeed:800,
 		// responsive:[
 		// 	{
-		// 		breakpoint: 768,
+		// 		breakpoint: 920,
 		// 		settings: {
-        //             slidesToShow: 3,
+        //             slidesToShow: 2,
         //             infinite: true,
         //             slidesToScroll: 1,
         //             variableWidth: true
