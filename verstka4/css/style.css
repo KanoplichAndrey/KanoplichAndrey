@@ -1,10 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Tinos&display=swap");
-@media all and (max-width: 1450px) {
-  width: 1200px;
-  background: #E5E5E5;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -84,7 +79,6 @@ body img {
 
 .wrapper {
   max-width: 1440px;
-  background: white;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
@@ -1333,6 +1327,10 @@ body img {
 @media all and (max-width: 970px) {
   .wrap-slider {
     max-width: 650px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -1408,6 +1406,12 @@ body img {
           transform: none;
 }
 
+@media all and (max-width: 970px) {
+  .slider2 {
+    max-width: 720px;
+  }
+}
+
 .p_wrap {
   width: 920px;
   height: 100%;
@@ -1433,6 +1437,12 @@ body img {
 .p_wrap ul li:nth-child(2) img {
   margin-top: 20px;
   border-radius: 100px;
+}
+
+@media all and (max-width: 970px) {
+  .p_wrap ul {
+    max-width: 720px;
+  }
 }
 
 .p_wrap li:nth-child(3) p {
@@ -1562,6 +1572,10 @@ body img {
 @media all and (max-width: 970px) {
   .slide3 {
     max-width: 720px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -1662,6 +1676,10 @@ body img {
 @media all and (max-width: 970px) {
   .slide4 .wrap-slide4 {
     max-width: 720px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
