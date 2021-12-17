@@ -164,7 +164,7 @@ body img {
   transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
 }
 
-@media all and (max-width: 720px) {
+@media all and (max-width: 970px) {
   .wrapper .header-img .header {
     max-width: 100%;
     margin: 0 auto;
