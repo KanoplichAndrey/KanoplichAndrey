@@ -8,12 +8,38 @@
 </head>
 <body>
    <script>
-let fam=prompt("Введите фамилию")
-let name=prompt("Введите имя")
-let otc=prompt("Введите отчество")
-let fio=fam+name+otc
-let old=+prompt("Сколько вам лет")
-let god=365
+   // function prom(a) {
+   //    if(a.search(/^[a-zA-Z]/)==-1) alert('вы должны ввести буквы'); prom(a)
+     
+      
+      
+   // } 
+   //  prom(fam=prompt("Введите фамилию"))
+   //  prom(name=prompt("Введите имя"))
+function fame(){
+   fam=prompt("Введите фамилию")
+   if(fam.search(/^[a-zA-Z]/)==-1)  fame()
+}
+fame()
+
+function nam(){
+   name=prompt("Введите имя")
+   if(name.search(/^[a-zA-Z]/)==-1) alert('вы должны ввести буквы'), nam()
+}
+nam()
+
+function otc1(){
+   otc=prompt("Введите отчество")
+   if(otc.search(/^[a-zA-Z]/)==-1) alert('вы должны ввести буквы'), otc1()
+}
+otc1()
+
+function old1(){
+   old=+prompt("Сколько вам лет")
+   if(isNaN(old) || old <=0) alert('введите число'), old1()
+}
+old1()
+
 let day=old*365
 let day5=old+5
 //let pensia
@@ -28,10 +54,7 @@ let pol=confirm("Ваш пол мужской","или женский");
 
 
 
-
-
-
-alert("Ваше ФИО: "+fio+"\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+pol+"\n"+"Вы на пенсии: "+pensia)
+alert("Ваше ФИО: "+fam+ ' '+name+ ' '+ otc+"\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+pol+"\n"+"Вы на пенсии: "+pensia)
 </script>
    
 </body>

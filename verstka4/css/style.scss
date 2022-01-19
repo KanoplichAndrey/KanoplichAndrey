@@ -121,6 +121,7 @@ body {
 .wrapper {
 //   max-width: 1440px;
   max-width: 1440px;
+  
     // background: #E5E5E5;
     // background: white;
 
@@ -141,24 +142,17 @@ body {
         max-width: 970px;
         margin: 0 auto;
       
-    }
-    @include media(970px) {
+    
+    
+    // @include media( 1210px) {
 
-        max-width: 720px;
        
-      
-    } 
-    @include media( 1210px) {
-
-        // max-width: 100%;
-        // margin: 0 auto;
-        // background: #a30c0c;
        
         .nav-flex{
             position: relative;
             top: -500px;
             z-index: -1;
-            margin-top: 0px !important;
+            margin-top: 0px ;
             width: 100%;
             .border{
                 display: none ;
@@ -177,7 +171,20 @@ body {
             }
    
     
+    // }
+}
+    @include media(970px) {
+
+        max-width: 720px ;
+       
+      
     }
+    @include media(767px) {
+
+                max-width:375px;
+               margin: 0 auto;
+        
+        }
    
     
     .header-img {
@@ -255,7 +262,7 @@ body {
 
             }
             @include media( 970px) {
-                max-width: 100%;
+                max-width: 300px;
                 margin: 0 auto;
               
            .menu-burger{
@@ -1980,18 +1987,7 @@ body {
           
         } 
              
-//         @include media(992px) {
 
-//             max-width: 750px;
-//             margin: 0 auto;
-    
-//     }
-//     @include media(767px) {
-
-//         max-width:none;
-//         margin: 0 auto;
-
-// }
 
     
 
