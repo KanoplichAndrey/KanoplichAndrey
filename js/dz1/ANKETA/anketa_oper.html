@@ -7,30 +7,49 @@
    <title>govnocod1</title>
 </head>
 <body>
-   <script>
-   // function prom(a) {
-   //    if(a.search(/^[a-zA-Z]/)==-1) alert('вы должны ввести буквы'); prom(a)
-     
-      
-      
-   // } 
-   //  prom(fam=prompt("Введите фамилию"))
-   //  prom(name=prompt("Введите имя"))
+   <div class="container">
+      <p>Создать проект ANKETA. Спросить у пользователя:</p>
+      <ul>
+         <li>фамилию, имя, отчество РАЗДЕЛЬНО (оператором prompt)</li>
+         <li>возраст в годах (оператором prompt)</li>
+         <li>пол (оператором confirm, например, "ваш пол - мужской?")</li>
+      </ul>
+      <p>и вывести оператором alert анкету пользователя по примеру:</p>
+      <ul>
+         <li>ваше ФИО: Иванов Иван Иванович</li>
+         <li>ваш возраст в годах: 20</li>
+         <li>ваш возраст в днях: 7300</li>
+         <li>через 5 лет вам будет: 25</li>
+         <li>ваш пол: мужской</li>
+         <li>вы на пенсии: нет</li>
+       </ul> 
+       <p>Должен быть контроль корректности вводимых пользователем данных (например, фамилия не должна быть пустой, возраст должен быть корректной цифрой и т.д.).</p>
+         <p>Оператор alert в коде должен использоваться ровно один раз.</p> 
+   </div>
+   <script >
+   
+   window.onload = function() {
+    anketa();
+  };
+  function  anketa(){
+
 function fame(){
    fam=prompt("Введите фамилию")
-   if(fam.search(/^[a-zA-Z]/)==-1)  fame()
+   if(fam.search(/^[a-zA-Zа-яА-Я]/)==-1) alert('вы должны ввести буквы'),  fame()
 }
 fame()
 
 function nam(){
    name=prompt("Введите имя")
-   if(name.search(/^[a-zA-Z]/)==-1) alert('вы должны ввести буквы'), nam()
+   // if(name.search(/^[a-zA-Zа-яА-Я]/)==-1) alert('вы должны ввести буквы'), nam()
+   if(Boolean(name)==false || isFinite(parseInt(name))) alert('вы должны ввести буквы'), nam()
+   console.log(typeof(name))
 }
 nam()
 
 function otc1(){
    otc=prompt("Введите отчество")
-   if(otc.search(/^[a-zA-Z]/)==-1) alert('вы должны ввести буквы'), otc1()
+   if(otc.search(/^[a-zA-Zа-яА-Я]/)==-1) alert('вы должны ввести буквы'), otc1()
 }
 otc1()
 
@@ -42,19 +61,12 @@ old1()
 
 let day=old*365
 let day5=old+5
-//let pensia
 let pol=confirm("Ваш пол мужской","или женский");
-(pol == true)? pol="Мужской": pol="Женский";
-(pol == true && old >= 60)? pensia='да':pensia='нет';
+(pol)? pol="Мужской": pol="Женский";
+(pol && old >= 60)? pensia='да':pensia='нет';
 (pol != true && old >= 55)? pensia='да':pensia='нет';
-
-//let pensia=prompt("Вы на пенсии?","да или нет");
-//(pensia.toLowerCase()=='да')? pensia="Да":
-//(pensia.toLowerCase()=='нет')?pensia="Нет":pensia="Вы не правильно ответили на ответ"
-
-
-
 alert("Ваше ФИО: "+fam+ ' '+name+ ' '+ otc+"\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+pol+"\n"+"Вы на пенсии: "+pensia)
+}
 </script>
    
 </body>
