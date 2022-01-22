@@ -8,13 +8,13 @@
 </head>
 <body>
    <div class="container">
-      <p>Создать проект ANKETA. Спросить у пользователя:</p>
+      <h4>Создать проект ANKETA. Спросить у пользователя:</h4>
       <ul>
          <li>фамилию, имя, отчество РАЗДЕЛЬНО (оператором prompt)</li>
          <li>возраст в годах (оператором prompt)</li>
          <li>пол (оператором confirm, например, "ваш пол - мужской?")</li>
       </ul>
-      <p>и вывести оператором alert анкету пользователя по примеру:</p>
+      <h4>и вывести оператором alert анкету пользователя по примеру:</h4>
       <ul>
          <li>ваше ФИО: Иванов Иван Иванович</li>
          <li>ваш возраст в годах: 20</li>
@@ -23,8 +23,8 @@
          <li>ваш пол: мужской</li>
          <li>вы на пенсии: нет</li>
        </ul> 
-       <p>Должен быть контроль корректности вводимых пользователем данных (например, фамилия не должна быть пустой, возраст должен быть корректной цифрой и т.д.).</p>
-         <p>Оператор alert в коде должен использоваться ровно один раз.</p> 
+       <h4>Должен быть контроль корректности вводимых пользователем данных (например, фамилия не должна быть пустой, возраст должен быть корректной цифрой и т.д.).</h4>
+         <h4>Оператор alert в коде должен использоваться ровно один раз.</h4> 
    </div>
    <script >
    
@@ -33,29 +33,43 @@
   };
   function  anketa(){
 
-function fame(){
-   fam=prompt("Введите фамилию")
-   if(fam.search(/^[a-zA-Zа-яА-Я]/)==-1) alert('вы должны ввести буквы'),  fame()
-}
-fame()
+  let fio=''
 
-function nam(){
-   name=prompt("Введите имя")
-   // if(name.search(/^[a-zA-Zа-яА-Я]/)==-1) alert('вы должны ввести буквы'), nam()
-   if(Boolean(name)==false || isFinite(parseInt(name))) alert('вы должны ввести буквы'), nam()
-   console.log(typeof(name))
-}
-nam()
+   function Name(ask){
+   let name = prompt(ask) 
+    const isCancelled = name === null;
+    const isEmpty = name === '';
+    
+    if(isCancelled){
+        return
+    }
 
-function otc1(){
-   otc=prompt("Введите отчество")
-   if(otc.search(/^[a-zA-Zа-яА-Я]/)==-1) alert('вы должны ввести буквы'), otc1()
+   let arr = name.split('');
+   
+   if(name.length <= 0)Name()
+    let isAllLetters = arr.every((elem) => elem.toUpperCase() !== elem.toLowerCase()  );
+    if(isAllLetters  )  {
+       fio+= name+' ';
+    }
+    else{
+         alert('некоректно ввели данные, попробуйте еще раз')
+         Name(ask)
+    }
 }
-otc1()
+
+Name('введите ваше фамилию')
+Name('введите ваше имя')
+Name('введите ваше отчество')
+
+// function otc1(){
+//    otc=prompt("Введите отчество")
+//    if(otc.search(/^[a-zA-Zа-яА-Я]/)==-1) alert('вы должны ввести буквы'), otc1()
+// }
+// otc1()
 
 function old1(){
    old=+prompt("Сколько вам лет")
-   if(isNaN(old) || old <=0) alert('введите число'), old1()
+   if(isNaN(old) || old <0) alert('введите число'), old1()  
 }
 old1()
 
@@ -65,7 +79,7 @@ let pol=confirm("Ваш пол мужской","или женский");
 (pol)? pol="Мужской": pol="Женский";
 (pol && old >= 60)? pensia='да':pensia='нет';
 (pol != true && old >= 55)? pensia='да':pensia='нет';
-alert("Ваше ФИО: "+fam+ ' '+name+ ' '+ otc+"\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+pol+"\n"+"Вы на пенсии: "+pensia)
+alert("Ваше ФИО: " +fio+ "\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+pol+"\n"+"Вы на пенсии: "+pensia)
 }
 </script>
    
