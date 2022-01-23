@@ -39,7 +39,7 @@
   let pensia;
 
    function Name(ask){
-   let name = prompt(ask) 
+   let name = prompt(ask); 
     const isCancelled = name === null;
     const isEmpty = name === '';
     
@@ -49,21 +49,21 @@
     let arr = isEmpty ? [] : name.split('');
    // let arr = name.split('');
    
-    if(name.length <=0)Name(ask)
+    if(name.length <=0)aler(),Name(ask);
 
     let comparison = arr.every((elem) => elem.toUpperCase() !== elem.toLowerCase()  );
     if(comparison)  {
        fio+= name+' ';
     }
     else{
-         alert('некоректно ввели данные, попробуйте еще раз')
-         Name(ask)
+      aler,Name(ask);
+         
     }
 }
 
-Name('введите ваше фамилию')
-Name('введите ваше имя')
-Name('введите ваше отчество')
+Name('введите ваше фамилию');
+Name('введите ваше имя');
+Name('введите ваше отчество');
 
 // function otc1(){
 //    otc=prompt("Введите отчество")
@@ -72,19 +72,22 @@ Name('введите ваше отчество')
 // otc1()
 
 function old1(){
-  old=+prompt("Сколько вам лет")
-   if(isNaN(old) || old <0) alert('введите число'), old1()  
+  old=+prompt("Сколько вам лет");
+   if(isNaN(old) || old <0) aler(), old1() ; 
+    
 }
-old1()
+old1();
 
-let day=old*365
-let day5=old+5
+let day=old*365;
+let day5=old+5;
 let pol=confirm("Ваш пол мужской","или женский");
 (pol)? pol="Мужской": pol="Женский";
 (pol && old >= 60)? pensia='да':pensia='нет';
 (pol != true && old >= 55)? pensia='да':pensia='нет';
 alert("Ваше ФИО: " +fio+ "\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+pol+"\n"+"Вы на пенсии: "+pensia)
 }
+let  aler=() => alert('некоректно ввели данные, попробуйте еще раз')
+
 </script>
    
 </body>
