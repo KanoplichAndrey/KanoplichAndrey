@@ -44,19 +44,17 @@
     const isEmpty = name === '';
     
     if(isCancelled){
-        return
+        return aler(),Name(ask);
     }
     let arr = isEmpty ? [] : name.split('');
-   // let arr = name.split('');
-   
     if(name.length <=0)aler(),Name(ask);
-
+    console.log(name)
     let comparison = arr.every((elem) => elem.toUpperCase() !== elem.toLowerCase()  );
     if(comparison)  {
        fio+= name+' ';
     }
     else{
-      aler,Name(ask);
+      aler(),Name(ask);
          
     }
 }
@@ -73,9 +71,10 @@ Name('введите ваше отчество');
 
 function old1(){
   old=+prompt("Сколько вам лет");
-   if(isNaN(old) || old <0) aler(), old1() ; 
-    
+   if(isNaN(old) || old <=0) aler(), old1() ; 
+  
 }
+
 old1();
 
 let day=old*365;
