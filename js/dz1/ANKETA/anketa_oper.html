@@ -46,10 +46,11 @@
     if(isCancelled){
         return
     }
-
-   let arr = name.split('');
+    let arr = isEmpty ? [] : name.split('');
+   // let arr = name.split('');
    
-   if(name.length <=0)Name()
+    if(name.length <=0)Name(ask)
+
     let comparison = arr.every((elem) => elem.toUpperCase() !== elem.toLowerCase()  );
     if(comparison)  {
        fio+= name+' ';
