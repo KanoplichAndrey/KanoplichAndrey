@@ -7,7 +7,7 @@
    <title>govnocod1</title>
 </head>
 <body>
-   <div class="container">
+   <!-- <div class="container">
       <h4>Создать проект ANKETA. Спросить у пользователя:</h4>
       <ul>
          <li>фамилию, имя, отчество РАЗДЕЛЬНО (оператором prompt)</li>
@@ -25,15 +25,18 @@
        </ul> 
        <h4>Должен быть контроль корректности вводимых пользователем данных (например, фамилия не должна быть пустой, возраст должен быть корректной цифрой и т.д.).</h4>
          <h4>Оператор alert в коде должен использоваться ровно один раз.</h4> 
-   </div>
+   </div> -->
    <script >
+      "use strict";
    
    window.onload = function() {
     anketa();
   };
   function  anketa(){
 
-  let fio=''
+  let fio='';
+  let old;
+  let pensia;
 
    function Name(ask){
    let name = prompt(ask) 
@@ -46,9 +49,9 @@
 
    let arr = name.split('');
    
-   if(name.length <= 0)Name()
-    let isAllLetters = arr.every((elem) => elem.toUpperCase() !== elem.toLowerCase()  );
-    if(isAllLetters  )  {
+   if(name.length <=0)Name()
+    let comparison = arr.every((elem) => elem.toUpperCase() !== elem.toLowerCase()  );
+    if(comparison)  {
        fio+= name+' ';
     }
     else{
@@ -68,7 +71,7 @@ Name('введите ваше отчество')
 // otc1()
 
 function old1(){
-   old=+prompt("Сколько вам лет")
+  old=+prompt("Сколько вам лет")
    if(isNaN(old) || old <0) alert('введите число'), old1()  
 }
 old1()
