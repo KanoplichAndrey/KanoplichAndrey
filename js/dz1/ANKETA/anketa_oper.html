@@ -7,60 +7,128 @@
    <title>govnocod1</title>
 </head>
 <body>
-   <div class="container">
-      <h4>Создать проект ANKETA. Спросить у пользователя:</h4>
-      <ul>
-         <li>фамилию, имя, отчество РАЗДЕЛЬНО (оператором prompt)</li>
-         <li>возраст в годах (оператором prompt)</li>
-         <li>пол (оператором confirm, например, "ваш пол - мужской?")</li>
-      </ul>
-      <h4>и вывести оператором alert анкету пользователя по примеру:</h4>
-      <ul>
-         <li>ваше ФИО: Иванов Иван Иванович</li>
-         <li>ваш возраст в годах: 20</li>
-         <li>ваш возраст в днях: 7300</li>
-         <li>через 5 лет вам будет: 25</li>
-         <li>ваш пол: мужской</li>
-         <li>вы на пенсии: нет</li>
-       </ul> 
-       <h4>Должен быть контроль корректности вводимых пользователем данных (например, фамилия не должна быть пустой, возраст должен быть корректной цифрой и т.д.).</h4>
-         <h4>Оператор alert в коде должен использоваться ровно один раз.</h4> 
-   </div>
+  
    <script >
       "use strict";
    
-   window.onload = function() {
-    anketa();
-  };
+      anketa()
   function  anketa(){
 
-  let fio='';
+
+  let fam;
+  let name;
+  let otch;
   let old;
   let pensia;
+  var pens;
+  
 
-   function Name(ask){
-   let name = prompt(ask); 
-    const isCancelled = name === null;
-    const isEmpty = name === '';
-    
-    if(isCancelled){
-        return aler(),Name(ask);
-    }
-    let arr = isEmpty ? [] : name.split('');
-    if(name.length <=0)aler(),Name(ask);
-    let comparison = arr.every((elem) => elem.toUpperCase() !== elem.toLowerCase()  );
-    if(comparison)  {
-       fio+= name+' ';
-    }
-    else{
-      aler(),Name(ask);
-         
-    }
+do {
+fam=prompt('введите ваше фамилию')
+ if(fam==null)
+    fam+=1;
+}while ( parseInt(fam)||fam==0 || fam.match(/[^a-zA-Zа-яА-Я]/ ))
+/////////////////////////////////////////////////////////////////////////
+do {
+   name=prompt('введите ваше имя');
+ if(name==null)
+ name+=1;
+}while ( parseInt(name)||name==0 || name.match(/[^a-zA-Zа-яА-Я]/ ))
+/////////////////////////////////////////////////////////////////////////
+do {
+   otch=prompt('введите ваше отчество');
+ if(otch==null)
+    otch+=1;
+}while ( parseInt(otch)||otch==0 || otch.match(/[^a-zA-Zа-яА-Я]/ ))
+/////////////////////////////////////////////////////////////////////////
+  do {
+  old=+prompt("Сколько вам лет");
+} while (isNaN(old) || old <=0);
+/////////////////////////////////////////////////////////////////////////
+let day=old*365;
+let day5=old+5;
+/////////////////////////////////////////////////////////////////////////
+let pol=confirm("Ваш пол мужской","или женский");
+pol?pens=60:pens=55;
+pens==60&&old>=pens || pens==55&&old>=pens? pensia="да": pensia="нет";
+pol? pol="мужской":pol="женский";
+ /////////////////////////////////////////////////////////////////////////     
+
+alert("Ваше ФИО: " +fam+' ' +name+' ' +otch+ "\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+pol+"\n"+"Вы на пенсии: "+pensia)
+
 }
 
-Name('введите ваше фамилию');
-Name('введите ваше имя');
-Name('введите ваше отчество');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   let fio='';
+ 
+
+   // function Name(ask){
+//    let name = prompt(ask); 
+//     const isCancelled = name === null;
+//     const isEmpty = name === '';
+    
+//     if(isCancelled){
+//         return alert('некоректно ввели данные, попробуйте еще раз'),Name(ask);
+//     }
+//     let arr = isEmpty ? [] : name.split('');
+//     if(name.length <=0)alert('некоректно ввели данные, попробуйте еще раз'),Name(ask);
+//     let comparison = arr.every((elem) => elem.toUpperCase() !== elem.toLowerCase()  );
+//     if(comparison)  {
+//        fio+= name+' ';
+//     }
+//     else{
+//       alert('некоректно ввели данные, попробуйте еще раз'),Name(ask);
+         
+//     }
+// }
+
+// Name('введите ваше фамилию');
+// Name('введите ваше имя');
+// Name('введите ваше отчество');
+
+
+
+// while(true){
+//     fam=prompt('введите ваше фамилию');
+//     let arr =  fam.split('');
+//     console.log(arr)
+
+//     for(let i=0;i<=arr.length;i++){
+//        console.log(arr[i])
+//       if (arr[i]==Number || isFinite(parseInt(arr[i]))) {
+//          // continue;
+//       }
+         
+//       else{
+//         break;
+//       }
+//       //  if(elem.search(/^[a-zA-Zа-яА-Я]/)==-1)
+//       //  
+//     }
+//     break 
+// }
+
 
 // function otc1(){
 //    otc=prompt("Введите отчество")
@@ -68,25 +136,19 @@ Name('введите ваше отчество');
 // }
 // otc1()
 
-function old1(){
-  old=+prompt("Сколько вам лет");
-   if(isNaN(old) || old <=0) aler(), old1() ; 
+// function old1(){
  
+
   
-}
+//   for (let elem of  old){
+//      if(isNaN(old) || old <=0) alert('некоректно ввели данные, попробуйте еще раз')
+//      return  
+//   }
+    
 
-old1();
+// }
 
-let day=old*365;
-let day5=old+5;
-let pol=confirm("Ваш пол мужской","или женский");
-(pol)? pol="Мужской": pol="Женский";
-(pol && old >= 60)? pensia='да':pensia='нет';
-(pol != true && old >= 55)? pensia='да':pensia='нет';
-alert("Ваше ФИО: " +fio+ "\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+pol+"\n"+"Вы на пенсии: "+pensia)
-}
-let  aler=() => alert('некоректно ввели данные, попробуйте еще раз')
-
+// old1();
 </script>
    
 </body>
