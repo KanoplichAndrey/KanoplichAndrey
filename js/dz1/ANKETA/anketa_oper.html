@@ -48,7 +48,6 @@
     }
     let arr = isEmpty ? [] : name.split('');
     if(name.length <=0)aler(),Name(ask);
-    console.log(name)
     let comparison = arr.every((elem) => elem.toUpperCase() !== elem.toLowerCase()  );
     if(comparison)  {
        fio+= name+' ';
@@ -72,6 +71,7 @@ Name('введите ваше отчество');
 function old1(){
   old=+prompt("Сколько вам лет");
    if(isNaN(old) || old <=0) aler(), old1() ; 
+ 
   
 }
 
