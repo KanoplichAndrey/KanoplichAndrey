@@ -22,7 +22,7 @@ do {  // три раза писать один и тот же цикл не ст
  value = prompt(ask);
 
  let matchResul = (value || '').match(/[^a-zA-Zа-яА-Я]/);
- 
+
  isValid = value && (matchResul === null);
  if(isValid) fio+= value+' ';
     
