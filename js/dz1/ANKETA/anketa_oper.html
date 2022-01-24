@@ -13,8 +13,6 @@
 
 let fio=" "
 let old;
-let pensia;
-let pens;
 
    function Name(ask){
 let value
@@ -28,7 +26,7 @@ do {  // три раза писать один и тот же цикл не ст
  isValid = value && (matchResul === null);
  if(isValid) fio+= value+' ';
     
-console.log(isValid)
+// console.log(isValid)
 
 } while (!isValid);
 
@@ -48,13 +46,10 @@ let day5=old+5;
 /////////////////////////////////////////////////////////////////////////
 
 let pol=confirm("Ваш пол мужской","или женский");
-pol?pens=60:pens=55;
-pens==60&&old>=pens || pens==55&&old>=pens? pensia="да": pensia="нет";
-pol? pol="мужской":pol="женский";
- /////////////////////////////////////////////////////////////////////////   
-   
+let pensia=old >= 55 && !pol || old >= 60 && pol? "да":"нет";
+let gender=pol ? "мужской" : "женский";
 
-alert("Ваше ФИО: " +fio+ "\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+pol+"\n"+"Вы на пенсии: "+pensia)
+alert("Ваше ФИО: " +fio+ "\n" +"Ваш возраст в годах: "+old+"\n"+"Ваш возраст в днях: "+day+"\n"+"Через 5 лет вам будет: "+day5+"\n"+"Ваш пол: "+gender+"\n"+"Вы на пенсии: "+pensia)
 
 
 
