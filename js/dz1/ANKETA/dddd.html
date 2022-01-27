@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>govnocod1</title>
+</head>
+<body>
+   <script>
+"use strict";
+
+function vowelCounter() {
+            var count={}
+            var stringsearch = ["А","О","И","Е","Ё","Э","Ы","У","Ю","Я", "а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
+            var f = prompt("");
+            for (var i = 0; i < f.length; i++)
+                for (var j = 0; j < stringsearch.length; j++)
+                    if (f[i] === stringsearch[j]) {
+                      var c=[f[i]]
+                      if(!(c in count))
+                      count[c]=0;
+                      count[c] ++;
+                    }
+                    return count 
+        }
+        console.log(vowelCounter());
+
+  
+</script>
+   
+</body>
+</html>
