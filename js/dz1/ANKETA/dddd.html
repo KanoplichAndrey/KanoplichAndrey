@@ -12,8 +12,8 @@
 
  function ask(b){
         let stringsearch = ["А","О","И","Е","Ё","Э","Ы","У","Ю","Я", "а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
-        let count=1;
-    for(let i=1;i<= b.length;++i){
+        let count=0;
+    for(let i=0;i<= b.length;++i){
     if(stringsearch.includes(b[i])){
       count+=1;
     }
@@ -22,7 +22,7 @@
   
   return  count 
 }
-   console.log(ask('аааа'))
+   console.log(ask('ааимсисмиасаа'))
   
 //    do {
 //     let stringsearch = ["А","О","И","Е","Ё","Э","Ы","У","Ю","Я", "а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
