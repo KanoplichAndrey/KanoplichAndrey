@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>govnocod1</title>
+</head>
+<body>
+   <script>
+"use strict";
+
+
+
+function ask3(str) {
+let one;
+let two;
+for (let i = 0; i < str.length; i++) { if (str.charAt(i) !== " ") { one=str.slice(i);break; } }
+two=one;
+for (let i = one.length-1; i >=0; k--) { if (one.charAt(i) !== " ") { two=one.slice(0,i+1);break; } }
+return '$'+two+'$';
+}
+
+alert(ask3(prompt() ))
+
+</script>
+   
+</body>
+</html>
