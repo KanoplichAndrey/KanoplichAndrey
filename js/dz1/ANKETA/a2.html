@@ -10,19 +10,34 @@
    <script>
 "use strict";
 
+function trim(str, border=' ' ) {
+    let firstCount = 0;
+    let lastCount = str.length;
 
+    for (let i = firstCount; i < str.length; i++) {
+         
+        if ( str[i]=== ' ') {
+         firstCount++ ;
+        } else {
+            break;
+        }
+    }
 
-function ask3(str) {
-let one;
-let two;
-for (let i = 0; i < str.length; i++) { if (str.charAt(i) !== " ") { one=str.slice(i);break; } }
-two=one;
-for (let i = one.length-1; i >=0; k--) { if (one.charAt(i) !== " ") { two=one.slice(0,i+1);break; } }
-return '$'+two+'$';
+    for (let i = lastCount -1; i > 0; i--) {
+        
+        if (str[i]=== ' ') {
+         lastCount = lastCount -1;
+        } else {
+            break;
+        }
+    }
+
+    let result = str.substring(firstCount,lastCount);
+
+    return  border+result+border;
 }
 
-alert(ask3(prompt() ))
-
+alert(trim(prompt(),'$'))
 </script>
    
 </body>
