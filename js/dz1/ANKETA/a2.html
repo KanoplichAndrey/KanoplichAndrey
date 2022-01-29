@@ -26,7 +26,7 @@ function trim(str, border=' ' ) {
     for (let i = lastCount -1; i > 0; i--) {
         
         if (str[i]=== ' ') {
-         lastCount = lastCount -1;
+         lastCount--;
         } else {
             break;
         }
@@ -38,6 +38,36 @@ function trim(str, border=' ' ) {
 }
 
 alert(trim(prompt(),'$'))
+
+
+
+
+
+
+
+
+// function trim(str,border) {
+// let l = 0, r = str.length - 1
+
+// for (let i = 0, k = str.length - 1; i < str.length; i++, k--) {
+// if (i > l && k < r) break
+
+// if (str[i] === ' ' && i <= l) l++
+
+// if (str[str.length - i - 1] === ' ' && k >= r) r--
+// }
+//  let result =  str.slice(l, r + 1)
+
+
+// return  border+result+border;
+    
+
+   
+
+    
+// }
+
+// alert(trim(prompt(),'$'))
 </script>
    
 </body>
