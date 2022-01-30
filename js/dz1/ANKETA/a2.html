@@ -10,20 +10,19 @@
    <script>
 "use strict";
 
-function trim(str, border=' ' ) {
-    let firstCount = 0;
-    let lastCount = str.length;
+function trim(str ) {
+    var firstCount = 0;
+    var lastCount = str.length;
 
-    for (let i = firstCount; i < str.length; i++) {
-         
+    for (var i = firstCount; i < str.length; i++) {
+        
         if ( str[i]=== ' ') {
          firstCount++ ;
         } else {
             break;
         }
     }
-
-    for (let i = lastCount -1; i > 0; i--) {
+    for (var i = lastCount -1; i > 0; i--) {
         
         if (str[i]=== ' ') {
          lastCount--;
@@ -31,13 +30,13 @@ function trim(str, border=' ' ) {
             break;
         }
     }
-
-    let result = str.substring(firstCount,lastCount);
-
-    return  border+result+border;
+   return str.slice(firstCount,lastCount);
+    
 }
 
-alert(trim(prompt(),'$'))
+let s = trim(prompt())
+alert('$'+s+'$')
+
 
 
 
@@ -68,6 +67,37 @@ alert(trim(prompt(),'$'))
 // }
 
 // alert(trim(prompt(),'$'))
+
+
+// function trim(str, border=' ' ) {
+//     let firstCount = 0;
+//     let lastCount = str.length;
+
+//     for (let i = firstCount; i < str.length; i++) {
+         
+//         if ( str[i]=== ' ') {
+//          firstCount++ ;
+//         } else {
+//             break;
+//         }
+//     }
+
+//     for (let i = lastCount -1; i > 0; i--) {
+        
+//         if (str[i]=== ' ') {
+//          lastCount--;
+//         } else {
+//             break;
+//         }
+//     }
+
+//     let result = str.substring(firstCount,lastCount);
+
+//     return  border+result+border;
+// }
+
+// alert(trim(prompt(),'$'))
+
 </script>
    
 </body>
