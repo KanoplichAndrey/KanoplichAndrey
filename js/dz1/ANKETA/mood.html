@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+"use strict";
+
+// N.10 Домашнее задание MOOD
+// Доработать проект MOOD (слайды N.10) так, чтобы цвета не повторялись.
+// Для контроля повторения цветов использовать хэш.
+
+
+
+function randomDiap(n,m) {
+        return Math.floor(Math.random()*(m-n+1))+n;
+}
+
+function color(colorsCount) {
+    var obj = {};
+    var colors=[ '', 'красный', 'оранжевый', 'жёлтый', 'зелёный', 'голубой', 'синий', 'фиолетовый' ];
+    console.log( 'цветов: ' + colorsCount );
+    
+    for ( var i=1; i<=colorsCount; i++ ) {
+        var colorName = ''
+        while (true)
+        {
+          var n = randomDiap(1,7);
+          colorName = colors[n];
+
+          if (!(colorName in obj))
+              break;
+        }
+
+        obj[colorName] = true; 
+        console.log( colorName );
+        
+    }
+    
+}
+
+color(3);
+
+
+
+
+
+
+    </script>
+</body>
+</html>
