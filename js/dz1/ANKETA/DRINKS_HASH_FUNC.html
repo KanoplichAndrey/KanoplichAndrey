@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+
+    <button id='add-coctail'>Добавить</button>
+    <button id='delete-coctail'>Удалить</button>
+    <button id='get-coctail'>Рецепт</button>
+    <button id='all-coctails'>Список рецептов</button>
+
+
     <script>
         "use strict";
 
@@ -29,27 +36,44 @@ function HashStorageFunc(){
 const drinkStorage = new HashStorageFunc();
 
 
-drinkStorage.addValue('drink1', {
-        name: 'name1',
-        isSoft: false,
-        recipe: 'plain text',
-});
 
-drinkStorage.addValue('drink2', {
-        name: 'name1',
-        isSoft: true,
-        recipe: 'plain text2',
-});
 
-console.log(drinkStorage.getValue('drink1'))
+// drinkStorage.addValue('drink1', {
+//         name: 'name1',
+//         isSoft: false,
+//         recipe: 'plain text',
+// });
 
-console.log(drinkStorage.getValue('drink2'))
+// drinkStorage.addValue('drink2', {
+//         name: 'name1',
+//         isSoft: true,
+//         recipe: 'plain text2',
+// });
 
-console.log(drinkStorage.getKeys())
+const addButton = document.getElementById('add-coctail');
+addButton.onclick = function () {
+  const coctail = {};
+  // получаем данные от пользовател
+  const name = window.prompt('Введите название коктеля');
+  const isAlcohol = window.confirm('Напиток алкогольный?')? "мужской" : "женский";
+  const recipe = window.prompt('Введите рецепт коктеля');
+  
+  // Добавляем значение в наше хранилище
+  drinkStorage.addValue(name, {name, isAlcohol, recipe});
+  console.log('Напиток ', drinkStorage.getValue(name));
+}
+
+
+
+// console.log(drinkStorage.getValue('drink1'))
+
+// console.log(drinkStorage.getValue('drink2'))
+
+// console.log(drinkStorage.getKeys())
 
 drinkStorage.deleteValue('drink1')
 
-console.log(drinkStorage.getKeys())
+// console.log(drinkStorage.getKeys())
     
 
 
