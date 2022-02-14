@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+
+
+
+function HashStorageFunc(){
+        const storage = {}
+        
+        this.addValue = (key, value) => storage[key] = value;
+        
+        this.getValue = (key) => storage[key];
+        
+        this.getKeys = () => Object.keys(storage);
+        
+        this.deleteValue = (key) =>  delete storage[key];
+}
+
+
+const drinkStorage = new HashStorageFunc();
+
+
+drinkStorage.addValue('drink1', {
+        name: 'name1',
+        isSoft: false,
+        recipe: 'plain text',
+});
+
+drinkStorage.addValue('drink2', {
+        name: 'name1',
+        isSoft: true,
+        recipe: 'plain text2',
+});
+
+console.log(drinkStorage.getValue('drink1'))
+
+console.log(drinkStorage.getValue('drink2'))
+
+console.log(drinkStorage.getKeys())
+
+drinkStorage.deleteValue('drink1')
+
+console.log(drinkStorage.getKeys())
+    
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

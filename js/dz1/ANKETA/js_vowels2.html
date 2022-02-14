@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>govnocod1</title>
+</head>
+<body>
+   <script>
+"use strict";
+
+
+
+let ask = stroka1 => stroka1.split("").filter(v => "аоиеёэыуюяАОИЕЕЭЫУЮЯ".includes(v)).length;
+ 
+console.log(ask(prompt("метод filter: "))); 
+
+
+
+/////////////////////////////////////////////////////////////////////   
+
+
+
+let ask5 = stroka5 => stroka5.split("").reduce((a, v) => a + "аоиеёэыуюяАОИЕЕЭЫУЮЯ".includes(v), 0);
+ 
+console.log(ask5(prompt("метод reduce: "))); 
+
+ 
+ /////////////////////////////////////////////////////////////////////   
+
+
+  function ask1(str){
+    let count1=0;
+    let stroka=str.split('');
+     function F(V,I,A){
+       let stringsearch=["А","О","И","Е","Ё","Э","Ы","У","Ю","Я","а", "у","о", "ы", "и", "э", "я", "ю", "ё", "е"];
+      //  if(stringsearch.includes(V)===true){
+        if(stringsearch.indexOf(V)!=-1){ 
+         count1++;
+       
+        }
+     }
+    stroka.forEach(F);
+    
+    return count1;
+  }
+
+console.log( ask1(prompt("метод forEach: ")))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+//   function ask3(b){
+    
+//         let stringsearch1 = ["А","О","И","Е","Ё","Э","Ы","У","Ю","Я", "а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
+//         let count1=0
+//     for(let search of b ){
+//     if(stringsearch1.includes(search)){
+//      count1+=1;
+//     }
+//   }
+//     return count1
+//    }
+//    console.log( ask3(prompt("includes: ")))
+//////////////////////////////////////////////////////////////////////////////////////
+   
+
+
+
+
+
+ 
+
+
+   
+
+
+
+  
+</script>

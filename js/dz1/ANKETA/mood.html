@@ -27,11 +27,12 @@ function color(colorsCount) {
     
     for ( var i=1; i<=colorsCount; i++ ) {
         var colorName = ''
+        
         while (true)
         {
           var n = randomDiap(1,7);
           colorName = colors[n];
-
+            
           if (!(colorName in obj))
               break;
         }
