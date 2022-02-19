@@ -7,84 +7,119 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+		<form style="text-align: center;">
+			<input type="button" value="1 - ввод информации о напитке" id="drinkName" style="width: 300px;"> <br><br>
+			<input type="button" value="2 - получение информации о напитке" id="drinkInfo"style="width: 300px;"><br><br>
+			<input type="button" value="3 - удаление информации о напитке" id="drinkInfoDel"style="width: 300px;"><br><br>
+			<input type="button" value="4 - перечень всех напитков" id="drinkList"style="width: 300px;"><br><br>
+		</form>
+		<p id="drinkInfoP"></p>
+	</div>
 
-    <button id='add-coctail'>Добавить</button>
-    <button id='delete-coctail'>Удалить</button>
-   
 
 
     <script>
-        "use strict";
 
+"use strict";
 
+function HashStorage(key, value) {
+   
 
+    this.storage = {};
 
-function HashStorageFunc(){
-        const storage = {}
-        
-        this.addValue = (key, value) => storage[key] = value;
-        
-        this.getValue = (key) => storage[key];
-        
-        this.getKeys = () => Object.keys(storage);
-        
-        this.deleteValue = (key) =>  delete storage[key];
+    this.addValue = function(key, value) {
+        this.storage[key] = value;
+    }
+
+    this.getValue = function(key) {
+        if (key in this.storage) {
+            return this.storage[key];
+        } else {
+            return undefined;
+        }
+    }
+
+    this.deleteValue = function(key) {
+        if (this.storage?.[key]) {
+            delete this.storage[key];
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // this.getKeys = function() {
+    //     let keys = [];
+    //     for (let key in this.storage) {
+    //         keys.push(key);
+    //     }
+
+    //     return keys;
+    // }
+    this.getKeys = () => Object.keys(this.storage);
+
 }
+const drinkStorage = new HashStorage();
 
+let drinkName = document.getElementById("drinkName");
 
-const drinkStorage = new HashStorageFunc();
+	drinkName.onclick = function() {
+		let keyP = prompt("напишите название напитка");
+		let valueC = {};
 
+		valueC.alcohol = confirm(keyP + " - алкогольный напиток или нет?\nok - алкогольный\nотмена - без алкогольный");
+		valueC.recipe = prompt("напишите рецепт напитка - " + keyP);
+		drinkStorage.addValue(keyP, valueC);
+	}
 
+	let drinkInfo = document.getElementById("drinkInfo");
 
+	drinkInfo.onclick = function() {
+		let drinkInf = prompt("Напишите название напитка");
+		let drinkInfoP = document.getElementById("drinkInfoP");
 
-// drinkStorage.addValue('drink1', {
-//         name: 'name1',
-//         isSoft: false,
-//         recipe: 'plain text',
-// });
+		let answer = drinkStorage.getValue(drinkInf);
 
-// drinkStorage.addValue('drink2', {
-//         name: 'name1',
-//         isSoft: true,
-//         recipe: 'plain text2',
-// });
+		if (drinkStorage.getValue(drinkInf) !== undefined) {
+			alert( "напиток: " + drinkInf + ", " + "алкогольный: " + (answer.alcohol === true ? "да" : "нет") + ", " + "Рецепт: " + (answer.recipe ? answer.recipe : " рецепта нет"));
+		} else {
+			alert( " таког напитка нет")
+		}
+	}
+	
+	let drinkInfoDel = document.getElementById("drinkInfoDel");
 
-const addButton = document.getElementById('add-coctail');
-addButton.onclick = function () {
-  const coctail = {};
-  // получаем данные от пользовател
-  const name = window.prompt('Введите название коктеля');
-  const isAlcohol = window.confirm('Напиток алкогольный?')? "мужской" : "женский";
-  const recipe = window.prompt('Введите рецепт коктеля');
-  
-  // Добавляем значение в наше хранилище
-  drinkStorage.addValue(name, {name, isAlcohol, recipe});
-  console.log('Напиток ', drinkStorage.getValue(name));
-}
+	drinkInfoDel.onclick = function() {
+		let drinkInfoDel = prompt("Напишите название напитка");
+		let drinkInfoP = document.getElementById("drinkInfoP");
 
+		if (drinkStorage.deleteValue(drinkInfoDel) === true) {
+			alert( "информация о напитке УДАЛЕНО!");
+		} else {
+			alert("В хранилище такой напиток отсутствует");
+		}
 
+	}
 
-// console.log(drinkStorage.getValue('drink1'))
-
-// console.log(drinkStorage.getValue('drink2'))
-
-// console.log(drinkStorage.getKeys())
-
-drinkStorage.deleteValue('drink1')
-
-// console.log(drinkStorage.getKeys())
-    
-
-
-
-
-    </script>
-
-
+	let drinkList = document.getElementById("drinkList");
+	
+	drinkList.onclick = function() {
+		let drinkInfoP = document.getElementById("drinkInfoP");
+		alert( drinkStorage.getKeys());
+	}
 
 
 
 
 
+
+
+
+
+
+
+
+  </script>
 </body>
 </html>
