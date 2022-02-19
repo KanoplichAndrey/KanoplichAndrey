@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="padding-left: 30px; background: rgb(204, 176, 166);">
     <div>
-		<form style="text-align: center;">
+		<form style="text-align: center;  ">
 			<input type="button" value="1 - ввод информации о напитке" id="drinkName" style="width: 300px;"> <br><br>
 			<input type="button" value="2 - получение информации о напитке" id="drinkInfo"style="width: 300px;"><br><br>
 			<input type="button" value="3 - удаление информации о напитке" id="drinkInfoDel"style="width: 300px;"><br><br>
@@ -71,6 +71,7 @@ let drinkName = document.getElementById("drinkName");
 		valueC.alcohol = confirm(keyP + " - алкогольный напиток или нет?\nok - алкогольный\nотмена - без алкогольный");
 		valueC.recipe = prompt("напишите рецепт напитка - " + keyP);
 		drinkStorage.addValue(keyP, valueC);
+        
 	}
 
 	let drinkInfo = document.getElementById("drinkInfo");
@@ -97,7 +98,7 @@ let drinkName = document.getElementById("drinkName");
 		if (drinkStorage.deleteValue(drinkInfoDel) === true) {
 			alert( "информация о напитке УДАЛЕНО!");
 		} else {
-			alert("В хранилище такой напиток отсутствует");
+			alert(" такой напиток отсутствует");
 		}
 
 	}
