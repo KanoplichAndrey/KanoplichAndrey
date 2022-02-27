@@ -13,14 +13,9 @@
     <form name='f1' action="https://fe.it-academy.by/TestForm.php"></form>
     <form name='f2' action="https://fe.it-academy.by/TestForm.php"></form>
 
-
-
-
-
-
     <script>
         "use strict"
-        var formDef1 = [{
+        let formDef1 = [{
                 label: 'Название сайта:',
                 kind: 'longtext',
                 name: 'sitename'
@@ -86,7 +81,7 @@
             },
         ];
 
-        var formDef2 = [{
+        let formDef2 = [{
                 label: 'Фамилия:',
                 kind: 'longtext',
                 name: 'lastname'
@@ -112,10 +107,10 @@
             },
         ];
 
-
+        
         function buildForm(formD, formE) {
             formD.forEach(elem => {
-                var fL = document.createElement('label');
+                let fL = document.createElement('label');
                 fL.innerHTML = elem.label;
 
 
@@ -126,45 +121,44 @@
                 st.style.cssText =
                     'background-color: #C52DD1FF;width: 960px;margin: 0 auto;color: rgb(255,255,255);font-family: Verdana, Geneva, sans-serif;'
 
-                console.log(elem.label)
+
 
                 function trans() {
-                    var transfer = document.createElement('br');
+                    let transfer = document.createElement('br');
                     formE.appendChild(transfer);
                 }
 
 
 
+
                 formE.appendChild(fL);
                 if (elem.kind == 'longtext') {
-                    var tag = document.createElement('input');
+                    let tag = document.createElement('input');
                     tag.type = 'text';
                     formE.appendChild(tag);
-                    trans()
+                    trans();
                 };
 
                 if (elem.kind == 'number') {
-                    var tag = document.createElement('input');
+                    let tag = document.createElement('input');
                     tag.type = 'number';
                     formE.appendChild(tag);
-                    trans()
+                    trans();
                 };
 
                 if (elem.kind == 'shorttext') {
-                    var tag = document.createElement('input');
+                    let tag = document.createElement('input');
                     tag.type = 'text';
                     formE.appendChild(tag);
-
-                    trans()
+                    trans();
                 };
 
                 if (elem.kind == 'combo') {
-                    var tag = document.createElement('select');
+                    let tag = document.createElement('select');
                     formE.appendChild(tag);
-
-                    trans()
+                    trans();
                     elem.variants.forEach(elem2 => {
-                        var tagOption = document.createElement('option');
+                        let tagOption = document.createElement('option');
                         tagOption.value = elem2.value;
                         tagOption.textContent = elem2.text;
                         tag.appendChild(tagOption);
@@ -173,110 +167,50 @@
                 };
                 if (elem.kind == 'radio') {
                     elem.variants.forEach(elemLevel2 => {
-                        var tag = document.createElement('input');
+                        let tag = document.createElement('input');
                         tag.type = 'radio';
                         tag.name = "payment";
                         tag.value = elemLevel2.value;
-                        var newSpanRadio = document.createElement('span');
+                        let newSpanRadio = document.createElement('span');
                         newSpanRadio.textContent = elemLevel2.text;
                         formE.appendChild(tag);
                         formE.appendChild(newSpanRadio);
                     });
-
-                    trans()
+                    trans();
                 };
 
                 if (elem.kind == 'check') {
-                    var tag = document.createElement('input');
+                    let tag = document.createElement('input');
                     tag.type = 'checkbox';
                     formE.appendChild(tag);
-                    trans()
+                    trans();
                 };
 
                 if (elem.kind == 'memo') {
-                    var tag = document.createElement('textarea');
+                    let tag = document.createElement('textarea');
 
                     formE.appendChild(tag);
-                    trans()
+                    trans();
                     let sr = document.querySelector('textarea')
                     sr.style.cssText = 'width: 250px'
                 };
 
                 if (elem.kind == 'submit') {
-                    var tag = document.createElement('input');
+                    let tag = document.createElement('input');
                     tag.type = 'submit';
                     tag.value = 'опубликовать';
                     formE.appendChild(tag);
-                    trans()
+                    trans();
                     formE.removeChild(fL);
-
-                    trans()
-                    var line = document.createElement('hr');
+                    trans();
+                    let line = document.createElement('hr');
                     formE.appendChild(line);
 
-
-
                 };
-
-
-
-
-
-
-
-
-
-                if (elem.name == 'sitename') {
-                    tag.name = 'sitename';
-                };
-                if (elem.name == 'siteurl') {
-                    tag.name = 'siteurl';
-                };
-                if (elem.name == 'visitors') {
-                    tag.name = 'visitors';
-                };
-                if (elem.name == 'email') {
-                    tag.name = 'email';
-                };
-                if (elem.name == 'division') {
-                    tag.name = 'division';
-                };
-
-
-                if (elem.name == 'votes') {
-                    tag.name = 'votes';
-                };
-                if (elem.name == 'description') {
-                    tag.name = 'description';
-                };
-                if (elem.name == 'lastname') {
-                    tag.name = 'lastname';
-                };
-                if (elem.name == 'firstname') {
-                    tag.name = 'firstname';
-                };
-                if (elem.name == 'secondname') {
-                    tag.name = 'secondname';
-                };
-                if (elem.name == 'age') {
-                    tag.name = 'age';
-                };
-
 
             });
         }
-
-        let eli = document.querySelectorAll('label')
-        for (let elem of eli) {
-            if (elem.matches('undefined')) {
-                console.log('nnnnnnnnnnnnnnnnnnnnnnnnnnnn')
-            } else {
-                console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvv')
-            }
-        }
-
-
-
+        // console.log(document.forms.f1)
         buildForm(formDef1, document.forms.f1);
         buildForm(formDef2, document.forms.f2);
     </script>

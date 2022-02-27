@@ -7,12 +7,36 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div>
+		<form >
+			<input type="button" value="1 - ввод информации о напитке" id="drinkName" style="width: 300px; " onclick= 'fff()'> <br><br>
+			<input type="button" value="2 - получение информации о напитке" id="drinkInfo"style="width: 300px;"onclick= 'ff()'><br><br>
+			<input type="button" value="3 - удаление информации о напитке" id="drinkInfoDel"style="width: 300px;"onclick= 'fff()'><br><br>
+			<input type="button" value="4 - перечень всех напитков" id="drinkList"style="width: 300px;"onclick= 'ffff()'><br><br>
+            <!-- <input type="button" value="5 -  напитков" id="dr"style="width: 300px;"onclick= 'f1()'><br><br> -->
+            
+            <p id="check1"></p>
+            
+		</form>
+		<p id="drinkInfoP"></p>
+
+        <form name="formForSite" action="http://fe.it-academy.by/TestForm.php"></form>
+		
+        
+	</div>
+
+
+
     <script>
+   
 let ob={
     value2: 3000,
 }
 ob.key='andrey'
 ob.value='30'
+console.log(Object.keys(ob))
+
 ob.value1=''
 let p='fff'
 ob.value1=p
@@ -23,8 +47,190 @@ let obb=ob;
 ob.key='gggggggggggfffffffffff'
 // delete obb.age
 console.log(ob)
-console.log(obb)
 
+
+
+let obbb={
+    '1a': 1,
+    '2b': 2,
+    '3c': 3,
+}
+console.log(obbb['1a'] + obbb['2b'] + obbb['3c'])
+console.log(obbb['1a'])
+// let g= Object.keys(obbb)
+let res
+    for(let key in obbb){
+        res = obbb[key] + obbb[key]
+        
+    } console.log(res)   
+    console.log('1' in obbb)
+    let user = {
+        name: 'andrey',
+        surname: 'kanoplich',
+        patronymic: 'grigorevich'}; 
+            let g = 'name'
+            let y=  user.name
+console.log( user)
+alert( user.name +' '+ user.surname +' '+ user.patronymic)
+console.log(user[g])
+console.log(y)
+
+console.log( typeof {a: 1, b: 2, c: 3} );
+console.log( typeof [1, 2, 3] );
+let arr = [1, 2, 3];
+console.log( typeof arr[0] );
+let arr1 = ['1', '2', '3'];
+console.log( typeof arr1[0] );
+
+
+
+let arr3 = [1, 2, 3];
+let arr2 = arr3;
+
+arr3[0] = 'a';
+console.log(arr3);
+
+
+let obj5 = {a: 1, b: 2, c: 3, d: 4, e: 5};
+delete obj5.e;
+console.log('e' in obj5);
+
+const arrw = ['a', 'b', 'c'];
+arrw[1] = '!';
+console.log(arrw);
+
+const arrv = ['a', 'b', 'c'];
+arrv[1] = ['a', 'b', 'c'];
+console.log(arrv);
+
+
+let str = 'london';
+
+let result =   str.slice(0,str.length-2) + str.slice(str.length-2,str.length ).toUpperCase()
+console.log(result); // выведет 'London'
+
+
+
+function CarD(carNum) {
+  var self=this; // спасаем this и упрощаем себе жизнь
+  
+  self.num=carNum; // публичное свойство - элемент хэша this/self
+
+  self.maxSpeed=160; // публичное свойство - элемент хэша this/self
+
+  var wheels=4; // приватное свойство - локальная переменная
+
+  function getMaxSpeed() { // приватный метод - локальная функция
+    return self.maxSpeed; // и она может обратиться к публичному свойству
+  }
+
+  self.beep=function() { // публичный метод - элемент хэша this/self
+    console.log(
+        'num:'+self.num
+      +' wheels:'+wheels
+      +' maxspeed:'+getMaxSpeed()
+      +' beeeeep!');
+  }
+}
+
+var car4=new CarD('1-A');
+console.log(car4.num);
+// 1-A
+car4.beep();
+// num:1-A wheels:4 maxspeed:160 beeeeep!
+
+
+
+function Fas(key, value){
+    this.storage = {};
+    this.add= function fg(key, value){
+    this.storage[key] = value;
+       
+
+
+    return console.log(this.storage )
+}
+this.getValue = function(key) {
+        if (key in this.storage) {
+            return console.log(this.storage);
+        } else {
+            return console.log(undefined);
+        }
+    }
+    this.deleteValue = function(key) {
+        if (this.storage?.[key]) {
+            delete this.storage[key];}
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+    }
+
+    this.list=function() {
+      console.log(this.storage)
+    
+    }
+
+}
+
+const drinkStorage = new Fas()
+
+drinkStorage.add(prompt(),prompt());
+drinkStorage.add(prompt(),prompt());
+
+drinkStorage.getValue(prompt());
+drinkStorage.deleteValue(prompt())
+// drinkStorage.getValue(prompt())
+// drinkStorage.list()
+drinkStorage.list()
+// let elem= document.querySelector('form')
+ function fff(){
+    document.querySelector('form').style.cssText='border: solid 1px; background-color: red; text-align: center';
+ }
+ function ff(){
+    document.querySelector('form').style.cssText='';
+ }
+ function ffff(){
+    document.querySelector('form').style.cssText='border: solid 10px; background-color: blue; text-align: center';
+ }
+ 
+elem.className='ffffff'
+function f1(){
+   document.querySelector('form').outerHTML= '<div>gggggggggg</div>'
+   
+ }
+ f1()
+
+let fgh= document.querySelectorAll('input')
+for (let i = 0; i< fgh.length; i++) {
+     fgh2 = fgh[i];
+    fgh2.style.width= '500px';
+    fgh2.style.color='red';
+    fgh2.style.borderStyle='solid';
+    fgh2.style.borderColor='blue';
+    fgh2.style.borderWidth='1px';
+
+}
+
+
+
+const fgh1= document.getElementsByTagName('p')
+
+
+
+// fgh1.style.width= '500px';
+// console.log(fgh)
+// console.log(fgh1)
+// fg('gggg','hhhh')
+
+// function gh(keyp,valuec){
+//     this.sd={}
+//     this.sd[keyp]=valuec
+//     return this.sd
+// }
+//  p = gh(prompt(),prompt())
+
+// console.log(p)
     </script>
 </body>
 </html>
