@@ -33,14 +33,14 @@
                 const image = event.target;
                 if (image.tagName === 'IMG') {
 
-                    let shiftX = event.clientX - image.getBoundingClientRect().left;
-                    let shiftY = event.clientY - image.getBoundingClientRect().top;
+                    let sX = event.clientX - image.getBoundingClientRect().left;
+                    let sY = event.clientY - image.getBoundingClientRect().top;
                     document.body.appendChild(event.target); //перемещение в конец 
                     moveAt(event.pageX, event.pageY);
 
                     function moveAt(pageX, pageY) {
-                        image.style.left = pageX - shiftX + "px";
-                        image.style.top = pageY - shiftY + "px";
+                        image.style.left = pageX - sX + "px";
+                        image.style.top = pageY - sY + "px";
                     };
 
                     document.onmousemove = function (event) {
