@@ -8,11 +8,12 @@
     <title>Document</title>
 </head>
 
-<body style='min-height: 100vh'>
-    <img src='http://fe.it-academy.by/Sites/0000007/sax.jpg' width=150>
-    <img src='http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png' width=150>
-    <img src='http://fe.it-academy.by/Sites/0000007/Man-and-woman.png' width=150>
-    <img src='http://fe.it-academy.by/Sites/0000007/No_smoking.png' width=150>
+<body style='min-height: 100vh;'>
+    <img src='http://fe.it-academy.by/Sites/0000007/sax.jpg'>
+<img src='http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png' width=100>
+<img src='http://fe.it-academy.by/Sites/0000007/Man-and-woman.png' width=150>
+<img src='http://fe.it-academy.by/Sites/0000007/No_smoking.png' style='padding-left: 50px'>
+
 
     <script>
         "use strict";
@@ -20,15 +21,20 @@
         window.onload = function () {
 
             let images = document.querySelectorAll("img");
-            let list = Array.from(images)
-            list.reverse().forEach((image) => {
-                image.style.top = image.offsetTop + "px";
-                image.style.left = image.offsetLeft + "px";
-                image.style.position = "absolute"
-                image.ondragstart = function () {
-                    return false;
-                };
-            })
+            for (var i = images.length - 1; i >= 0; --i) {
+            var image = images[i];
+            var posY = image.offsetTop;
+            var posX = image.offsetLeft;
+            
+            posY =  256 - image.getBoundingClientRect().height
+            
+            image.style.position = "absolute";
+            image.style.top = posY + "px";
+            image.style.left = posX + "px";
+            image.ondragstart = function () {
+                return false;
+            };
+            }
             document.addEventListener('mousedown', function (event) {
                 const image = event.target;
                 if (image.tagName === 'IMG') {

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html style=" margin: 0;padding: 0;box-sizing: border-box;">
+
+    
+    
+    
+    
+
+  <head>
+    <meta charset=UTF-8>
+    <title>drag&amp;drop</title>
+  </head>
+  
+  <body style='padding: 0px;margin: 0px;'>
+ <div class="cont"> 
+<img src='http://fe.it-academy.by/Sites/0000007/sax.jpg'>
+<img src='http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png' width=100>
+<img src='http://fe.it-academy.by/Sites/0000007/Man-and-woman.png' width=150>
+<img src='http://fe.it-academy.by/Sites/0000007/No_smoking.png' style='padding-left: 50px'>
+</div>  
+<script>
+   "use strict";
+
+window.onload = function () {
+    var images = document.querySelectorAll("img");
+  
+    
+    for (var i = images.length - 1; i >= 0; --i) {
+        var image = images[i];
+        
+        var posY  = image.offsetTop;
+        
+        var posX = image.offsetLeft;
+        
+            var kk = image.getBoundingClientRect().height 
+        
+        
+        posY =  256 - image.getBoundingClientRect().height
+       
+         console.log(image.getBoundingClientRect().height)
+        image.style.position = "absolute";
+        image.style.top = posY + "px";
+        image.style.left = posX + "px";
+        image.ondragstart = function () {
+            
+            return false;
+        };
+    };
+    document.onmousedown = function (EO) {
+        EO = EO || window.event;
+        image = EO.target;
+
+        if (image.tagName === 'IMG') {
+
+            var shiftX = EO.clientX - image.getBoundingClientRect().left;
+            var shiftY = EO.clientY - image.getBoundingClientRect().top;
+
+            document.body.appendChild(image);
+            moveAt(EO.pageX, EO.pageY);
+
+            function moveAt(pageX, pageY) {
+                image.style.left = pageX - shiftX + "px";
+                image.style.top = pageY - shiftY + "px";
+            };
+
+            document.onmousemove = function (EO) {
+                moveAt(EO.pageX, EO.pageY);
+            };
+
+            image.onmouseup = function () {
+                document.onmousemove = null;
+                image.onmouseup = null;
+            };
+        };
+    };
+};
+
+
+
+
+</script>
+
+  </body>
+</html>
