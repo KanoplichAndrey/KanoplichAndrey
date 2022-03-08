@@ -18,7 +18,7 @@
         "use strict";
 
         window.onload = function () {
-         
+
             let images = document.querySelectorAll("img");
             let list = Array.from(images)
             list.reverse().forEach((image) => {
@@ -29,8 +29,8 @@
                     return false;
                 };
             })
-            document.addEventListener('mousedown', function (event)  {
-               const image = event.target;
+            document.addEventListener('mousedown', function (event) {
+                const image = event.target;
                 if (image.tagName === 'IMG') {
 
                     let shiftX = event.clientX - image.getBoundingClientRect().left;
