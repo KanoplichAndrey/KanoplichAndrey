@@ -35,16 +35,16 @@
 
                     let sX = event.clientX - image.getBoundingClientRect().left;
                     let sY = event.clientY - image.getBoundingClientRect().top;
-                    document.body.appendChild(event.target); //перемещение в конец 
-                    moveAt(event.pageX, event.pageY);
+                    document.body.appendChild(event.target);  
+                    mAt(event.pageX, event.pageY);
 
-                    function moveAt(pageX, pageY) {
+                    function mAt(pageX, pageY) {
                         image.style.left = pageX - sX + "px";
                         image.style.top = pageY - sY + "px";
                     };
 
                     document.onmousemove = function (event) {
-                        moveAt(event.pageX, event.pageY);
+                        mAt(event.pageX, event.pageY);
                     };
 
                     image.onmouseup = function () {
