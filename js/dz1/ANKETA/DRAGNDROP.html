@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style='min-height: 100vh'>
+    <img src='http://fe.it-academy.by/Sites/0000007/sax.jpg' width=150>
+    <img src='http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png' width=150>
+    <img src='http://fe.it-academy.by/Sites/0000007/Man-and-woman.png' width=150>
+    <img src='http://fe.it-academy.by/Sites/0000007/No_smoking.png' width=150>
+
+    <script>
+        "use strict";
+
+        window.onload = function () {
+         
+            let images = document.querySelectorAll("img");
+            let list = Array.from(images)
+            list.reverse().forEach((image) => {
+                image.style.top = image.offsetTop + "px";
+                image.style.left = image.offsetLeft + "px";
+                image.style.position = "absolute"
+                image.ondragstart = function () {
+                    return false;
+                };
+            })
+            document.addEventListener('mousedown', function (event)  {
+               const image = event.target;
+                if (image.tagName === 'IMG') {
+
+                    let shiftX = event.clientX - image.getBoundingClientRect().left;
+                    let shiftY = event.clientY - image.getBoundingClientRect().top;
+                    document.body.appendChild(event.target); //перемещение в конец 
+                    moveAt(event.pageX, event.pageY);
+
+                    function moveAt(pageX, pageY) {
+                        image.style.left = pageX - shiftX + "px";
+                        image.style.top = pageY - shiftY + "px";
+                    };
+
+                    document.onmousemove = function (event) {
+                        moveAt(event.pageX, event.pageY);
+                    };
+
+                    image.onmouseup = function () {
+                        document.onmousemove = null;
+                        image.onmouseup = null;
+                    };
+                };
+            })
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-say-hi="yes">Привет!</div>
+
+
+    <ul>
+        <li id="f">Корчи</li>
+        <li>Йончи</li>
+
+    </ul>
+    <div class="g">
+
+    </div>
+
+    <script>
+        let lastch=document
+   
+      
+     function show(event){
+         console.log(event.pageX+"px") // показывает координаты клика по х
+         console.log(event.clientY) // показывает координаты клика по y
+         console.log(event.currentTarget) //обьект к которому назначен обработчик
+         console.log(event.type) // тип события
+         console.log(event.target)// обьект на котором сработал обработчик
+         console.log(event) // все детали события
+        hh.innerHTML='координаты по x'+ event.pageX+"px" + '<br>' +"координаты по y" +event.clientY
+     }
+let hh=document.querySelector('.g')
+
+
+lastch.addEventListener('click',show, )
+lastch.addEventListener('mousemove',show, {'once':  true})// true указывает что обработчик будет удален после выполнения
+
+
+alert( Array.from(document.body.childNodes).filter ); // сделали массив
+// lastch.addEventListener('mouseenter',show)
+        // let v=document.querySelector('[data-say-hi]')
+        
+        // let res=v.innerHTML
+    //    let b=v.getAttribute('data-say-hi')
+    //     console.log(b)
+       //ДОМАШКА
+/*
+1. Изучить теорию
+2. Решить задачи:
+*/
+/*
+// Задача №1.
+// Получить в переменную элемент с атрибутом data-say-hi
+// и прочитать значение этого атрибута
+<div data-say-hi="yes">Привет!</div>
+
+// Задача №2.
+// Получить в переменную элемент с текстом Йончи
+<ul>
+	<li>Корчи</li>
+	<li>Йончи</li>
+</ul>
+
+// Задача №3.
+// Получить в переменную коллекцию элементов с классом like
+<div class="like"></div>
+<div class="subscribe"></div>
+<div class="like subscribe"></div>
+
+// Задача №4.
+// Куда добавится <li>Текст</li> ?
+
+// JS
+const list = document.querySelectorAll('ul');
+list.insertAdjacentHTML(
+	'beforeend',
+	'<li>Текст</li>'
+);
+
+// HTML
+<ul>
+	<li>Пункт №1</li>
+	<li>Пункт №2</li>
+</ul>
+*/
+
+                   
+                   
+
+                
+
+           
+          
+
+    </script>
+</body>
+</html>
