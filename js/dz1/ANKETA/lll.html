@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style='min-height: 100vh;'>
+    <img src='http://fe.it-academy.by/Sites/0000007/sax.jpg'>
+<img src='http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png' width=100 style="background-position: 100px;">
+<img src='http://fe.it-academy.by/Sites/0000007/Man-and-woman.png' width=150>
+<img src='http://fe.it-academy.by/Sites/0000007/No_smoking.png' style='padding-left: 50px'>
+
+
+    <script>
+"use strict"
+document.addEventListener("DOMContentLoaded", start,true);
+window.onload=start;
+function start() {
+    var counter=0;
+    var mouseOffset;
+
+        document.querySelectorAll("img").forEach(function (element) {
+            var left=getCoords(element).left+"px";
+            element.style.left=left;
+            element.addEventListener("mousedown",Mouse_Down,false);
+            element.addEventListener("mouseup",Mouse_Up,false);
+        });
+        document.styleSheets[0].insertRule("img { position: absolute; }", 0);
+
+
+    function Mouse_Down(EO) {
+        if (EO.which != 1) {
+            return;
+        } else { 
+            counter++;
+            EO=EO||window.event;
+            EO.preventDefault();
+            var DragElement=EO.target;
+            DragElement.style.left= DragElement.offsetLeft + "px";
+            DragElement.style.top= DragElement.offsetTop + "px";
+            DragElement.style.zIndex=counter;
+            DragElement.addEventListener("mousemove",Mouse_Move,false);
+            DragElement.style.cursor="pointer";
+
+        }
+        mouseOffset = getMouseOffset(DragElement, EO);
+
+
+    }
+    function Mouse_Up(EO) {
+        EO=EO||window.event;
+        EO.preventDefault();
+        var DragElement=EO.target;
+        DragElement.removeEventListener("mousemove", Mouse_Move,false)
+        document.onmousemove=null; //работает
+        DragElement.onmouseout=null;
+        DragElement.style.cursor="move";
+
+    }
+    function Mouse_Move(EO) {
+        EO=EO||window.event;
+        EO.preventDefault();
+        var DragElement=EO.target;
+        DragElement.style.left=EO.pageX - mouseOffset.x +"px";
+        DragElement.style.top=EO.pageY -mouseOffset.y+ "px";
+        DragElement.onmouseout=function () {
+            document.onmousemove=Mouse_Move_Out;
+        };
+
+        function Mouse_Move_Out(EO) {
+            EO=EO||window.event;
+            EO.preventDefault();
+            DragElement.style.left=EO.pageX - mouseOffset.x +"px";
+            DragElement.style.top=EO.pageY -mouseOffset.y+ "px";
+        }
+
+    }
+    function getCoords(elem) { // кроме IE8-
+        var box = elem.getBoundingClientRect();
+
+        return {
+            top: box.top + pageYOffset,
+            left: box.left + pageXOffset
+        };
+
+    }
+    function getMouseOffset(elem, EO) {
+        var docPos	= getCoords(elem);
+        return {x:EO.pageX - docPos.left, y:EO.pageY - docPos.top};
+    }
+}
+    </script>
+
+</body>
+
+</html>

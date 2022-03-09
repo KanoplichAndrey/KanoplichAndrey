@@ -10,32 +10,37 @@
 
 <body style='min-height: 100vh;'>
     <img src='http://fe.it-academy.by/Sites/0000007/sax.jpg'>
-<img src='http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png' width=100>
-<img src='http://fe.it-academy.by/Sites/0000007/Man-and-woman.png' width=150>
-<img src='http://fe.it-academy.by/Sites/0000007/No_smoking.png' style='padding-left: 50px'>
+    <img src='http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png' width=100>
+    <img src='http://fe.it-academy.by/Sites/0000007/Man-and-woman.png' width=150>
+    <img src='http://fe.it-academy.by/Sites/0000007/No_smoking.png' style='padding-left: 50px'>
 
+<script>
+    
 
-    <script>
-        "use strict";
+ 
+    "use strict";
 
-        window.onload = function () {
-
-            let images = document.querySelectorAll("img");
-            for (var i = images.length - 1; i >= 0; --i) {
+window.onload = function () {
+    var images = document.getElementsByTagName("img");
+        for (var i = images.length - 1; i >= 0; --i) {
             var image = images[i];
             var posY = image.offsetTop;
+            console.log(i,posY)
             var posX = image.offsetLeft;
-            
-            posY =  256 - image.getBoundingClientRect().height
-            
-            image.style.position = "absolute";
             image.style.top = posY + "px";
             image.style.left = posX + "px";
             image.ondragstart = function () {
                 return false;
             };
-            }
-            document.addEventListener('mousedown', function (event) {
+        };
+        // for(let i of document.querySelectorAll('img')){
+        //     i.style.position = "absolute"
+        // }
+        document.querySelectorAll('img').forEach(i => i.style.position = "absolute")
+        
+    
+
+        document.addEventListener('mousedown', function (event) {
                 const image = event.target;
                 if (image.tagName === 'IMG') {
 
@@ -60,7 +65,8 @@
                 };
             })
         };
-    </script>
+
+    </script> 
 
 </body>
 

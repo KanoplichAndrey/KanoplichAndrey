@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style=" margin: 0;padding: 0;box-sizing: border-box;">
+<html >
 
     
     
@@ -12,31 +12,44 @@
   </head>
   
   <body style='padding: 0px;margin: 0px;'>
- <div class="cont"> 
+ <div id="c" > jjjjjjjjjjjjjjjjjj
 <img src='http://fe.it-academy.by/Sites/0000007/sax.jpg'>
 <img src='http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png' width=100>
 <img src='http://fe.it-academy.by/Sites/0000007/Man-and-woman.png' width=150>
 <img src='http://fe.it-academy.by/Sites/0000007/No_smoking.png' style='padding-left: 50px'>
+
 </div>  
+
 <script>
    "use strict";
 
 window.onload = function () {
     var images = document.querySelectorAll("img");
-  
     
+    
+    var hhjj= document.querySelector('#c')
+  
+      
+    
+  
+     
+    
+    
+     
     for (var i = images.length - 1; i >= 0; --i) {
         var image = images[i];
         
         var posY  = image.offsetTop;
         
         var posX = image.offsetLeft;
+            // var kk = image.getBoundingClientRect().height 
+        // posY =  256 - image.getBoundingClientRect().height
         
-            var kk = image.getBoundingClientRect().height 
-        
-        
-        posY =  256 - image.getBoundingClientRect().height
-       
+        hhjj.addEventListener('click', b)
+        var b= function sh(){
+     hhjj.innerHTML = "<div>ffffff<span >ooooooooooooooooo</span>fffffff</div>"  
+     hhjj.style="color: aqua"}
+    
          console.log(image.getBoundingClientRect().height)
         image.style.position = "absolute";
         image.style.top = posY + "px";
