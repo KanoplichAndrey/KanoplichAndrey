@@ -23,12 +23,12 @@
         <span id="nameSiteError"></span><br>
 
        <label>URL сайта:</label>
-       <input type="url" name="url" id="">
+       <input type="url" name="url" >
        <span id="urlError"></span><br>
        
 
        <label >Дата запуска сайта:</label>
-       <input type="date" name="date" id=""> 
+       <input type="date" name="date" > 
        <span id="dateError"></span><br>
 
        <label >Посетителей в сутки:</label>
@@ -36,7 +36,7 @@
        <span id="visitorsError"></span><br> 
 
        <label >E-mail для связи:</label>
-       <input type="email" name="email" id="">
+       <input type="email" name="email" >
        <span id="emailError"></span><br>
 
        <label >Рубрика каталога:</label>
@@ -64,7 +64,7 @@
     <textarea name="description" id="" cols="30" rows="10"></textarea> 
     <span id="descriptionError"></span><br>
 
-    <input type="submit" value="Опубликовать">
+    <input type="submit"name="submit" value="Опубликовать">
 
 
 
@@ -146,7 +146,7 @@
                 return false;
             }
             else {
-                document.querySelector("#urlSiteError").innerHTML = "";
+                document.querySelector("#urlError").innerHTML = "";
                 return true;
             }
         }
@@ -265,7 +265,7 @@
                 return true;
             }
         }
-        //поле ОПИСАНИЕ САЙТА, проверка на пустое поле и текст должен быть более 10 символов
+        
         function descriptionValid(a) {
             var description = form.elements.description;
             var descriptionValue = description.value;
