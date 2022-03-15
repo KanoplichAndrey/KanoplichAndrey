@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Для внесения вашего сайта в каталог, заполните форму:</div> <br>
+   
+    <form method="post" action="https://fe.it-academy.by/TestForm.php" name="info" novalidate>
+        <label>Разработчики:</label>
+        <input type="text" name="razrab" > 
+        <span id="razrabError"></span><br>
+
+       <label>введите вашу фамилию:</label> 
+       <input type="text" name="fio"> 
+       <span id="fioError"></span><br>
+
+       <label>Название сайта:</label>
+       <input type="text" name="nameSite">
+        <span id="nameSiteError"></span><br>
+
+       <label>URL сайта:</label>
+       <input type="url" name="url" id="">
+       <span id="urlError"></span><br>
+       
+
+       <label >Дата запуска сайта:</label>
+       <input type="date" name="date" id=""> 
+       <span id="dateError"></span><br>
+
+       <label >Посетителей в сутки:</label>
+       <input type="number" name="visitors" >
+       <span id="visitorsError"></span><br> 
+
+       <label >E-mail для связи:</label>
+       <input type="email" name="email" id="">
+       <span id="emailError"></span><br>
+
+       <label >Рубрика каталога:</label>
+       <select name="rubric">
+        <option value=1>здоровье</option>
+        <option value=2>домашний уют</option>
+        <option value=3 selected>бытовая техника</option>
+    </select>
+    <span id="rubricError"></span><br>
+
+    <label>Размещение:</label>
+        <div id="variants">
+            <input id="radioFirst" type="radio" name="publicVar" value="free"><span>бесплатное</span>
+            <input type="radio" name="publicVar" value="pay" ><span>платное</span>
+            <input type="radio" name="publicVar" value="vip" ><span>VIP</span>
+        </div>
+            <span id="variantsError"></span>
+
+    <label>Разрешить отзывы:</label>
+        <input type="checkbox" name="comments">
+        <span id="commentsError"></span><br>
+
+
+    <label for="">Описание сайта:</label> <br>
+    <textarea name="description" id="" cols="30" rows="10"></textarea> 
+    <span id="descriptionError"></span><br>
+
+    <input type="submit" value="Опубликовать">
+
+
+
+    </form>
+
+    <script>
+ "use strict";
+
+            var form = document.forms.info;
+            var razrab = form.elements.razrab;
+            var fio = form.elements.fio;
+            var nameSite = form.elements.nameSite;
+            var url = form.elements.url;
+            var date = form.elements.date;
+            var visitors = form.elements.visitors;
+            var email = form.elements.email;
+            var rubric = form.elements.rubric;
+            var variants = document.querySelector('#variants');
+            var comments = form.elements.comments;
+            var description = form.elements.description;
+
+
+            
+        function razrabValid(a) {
+            var razrab = form.elements.razrab;
+            var razrabValue = razrab.value;
+
+            if (razrabValue == "") {
+                document.querySelector("#razrabError").innerHTML = " введите данные!";
+                razrabError.style.color="red";
+                if (a) razrab.focus();
+              return false;
+            }
+            else {
+                document.querySelector("#razrabError").innerHTML = "";
+                return true;
+            }
+        }
+        function fioValid(a) {
+            var fio = form.elements.fio;
+            var fioValue = fio.value;
+
+            if (fioValue == "") {
+                document.querySelector("#fioError").innerHTML = "Поле не может быть пустым, пожалуйста, введите данные!";
+                fioError.style.color="red";
+                if (a) fio.focus();
+                return false;
+            }
+            else {
+                document.querySelector("#fioError").innerHTML = "";
+                return true;
+            }
+        }
+        
+        function nameSiteValid(a) {
+            var nameSite = form.elements.nameSite;
+            var nameSiteValue = nameSite.value;
+
+            if (nameSiteValue == "") {
+                document.querySelector("#nameSiteError").innerHTML = "Поле не может быть пустым, пожалуйста, введите данные!";
+                nameSiteError.style.color="red";
+                if (a) nameSite.focus();
+                return false;
+            }
+            else {
+                document.querySelector("#nameSiteError").innerHTML = "";
+                return true;
+            }
+        }
+        
+        function urlValid (a) {
+            var url = form.elements.url;
+            var urlValue = url.value;
+
+            if (urlValue == "") {
+                document.querySelector("#urlError").innerHTML = " введите данные!";
+                urlError.style.color="red";
+                if (a) urlSite.focus();
+                return false;
+            }
+            else {
+                document.querySelector("#urlSiteError").innerHTML = "";
+                return true;
+            }
+        }
+        
+        function dateValid(a) {
+            var date = form.elements.date;
+            var dateValue = date.value;
+
+            if (dateValue == "") {
+                document.querySelector("#dateError").innerHTML = "Вам необходимо выбрать дату !";
+                dateError.style.color="red";
+                if (a) date.focus();
+                return false;
+            }
+            else {
+                document.querySelector("#dateError").innerHTML = "";
+                return true;
+            }
+        }
+        
+        function visitorsValid (a) {
+            var visitors = form.elements.visitors;
+            var visitorsValue = visitors.value;
+
+            if (visitorsValue == "") {
+                document.getElementById("visitorsError").innerHTML = "введите данные!";
+                visitorsError.style.color = "red";
+                if (a) visitors.focus();
+                return false;
+            }
+            else if(isNaN(visitorsValue)) {
+                document.getElementById("visitorsError").innerHTML = "введите лоличество посетителей !";
+                visitorsError.style.color = "red";
+                if (a) visitors.focus();
+                return false;
+            }
+            else{
+                document.getElementById("visitorsError").innerHTML = "";
+                return true;
+            }
+        }
+        
+        function emailValid(a) {
+            var email = form.elements.email;
+            var emailValue = email.value;
+
+            if(emailValue == ""){
+                document.querySelector("#emailError").innerHTML = "введите данные!";
+                emailError.style.color = "red";
+                if (a) email.focus();
+                return false;
+            }
+            else if(!emailValue.includes("@")) {
+                document.querySelector("#emailError").innerHTML = "Проверьте корректность введеной почты";
+                emailError.style.color = "red";
+                if (a) email.focus();
+                return false;
+            }
+            else{
+                document.querySelector("#emailError").innerHTML = "";
+                return true;
+            }
+        }
+
+       
+        function rubricValid(a) {
+            var rubric = form.elements.rubric;
+            var rubricValue = rubric.value;
+
+            if(rubricValue == 3) {
+                document.querySelector("#rubricError").innerHTML = "Данная рубрика, к сожалению, недоступна, выберите другой вариант!";
+                rubricError.style.color = "red";
+                if (a) rubric.focus();
+                return false;
+            }
+            else{
+                document.querySelector("#rubricError").innerHTML = "";
+                return true;
+            }
+        }
+        
+        function variantsValid(a) {
+            var variants = form.elements.publicVar;
+            var variantsValue = variants.value;
+
+            if(variantsValue == ""){
+                document.querySelector("#variantsError").innerHTML = "Поле не может быть пустым, пожалуйста, введите данные!";
+                variantsError.style.color = "red";
+                if (a) document.querySelector("#free").scrollIntoView();
+                return false;
+            }
+            else if (variantsValue == "vip"){
+                document.querySelector("#variantsError").innerHTML ="Вариант VIP, недоступен, выберите другой вариант!";
+                variantsError.style.color = "red";
+                if (a) document.querySelector("#free").scrollIntoView();
+                return false;
+            }
+            else{
+                document.querySelector("#variantsError").innerHTML = "";
+                return true;
+            }
+        }
+        
+        function commentsValid(a) {
+            var comments = form.elements.comments;
+            var commentsValue = comments.checked;
+
+            if(!commentsValue){
+                document.querySelector("#commentsError").innerHTML = "Вам необходимо дать согласие на отзывы!";
+                commentsError.style.color = "red";
+                if (a) comments.focus();
+                return false;
+            }
+            else {
+                document.querySelector("#commentsError").innerHTML = "";
+                return true;
+            }
+        }
+        //поле ОПИСАНИЕ САЙТА, проверка на пустое поле и текст должен быть более 10 символов
+        function descriptionValid(a) {
+            var description = form.elements.description;
+            var descriptionValue = description.value;
+
+            if (descriptionValue == "") {
+                document.getElementById("descriptionError").innerHTML = "Поле не может быть пустым, пожалуйста, введите данные!";
+                descriptionError.style.color = "red";
+                if (a) description.focus();
+                return false;
+            }
+            else if (descriptionValue.length < 10) {
+                    document.getElementById("descriptionError").innerHTML = "Описание сайта должно содержать более 10 символов!";
+                    descriptionError.style.color = "red";
+                    if (a) description.focus();
+                    return false;
+            }
+            else{
+                document.getElementById("descriptionError").innerHTML = "";
+                return true;
+            }
+        }
+
+        razrab.addEventListener("blur", (EO)=> razrabValid(false));
+        fio.addEventListener("blur", (EO)=> fioValid(false))
+        nameSite.addEventListener("blur", (EO)=> nameSiteValid(false));
+        url.addEventListener("blur", (EO)=> urlValid(false));
+        date.addEventListener("blur", (EO)=> dateValid(false));
+        visitors.addEventListener("blur", (EO)=> visitorsValid(false));
+        email.addEventListener("blur", (EO)=> emailValid(false));
+        rubric.addEventListener("change", (EO)=> rubricValid(false));
+        variants.addEventListener("change", (EO)=> variantsValid(false));
+        comments.addEventListener("change", (EO)=> commentsValid(false));
+        description.addEventListener("blur", (EO)=> descriptionValid(false));
+
+        form.onsubmit = function (EO) {
+            EO=EO||window.event;
+            var b = true;
+            b = razrabValid(b) && b;
+            b = fioValid(b) && b;
+            b = nameSiteValid(b) && b;
+            b = urlValid(b) && b;
+            b = dateValid(b) && b;
+            b = visitorsValid(b) && b;
+            b = emailValid(b) && b;
+            b = rubricValid(b) && b;
+            b = variantsValid(b) && b;
+            b = commentsValid(b) && b;
+            b = descriptionValid(b) && b;
+
+            if(!b) {
+                EO.preventDefault();
+            }
+        }
+
+
+    </script>
+</body>
+</html>
