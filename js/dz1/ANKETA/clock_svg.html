@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#wrap {
+    display: inline-flex;
+}
+#clock {
+	border-radius: 50%;
+	position:relative;
+	background-color: #fce38a;
+
+}
+/* #ouh,
+#sec,
+#min {
+	background-color: black;
+	border-radius: 8px;
+	/* transform-origin: 50% 100%; */
+ 
+
+</style>
+<body>
+    
+      
+      <div id="wrap">
+            <svg id="clock"  xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+        
+    
+<script>
+
+    "use strict";
+   
+       
+window.onload= function gh(){
+var clock = document.getElementById("clock");
+var wrap = document.getElementById("wrap");
+
+
+clock.style.width= 400 + 'px'
+clock.style.height= 400 + 'px'
+
+var rC = wrap.offsetWidth / 2;
+var sN = rC / 6;
+var arrowWidth = rC/20;
+
+
+var clockCircle = document.createElementNS("http://www.w3.org/2000/svg","circle");
+clockCircle.setAttribute("cx", rC);
+clockCircle.setAttribute("cy", rC);
+clockCircle.setAttribute("r", rC);
+clockCircle.setAttribute("fill", "#fce38a");
+clock.appendChild(clockCircle);
+
+var r = rC - sN;
+var numbersCenterX = rC;
+var numbersCenterY = rC;
+
+for (var h = 1; h <= 12; h++) {
+    var angle = h / 12 * Math.PI * 2;
+    var nx = numbersCenterX + Math.sin(angle) * r;
+    var ny = numbersCenterY - Math.cos(angle) * r;
+
+
+    
+    var numbers = document.createElementNS("http://www.w3.org/2000/svg","circle");
+    numbers.setAttribute("cx", nx);
+    numbers.setAttribute("cy", ny);
+    numbers.setAttribute("r", 20);
+    numbers.setAttribute("fill", "red");
+    document.querySelector("svg").appendChild(numbers);
+
+
+    var text = document.createElementNS("http://www.w3.org/2000/svg","text");
+    text.textContent=h;
+    text.setAttribute("x", nx);
+    text.setAttribute("y", ny);
+    text.setAttribute("text-anchor", "middle");
+    text.setAttribute("dominant-baseline", "central");
+    text.setAttribute("text", 0.5);
+    text.style.fontSize = 20;
+    clock.appendChild(text);
+}
+
+
+var ouh = document.createElementNS("http://www.w3.org/2000/svg","line");
+ouh.setAttribute("x1", rC);
+ouh.setAttribute("y1", rC);
+ouh.setAttribute("x2", rC);
+ouh.setAttribute("y2", rC/2);
+ouh.setAttribute("stroke", "black");
+ouh.setAttribute("stroke-opacity", 0.5);
+ouh.setAttribute("stroke-width", arrowWidth);
+ouh.setAttribute("stroke-linecap", "round");
+clock.appendChild(ouh);
+
+
+var min = document.createElementNS("http://www.w3.org/2000/svg","line");
+min.setAttribute("stroke", "black");
+min.setAttribute("stroke-opacity", 0.5);
+min.setAttribute("stroke-width", arrowWidth/2);
+min.setAttribute("x1", rC);
+min.setAttribute("y1", rC);
+min.setAttribute("x2", rC);
+min.setAttribute("y2", rC*0.3);
+min.setAttribute("stroke-linecap", "round");
+clock.appendChild(min);
+
+
+var sec = document.createElementNS("http://www.w3.org/2000/svg","line");
+sec.setAttribute("x1", rC);
+sec.setAttribute("y1", rC);
+sec.setAttribute("x2", rC);
+sec.setAttribute("y2", rC*0.1);
+sec.setAttribute("stroke", "black");
+sec.setAttribute("stroke-opacity", 0.5);
+sec.setAttribute("stroke-width", arrowWidth/3);
+sec.setAttribute("stroke-linecap", "round");
+clock.appendChild(sec);
+
+var cT = document.createElementNS("http://www.w3.org/2000/svg",'text');
+cT.setAttribute("id",'time');
+cT.setAttribute("stroke","black");
+cT.setAttribute("x",rC);
+cT.setAttribute("y",rC/2 + sN);
+cT.setAttribute("text-anchor","middle");
+cT.setAttribute("stroke-opacity", 0.1);
+cT.style.fontSize = 25;
+clock.appendChild(cT);
+
+
+ouh.style.transformOrigin = "center 200px";
+min.style.transformOrigin = "center 200px";
+sec.style.transformOrigin = "center 200px";
+
+
+function updateArrows () {
+    var time = new Date();
+
+    cT.innerHTML = time.toLocaleTimeString();
+
+    var secondAngular = 6 * time.getSeconds() - 6;
+    var minuteAngular = 6 * (time.getMinutes() + (1 / 60) * time.getSeconds());
+    var hourAngular = 30 * (time.getHours() + (1 / 60) * time.getMinutes());
+
+    secondAngular += 6;
+    sec.style.transform = "rotate(" + secondAngular + "deg)";
+    minuteAngular += 6 * (1/60);
+    min.style.transform = "rotate(" + minuteAngular + "deg)";
+    hourAngular += 6 * (1/360);
+    ouh.style.transform = "rotate(" + hourAngular + "deg)";
+
+    setTimeout(updateArrows, 1020 - time.getMilliseconds()); // планируем обновление стрелок при следующей смене секунды
+}
+updateArrows();
+}
+</script>
+</body>
+</html>

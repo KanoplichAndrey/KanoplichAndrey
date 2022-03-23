@@ -11,7 +11,7 @@
   <title>drag&amp;drop</title>
 </head>
 
-<body style='padding: 0px;margin: 0px;'>
+<body style='padding: 0px;margin: 0px;' >
 
   <!-- <img src='http://fe.it-academy.by/Sites/0000007/sax.jpg'>
   <img src='http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png' width=100 id="o">
@@ -51,35 +51,76 @@
 
     buttNormal();
   </script> -->
-  <input type='text' id='fld'>
+  <!-- <input type='text' id='fld'> -->
 
   <script>
   
-    "use strict";
+    // "use strict";
   
-    var fldElem=document.getElementById('fld')
-    fldElem.addEventListener("keypress",inputKey);
+    // var fldElem=document.getElementById('fld')
+    // fldElem.addEventListener("keypress",inputKey);
   
-    function inputKey(EO) {
-      EO=EO||window.event;
-      var pressedChar=getKeyboardChar(EO);
-      if ( pressedChar=='z' )
-        EO.preventDefault();
-      console.log('input '+pressedChar);
+    // function inputKey(EO) {
+    //   EO=EO||window.event;
+    //   var pressedChar=getKeyboardChar(EO);
+    //   if ( pressedChar=='z' )
+    //     EO.preventDefault();
+    //   console.log('input '+pressedChar);
+    // }
+  
+    // function getKeyboardChar(EO) {
+    //   if ( EO.which==null ) {  // IE
+    //     if ( EO.keyCode<32) return null; // управляющая клавиша
+    //     return String.fromCharCode(EO.keyCode); // печатный символ
+    //   }
+    //   if ( EO.which!=0 && EO.charCode!=0 ) {   // остальные браузеры
+    //     if ( EO.which<32 ) return null; // управляющая клавиша
+    //     return String.fromCharCode(EO.which); // печатный символ
+    //   }
+    //   return null; // управляющая клавиша
+    // }
+  class Animal{
+    constructor(option){
+      this.name= option.name
+      this.age= option.age
     }
-  
-    function getKeyboardChar(EO) {
-      if ( EO.which==null ) {  // IE
-        if ( EO.keyCode<32) return null; // управляющая клавиша
-        return String.fromCharCode(EO.keyCode); // печатный символ
-      }
-      if ( EO.which!=0 && EO.charCode!=0 ) {   // остальные браузеры
-        if ( EO.which<32 ) return null; // управляющая клавиша
-        return String.fromCharCode(EO.which); // печатный символ
-      }
-      return null; // управляющая клавиша
+
+    voce(){ 
+      let parent = document.querySelector('body');
+    
+  for (let i = 1; i <= 925; i++) {
+	let li = document.createElement('button');
+	li.innerHTML = i;
+  li.style.color='red', 
+  li.style.listStyle= 'none';
+	parent.prepend(li);
+  // let textNode = document.createTextNode('А вот и я');
+  // document.body.append(textNode);
+  }
+  let button=document.querySelectorAll('button')
+  console.log(button)
+  // for ( el of button) {
+    parent.addEventListener('click', function() {
+   console.log(animal.voce()) 
+}) 
+// }
     }
-  
+  }
+let animal = new Animal({
+  name:'andrey',
+  age: 40
+})
+let animals = new Animal({
+  name:'sergey',
+  age: 30
+})
+
+console.log(animal)
+console.log(animals)
+console.log(animal.voce())
+ 
+
+
   </script>
   
 </body>

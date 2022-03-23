@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div style='width: 1300px; height: 600px;
+    border: solid white 1px; position: relative'> -->
+
+    <div id='IBall'style='position: absolute'>
+ <div id="drag">
+    
+        <div id="clock"  >
+  
+            <div id="ouh" ></div>
+            <div id="min" ></div>
+            <div id="sec" ></div>
+            
+         
+        </div>
+         </div>
+        
+    </div>  
+    <!-- </div> -->
+
+
+    
+        
+</div>
+
+
+
+
+       
+        <input type='button' value='Пуск!' onclick='start()'>
+        
+       
+
+    <script>
+        "use strict";
+        
+            var images = document.querySelectorAll("#drag");
+                
+                document.querySelectorAll('#drag').forEach(i => i.style.position = "absolute")
+                document.addEventListener('mousedown', function (event) {
+                        const image = event.target;
+                        console.log(image.tagName)
+                        if (image.tagName === 'DIV') {
+        
+                            let sX = event.clientX - image.getBoundingClientRect().left;
+                            let sY = event.clientY - image.getBoundingClientRect().top;
+                            document.body.appendChild(event.target);  
+                            mAt(event.pageX, event.pageY);
+        
+                            function mAt(pageX, pageY) {
+                                image.style.left = pageX - sX + "px";
+                                image.style.top = pageY - sY + "px";
+                            };
+        
+                            document.onmousemove = function (event) {
+                                mAt(event.pageX, event.pageY);
+                            };
+        
+                            image.onmouseup = function () {
+                                document.onmousemove = null;
+                                image.onmouseup = null;
+                            };
+                        };
+                    })
+                // };
+        
+       
+            let clock = document.getElementById('clock')
+            clock.style.backgroundColor= '#FCCA66'
+            clock.style.position= 'relative'
+            let clockSize=prompt()
+            clock.style.width= clockSize + 'px'
+            clock.style.height= clockSize + 'px'
+            clock.style.borderRadius= '250px'
+            clock.style.zIndex = "-4"
+            
+            let rC = clock.offsetWidth/2; // радиус часов
+            let sizeNumbers = rC/4.5; // размер цифр
+            let arrowWidth = rC/20;
+            let r = rC - sizeNumbers; // расстояние между цифрами и часами
+            let numbersCenterX = rC - sizeNumbers/2; // определяем положение "кружка" с цифрами относительно циферлата по Х
+            let numbersCenterY = rC - sizeNumbers/2; // определяем положение по Y
+
+            for(let h=1; h<=12 ;h++){
+            let angle = h / 12 * Math.PI * 2; //отображаемый угол в радианах
+            let nx = numbersCenterX - Math.cos(angle) * r; //проверяем - для угла=0 cos=1
+            let ny = numbersCenterY + Math.sin(angle) * r; // проверяем - для угла=0 sin=0
+            let numbers = document.createElement("div"); 
+            numbers.style.borderRadius ="50%"
+            numbers.style.width= sizeNumbers +'px'
+            numbers.style.height= sizeNumbers +'px'
+            numbers.style.backgroundColor="red"
+            numbers.style.position = "absolute"
+            
+            numbers.style.zIndex = "-1"
+            numbers.style.top = nx + 'px'
+            numbers.style.left = ny + 'px'
+            numbers.textContent = h; 
+            numbers.style.textAlign = 'center'
+            numbers.style.lineHeight = sizeNumbers + "px"; //выравнивание цифр
+            numbers.style.fontSize = sizeNumbers / 1.5 + "px"
+            clock.appendChild(numbers)
+            }
+
+
+
+
+                let sec = document.getElementById('sec')  
+                sec.style.width = arrowWidth/5 + "px"; // толщина стрелки секунд
+                sec.style.height = rC / 1.2 + "px"; // длина стрелки секунд
+                sec.style.position= 'absolute'
+                sec.style.bottom = rC + "px";
+                sec.style.left = rC - arrowWidth/6 + "px"; //положение стрелки секунд относительно центра часов
+                sec.style.zIndex = "1"; 
+                sec.style.backgroundColor= 'black'
+                sec.style.borderRadius= '25px'
+                sec.style.transformOrigin = "center bottom"
+
+                let min = document.getElementById('min')  
+                min.style.width = arrowWidth/2 + "px"; 
+                min.style.height = rC / 1.4 + "px"; 
+                min.style.position= 'absolute'
+                min.style.bottom = rC + "px";
+                min.style.left = rC - arrowWidth/6 + "px"; 
+                min.style.zIndex = "2"; 
+                min.style.backgroundColor= 'black'
+                min.style.borderRadius= '25px'
+                min.style.transformOrigin = "center bottom"
+
+
+                let ouh = document.getElementById('ouh')  
+                ouh.style.width = arrowWidth/1.5 + "px"; 
+                ouh.style.height = rC / 2 + "px";
+                ouh.style.position= 'absolute'
+                ouh.style.bottom = rC + "px";
+                ouh.style.left = rC - arrowWidth/6 + "px"; 
+                ouh.style.zIndex = "3"; 
+                ouh.style.backgroundColor= 'black'
+                ouh.style.borderRadius= '25px'
+                ouh.style.transformOrigin = "center bottom"
+
+
+                
+                let cT = document.createElement("time")  //электронные часы
+                cT.style.display= 'flex'
+                cT.style.justifyContent= 'center'
+                cT.style.position = "absolute"; 
+                cT.style.left = rC - rC/4 + "px";
+                cT.style.top = rC / 2.5 + "px"; 
+                cT.style.width = rC/2 + "px"; 
+                cT.style.fontSize = sizeNumbers / 2 + "px"; 
+                cT.backgroundColor= 'black'
+                clock.appendChild(cT)
+
+                function updateArrows () { 
+                let time = new Date(); 
+                cT.innerHTML = time.toLocaleTimeString() 
+
+                let secondAngular = 6 * time.getSeconds() - 6; 
+                let minuteAngular = 6 * (time.getMinutes() + (1 / 60) * time.getSeconds()); 
+                let hourAngular = 30 * (time.getHours() + (1 / 60) * time.getMinutes()); 
+
+                secondAngular += 6; 
+                sec.style.transform = "rotate(" + secondAngular + "deg)";
+                minuteAngular += 6 * (1/60); 
+                min.style.transform = "rotate(" + minuteAngular + "deg)";
+                hourAngular += 6 * (1/360); 
+                ouh.style.transform = "rotate(" + hourAngular + "deg)";
+
+                setTimeout(updateArrows, 1020 - time.getMilliseconds()); 
+                
+            }    
+             updateArrows();
+        
+             var ballH={
+        posX : 200,
+        posY : 20,
+        speedX : 2,
+        speedY : 10,
+        width : 900,
+        height: 500,
+
+        update : function() {
+            var ballElem=document.getElementById('IBall');
+            ballElem.style.left=this.posX+"px";
+            ballElem.style.top=this.posY+"px";
+        }
+    }
+
+    var areaH={
+        width : 1200 ,
+        height : 600
+    }
+
+    function start() {
+        // плавное движение - от 25 кадр/сек
+        setInterval(tick,40);
+    }
+
+    function tick() {
+
+        ballH.posX+=ballH.speedX;
+        // вылетел ли мяч правее стены?
+        if ( ballH.posX+ballH.width>areaH.width ) {
+            ballH.speedX=-ballH.speedX;
+            ballH.posX=areaH.width-ballH.width;
+        }
+        // вылетел ли мяч левее стены?
+        if ( ballH.posX<0 ) {
+            ballH.speedX=-ballH.speedX;
+            ballH.posX=0;
+        }
+
+        ballH.posY+=ballH.speedY;
+        // вылетел ли мяч ниже пола?
+        if ( ballH.posY+ballH.height>areaH.height ) {
+            ballH.speedY=-ballH.speedY;
+            ballH.posY=areaH.height-ballH.height;
+        }
+        // вылетел ли мяч выше потолка?
+        if ( ballH.posY<0 ) {
+            ballH.speedY=-ballH.speedY;
+            ballH.posY=0;
+        }
+
+        ballH.update();
+    }
+
+    ballH.update();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- <input type=button value='сменить погоду' onclick='weather.change()'>
+<br /><br />
+<img id=IWeather>
+<br /><hr><br />
+<img id=ICat> -->
+
+<script>
+
+//     "use strict";
+
+//     function Weather() {
+//         var self=this;
+
+//         self.num=1; // погода: 1=солнце 2=дождь
+
+//         self.change=function() {
+//             self.num=3-self.num; // меняем на противоположную
+//             self.update();
+//             cat.checkWeather(); // приходится явно оповещать кота
+//         }
+
+//         self.update=function() {
+//             var weatherElem=document.getElementById('IWeather');
+//             weatherElem.src='Examples/weather/'+((self.num==1)?'weather_sun.jpg':'weather_rain.jpg');
+//         }
+
+//     }
+
+//     var weather=new Weather;
+//     weather.update();
+
+//     function Cat() {
+//         var self=this;
+
+//         self.state=null; // состояние: 11=загар 12=зонтик
+
+//         self.checkWeather=function() {
+//             self.state=weather.num+10;
+//             self.update();
+//         }
+
+//         self.update=function() {
+//             var catElem=document.getElementById('ICat');
+//             catElem.src='Examples/weather/'+((self.state==11)?'cat_sun.jpg':'cat_rain.jpg');
+//         }
+
+//     }
+
+//     var cat=new Cat;
+//     cat.checkWeather(); -->
+
+</script> 
+
+
+ <object id=SSS data="shockdanger.svg" type="image/svg+xml" width=256 height=256> -->
+ </object>
+<br />
+ <input type=button value='внутрь' onclick='digSVG()'> 
+ <div>
+
+ </div>
+   
+ <script>
+
+    "use strict";
+    
+
+    function digSVG() {
+        // ищем сам элемент OBJECT
+        
+        var SVGObjectElem=document.getElementById("SSS");
+        // получаем встроенный в него под-документ
+        let flag= true
+        var SVGDocument=SVGObjectElem.contentDocument;
+        console.log(SVGDocument);
+
+        // стандартным способом получаем все теги path внутри под-документа
+        var paths=SVGDocument.getElementsByTagName("path");
+        console.log(paths);
+
+        // ставим всем зелёный цвет
+        
+        for ( var p=0; p<paths.length; p++ ) {
+            // можно менять элемент style
+            paths[p].style.fill="blue";
+            // можно менять SVG-атрибуты
+            paths[p].setAttribute("transform","rotate(-2)"); 
+        }
+    }
+    
+        
+        
+       
+       
+        
+    
+
+</script>
+</body>
+</html>

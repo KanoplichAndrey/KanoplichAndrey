@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* .p{
+        position: absolute;
+        border-left: 
+    } */
+</style>
+<body>
+        <div id="clock" >
+            <div id="sec" class="ss"></div>
+            <div id="min" class="mm"></div>
+            <div id="ouh" class="hh"></div>
+            <div id="time"></div>
+            
+        </div>
+
+        <div style="border-left:  solid 12px; height: 100px"></div>
+
+
+    <script>
+        "use strict";
+        
+
+        window.onload = function(){
+           
+            let clock = document.getElementById('clock')
+            // clock.style.borderBottom= 'solid 1px';
+            // clock.style.width= '20px';
+            clock.style.backgroundColor= '#FCCA66'
+            clock.style.position= 'relative'
+            clock.style.width= '500px'
+            clock.style.height= '500px'
+            clock.style.borderRadius= '250px'
+            clock.style.zIndex = "-4"
+            
+            const radiusClock = clock.offsetWidth/2; // радиус часов
+            const sizeNumbers = radiusClock/4.5; // размер цифр
+            var arrowWidth = radiusClock/20;
+            var r = radiusClock - sizeNumbers; // расстояние между цифрами и часами
+            var numbersCenterX = radiusClock - sizeNumbers/2; // определяем положение "кружка" с цифрами относительно циферлата по Х
+            var numbersCenterY = radiusClock - sizeNumbers/2; // определяем положение по Y
+
+
+
+
+                var sec = document.getElementById('sec')  
+                let lsec = ( clock.offsetWidth)/2 
+                let lsec2=(clock.offsetHeight)/2 
+                // console.log(lsec) 
+                // console.log(clock.offsetLeft, clock.offsetHeight/2) 
+                sec.style.borderBottom= 'solid 4px';
+                // sec.style.height= '220px'
+                sec.style.width='220px'
+                sec.style.position= 'absolute'
+                sec.style.left= lsec +'px'
+                sec.style.top= lsec2 +'px'
+                sec.style.borderRadius= '25px'
+                sec.style.backgroundColor= 'black'
+
+                // sec.style.left = radiusClock - arrowWidth/2 + "px"
+
+
+                let min = document.getElementById('min')  
+                let lmin = (clock.offsetWidth)/2 
+                let lmin2=(clock.offsetHeight)/2 
+                min.style.borderBottom= 'solid 8px blue';
+                min.style.width= '180px'
+                min.style.position= 'absolute'
+                min.style.left= lmin +'px'
+                min.style.top= lmin2 +'px'
+                min.style.borderRadius= '25px'
+
+                let ouh = document.getElementById('ouh')  
+                let louh = (clock.offsetWidth)/2 
+                let louh2=(clock.offsetHeight)/2 
+                ouh.style.borderBottom= 'solid 12px ';
+                ouh.style.width= '120px'
+                ouh.style.position= 'absolute'
+                ouh.style.left= louh +'px'
+                ouh.style.top= louh2 +'px'
+                ouh.style.borderRadius= '25px'
+           
+           
+            for (var h = 1; h <= 12; h++) { // отображаемый час
+            var angle = h / 12 * Math.PI * 2; //отображаемый угол в радианах
+            var nx = numbersCenterX - Math.cos(angle) * r; //проверяем - для угла=0 cos=1
+            var ny = numbersCenterY + Math.sin(angle) * r; // проверяем - для угла=0 sin=0
+            var numbers = document.createElement("div"); // создаем кружки для часав
+            numbers.style.width = sizeNumbers + "px"; //ширина элемента
+            numbers.style.height = sizeNumbers + "px"; //высота элемента
+            numbers.style.borderRadius = "50%"; //делаем круг
+            numbers.style.backgroundColor = "#48B382"; // цвет элемента
+            numbers.style.position = "absolute"; //позиционируем элементы часов
+            numbers.style.top = nx +"px"; // положение по оси Х
+            numbers.style.left = ny + "px"; // положение по оси Y
+            numbers.textContent = h; //получаем текстовый контент указанного узла и всех его потомков
+            numbers.style.textAlign = "center"; // положение цифр внутри кружка
+            numbers.style.lineHeight = sizeNumbers + "px"; //выравнивание цифр
+            numbers.style.fontSize = sizeNumbers / 1.5 + "px"; // получаем размер цифр
+            numbers.style.zIndex = "-3";
+            clock.appendChild(numbers); // делаем дочерним элементом
+
+        }
+
+            // function fd(){
+               
+            // }
+            let hh = document.querySelector('.hh')
+            let mm = document.querySelector('.mm')
+            let ss = document.querySelector('.ss')
+
+            setInterval(fsec,10)
+            function fsec(){
+                let d= new Date()
+             hh = d.getHours() * 30
+             mm = d.getMinutes() * 6
+             ss = d.getSeconds() * 6
+
+            console.log(hh,mm,ss)
+            
+            ouh.style.transform=  'rotate ('+ hh + ' deg)'
+            min.style.transform=  'rotate ('+ mm + ' deg)'
+            sec.style.transform='rotateZ ('+ ss + ' deg)'
+
+            // if(hours<10) hours ='0' + hours
+            // if(minutes<10) minutes ='0' + minutes
+            // if(seconds<10) seconds +'0' + seconds
+
+            // let clo = hours + ':' + minutes + ':' + seconds;
+            // let j=document.getElementById('time').innerHTML= clo 
+            //   j.style.position= 'absolute'
+            //   j.style.left= lmin +'px'
+            //   j.style.top= lmin2 +'px'
+            }
+            
+
+            // document.getElementById('time').innerHTML=d.toLocaleTimeString()
+
+            
+            // let int = 0
+            // let int2=0
+            // let int3=0
+
+            // function fsec() {
+            //     // sec.style.transitionTimingFunction='cubic-bezier(0.1, 2.7, 0.58, 1)' 
+            //    sec.style.transformOrigin='left top 0'
+            //    min.style.transformOrigin='left top 0'
+            //    ouh.style.transformOrigin='left top 0'
+            //    sec.style.transform='rotateZ(' + int + 'deg)'
+            //    min.style.transform='rotateZ(' + int2 + 'deg)'
+            //    ouh.style.transform='rotateZ(' + int3 + 'deg)'
+            //    if(int+6 == 366){
+            //     int = 0
+            //     int2 += 6
+            //    }
+            //    if(int2+6 == 366){
+            //        int3+=30
+            //    }
+            //    int+= 6
+            // }
+
+           
+
+
+
+        }
+        
+
+    </script>
+</body>
+
+</html>
