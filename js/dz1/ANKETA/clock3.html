@@ -8,171 +8,200 @@
     <title>Document</title>
 </head>
 <style>
-    /* .p{
-        position: absolute;
-        border-left: 
-    } */
+    #wrap {
+    display: inline-flex;
+}
+#clock {
+	border-radius: 50%;
+	position:relative;
+	background-color: #fce38a;
+
+}
 </style>
 <body>
-        <div id="clock" >
-            <div id="sec" class="ss"></div>
-            <div id="min" class="mm"></div>
-            <div id="ouh" class="hh"></div>
-            <div id="time"></div>
-            
-        </div>
+    
+      
+        <div id="wrap">
+              <svg id="clock"  xmlns="http://www.w3.org/2000/svg"></svg>
+          </div>
+          
+      
+  <script>
+  
+      "use strict";
+     
+         
+      window.onload= function gh(){
+var clock = document.getElementById("clock");
+var wrap = document.getElementById("wrap");
 
-        <div style="border-left:  solid 12px; height: 100px"></div>
+
+clock.style.width= 400 + 'px'
+clock.style.height= 400 + 'px'
+
+var rC = wrap.offsetWidth / 2;
+var sN = rC / 6;
+var arrowWidth = rC/20;
 
 
-    <script>
-        "use strict";
+var clockCircle = document.createElementNS("http://www.w3.org/2000/svg","circle");
+clockCircle.setAttribute("cx", rC);
+clockCircle.setAttribute("cy", rC);
+clockCircle.setAttribute("r", sN);
+clockCircle.setAttribute("fill", "#fce38a");
+clock.appendChild(clockCircle);
+
+var r = rC - sN;
+var numbersCenterX = rC;
+var numbersCenterY = rC;
+
+for (var h = 1; h <= 12; h++) {
+    var angle = h / 12 * Math.PI * 2;
+    var nx = numbersCenterX + Math.sin(angle) * r;
+    var ny = numbersCenterY - Math.cos(angle) * r;
+
+
+    
+    var numbers = document.createElementNS("http://www.w3.org/2000/svg","circle");
+    numbers.setAttribute("cx", nx);
+    numbers.setAttribute("cy", ny);
+    numbers.setAttribute("r", 20);
+    numbers.setAttribute("fill", "red");
+    document.querySelector("svg").appendChild(numbers);
+
+
+    var text = document.createElementNS("http://www.w3.org/2000/svg","text");
+    text.textContent=h;
+    text.setAttribute("x", nx);
+    text.setAttribute("y", ny);
+    text.setAttribute("text-anchor", "middle");
+    text.setAttribute("dominant-baseline", "central");
+    text.setAttribute("text", 0.5);
+    text.style.fontSize = 20;
+    clock.appendChild(text);
+}
+
+
+    var our = document.createElementNS("http://www.w3.org/2000/svg","line");
+    our.setAttribute("x1", rC);
+    our.setAttribute("y1", rC);
+    our.setAttribute("x2", rC);
+    our.setAttribute("y2", rC/2);
+
+    our.setAttribute("stroke", "green");
+    our.setAttribute("stroke-width", arrowWidth);
+    our.setAttribute("stroke-linecap", "round");
+    clock.appendChild(our);
+
+    var min = document.createElementNS("http://www.w3.org/2000/svg","line");
+    min.setAttribute("x1", rC);
+    min.setAttribute("y1", rC);
+    min.setAttribute("x2", rC);
+    min.setAttribute("y2", rC/3);
+
+    min.setAttribute("stroke", "black");
+    min.setAttribute("stroke-width", arrowWidth);
+    min.setAttribute("stroke-linecap", "round");
+    clock.appendChild(min);
+
+    var sec = document.createElementNS("http://www.w3.org/2000/svg","line");
+    sec.setAttribute("x1", rC);
+    sec.setAttribute("y1", rC);
+    sec.setAttribute("x2", rC);
+    sec.setAttribute("y2", rC/6);
+
+    sec.setAttribute("stroke", "black");
+    sec.setAttribute("stroke-width", arrowWidth);
+    sec.setAttribute("stroke-linecap", "round");
+    clock.appendChild(sec);
+           
+
+              
+                   
+         var cT = document.createElementNS("http://www.w3.org/2000/svg","text");  //электронные часы
+         cT.setAttribute("id", 'time');            
+         cT.setAttribute("stroke","black");
+         cT.setAttribute("x",rC);
+         cT.setAttribute("y",rC/2 + sN);
+         cT.setAttribute("text-anchor","middle");
+cT.setAttribute("stroke-opacity", 0.1);
+cT.style.fontSize = 25;
+clock.appendChild(cT);
+ 
         
-
-        window.onload = function(){
-           
-            let clock = document.getElementById('clock')
-            // clock.style.borderBottom= 'solid 1px';
-            // clock.style.width= '20px';
-            clock.style.backgroundColor= '#FCCA66'
-            clock.style.position= 'relative'
-            clock.style.width= '500px'
-            clock.style.height= '500px'
-            clock.style.borderRadius= '250px'
-            clock.style.zIndex = "-4"
-            
-            const radiusClock = clock.offsetWidth/2; // радиус часов
-            const sizeNumbers = radiusClock/4.5; // размер цифр
-            var arrowWidth = radiusClock/20;
-            var r = radiusClock - sizeNumbers; // расстояние между цифрами и часами
-            var numbersCenterX = radiusClock - sizeNumbers/2; // определяем положение "кружка" с цифрами относительно циферлата по Х
-            var numbersCenterY = radiusClock - sizeNumbers/2; // определяем положение по Y
-
-
-
-
-                var sec = document.getElementById('sec')  
-                let lsec = ( clock.offsetWidth)/2 
-                let lsec2=(clock.offsetHeight)/2 
-                // console.log(lsec) 
-                // console.log(clock.offsetLeft, clock.offsetHeight/2) 
-                sec.style.borderBottom= 'solid 4px';
-                // sec.style.height= '220px'
-                sec.style.width='220px'
-                sec.style.position= 'absolute'
-                sec.style.left= lsec +'px'
-                sec.style.top= lsec2 +'px'
-                sec.style.borderRadius= '25px'
-                sec.style.backgroundColor= 'black'
-
-                // sec.style.left = radiusClock - arrowWidth/2 + "px"
-
-
-                let min = document.getElementById('min')  
-                let lmin = (clock.offsetWidth)/2 
-                let lmin2=(clock.offsetHeight)/2 
-                min.style.borderBottom= 'solid 8px blue';
-                min.style.width= '180px'
-                min.style.position= 'absolute'
-                min.style.left= lmin +'px'
-                min.style.top= lmin2 +'px'
-                min.style.borderRadius= '25px'
-
-                let ouh = document.getElementById('ouh')  
-                let louh = (clock.offsetWidth)/2 
-                let louh2=(clock.offsetHeight)/2 
-                ouh.style.borderBottom= 'solid 12px ';
-                ouh.style.width= '120px'
-                ouh.style.position= 'absolute'
-                ouh.style.left= louh +'px'
-                ouh.style.top= louh2 +'px'
-                ouh.style.borderRadius= '25px'
-           
-           
-            for (var h = 1; h <= 12; h++) { // отображаемый час
-            var angle = h / 12 * Math.PI * 2; //отображаемый угол в радианах
-            var nx = numbersCenterX - Math.cos(angle) * r; //проверяем - для угла=0 cos=1
-            var ny = numbersCenterY + Math.sin(angle) * r; // проверяем - для угла=0 sin=0
-            var numbers = document.createElement("div"); // создаем кружки для часав
-            numbers.style.width = sizeNumbers + "px"; //ширина элемента
-            numbers.style.height = sizeNumbers + "px"; //высота элемента
-            numbers.style.borderRadius = "50%"; //делаем круг
-            numbers.style.backgroundColor = "#48B382"; // цвет элемента
-            numbers.style.position = "absolute"; //позиционируем элементы часов
-            numbers.style.top = nx +"px"; // положение по оси Х
-            numbers.style.left = ny + "px"; // положение по оси Y
-            numbers.textContent = h; //получаем текстовый контент указанного узла и всех его потомков
-            numbers.style.textAlign = "center"; // положение цифр внутри кружка
-            numbers.style.lineHeight = sizeNumbers + "px"; //выравнивание цифр
-            numbers.style.fontSize = sizeNumbers / 1.5 + "px"; // получаем размер цифр
-            numbers.style.zIndex = "-3";
-            clock.appendChild(numbers); // делаем дочерним элементом
-
-        }
-
-            // function fd(){
+       
+       
+       
+our.style.transformOrigin = "center 200px";
+min.style.transformOrigin = "center 200px";
+sec.style.transformOrigin = "center 200px";
                
-            // }
-            let hh = document.querySelector('.hh')
-            let mm = document.querySelector('.mm')
-            let ss = document.querySelector('.ss')
+                       
+                      
+       
+                       function updateArrows () { 
+                       let time = new Date(); 
+                       cT.innerHTML = time.toLocaleTimeString() 
+       
+                       let secondAngular = 6 * time.getSeconds() - 6; 
+                       let minuteAngular = 6 * (time.getMinutes() + (1 / 60) * time.getSeconds()); 
+                       let hourAngular = 30 * (time.getHours() + (1 / 60) * time.getMinutes()); 
+       
+                       secondAngular += 6; 
+                       sec.style.transform = "rotate(" + secondAngular + "deg)";
+                       minuteAngular += 6 * (1/60); 
+                       min.style.transform = "rotate(" + minuteAngular + "deg)";
+                       hourAngular += 6 * (1/360); 
+                       our.style.transform = "rotate(" + hourAngular + "deg)";
+       
+                       setTimeout(updateArrows, 1020 - time.getMilliseconds()); 
+                       
+                     } 
+                   
+                        updateArrows();
+                   }
 
-            setInterval(fsec,10)
-            function fsec(){
-                let d= new Date()
-             hh = d.getHours() * 30
-             mm = d.getMinutes() * 6
-             ss = d.getSeconds() * 6
-
-            console.log(hh,mm,ss)
-            
-            ouh.style.transform=  'rotate ('+ hh + ' deg)'
-            min.style.transform=  'rotate ('+ mm + ' deg)'
-            sec.style.transform='rotateZ ('+ ss + ' deg)'
-
-            // if(hours<10) hours ='0' + hours
-            // if(minutes<10) minutes ='0' + minutes
-            // if(seconds<10) seconds +'0' + seconds
-
-            // let clo = hours + ':' + minutes + ':' + seconds;
-            // let j=document.getElementById('time').innerHTML= clo 
-            //   j.style.position= 'absolute'
-            //   j.style.left= lmin +'px'
-            //   j.style.top= lmin2 +'px'
-            }
-            
-
-            // document.getElementById('time').innerHTML=d.toLocaleTimeString()
-
-            
-            // let int = 0
-            // let int2=0
-            // let int3=0
-
-            // function fsec() {
-            //     // sec.style.transitionTimingFunction='cubic-bezier(0.1, 2.7, 0.58, 1)' 
-            //    sec.style.transformOrigin='left top 0'
-            //    min.style.transformOrigin='left top 0'
-            //    ouh.style.transformOrigin='left top 0'
-            //    sec.style.transform='rotateZ(' + int + 'deg)'
-            //    min.style.transform='rotateZ(' + int2 + 'deg)'
-            //    ouh.style.transform='rotateZ(' + int3 + 'deg)'
-            //    if(int+6 == 366){
-            //     int = 0
-            //     int2 += 6
-            //    }
-            //    if(int2+6 == 366){
-            //        int3+=30
-            //    }
-            //    int+= 6
-            // }
-
-           
-
-
-
-        }
+                   
         
+
+
+
+            // function createSVG() {
+
+            //     var SVGElem=document.getElementById("SSS");
+        
+            //     var circle=document.createElementNS("http://www.w3.org/2000/svg",'ellipse');
+            //     circle.setAttribute("stroke","green");
+            //     circle.setAttribute("fill","yellow");
+            //     circle.setAttribute("rx",50);
+            //     circle.setAttribute("ry",50);
+            //     circle.setAttribute("cx",100);
+            //     circle.setAttribute("cy",60);
+            //     SVGElem.appendChild(circle);
+        
+            //     var smile=document.createElementNS("http://www.w3.org/2000/svg",'image');
+            //     smile.setAttributeNS("http://www.w3.org/1999/xlink","href","Examples/smile1.gif");
+            //     smile.setAttribute("width","20");
+            //     smile.setAttribute("height","24");
+            //     smile.setAttribute("x",20);
+            //     smile.setAttribute("y",60);
+            //     SVGElem.appendChild(smile);
+        
+            //     var txt=document.createElementNS("http://www.w3.org/2000/svg",'text');
+            //     txt.setAttribute("x",50);
+            //     txt.setAttribute("y",130);
+            //     txt.style.fill="red";
+            //     txt.textContent='Всем привет!';
+            //     SVGElem.appendChild(txt);
+            // }
+        
+        
+
+    
+        
+        
+
+      
 
     </script>
 </body>

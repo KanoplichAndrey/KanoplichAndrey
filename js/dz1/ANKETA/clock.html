@@ -7,113 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <style>
-        #clock {
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            position: relative;
-            background-color: #fce38a;
-        }
-        #time{
-            display: flex;
-            justify-content: center;
-        }
-        #hourArrow,
-        #secondArrow,
-        #minuteArrow {
-            background-color: black;
-             border-radius: 8px;
-            transform-origin: center bottom;
-        }
-    </style>
-    <div id="clock">
-        <div id="time"></div>
-        <div id="hourArrow"></div>
-        <div id="minuteArrow"></div>
-        <div id="secondArrow"></div>
-    </div>
-    <script>
-        "use strict";
-        var clock = document.querySelector("#clock"); // получаем CSS для часов
-        var width = prompt()
-        clock.style.width = `${width}px`;  
-        clock.style.height = `${width}px`;  
-        const radiusClock = clock.offsetWidth/2; // радиус часов
-        const sizeNumbers = radiusClock/5; // размер цифр
-        var arrowWidth = radiusClock/20; // толщина стрелок
+    <svg width=200 height=250 xmlns='http://www.w3.org/2000/svg'>
 
-        var r = radiusClock - sizeNumbers; // расстояние между цифрами и часами
-        var numbersCenterX = radiusClock - sizeNumbers/2; // определяем положение "кружка" с цифрами относительно циферлата по Х
-        var numbersCenterY = radiusClock - sizeNumbers/2; // определяем положение по Y
-
-        for (var h = 1; h <= 12; h++) { // отображаемый час
-            var angle = h / 12 * Math.PI * 2; //отображаемый угол в радианах
-            var nx = numbersCenterX - Math.cos(angle) * r; //проверяем - для угла=0 cos=1
-            var ny = numbersCenterY + Math.sin(angle) * r; // проверяем - для угла=0 sin=0
-            var numbers = document.createElement("div"); // создаем кружки для часав
-            numbers.style.width = sizeNumbers + "px"; //ширина элемента
-            numbers.style.height = sizeNumbers + "px"; //высота элемента
-            numbers.style.borderRadius = "50%"; //делаем круг
-            numbers.style.backgroundColor = "#48B382"; // цвет элемента
-            numbers.style.position = "absolute"; //позиционируем элементы часов
-            numbers.style.top = nx +"px"; // положение по оси Х
-            numbers.style.left = ny + "px"; // положение по оси Y
-            numbers.textContent = h; //получаем текстовый контент указанного узла и всех его потомков
-            numbers.style.textAlign = "center"; // положение цифр внутри кружка
-            numbers.style.lineHeight = sizeNumbers + "px"; //выравнивание цифр
-            numbers.style.fontSize = sizeNumbers / 1.5 + "px"; // получаем размер цифр
-            clock.appendChild(numbers); // делаем дочерним элементом
-
-        }
-        var hourArrow = document.getElementById("hourArrow"); // создаем стрелку часа
-        hourArrow.style.width = arrowWidth/1.5 + "px"; // толщина стрелки часа
-        hourArrow.style.height = radiusClock / 2 + "px"; // длина стрелки часа
-        hourArrow.style.position = "absolute"; //позиционируем стрелку часа
-        hourArrow.style.bottom = radiusClock + "px";
-        hourArrow.style.left = radiusClock - arrowWidth/2 + "px"; // положение стрелки относительно центра
-
-        var minuteArrow = document.getElementById("minuteArrow"); //создаем стрелку минут
-        minuteArrow.style.width = arrowWidth/4 + "px"; // толщина стрелки минут
-        minuteArrow.style.height = radiusClock / 1.5 + "px"; // длина стрелки минут
-        minuteArrow.style.position = "absolute"; //позиционируем стрелку минут
-        minuteArrow.style.bottom = radiusClock + "px";
-        minuteArrow.style.left = radiusClock - arrowWidth/4 + "px"; //положение стрелки минут относительно центра часов
-        minuteArrow.style.zIndex = "1";
-
-        var secondArrow = document.getElementById("secondArrow"); //создаем стрелку секунд
-        secondArrow.style.width = arrowWidth/8 + "px"; // толщина стрелки секунд
-        secondArrow.style.height = radiusClock / 1.2 + "px"; // длина стрелки секунд
-        secondArrow.style.position = "absolute"; //позиционируем стрелку секунд
-        secondArrow.style.bottom = radiusClock + "px";
-        secondArrow.style.left = radiusClock - arrowWidth/6 + "px"; //положение стрелки секунд относительно центра часов
-        secondArrow.style.zIndex = "2";
-
-        var currTime = document.getElementById("time"); //создаем электронные часы
-        currTime.style.position = "absolute"; //позиционируем электронные часы
-        currTime.style.left = radiusClock - radiusClock/4 + "px"; //положение электронных часов относительно центра циферблата
-        currTime.style.top = radiusClock / 2.5 + "px"; //положение электронных часов по оси Х
-        currTime.style.width = radiusClock/2 + "px"; //положение электронных часов по оси Y
-        currTime.style.fontSize = sizeNumbers / 2 + "px"; //размер электронных часов
-
-        function updateArrows () { // обновляем стрелки при открытии страницы
-            var time = new Date(); //текущее время
-            currTime.innerHTML = time.toLocaleTimeString(); //возвращаем НАШЕ время
-
-            var secondAngular = 6 * time.getSeconds() - 6; //определяем по времени где должна быть стрелка секунд
-            var minuteAngular = 6 * (time.getMinutes() + (1 / 60) * time.getSeconds()); //определяем по времени где должна быть стрелка минут
-            var hourAngular = 30 * (time.getHours() + (1 / 60) * time.getMinutes()); //определяем по времени где должна быть стрелка часа
-
-            secondAngular += 6; //каждую секунду стрелка секунда будет двигать на 6 градусо
-            secondArrow.style.transform = "rotate(" + secondAngular + "deg)";
-            minuteAngular += 6 * (1/60); //каждую секунду стрелка минута будет двигать на 6*(1/60) градусов
-            minuteArrow.style.transform = "rotate(" + minuteAngular + "deg)";
-            hourAngular += 6 * (1/360); //каждую секунду стрелка часа будет двигать на 6*(1/360) градусов
-            hourArrow.style.transform = "rotate(" + hourAngular + "deg)";
-
-            setTimeout(updateArrows, 1020 - time.getMilliseconds()); // планируем обновление стрелок при следующей смене секунды
-        }
-        updateArrows();
-    </script>
+        <text x=0 y=10>строка текста</text>
+        <text x=0 y=30 fill=red>цветная строка текста</text>
+        <text x=0 y=80 fill=none stroke=green style='font-size: 30px'>
+            обводка</text>
+    
+        <text x=0 y=115 textLength=150>строка текста</text>
+        <text x=0 y=130 textLength=150 lengthAdjust=spacingAndGlyphs>
+            строка текста</text>
+    
+        <text x=0 y=190 fill=green font-size=40 rotate='20,0,-10'>
+            строчка</text>
+    
+        <text x=100 y=210 text-anchor=start>левым краем</text>
+        <text x=100 y=225 text-anchor=middle>центром</text>
+        <text x=100 y=240 text-anchor=end>правым краем</text>
+    </svg>
 </body>
 </html>

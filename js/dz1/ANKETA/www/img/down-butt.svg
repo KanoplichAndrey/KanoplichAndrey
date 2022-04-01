@@ -1,0 +1,22 @@
+<svg width="1000.0000000000001" height="404" xmlns="http://www.w3.org/2000/svg">
+ <metadata>Svg Vector Icons : http://www.onlinewebfonts.com/icon</metadata>
+ <defs>
+  <linearGradient id="svg_30" x1="0" y1="0.746094" x2="0.996094" y2="0.210938" spreadMethod="pad">
+   <stop stop-color="#edd5cd" offset="5%"/>
+   <stop stop-color="#d19695" offset="100%"/>
+  </linearGradient>
+  <linearGradient id="svg_31" x1="0" y1="0.863281" x2="0.90625" y2="0.183594" spreadMethod="pad">
+   <stop stop-color="#edd5cd" offset="5%" stop-opacity="0.5"/>
+   <stop stop-color="#c3807f" offset="100%" stop-opacity="0.7"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="1002" height="406" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path transform="rotate(90 856.797607421875,256.67633056640636) " stroke="url(#svg_31)" id="svg_9" d="m856.79765,228.50091c-15.56079,0 -28.17538,12.6146 -28.17538,28.17541c0,15.56076 12.61459,28.17541 28.17538,28.17541c15.56079,0 28.17537,-12.61465 28.17537,-28.17541c0,-15.56081 -12.61458,-28.17541 -28.17537,-28.17541zm-4.52653,47.02855l-6.85529,-6.86125l11.99414,-11.99339l-11.99414,-11.99337l6.85529,-6.85532l18.85085,18.84869l-18.85085,18.85464z" stroke-width="2" fill="url(#svg_30)"/>
+  <path fill="#edd5cd" stroke-width="0" d="m870.15801,245.78488l-12.25031,12.24958l12.25031,12.24956l-7.00092,7.00467l-19.25122,-19.25423l19.25122,-19.25571" id="svg_10" stroke="#edd5cd" transform="rotate(-90 857.0319213867189,258.03372192382807) "/>
+ </g>
+</svg>

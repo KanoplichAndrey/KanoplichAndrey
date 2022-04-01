@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"  width="704px" height = "480px">
+  <title>
+    white checkered blue squares light blue #edd5cd #d4b5b5 diagonal 0° 24px
+  </title>
+  <desc>
+    white checkered blue squares light blue #edd5cd #d4b5b5 diagonal 0° 24px
+  </desc>
+
+  <linearGradient id="linear-gradient">
+    <stop offset="0%" stop-color="#ffd881"/>
+    <stop offset="100%" stop-color="#d97b7a"/>
+  </linearGradient>
+
+  <defs>
+    <pattern id="p1" patternUnits="userSpaceOnUse" x="0" y="0" width="48" height="48" patternTransform="rotate(360 0)">
+      <rect x="0" y="0" width="24" height="24" rx="0" ry="0" fill="#edd5cd" />
+      <rect x="24" y="0" width="24" height="24" rx="0" ry="0" fill="#d4b5b5" />
+      <rect x="24" y="24" width="24" height="24" rx="0" ry="0" fill="#edd5cd" />
+      <rect x="0" y="24" width="24" height="24" rx="0" ry="0" fill="#d4b5b5" />
+    </pattern>
+  </defs>
+
+  <rect width="704" height="480" x="0" y="0" fill="url(#p1)" />
+  <rect width="704" height="480" x="0" y="0" fill="url(#linear-gradient)" opacity="0.5" />
+</svg>

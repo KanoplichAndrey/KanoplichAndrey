@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        /* padding: 0px; */
+        /* margin: 0 auto; */
+        box-sizing: border-box;
+    }
+
+    /* body {
+        background-color: rgb(159, 201, 221);
+    } */
+</style>
+
+<body>
+    <input type='button' value='Пуск!' onclick='start()'>
+    <br /><br />
+    <div style="display: flex;flex-direction: column; align-items: center;">
+    <div id="container" style="display: flex;">
+    <div id="schetLeft" style=" font-size: 40px; font-weight: bold;">0</div>
+    <div id="schet" style=" font-size: 40px; font-weight: bold;">:</div>
+    <div id="schetright" style=" font-size: 40px; font-weight: bold;">0</div>
+    </div>
+    <div style='width: 1000px; height: 600px;
+        border: solid blue 1px; position: relative'>
+        <div id='IBall' ></div> 
+        <div id="redPlayer" style="width: 10px; height: 100px;background-color: red;position: absolute; left: 975px; top: 250px; "></div>
+    <div id="greenPlayer" style="width: 10px; height: 100px; background-color: green; position: absolute; left: 15px; top: 250px;"></div>
+    </div>
+    </div>
+    <script>
+    
+        "use strict";
+    
+        var ballH={
+            posX : 485,
+            posY : 285,
+            speedX : 10,
+            speedY : 4,
+            width : 30,
+            height: 30,
+    
+            update : function() {
+                var ballElem=document.getElementById('IBall');
+                ballElem.style.left=this.posX+"px";
+                ballElem.style.top=this.posY+"px";
+                ballElem.style.borderRadius = 50 +"%";
+                ballElem.style.width = 30 +"px";
+                ballElem.style.height = 30 +"px";
+                ballElem.style.backgroundColor = 'red' ;
+                ballElem.style.position = "absolute";
+               
+
+
+
+
+            }
+        }
+            
+        var areaH={
+            width : 1000,
+            height : 600
+        }
+        
+        function start() {
+            function keyDown(event){
+            switch (event.code) {
+                case 'ShiftLeft':
+                greenPlayerSpeedX= -10
+                break;
+
+                case 'ControlLeft': 
+                greenPlayerSpeedX= 10
+                break;
+
+                case 'ArrowUp':
+                redPlayerSpeedX= -10
+                break;
+
+                case 'ArrowDown': 
+                redPlayerSpeedX= 10
+                break;
+
+
+                default:
+                    console.log(event)
+            }
+            
+            }
+            // setInterval(tick,40);
+            document.addEventListener('keydown',keyDown)
+
+            
+            
+        
+            function keyUp(event){
+            switch (event.code) {
+                case 'ShiftLeft':
+                case 'ControlLeft':
+                case 'ArrowUp': 
+                case 'ArrowDown':   
+                greenPlayerSpeedX= 0
+                redPlayerSpeedX = 0
+                break;
+                
+                default:
+                    console.log(event)
+            }
+            
+            }
+            setInterval(tick,40);
+            document.addEventListener('keyup',keyUp)
+
+        }
+
+
+// let ballLastX = ballH.posX
+// let ballLastY = ballH.posY
+
+
+// ballH.posX=ballH.posX+ballH.speedX
+// ballH.posY=ballH.posY+ballH.speedY
+
+        let greenPlayerHeight = 100
+        let greenPlayerWight = 40
+        let greenPlayerY = 1000 - (1000 - greenPlayerWight +15)
+
+        let redPlayerHeight = 100
+        let redPlayerWight = 40
+        let redPlayerY = 1000 - ( greenPlayerWight +15)
+
+        // console.log(redPlayerY)
+        // console.log(greenPlayerY)
+        
+        let greenPlayerX = (areaH.height - greenPlayerHeight)/2
+        let redPlayerX =(areaH.height-greenPlayerHeight)/2  
+
+        let greenPlayerSpeedX = 0
+        let redPlayerSpeedX = 0
+        // console.log(ballH.posY + "posy")
+
+               
+
+        let n=0
+
+        function tick() {
+            let schetLeft = document.getElementById('schetLeft')
+            let schetright = document.getElementById('schetright')
+            
+            
+            function restartBall(){
+                ballH.posX= areaH.height/2 -ballH.height/2
+                ballH.posY= areaH.width/2 -ballH.width/2
+            }
+
+
+            
+       
+
+            
+            
+            function checgoal(){
+
+                if(ballH.posX<0){
+                    console.log('ggggggggggggggggggggg')
+                    restartBall()
+                }
+                if(ballH.posX > areaH.width+ballH.width){
+                    console.log('ffffffffff')
+                    schetLeft.innerHTML= n++  
+                    restartBall()
+                }
+            }
+            redPlayer.style.top= redPlayerX + 'px'
+            greenPlayer.style.top= greenPlayerX + 'px'
+
+            
+            
+            
+           move()
+           checgoal()
+            // вылетел ли мяч правее стены?
+            if ( ballH.posX+ballH.width>areaH.width ) {
+                // ballH.speedX=-ballH.speedX;
+                // ballH.posX=areaH.width-ballH.width;
+                
+              
+            }
+            // вылетел ли мяч левее стены?
+            if ( ballH.posX<0 ) {
+                // ballH.speedX=-ballH.speedX;
+
+                // ballH.posY = (areaH.height/2) - (ballH.height/2)
+                // ballH.speedX = 0
+                schetright.innerHTML= '1'   
+                // ballH.update()
+            }
+               
+            
+            // вылетел ли мяч ниже пола?
+            if ( ballH.posY+ballH.height>areaH.height ) {
+                ballH.speedY=-ballH.speedY;
+                ballH.posY=areaH.height-ballH.height;
+            }
+            // вылетел ли мяч выше потолка?
+            if ( ballH.posY<0 ) {
+                ballH.speedY=-ballH.speedY;
+                ballH.posY=0;
+            }
+            if ( greenPlayerX <= 0 ) { // столкновение игрока со стеной верх
+                greenPlayerSpeedX = 0 
+                greenPlayerX =  0
+                
+            }
+            if ( greenPlayerX > (areaH.height - greenPlayerHeight)  ) {  // столкновение игрока со стеной низ
+                greenPlayerSpeedX = 0 
+                greenPlayerX = (areaH.height - greenPlayerHeight)
+
+
+            }
+            if ( redPlayerX <= 0 ) { // столкновение игрока со стеной верх
+               
+                redPlayerSpeedX = 0 
+                redPlayerX =  0
+            }
+            if ( redPlayerX > (areaH.height - redPlayerHeight)  ) {  // столкновение игрока со стеной низ
+                redPlayerSpeedX = 0 
+                redPlayerX = (areaH.height - redPlayerHeight)
+            }
+            
+            function move(){
+                
+                    // ballLastX = ballH.posX
+                    // ballLastY = ballH.posY
+
+                    ballH.posX+=ballH.speedX;
+                    ballH.posY+=ballH.speedY;
+
+                    redPlayerX +=redPlayerSpeedX
+                    greenPlayerX += greenPlayerSpeedX
+                    // console.log(ballLastY)
+                }
+
+
+
+            if( ballH.posX + ballH.width/2 > greenPlayerY && ballH.posX - ballH.width/2 < greenPlayerY ){
+               if(ballH.posX  < greenPlayerY && ballH.posY + ballH.height/2 <  greenPlayerX + greenPlayerHeight  ){
+                 if(ballH.posX  < greenPlayerY && ballH.posY + ballH.height/2 >  greenPlayerX - greenPlayerHeight) 
+                    
+                        ballH.speedX = -ballH.speedX;
+                    }
+             }
+            
+             if( ballH.posX + ballH.width/2 > redPlayerY && ballH.posX - ballH.width  < redPlayerY   ){
+               if(ballH.posX  < redPlayerY && ballH.posY + ballH.height/2 <  redPlayerX + redPlayerHeight  ){
+                 if(ballH.posX + ballH.width/2 < redPlayerY + redPlayerWight && ballH.posY  >  redPlayerX - redPlayerHeight  ) 
+                    
+                        ballH.speedX = -ballH.speedX;
+                    }
+             }
+            
+         
+            
+    
+            ballH.update();
+            }
+    
+        ballH.update();
+    
+    </script>

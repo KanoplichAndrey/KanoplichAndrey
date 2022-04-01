@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1">
+  <meta name="HandheldFriendly" content="True"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="global_container">
+    
+    <div class="game_container">
+      <h1>Snake game</h1>
+      <canvas id="background_controller" width="1000px" heigth="404px"></canvas>
+      <canvas id="game_field" width="480px" height="336px"></canvas> <!--20x14-->
+      <form id="party">
+        <label for="party-checkbox">Party mode</label>
+        <input type="checkbox" name="party mode" id="party-checkbox" value="party-on">
+      </form>
+      <button type="button" id="butt_start" class="btn">Старт</button>
+      <div class="hidden">
+        <label for="butt_save_record" id="label_save">
+          <p>Вы проиграли!</p>
+          <p>Общий счёт: <span id="final_score"></span></p>
+          Введите свое имя и нажмите "Сохранить".
+        </label>
+        <input type="text" id="user_name" name="user_name">
+        <button type="button" id="butt_save_record" class="btn">Сохранить</button>
+        <button type="button" id="butt-all-records" class="btn">Рекорды</button>
+      </div>
+      <div class="score_container">
+        <img src="img/black-32.png" id="score_img">
+        <span id="score_value">0</span>
+      </div>
+      <button type="button" id="butt_rules" class="btn">Правила</button>
+      <!-- <object id="dir-butt-object" data="img/method-draw-image.svg" type="image/svg+xml" width="1000px" heigth="404px"></object> -->
+     
+      <!-- svg desktop buttons -->
+      <svg width="1000" height="404" xmlns="http://www.w3.org/2000/svg" id="dir-butt-object" class="inline_svg">
+        <defs>
+         <linearGradient spreadMethod="pad" y2="1" x2="0.785156" y1="0" x1="0.320313" id="svg_20">
+          <stop offset="5%" stop-color="#edd5cd"/>
+          <stop offset="100%" stop-color="#d19695"/>
+         </linearGradient>
+         <linearGradient spreadMethod="pad" y2="0.9375" x2="0.820313" y1="0" x1="0.101563" id="svg_23">
+          <stop stop-opacity="0.5" offset="5%" stop-color="#edd5cd"/>
+          <stop stop-opacity="0.7" offset="100%" stop-color="#c3807f"/>
+         </linearGradient>
+         <linearGradient spreadMethod="pad" y2="0.210938" x2="0.996094" y1="0.746094" x1="0" id="svg_30">
+          <stop offset="5%" stop-color="#edd5cd"/>
+          <stop offset="100%" stop-color="#d19695"/>
+         </linearGradient>
+         <linearGradient spreadMethod="pad" y2="0.183594" x2="0.90625" y1="0.863281" x1="0" id="svg_31">
+          <stop stop-opacity="0.5" offset="5%" stop-color="#edd5cd"/>
+          <stop stop-opacity="0.7" offset="100%" stop-color="#c3807f"/>
+         </linearGradient>
+         <linearGradient spreadMethod="pad" y2="1" x2="0.734375" y1="0" x1="0.308594" id="svg_32">
+          <stop offset="5%" stop-color="#edd5cd"/>
+          <stop offset="100%" stop-color="#d19695"/>
+         </linearGradient>
+
+         <filter id="inset-shadow">
+           <feOffset dx="0" dy="0"></feOffset>
+             <!-- Размытие тени -->
+             <feGaussianBlur stdDeviation="20" result="offset-blur"></feGaussianBlur>
+             <!-- Инвертируем drop shadow
+             чтобы создать внутреннюю тень -->
+             <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"></feComposite>
+             <!-- Цвет и Прозрачность -->
+             <feFlood flood-color="gray" flood-opacity="0.65" result="color"></feFlood>
+             <!-- Обрезаем цвет внутрь тени -->
+             <feComposite operator="in" in="color" in2="inverse" result="shadow"></feComposite>
+             <!-- Раcполагаем тень поверх элемента -->
+             <feComposite operator="over" in="shadow" in2="SourceGraphic"></feComposite>
+         </filter>
+        </defs>
+  
+        <g> 
+         <g id="up" class="dir-butt-elem">
+           <path fill="url(#svg_30)" stroke-width="2" d="m856.48964,172.90983c15.60277,0 28.25,-12.64802 28.25,-28.25c0,-15.60202 -12.64723,-28.25001 -28.25,-28.25001c-15.60201,0 -28.25001,12.64799 -28.25001,28.25001c0,15.60198 12.648,28.25 28.25001,28.25zm4.53854,-47.15082l6.87338,6.87713l-12.02585,12.02516l12.02585,12.02588l-6.87338,6.87487l-18.8986,-18.90075l18.8986,-18.90229l0,0z" id="svg_7" transform="rotate(90 856.4896240234375,144.6598205566407) " stroke="url(#svg_31)"/>
+           <path transform="rotate(90 856.4500122070312,143.2873840332032) " stroke="#edd5cd" id="svg_8" d="m869.57609,131.03854l-12.25031,12.24958l12.25031,12.24956l-7.00092,7.00467l-19.25122,-19.25423l19.25122,-19.25571" stroke-width="0" fill="#edd5cd"/>
+         </g>
+         <g id="right" class="dir-butt-elem">
+           <path fill="url(#svg_32)" stroke-width="2" d="m912.95155,172.11776c-15.56079,0 -28.17538,12.6146 -28.17538,28.17541c0,15.56076 12.61459,28.17541 28.17538,28.17541c15.56079,0 28.17537,-12.61465 28.17537,-28.17541c0,-15.56081 -12.61458,-28.17541 -28.17537,-28.17541zm-4.52653,47.02855l-6.85529,-6.86125l11.99414,-11.99338l-11.99414,-11.99338l6.85529,-6.85532l18.85085,18.8487l-18.85085,18.85463z" id="svg_6" stroke="url(#svg_23)"/>
+           <path transform="rotate(-180 914.584228515625,200.2225341796875) " stroke="#edd5cd" id="svg_4" d="m927.7103,187.9737l-12.25031,12.24957l12.25031,12.24956l-7.00093,7.00467l-19.25122,-19.25423l19.25122,-19.25571" stroke-width="0" fill="#edd5cd"/>
+         </g>
+         <g id="down" class="dir-butt-elem">
+           <path fill="url(#svg_30)" stroke-width="2" d="m856.79765,228.50091c-15.56079,0 -28.17538,12.6146 -28.17538,28.17541c0,15.56076 12.61459,28.17541 28.17538,28.17541c15.56079,0 28.17537,-12.61465 28.17537,-28.17541c0,-15.56081 -12.61458,-28.17541 -28.17537,-28.17541zm-4.52653,47.02855l-6.85529,-6.86125l11.99414,-11.99339l-11.99414,-11.99337l6.85529,-6.85532l18.85085,18.84869l-18.85085,18.85464z" id="svg_9" stroke="url(#svg_31)" transform="rotate(90 856.797607421875,256.67633056640636) "/>
+           <path transform="rotate(-90 857.0319213867189,258.03372192382807) " stroke="#edd5cd" id="svg_10" d="m870.15801,245.78488l-12.25031,12.24958l12.25031,12.24956l-7.00092,7.00467l-19.25122,-19.25423l19.25122,-19.25571" stroke-width="0" fill="#edd5cd"/>
+         </g>
+         <g id="left" class="dir-butt-elem">
+           <path stroke="#edd5cd" id="svg_3" d="m812.64094,188.26781l-12.25031,12.24957l12.25031,12.24957l-7.00093,7.00467l-19.25121,-19.25423l19.25121,-19.25571" stroke-width="0" fill="#edd5cd"/>
+           <path fill="url(#svg_20)" stroke-width="2" d="m801.02003,228.83512c15.72028,0 28.46276,-12.74327 28.46276,-28.46277c0,-15.71952 -12.74248,-28.46277 -28.46276,-28.46277c-15.71952,0 -28.46278,12.74325 -28.46278,28.46277c0,15.7195 12.74326,28.46277 28.46278,28.46277zm4.57271,-47.50594l6.92515,6.92894l-12.11642,12.11572l12.11642,12.11646l-6.92515,6.92665l-19.04093,-19.0431l19.04093,-19.04467l0,0z" id="svg_5" stroke="url(#svg_23)"/>
+         </g>
+         
+         <path fill="url(#svg_20)" stroke="url(#svg_23)" stroke-width="2" d="m121.97576,179.83884l-0.14284,-60.28552l41.71414,0l0,60.28551l59.85694,0l0,41.57129l-59.71408,0l0,59.85694l-41.857,0l0,-60.42837l-59.28551,0l-0.14286,-40.57129l29.77683,0l29.77682,0" id="svg_13"/>
+        </g>
+      </svg>
+
+      <!-- svg mobile buttons -->
+      <svg width="176" height="174" xmlns="http://www.w3.org/2000/svg" id="dir-butt-mobile" class="inline_svg">
+        <defs>
+         <linearGradient id="20" x1="0.320313" y1="0" x2="0.785156" y2="1" spreadMethod="pad">
+          <stop stop-color="#edd5cd" offset="5%"/>
+          <stop stop-color="#d19695" offset="100%"/>
+         </linearGradient>
+         <linearGradient id="23" x1="0.101563" y1="0" x2="0.820313" y2="0.9375" spreadMethod="pad">
+          <stop stop-color="#edd5cd" offset="5%" stop-opacity="0.5"/>
+          <stop stop-color="#c3807f" offset="100%" stop-opacity="0.7"/>
+         </linearGradient>
+         <linearGradient id="30" x1="0" y1="0.746094" x2="0.996094" y2="0.210938" spreadMethod="pad">
+          <stop stop-color="#edd5cd" offset="5%"/>
+          <stop stop-color="#d19695" offset="100%"/>
+         </linearGradient>
+         <linearGradient id="31" x1="0" y1="0.863281" x2="0.90625" y2="0.183594" spreadMethod="pad">
+          <stop stop-color="#edd5cd" offset="5%" stop-opacity="0.5"/>
+          <stop stop-color="#c3807f" offset="100%" stop-opacity="0.7"/>
+         </linearGradient>
+         <linearGradient id="32" x1="0.308594" y1="0" x2="0.734375" y2="1" spreadMethod="pad">
+          <stop stop-color="#edd5cd" offset="5%"/>
+          <stop stop-color="#d19695" offset="100%"/>
+         </linearGradient>
+
+        </defs>
+       
+       <g id="mob-up" class="dir-butt-elem-mob">
+         <path stroke="url(#31)" transform="rotate(90 87.48962402343751,31.659820556640632) " id="svg_7" d="m87.48964,59.90983c15.60277,0 28.25,-12.64802 28.25,-28.25c0,-15.60202 -12.64723,-28.25001 -28.25,-28.25001c-15.60201,0 -28.25001,12.64799 -28.25001,28.25001c0,15.60198 12.648,28.25 28.25001,28.25zm4.53854,-47.15082l6.87338,6.87713l-12.02585,12.02516l12.02585,12.02588l-6.87338,6.87487l-18.8986,-18.90075l18.8986,-18.90229l0,0z" stroke-width="2" fill="url(#30)"/>
+         <path fill="#edd5cd" stroke-width="0" d="m100.57609,18.03854l-12.25031,12.24958l12.25031,12.24956l-7.00092,7.00467l-19.25122,-19.25423l19.25122,-19.25571" id="svg_8" stroke="#edd5cd" transform="rotate(90 87.45007324218751,30.287384033203132) "/>
+       </g>
+       <g id="mob-right" class="dir-butt-elem-mob">
+         <path stroke="url(#23)" id="svg_6" d="m143.95155,59.11776c-15.56079,0 -28.17538,12.6146 -28.17538,28.17541c0,15.56076 12.61459,28.17541 28.17538,28.17541c15.56079,0 28.17537,-12.61465 28.17537,-28.17541c0,-15.56081 -12.61458,-28.17541 -28.17537,-28.17541zm-4.52653,47.02855l-6.85529,-6.86125l11.99414,-11.99338l-11.99414,-11.99338l6.85529,-6.85532l18.85085,18.8487l-18.85085,18.85463z" stroke-width="2" fill="url(#32)"/>
+         <path fill="#edd5cd" stroke-width="0" d="m158.7103,74.9737l-12.25031,12.24957l12.25031,12.24956l-7.00093,7.00467l-19.25122,-19.25423l19.25122,-19.25571" id="svg_4" stroke="#edd5cd" transform="rotate(-180 145.584228515625,87.22253417968749) "/>
+       </g>
+       <g id="mob-down" class="dir-butt-elem-mob">
+         <path transform="rotate(90 87.79760742187499,143.67633056640628) " stroke="url(#svg_31)" id="svg_9" d="m87.79765,115.50091c-15.56079,0 -28.17538,12.6146 -28.17538,28.17541c0,15.56076 12.61459,28.17541 28.17538,28.17541c15.56079,0 28.17537,-12.61465 28.17537,-28.17541c0,-15.56081 -12.61458,-28.17541 -28.17537,-28.17541zm-4.52653,47.02855l-6.85529,-6.86125l11.99414,-11.99339l-11.99414,-11.99337l6.85529,-6.85532l18.85085,18.84869l-18.85085,18.85464z" stroke-width="2" fill="url(#30)"/>
+         <path fill="#edd5cd" stroke-width="0" d="m101.15801,132.78488l-12.25031,12.24958l12.25031,12.24956l-7.00092,7.00467l-19.25122,-19.25423l19.25122,-19.25571" id="svg_10" stroke="#edd5cd" transform="rotate(-90 88.03198242187504,145.03372192382815) "/>
+       </g>
+       <g id="mob-left" class="dir-butt-elem-mob">
+         <path stroke="url(#23)" id="svg_5" d="m32.02003,115.83512c15.72028,0 28.46276,-12.74327 28.46276,-28.46277c0,-15.71952 -12.74248,-28.46277 -28.46276,-28.46277c-15.71952,0 -28.46278,12.74325 -28.46278,28.46277c0,15.7195 12.74326,28.46277 28.46278,28.46277zm4.57271,-47.50594l6.92515,6.92894l-12.11642,12.11572l12.11642,12.11646l-6.92515,6.92665l-19.04093,-19.0431l19.04093,-19.04467l0,0z" stroke-width="2" fill="url(#20)"/>
+         <path fill="#edd5cd" stroke-width="0" d="m43.64094,75.26781l-12.25031,12.24957l12.25031,12.24957l-7.00093,7.00467l-19.25121,-19.25423l19.25121,-19.25571" id="svg_3" stroke="#edd5cd"/>
+       </g>
+      </svg>
+
+      <table id="records-table">
+        <col class="col-order"><col class="col-names"><col class="col-score">
+        <tr>
+          <th></th>
+          <th>Имя</th>
+          <th>Рекорд</th>
+        </tr>
+        <tr class="dyn-line">
+          <td class="champ-order">1.</td>
+          <td class="champ-name"></td>
+          <td class="champ-score"></td>
+        </tr>
+        <tr class="dyn-line">
+          <td class="champ-order">2.</td>
+          <td class="champ-name"></td>
+          <td class="champ-score"></td>
+        </tr>
+        <tr class="dyn-line">
+          <td class="champ-order">3.</td>
+          <td class="champ-name"></td>
+          <td class="champ-score"></td>
+        </tr>
+        <tr class="dyn-line">
+          <td class="champ-order">4.</td>
+          <td class="champ-name"></td>
+          <td class="champ-score"></td>
+        </tr>
+        <tr class="dyn-line">
+          <td class="champ-order">5.</td>
+          <td class="champ-name"></td>
+          <td class="champ-score"></td>
+        </tr>
+        <tr class="dyn-line">
+          <td class="champ-order">6.</td>
+          <td class="champ-name"></td>
+          <td class="champ-score"></td>
+        </tr>
+        <tr class="dyn-line">
+          <td class="champ-order">7.</td>
+          <td class="champ-name"></td>
+          <td class="champ-score"></td>
+        </tr>
+        <tr class="dyn-line">
+          <td class="champ-order">8.</td>
+          <td class="champ-name"></td>
+          <td class="champ-score"></td>
+        </tr>
+        <tr class="dyn-line">
+          <td class="champ-order">9.</td>
+          <td class="champ-name"></td>
+          <td class="champ-score"></td>
+        </tr>
+        <tr class="dyn-line">
+          <td class="champ-order">10.</td>
+          <td class="champ-name"></td>
+          <td class="champ-score"></td>
+        </tr>
+        <tr id="close-tr">
+          <td></td>
+          <td id="close-td">
+            <span id="but-return-from-records">назад</span>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+
+    </div>
+  
+    <div id="rules">
+      <img src="img/close-ico.png" alt="закрыть" id="close-rules-but">
+      <p style="text-align: center; font-weight: bold; margin-top: 30px;">
+        Правила игры очень просты:)
+      </p>
+      <p>
+        Накормите змейку и постарайтесь продержаться как можно дольше не врезаясь в хвост.
+      </p>
+      <p>
+        Вы управляете направлением движения головы змейки, а ее хвост движется следом. Вы не можете остановить движение. 
+        Каждый раз, когда змейка съедает кусок пищи, она становится длиннее, что постепенно усложняет игру. 
+      </p>
+      <p>
+        Чтобы привести змейку в движение или изменить направление движения, нажмите одну из клавиш со стрелками на клавиатуре или щелкните мышью по одной из кнопок со стрелками.
+      </p>
+      <p style="text-align: center;">
+        Удачи!
+      </p>
+    </div>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>

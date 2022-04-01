@@ -52,9 +52,22 @@
     buttNormal();
   </script> -->
   <!-- <input type='text' id='fld'> -->
-
+<input id="f1" type="button" value="press">
   <script>
-  
+    document.querySelector('#f1').ondblclick = f1
+    let p = 0
+  function f1(){
+      console.log(this)
+       p++
+       if(p==5){ p=200}
+      console.log(p)
+    //  f1()
+    }
+  let ggg = new MouseEvent('dblclick')
+    setInterval(document.querySelector('#f1').dispatchEvent(ggg),1000) 
+    // document.querySelector('#f1').dispatchEvent(ggg)
+    // document.querySelector('#f1').dispatchEvent(ggg)
+    // document.querySelector('#f1').dispatchEvent(ggg)
     // "use strict";
   
     // var fldElem=document.getElementById('fld')
@@ -79,45 +92,45 @@
     //   }
     //   return null; // управляющая клавиша
     // }
-  class Animal{
-    constructor(option){
-      this.name= option.name
-      this.age= option.age
-    }
+  // class Animal{
+  //   constructor(option){
+  //     this.name= option.name
+  //     this.age= option.age
+  //   }
 
-    voce(){ 
-      let parent = document.querySelector('body');
+  //   voce(){ 
+  //     let parent = document.querySelector('body');
     
-  for (let i = 1; i <= 925; i++) {
-	let li = document.createElement('button');
-	li.innerHTML = i;
-  li.style.color='red', 
-  li.style.listStyle= 'none';
-	parent.prepend(li);
+  // for (let i = 1; i <= 925; i++) {
+	// let li = document.createElement('button');
+	// li.innerHTML = i;
+  // li.style.color='red', 
+  // li.style.listStyle= 'none';
+	// parent.prepend(li);
   // let textNode = document.createTextNode('А вот и я');
   // document.body.append(textNode);
-  }
-  let button=document.querySelectorAll('button')
-  console.log(button)
+  // }
+  // let button=document.querySelectorAll('button')
+  // console.log(button)
   // for ( el of button) {
-    parent.addEventListener('click', function() {
-   console.log(animal.voce()) 
-}) 
+//     parent.addEventListener('click', function() {
+//    console.log(animal.voce()) 
+// }) 
 // }
-    }
-  }
-let animal = new Animal({
-  name:'andrey',
-  age: 40
-})
-let animals = new Animal({
-  name:'sergey',
-  age: 30
-})
+//     }
+//   }
+// let animal = new Animal({
+//   name:'andrey',
+//   age: 40
+// })
+// let animals = new Animal({
+//   name:'sergey',
+//   age: 30
+// })
 
-console.log(animal)
-console.log(animals)
-console.log(animal.voce())
+// console.log(animal)
+// console.log(animals)
+// console.log(animal.voce())
  
 
 
