@@ -78,7 +78,7 @@
      
         function start() {
             ballH.speedX = ballH.speedX = Math.round((10 + Math.random() * 5) * Math.sign(Math.random() - 0.5))
-            ballH.speedY = ballH.speedY = Math.round((Math.random() - 0.1) * 3)
+            ballH.speedY = ballH.speedY = Math.round((Math.random() - 2) * 3)
             ballH.posX = areaH.width / 2 - ballH.width / 2
             ballH.posY = areaH.height / 2 - ballH.height / 2
 
@@ -125,7 +125,7 @@
                 }
 
             }
-
+            if(timer){clearInterval(timer)}
             timer = setInterval(tick, 40);
             document.addEventListener('keyup', keyUp)
 
@@ -134,7 +134,7 @@
 
         let greenPlayerHeight = 100
         let greenPlayerWight = 10
-        let greenPlayerY = areaH.width - (areaH.width - greenPlayerWight - 15)// перепутал x и y, т.е.  greenPlayerY это greenPlayerX 
+        let greenPlayerY = areaH.width - (areaH.width - greenPlayerWight - 15)// перепутал x и y, т.е.  greenPlayerY это 
 
         let redPlayerHeight = 100
         let redPlayerWight = 10
@@ -158,12 +158,12 @@
 
         }
 
-        function play() {
+        // function play() {
 
-            restartBall()
+        //     restartBall()
 
-            timer = setInterval(tick, 40)
-        }
+        //     timer = setInterval(tick, 40)
+        // }
 
         function checgoal() {
             if (ballH.posX < greenPlayerY - greenPlayerWight) {
@@ -187,6 +187,7 @@
             }
         }
 
+        
         let schetLeft = document.getElementById('schetLeft')
         let schetright = document.getElementById('schetright')
 
@@ -257,7 +258,7 @@
                 ballH.speedX = -ballH.speedX;
 
             }
- debugger
+ 
             if (ballH.posX < greenPlayerY &&
             ballH.posY > greenPlayerX &&
             ballH.posY < greenPlayerX+greenPlayerHeight&&
