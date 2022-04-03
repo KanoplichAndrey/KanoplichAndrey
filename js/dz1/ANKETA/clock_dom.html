@@ -23,22 +23,18 @@
 <body>
     <input type='button' value='Пуск!' onclick='startMove()'>
     <input type='button' value='Stop!' onclick='stopMove()'>
-    <!-- <input type='button' value='red' onclick='startp()'> -->
-    <!-- <input type='button' value='green!' onclick='stopp()'> -->
-    <!-- <input type='button' value='select!' onclick='sto()'> -->
+    
 
      <div style='width: 1000px; height: 600px;
     border: solid blue 1px; position: relative'>
-    <div id="linered" style="width: 10px; height: 100px;background-color: red;position: absolute; left: 975px; top: 250px; "></div>
-    <div id="linegreen" style="width: 10px; height: 100px; background-color: green; position: absolute; left: 15px; top: 250px;"></div>
     <div id='IBall' style='position: absolute; top: 300px;left: 500px;'>
-        <div id="drag">
+        
             <div id="clock">
                 <div id="ouh"></div>
                 <div id="min"></div>
                 <div id="sec"></div>
             </div>
-        </div>
+        
     </div>
    
     
@@ -49,26 +45,7 @@
 <script>
     'use strict';
 
-    // let sud 
-
-    // let startp = () => sud = true
-    // let stopp = () => sud = false
-
-    // let elem =document.body
-    // function sto() {
-    //     if (sud) {
-    //         console.log('красный')
-    //         elem.style.backgroundColor = 'red'
-
-    //     }
-    //     if (!sud) {
-    //         console.log('зеленый')
-    //         elem.style.backgroundColor = 'green'
-    //     }
-
-
-    // }
-    // sto()
+   
     
     let clock = document.getElementById('clock');
     clock.style.backgroundColor = '#FCCA66';
@@ -90,13 +67,7 @@
     IBall.style.position = 'absolute'
     IBall.style.top = ('300' - clockSize/2) + 'px'
     IBall.style.left = ('500'- clockSize/2 )+ 'px'
-    
-
-
-
-
-
-
+   
     for (let h = 1; h <= 12; h++) {
         let angle = h / 12 * Math.PI * 2; //отображаемый угол в радианах
         let nx = numbersCenterX - Math.cos(angle) * r; //проверяем - для угла=0 cos=1
@@ -166,7 +137,7 @@
     const updateArrow = () => {
         let time = new Date();
         cT.innerHTML = time.toLocaleTimeString();
-        // console.log(time.toLocaleTimeString())
+        
         let secondAngular = 6 * time.getSeconds() - 6;
         let minuteAngular = 6 * (time.getMinutes() + (1 / 60) * time.getSeconds());
         let hourAngular = 30 * (time.getHours() + (1 / 60) * time.getMinutes());
@@ -227,40 +198,6 @@
 
         ballH.update();
     }
-
-
-    // const getSecondsNow = () => {
-    //     new Date().getSeconds()
-    // }
-    // const currentSeconds = getSecondsNow()
-
-    // let sodmiclock
-
-
-
-    // const startMove = () => sodmiclock = true
-    // const stopMove = () => sodmiclock = false
-
-    // setInterval(() => {
-    //     let now = getSecondsNow
-    //     let isNextSecond = (currentSeconds !== now)
-
-    //     if (sodmiclock) {
-    //         moveClock()
-
-    //     }
-    //     if (isNextSecond) {
-    //         currentSeconds = now;
-    //         updateArrow()
-    //     }
-    // console.log(sodmiclock )
-    // console.log(isNextSecond )
-    // console.log(now )
-    // console.log(currentSeconds)
-    // }, 50);
-
-    // updateArrow()
-
 
 
     const getSecondsNow = () => new Date().getSeconds();
