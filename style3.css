@@ -191,7 +191,8 @@ div.cap{
     font-weight: bold;
     font-size: 44px;
     line-height: 60px;
-    color: #FFFFFF;
+    color: #FFFFFF; 
+    
 }
 .hit p:last-child{
     font-style: normal;

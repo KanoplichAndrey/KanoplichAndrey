@@ -10,9 +10,10 @@
 </head>
 <style>
     * {
-        /* padding: 0px; */
+        padding: 0px;
         margin: 0 auto;
         box-sizing: border-box;
+        overflow: hidden;
     }
 
     body {
@@ -26,7 +27,7 @@
     <br /><br />
     <div style="display: flex;flex-direction: column; align-items: center;">
         <!-- <input type="button" value="pausa" onclick="pausa()"> -->
-        <input type='button' value='Play!' style="height: 40px; width: 100px;font-weight: bold;font-size: 25px; "onclick='status()  '>
+        <input type='button' value='Play!' style="height: 40px; width: 100px;cursor: pointer;font-weight: bold;font-size: 25px; "onclick='status()  '>
         <div id="container" style="display: flex;  align-items: center; ">
 
             <div id="schetLeft" style=" font-size: 80px; font-weight: bold; color: green; ">0</div>
@@ -34,7 +35,7 @@
             <div id="schetright" style=" font-size: 80px; font-weight: bold;color: red;">0</div>
         </div>
         <div
-style='width: 1000px; height: 600px;  position: relative; background-color: #F0EE7E;' onclick='pausa()'>
+style='width: 1000px; height: 600px;  position: relative;cursor: pointer; background-color: #F0EE7E;' onclick='pausa()'>
             <div id='IBall'></div>
             <div id="redPlayer"
                 style="width: 10px; height: 100px;background-color: red;position: absolute; left: 975px; top: 250px; ">
@@ -47,8 +48,8 @@ style='width: 1000px; height: 600px;  position: relative; background-color: #F0E
     <script>
         "use strict";
         
-        setInterval(tick,40)
-        
+        // setInterval(tick,40)
+        requestAnimationFrame(tick)
         const ballH = {
             posX: 485,
             posY: 290,
@@ -131,11 +132,14 @@ style='width: 1000px; height: 600px;  position: relative; background-color: #F0E
             let LastballHspeedY
             
         function  status(){
+            
                 if(statusStart){
                 
             function start() {     
-                ballH.speedX=(10+Math.random() *5)* Math.sign(Math.random() - 0.5)
-                ballH.speedY=(Math.random() + 0.5)* -3
+                // ballH.speedX=(10+Math.random() *5)* Math.sign(Math.random() - 0.5)
+                // ballH.speedY=(Math.random() + 0.5)* -3
+                ballH.speedX=2
+                ballH.speedY=1
             
                 ballH.posX = (areaH.width  - ballH.width)/2
                 ballH.posY = (areaH.height - ballH.height)/2
@@ -300,11 +304,12 @@ style='width: 1000px; height: 600px;  position: relative; background-color: #F0E
 
             }
 
-// requestAnimationFrame(tick)
+
 
             ballH.update();
-            
+            requestAnimationFrame(tick)
         }
 
         ballH.update();
+        
     </script>
