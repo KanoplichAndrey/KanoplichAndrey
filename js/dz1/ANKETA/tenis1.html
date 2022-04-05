@@ -26,15 +26,15 @@
     <br /><br />
     <div style="display: flex;flex-direction: column; align-items: center;">
         <!-- <input type="button" value="pausa" onclick="pausa()"> -->
-        <input type='button' value='Play!' style="height: 40px; width: 100px;font-weight: bold;font-size: 25px; "onclick='status()  '>
+        <input type='button' value='Play!' style="height: 40px; width: 100px;font-weight: bold;font-size: 25px; cursor: pointer; "onclick='status()  '>
         <div id="container" style="display: flex;  align-items: center; ">
 
-            <div id="schetLeft" style=" font-size: 80px; font-weight: bold; color: green; ">0</div>
-            <div id="schet" style=" font-size: 80px; font-weight: bold;">:</div>
-            <div id="schetright" style=" font-size: 80px; font-weight: bold;color: red;">0</div>
+            <div id="schetLeft" style=" font-size: 50px; font-weight: bold; color: green; ">0</div>
+            <div id="schet" style=" font-size: 50px; font-weight: bold;">:</div>
+            <div id="schetright" style=" font-size: 50px; font-weight: bold;color: red;">0</div>
         </div>
         <div
-style='width: 1000px; height: 600px;  position: relative; background-color: #F0EE7E;' onclick='pausa()'>
+style='width: 1000px; height: 600px;  position: relative; background-color: #F0EE7E;cursor: pointer;' onclick='pausa()'>
             <div id='IBall'></div>
             <div id="redPlayer"
                 style="width: 10px; height: 100px;background-color: red;position: absolute; left: 975px; top: 250px; ">
@@ -54,6 +54,8 @@ style='width: 1000px; height: 600px;  position: relative; background-color: #F0E
             posY: 290,
             speedX: 0,
             speedY: 0,
+            accelX : 0.4,
+            accelY : 0.1,
             width: 30,
             height: 30,
 
@@ -266,6 +268,8 @@ style='width: 1000px; height: 600px;  position: relative; background-color: #F0E
                 ballH.posX += ballH.speedX;
                 ballH.posY += ballH.speedY;
 
+                
+
                 redPlayerY += redPlayerSpeedX
                 greenPlayerX += greenPlayerSpeedX
             }
@@ -286,6 +290,7 @@ style='width: 1000px; height: 600px;  position: relative; background-color: #F0E
             ) {
                 ballH.speedX = -ballH.speedX;
                 
+                
             }
  
             if (ballH.posX < greenPlayerY &&
@@ -297,6 +302,7 @@ style='width: 1000px; height: 600px;  position: relative; background-color: #F0E
            
               {  
                 ballH.speedX = -ballH.speedX;
+               
 
             }
 
