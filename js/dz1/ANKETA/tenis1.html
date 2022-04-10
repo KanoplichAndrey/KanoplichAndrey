@@ -129,8 +129,8 @@ style='width: 1000px; height: 600px;  position: relative; background-color: #F0E
                 // ballH.speedX=(10+Math.random() *5)* Math.sign(Math.random() - 0.5)
                 // ballH.speedY=(Math.random() + 0.5)* -3
 
-                ballH.speedX=10
-                ballH.speedY=4
+                ballH.speedX=5
+                ballH.speedY=2
             
                 ballH.posX = (areaH.width  - ballH.width)/2
                 ballH.posY = (areaH.height - ballH.height)/2
@@ -215,12 +215,14 @@ style='width: 1000px; height: 600px;  position: relative; background-color: #F0E
                 statusStart = true
             }
         }
+
+     
                 function move() {
         ballH.posX += ballH.speedX;
         ballH.posY += ballH.speedY;
         redPlayerY += redPlayerSpeedX
         greenPlayerX += greenPlayerSpeedX
-        console.log(ballH.posX)
+        // console.log(ballH.posX)
         }
             function checkArea(){
             // вылетел ли мяч ниже пола?

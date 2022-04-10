@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+<body>
+<input class="in" type="text">
+<button class="but">add</button>
+<div class="container">
+
+</div>
+</body>
+
+<script>
+    const phones = [
+        {title: 'nokia', cost: 5},
+        {title: 'apple', cost: 20},
+        {title: 'simens', cost: 10},
+    ]
+
+    window.phones = phones
+
+    const container = document.querySelector('.container')
+
+    function refreshPhones(){
+        container.innerHTML = '';
+        phones.forEach((phone) => {
+            const item = document.createElement('div');
+            item.innerHTML = phone.title;
+            container.appendChild(item);
+            
+            
+        })
+    }
+
+    refreshPhones();
+
+    const button = document.querySelector('.but');
+    button.addEventListener('click',() => {
+        const input = document.querySelector('.in');
+        console.log(input.value);
+        phones.push({title: input.value, cost: 20})
+        refreshPhones();
+        localStorage.clear()
+       localStorage.bbb=['good morning']
+        localStorage.setItem('ccc','good evning')
+    //    let p= localStorage.ggg=`[
+    //         {
+    //             "name":"ghghgghghghhg",
+    //             "nam":"ghghgghghghhg",
+    //             "na":"ghghgghghghhg"
+    //         }
+    //     ]`
+        
+    //     console.log(JSON.parse (p))
+    //     console.log(localStorage.ggg)
+        
+       
+    })
+    let compani= [
+            {
+                "name":"ghghgghghghhg",
+                "nam":"ghghgghghghhg",
+                "na":"ghghgghghghhg"
+            }
+        ]
+     
+    // console.log(JSON.stringify(compani))
+    
+    let gggg = JSON.stringify(compani)
+    
+    console.log(JSON.parse(gggg))
+    console.log(JSON.stringify(gggg))
+    console.log(gggg)
+    // 
+
+
+  let user = {
+  name: "Василий Иванович",
+  age: 35
+  
+};
+let j = JSON.stringify(user)
+console.log(j)
+console.log(JSON.parse(j))
+
+ console.log(user.name)
+ localStorage.clear()
+</script>
+
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style=" background: rgb(204, 176, 166);">
+    <div class="container" style="display: flex;justify-content: space-around;">
+    <div>
+		<form style="text-align: center;  ">
+			<input type="button" value="1 - ввод информации о напитке" id="drinkName" > <br><br>
+			<input type="button" value="2 - получение информации о напитке" id="drinkInfo"><br><br>
+			<input type="button" value="3 - удаление информации о напитке" id="drinkInfoDel"><br><br>
+			<input type="button" value="4 - перечень всех напитков" id="drinkList"><br><br>
+		</form>
+		<!-- <p id="drinkInfoP"></p> -->
+	</div>
+    <div>
+		<form style="text-align: center;  ">
+			<input type="button" value="1 - ввод информации о блюде" id="foodName" > <br><br>
+			<input type="button" value="2 - получение информации о блюде" id="foodInfo"><br><br>
+			<input type="button" value="3 - удаление информации о блюде" id="foodInfoDel"><br><br>
+			<input type="button" value="4 - перечень всех блюд" id="foodList"><br><br>
+		</form>
+		<!-- <p id="drinkInfoP"></p> -->
+	</div>
+    </div>
+
+   
+    <script>
+
+"use strict";
+
+let button =document.querySelectorAll('input')
+
+
+for (let i=0;i<button.length; i++) {
+ 
+    button[i].style.cssText ='background-color: rgb(98 63 32); width: 300px; height: 40px; color: rgb(255,255,255);transition-duration: 0.5s;'
+    button[i].addEventListener('mouseover' ,ouseEvent )
+    button[i].addEventListener('mouseout' ,ouseout )
+    function ouseEvent() {button[i].style.transform='scale(1.2)'}
+    function ouseout() {button[i].style.transform=''}   
+  
+}
+console.log(button)
+//  input.classList.add(input)
+// console.log(input)
+
+// for(let i=0; i<input.length ; i++){
+    
+//  input.style.height = 40 +'px'
+// }
+
+function HashStorage(lsKeyName) {
+    let self=this;
+    self.storage = {};
+
+    self.store = function() {
+    localStorage.setItem(lsKeyName, JSON.stringify(self.storage));	
+	}
+
+    if (localStorage.getItem(lsKeyName)){
+		if (lsKeyName == "lsDrink") {
+		let	myObject = JSON.parse(localStorage.lsDrink);
+			self.storage = myObject;
+         }   
+         if (lsKeyName == "lsfood") {
+		let	myObject = JSON.parse(localStorage.lsfood);
+			self.storage = myObject;
+         }  
+    }
+   self.addValue = function(key, value) {
+
+       self.storage[key] = value;
+       if (lsKeyName == "lsDrink") {
+		drinkStorage.store();
+         }   
+         if (lsKeyName == "lsfood") {
+		foodStorage.store();
+         }
+   }
+
+   self.getValue = function(key) {
+       if (key in self.storage) {
+           return self.storage[key];
+       } else {
+           return undefined;
+       }
+   }
+   self.deleteValue = function(key) {
+       if (self.storage?.[key]) {
+            delete self.storage[key];
+            if (lsKeyName == "lsDrink") {
+            drinkStorage.store();
+            }   
+            if (lsKeyName == "lsfood") {
+            foodStorage.store();
+            }
+
+           return true;
+
+       } else {
+           return false;
+       }
+   }
+
+   // this.getKeys = function() {
+   //     let keys = [];
+   //     for (let key in this.storage) {
+   //         keys.push(key);
+   //     }
+
+   //     return keys;
+   // }
+   self.getKeys = () => Object.keys(this.storage);
+
+}
+
+const drinkStorage = new HashStorage("lsDrink"),
+foodStorage = new HashStorage("lsfood")
+
+const drinkName = document.getElementById("drinkName");
+
+   drinkName.onclick = function() {
+       let keyP = prompt("напишите название напитка");
+       let valueC = {};
+       valueC.alcohol = confirm(keyP + " - алкогольный напиток или нет?\nok - алкогольный\nотмена - без алкогольный");
+       valueC.recipe = prompt("напишите рецепт напитка - " + keyP);
+       drinkStorage.addValue(keyP, valueC);
+    
+   }
+
+   const drinkInfo = document.getElementById("drinkInfo");
+
+   drinkInfo.onclick = function() {
+       let drinkInf = prompt("Напишите название напитка");
+       let drinkInfoP = document.getElementById("drinkInfoP");
+
+       let answer = drinkStorage.getValue(drinkInf);
+
+       if (drinkStorage.getValue(drinkInf) !== undefined) {
+           alert( "напиток: " + drinkInf + ", " + "алкогольный: " + (answer.alcohol === true ? "да" : "нет") + ", " + "Рецепт: " + (answer.recipe ? answer.recipe : " рецепта нет"));
+       } else {
+           alert( " таког напитка нет")
+       }
+   }
+   
+    const drinkInfoDel = document.getElementById("drinkInfoDel");
+
+   drinkInfoDel.onclick = function() {
+       let drinkInfoDel = prompt("Напишите название напитка");
+       let drinkInfoP = document.getElementById("drinkInfoP");
+
+       if (drinkStorage.deleteValue(drinkInfoDel) === true) {
+           alert( "информация о напитке УДАЛЕНО!");
+       } else {
+           alert(" такой напиток отсутствует");
+       }
+
+   }
+
+   const drinkList = document.getElementById("drinkList");
+   
+   drinkList.onclick = function() {
+       let drinkInfoP = document.getElementById("drinkInfoP");
+       alert( drinkStorage.getKeys());
+   }
+   
+   const foodName = document.getElementById("foodName");
+
+   foodName.onclick = function() {
+       let keyP = prompt("напишите название блюда");
+       let valueC = {};
+
+       valueC.alcohol = confirm(keyP + " - алкогольный напиток или нет?\nok - алкогольный\nотмена - без алкогольный");
+       valueC.recipe = prompt("напишите рецепт блюда - " + keyP);
+       foodStorage.addValue(keyP, valueC);
+       store = document.getElementById("store");
+   }
+
+   const foodInfo = document.getElementById("foodInfo");
+
+   foodInfo.onclick = function() {
+       let foodInfo = prompt("Напишите название блюда");
+       let foodInfoP = document.getElementById("drinkInfoP");
+
+       let answer = foodStorage.getValue(foodInf);
+
+       if (foodStorage.getValue(foodInf) !== undefined) {
+           alert( "напиток: " + foodInf + ", " + "алкогольный: " + (answer.alcohol === true ? "да" : "нет") + ", " + "Рецепт: " + (answer.recipe ? answer.recipe : " рецепта нет"));
+       } else {
+           alert( " таког напитка нет")
+       }
+   }
+   
+   const foodInfoDel = document.getElementById("foodInfoDel");
+
+   foodInfoDel.onclick = function() {
+       let foodInfoDel = prompt("Напишите название напитка");
+       let foodInfoP = document.getElementById("foodInfoP");
+
+       if (foodStorage.deleteValue(foodInfoDel) === true) {
+           alert( "информация о напитке УДАЛЕНО!");
+       } else {
+           alert(" такой напиток отсутствует");
+       }
+
+   }
+
+   const foodList = document.getElementById("foodList");
+   
+   foodList.onclick = function() {
+       let foodInfoP = document.getElementById("foodInfoP");
+       alert( foodStorage.getKeys());
+   }
+
+  </script>
+</body>
+</html>
