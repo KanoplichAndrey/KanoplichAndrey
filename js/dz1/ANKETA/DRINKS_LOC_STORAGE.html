@@ -79,11 +79,11 @@ function HashStorage(lsKeyName) {
    self.deleteValue = function(key) {
        if (self.storage?.[key]) {
             delete self.storage[key];
-            if (lsKeyName) {
+             if (lsKeyName) {
             self.store();
             }  
            return true;
-           
+          
        } else {
 
            return false;
