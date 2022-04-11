@@ -15,7 +15,7 @@
 			<input type="button" value="3 - удаление информации о напитке" id="drinkInfoDel"><br><br>
 			<input type="button" value="4 - перечень всех напитков" id="drinkList"><br><br>
 		</form>
-		<!-- <p id="drinkInfoP"></p> -->
+		
 	</div>
     <div>
 		<form style="text-align: center;  ">
@@ -24,7 +24,7 @@
 			<input type="button" value="3 - удаление информации о блюде" id="foodInfoDel"><br><br>
 			<input type="button" value="4 - перечень всех блюд" id="foodList"><br><br>
 		</form>
-		<!-- <p id="drinkInfoP"></p> -->
+		
 	</div>
     </div>
 
@@ -46,13 +46,7 @@ for (let i=0;i<button.length; i++) {
   
 }
 console.log(button)
-//  input.classList.add(input)
-// console.log(input)
 
-// for(let i=0; i<input.length ; i++){
-    
-//  input.style.height = 40 +'px'
-// }
 
 function HashStorage(lsKeyName) {
     let self=this;
@@ -62,25 +56,17 @@ function HashStorage(lsKeyName) {
     localStorage.setItem(lsKeyName, JSON.stringify(self.storage));	
 	}
 
-    if (localStorage.getItem(lsKeyName)){
-		if (lsKeyName == "lsDrink") {
-		let	myObject = JSON.parse(localStorage.lsDrink);
+    if (localStorage.getItem(lsKeyName)){	
+		let	myObject = JSON.parse(localStorage.getItem(lsKeyName));
 			self.storage = myObject;
-         }   
-         if (lsKeyName == "lsfood") {
-		let	myObject = JSON.parse(localStorage.lsfood);
-			self.storage = myObject;
-         }  
     }
    self.addValue = function(key, value) {
 
        self.storage[key] = value;
-       if (lsKeyName == "lsDrink") {
-		drinkStorage.store();
+       if (lsKeyName) {
+		self.store();
          }   
-         if (lsKeyName == "lsfood") {
-		foodStorage.store();
-         }
+	
    }
 
    self.getValue = function(key) {
@@ -93,16 +79,13 @@ function HashStorage(lsKeyName) {
    self.deleteValue = function(key) {
        if (self.storage?.[key]) {
             delete self.storage[key];
-            if (lsKeyName == "lsDrink") {
-            drinkStorage.store();
-            }   
-            if (lsKeyName == "lsfood") {
-            foodStorage.store();
-            }
-
+            if (lsKeyName) {
+            self.store();
+            }  
            return true;
-
+           
        } else {
+
            return false;
        }
    }
@@ -130,7 +113,7 @@ const drinkName = document.getElementById("drinkName");
        valueC.alcohol = confirm(keyP + " - алкогольный напиток или нет?\nok - алкогольный\nотмена - без алкогольный");
        valueC.recipe = prompt("напишите рецепт напитка - " + keyP);
        drinkStorage.addValue(keyP, valueC);
-    
+    //    drinkStorage.store();
    }
 
    const drinkInfo = document.getElementById("drinkInfo");
@@ -156,6 +139,7 @@ const drinkName = document.getElementById("drinkName");
 
        if (drinkStorage.deleteValue(drinkInfoDel) === true) {
            alert( "информация о напитке УДАЛЕНО!");
+        //    drinkStorage.store();
        } else {
            alert(" такой напиток отсутствует");
        }
@@ -168,7 +152,7 @@ const drinkName = document.getElementById("drinkName");
        let drinkInfoP = document.getElementById("drinkInfoP");
        alert( drinkStorage.getKeys());
    }
-   
+   ////////////////////////////////////////////////////////////////////////////////
    const foodName = document.getElementById("foodName");
 
    foodName.onclick = function() {
@@ -178,14 +162,15 @@ const drinkName = document.getElementById("drinkName");
        valueC.alcohol = confirm(keyP + " - алкогольный напиток или нет?\nok - алкогольный\nотмена - без алкогольный");
        valueC.recipe = prompt("напишите рецепт блюда - " + keyP);
        foodStorage.addValue(keyP, valueC);
-       store = document.getElementById("store");
+   
+    //    foodStorage.store();
    }
 
    const foodInfo = document.getElementById("foodInfo");
 
    foodInfo.onclick = function() {
        let foodInfo = prompt("Напишите название блюда");
-       let foodInfoP = document.getElementById("drinkInfoP");
+       let foodInfoP = document.getElementById("foodInfoP");
 
        let answer = foodStorage.getValue(foodInf);
 
@@ -204,6 +189,7 @@ const drinkName = document.getElementById("drinkName");
 
        if (foodStorage.deleteValue(foodInfoDel) === true) {
            alert( "информация о напитке УДАЛЕНО!");
+        //    foodStorage.store();
        } else {
            alert(" такой напиток отсутствует");
        }
