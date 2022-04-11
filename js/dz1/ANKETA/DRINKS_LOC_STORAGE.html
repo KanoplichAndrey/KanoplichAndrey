@@ -172,10 +172,10 @@ const drinkName = document.getElementById("drinkName");
        let foodInfo = prompt("Напишите название блюда");
        let foodInfoP = document.getElementById("foodInfoP");
 
-       let answer = foodStorage.getValue(foodInf);
+       let answer = foodStorage.getValue(foodInfo);
 
-       if (foodStorage.getValue(foodInf) !== undefined) {
-           alert( "напиток: " + foodInf + ", " + "алкогольный: " + (answer.alcohol === true ? "да" : "нет") + ", " + "Рецепт: " + (answer.recipe ? answer.recipe : " рецепта нет"));
+       if (foodStorage.getValue(foodInfo) !== undefined) {
+           alert( "напиток: " + foodInfo + ", " + "алкогольный: " + (answer.alcohol === true ? "да" : "нет") + ", " + "Рецепт: " + (answer.recipe ? answer.recipe : " рецепта нет"));
        } else {
            alert( " таког напитка нет")
        }
