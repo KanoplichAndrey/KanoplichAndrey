@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Домашнее задание A1</title>
+  <style>
+    h3 {
+      font-family: Arial;
+      max-width: 50vw;
+      margin:0 auto;
+      margin-top: 5vh;
+    }
+    button {
+      margin: 0 auto;
+      width: 100px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h3>Написать «чистую» («молчаливую») функцию для эффективного подсчёта количества русских гласных букв в строке.
+  Спросить у пользователя строку. Вывести в консоль количество русских гласных букв в ней.</h3>
+  <button  onclick="My_tests()" >Пройти тесты</button>
+
+<script>
+  "use strict";
+
+  window.onload = function() {
+
+    console.log("Метод с forEach. В строке  гласных букв: "+ ForFunc(prompt("Введите строку для метода forEach: ")) );
+    console.log("Метод с filter. В строке  гласных букв: "+ FilterFunc(prompt("Введите строку для метода filter: ")) );
+  };
+
+  function ForFunc(str){
+    var counter=0;
+    var stroka=str.toLowerCase().split('');
+     function F(V,I,A){
+       var mass=["а", "у","о", "ы", "и", "э", "я", "ю", "ё", "е"];
+       if(mass.indexOf(V)!=-1){
+         counter++;
+       }
+     }
+    stroka.forEach(F);
+    return counter;
+  }
+
+  function FilterFunc(str){
+    var stroka=str.toLowerCase().split('');
+    function FF(V,I,A){
+      var mass=["а", "у","о", "ы", "и", "э", "я", "ю", "ё", "е"];
+      return mass.indexOf(V)!=-1;
+
+    }
+    return stroka.filter(FF).length;
+
+  }
+
+
+  function My_tests()
+  {
+    console.log('тест 1 -> слово без гласных');
+    var Glasn=ForFunc("тррр");
+    var Glasn2=FilterFunc("тррр");
+    console.log( (Glasn==0)&&(Glasn2==0)?'пройден':'НЕ ПРОЙДЕН!' )
+
+    console.log('тест 2 -> слово из одних гласных');
+    var Glasn=ForFunc("аеиы");
+    var Glasn2=FilterFunc("аеиы");
+    console.log( (Glasn==4)&&(Glasn2==4)?'пройден':'НЕ ПРОЙДЕН!' )
+
+    console.log('тест 3 -> слово из  гласных и согласных');
+    var Glasn=ForFunc("слово");
+    var Glasn2=FilterFunc("слово");
+    console.log( (Glasn==2)&&(Glasn2==2)?'пройден':'НЕ ПРОЙДЕН!' )
+
+    console.log('тест 4 -> слово из  гласных и согласных больших букв');
+    var Glasn=ForFunc("ВОРОБЕЙ");
+    var Glasn2=FilterFunc("ВОРОБЕЙ");
+    console.log( (Glasn==3)&&(Glasn2==3)?'пройден':'НЕ ПРОЙДЕН!' )
+
+  }
+
+
+/*
+  function glas_str(stroka){
+
+    var re = /[ауоыиэяюёе]/g;
+    var str = stroka.toLowerCase();
+    var myArray = str.match(re);
+    return myArray.length;
+
+
+  }
+  */
+
+
+
+
+</script>
+</body>
+</html>

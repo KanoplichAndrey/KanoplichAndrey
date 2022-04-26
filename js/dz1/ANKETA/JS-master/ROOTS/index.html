@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ROOTS</title>
+</head>
+<body>
+<input type=button value='корни' onclick='TTT()'>
+<input type=button value='авто-тесты' onclick='SquareRoots_Tests()'>
+
+<script>
+
+    // находим корни квадратного уравнения
+    // возвращает массив корней
+    function SquareRoots(a,b,c)
+    {
+        if (a!=0) { // a не может быть равно 0
+            var d = b * b - 4 * a * c; // дискриминант
+
+            if (d < 0)
+                return []; // нет корней
+
+
+            if (d == 0)
+                return [-b / (2 * a)]; // один корень
+
+            var x1 = (-b + Math.sqrt(d)) / (2 * a);
+            var x2 = (-b - Math.sqrt(d)) / (2 * a);
+
+            return [x1, x2]; // два корня
+        } else {
+            return [1];
+        }
+    }
+
+    function SquareRoots_Tests()
+    {
+        console.log('тест 1,1,1 -> нет корней');
+        var RootsA=SquareRoots(1,1,1);
+        console.log( (RootsA.length==0)?'пройден':'НЕ ПРОЙДЕН!' )
+
+        console.log('тест 1,-2,-3 -> два корня 3,-1');
+        var RootsA=SquareRoots(1,-2,-3);
+        console.log( ((RootsA.length==2)&&(RootsA[0]==3)&&(RootsA[1]==-1))?'пройден':'НЕ ПРОЙДЕН!' )
+
+        console.log('тест -1,-2,15 -> два корня -5,3');
+        var RootsA=SquareRoots(-1,-2,15);
+        console.log( ((RootsA.length==2)&&(RootsA[0]==-5)&&(RootsA[1]==3))?'пройден':'НЕ ПРОЙДЕН!' )
+
+        console.log('тест 1,12,36 -> один корень -6');
+        var RootsA=SquareRoots(1,12,36);
+        console.log( ((RootsA.length==1)&&(RootsA[0]==-6))?'пройден':'НЕ ПРОЙДЕН!' )
+
+        console.log('тест 0,5,-5 -> один корень 1');
+        var RootsA=SquareRoots(0,5,-5);
+        console.log( ((RootsA.length==1)&&(RootsA[0]==1))?'пройден':'НЕ ПРОЙДЕН!' )
+    }
+
+    function TTT()
+    {
+        var a=Number(prompt('Введите a'));
+        var b=Number(prompt('Введите b'));
+        var c=Number(prompt('Введите c'));
+        var RootsA=SquareRoots(a,b,c);
+
+        if ( !RootsA.length )
+            alert('корней нет!');
+        else if ( RootsA.length==1 )
+            alert('один корень: '+RootsA[0]);
+        else
+            alert('два корня: '+RootsA[0]+' и '+RootsA[1]);
+    }
+
+</script>
+
+</body>
+</html>

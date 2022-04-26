@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<img src='http://fe.it-academy.by/Examples/SG1998.jpg' height=448>
+<br>
+<div id='MARKER' style='width: 20px; height: 20px; background-color: green'>
+
+  <script>
+    AddEventHandler(document.body,'click',ClickedHandler,false);
+
+    function ClickedHandler(EO)
+    {
+      EO=EO||window.event;
+      var MarkerObj=document.getElementById('MARKER');
+      MarkerObj.style.position='absolute';
+      MarkerObj.style.left=EO.pageX+"px";
+      MarkerObj.style.top=EO.pageY+"px";
+    }
+
+    // установка обработчика событий
+    function AddEventHandler(Elem,EventName,HandlerFunc,CaptureFlag)
+    {
+      if ( Elem.addEventListener )
+        Elem.addEventListener(EventName,HandlerFunc,CaptureFlag); // современные браузеры и IE >=9
+      else
+      if ( !CaptureFlag ) // перехват вообще невозможен
+      {
+        var EventName2='on'+EventName;
+        if ( Elem.attachEvent ) // IE <=8
+        {
+          // создаём обёртку для обработчика, чтобы обработчику правильно передавался this
+          var IEHandlerF=function() { HandlerFunc.call(Elem); }
+          Elem.attachEvent(EventName2,IEHandlerF);
+          var StoreName="__IEHandlerF_"+EventName;
+          Elem[StoreName]=IEHandlerF; // сохраняем ссылку на обёртку, чтобы найти её при удалении обработчика
+        }
+        else // устаревшие браузеры
+        if ( !Elem[EventName2] )
+          Elem[EventName2]=HandlerFunc; // не сработает если несколько обработчиков одного события
+      }
+    }
+  </script>
+</body>
+</html>

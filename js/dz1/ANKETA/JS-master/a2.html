@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Домашнее задание A2</title>
+  <style>
+    .container  {max-width: 50%;margin: 0 auto;}
+    * {font-size: 17px;}
+  </style>
+</head>
+<body>
+<div class="container" >
+  Создать проект ANKETA. Спросить у пользователя:
+  <ul>
+    <li>фамилию, имя, отчество РАЗДЕЛЬНО (оператором prompt)
+    </li><li>возраст в годах (оператором prompt)
+    </li><li>пол (оператором confirm, например, "ваш пол - мужской?")
+    </li></ul>
+  <br>
+  и вывести оператором alert анкету пользователя по примеру:
+  <ul>
+    <li>ваше ФИО: Иванов Иван Иванович</li>
+    <li>ваш возраст в годах: 20</li>
+    <li>ваш возраст в днях: 7300</li>
+    <li>через 5 лет вам будет: 25</li>
+    <li>ваш пол: мужской</li>
+    <li>вы на пенсии: нет</li>
+  </ul>
+
+
+
+
+
+
+  <p>Должен быть контроль корректности вводимых пользователем данных (например, фамилия не должна быть пустой, возраст должен быть корректной цифрой и т.д.).</p>
+  Оператор alert в коде должен использоваться ровно один раз.
+</div>
+<script>
+  "use strict";
+
+  window.onload = function() {
+    new_user();
+  };
+
+  function  new_user() {
+    var fio="";
+    var vozrast;
+    var pol;
+    var pens;
+    var pens_confirm;
+    var vozrast_days;
+    var vozrast_future;
+
+    enter_fio();
+    enter_vozrast();
+    enter_pol();
+
+
+      function enter_fio() {
+        function enter_fio(question) {
+          var answer=prompt(question);
+          if (!answer || isFinite(parseInt(answer))){
+            enter_fio(question);
+          } else{
+            fio+= answer+" ";
+          }
+        }
+        enter_fio("Введите вашу фамилию: ");
+        enter_fio("Введите вашу имя: ");
+        enter_fio("Введите вашу отчество: ");
+
+      }
+
+
+
+    function enter_vozrast() {
+
+      vozrast=parseInt(prompt("Введите возраст"));
+      if (isFinite(vozrast)){
+        vozrast_days=vozrast*365;
+        vozrast_future=vozrast+5;
+      } else {
+        enter_vozrast();
+      }
+    }
+
+    function enter_pol() {
+      pol=confirm("Ваш пол - мужской?");
+      pol?pens=65:pens=60;
+      if(pens==65&&vozrast>=pens || pens==60&&vozrast>=pens) {
+        pens_confirm="да";
+      } else{
+        pens_confirm="нет"
+      }
+      if(pol){
+        pol="мужской";
+      } else{
+        pol="женский";
+      }
+    }
+
+    
+
+    if (vozrast!=0&&fio.length!=0){
+      alert("ваше ФИО: "+fio+"\nваш возраст в годах: " + vozrast +"\nваш возраст в днях: "+vozrast_days+"\nчерез 5 лет вам будет: "+vozrast_future + "\nваш пол: " + pol +"\nвы на пенсии: " + pens_confirm );
+    } else {
+      alert("Введите данные снова в корректной форме");
+    }
+
+
+  }
+
+
+</script>
+</body>
+
+</html>

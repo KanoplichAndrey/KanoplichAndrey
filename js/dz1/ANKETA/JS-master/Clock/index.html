@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+
+  </style>
+</head>
+<body style="display: inline-block;">
+
+<script src="TClock.js"></script>
+<script src="TClockController.js"></script>
+<script src="TClockViewCanvas.js"></script>
+<script src="TClockViewDOM.js"></script>
+<script src="TClockViewSVG.js"></script>
+<script>
+    var ClockModel1=new TClock(-5);
+    var ClockView1=new TClockViewDOM(ClockModel1,"Нью-Йорк (GMT-5)");
+    var ClockController1=new TClockController(ClockView1);
+
+    var ClockModel2=new TClock(9);
+    var ClockView2=new TClockViewSVG(ClockModel2,"Токио (GMT+9)");
+    var ClockController2=new TClockController(ClockView2);
+
+    var ClockModel3=new TClock(3);
+    var ClockView3=new TClockViewCanvas(ClockModel3,"Минск (GMT+3)");
+    var ClockController3=new TClockController(ClockView3);
+
+    var ClockModel4=new TClock(1);
+    var ClockView4=new TClockViewDOM(ClockModel4,"Берлин (GMT+1)");
+    var ClockController4=new TClockController(ClockView4);
+
+    var ClockModel5=new TClock(0);
+    var ClockView5=new TClockViewSVG(ClockModel5,"Лондон (GMT)");
+    var ClockController5=new TClockController(ClockView5);
+
+    var ClockModel6=new TClock(10);
+    var ClockView6=new TClockViewCanvas(ClockModel6,"Владивосток (GMT+10)");
+    var ClockController6=new TClockController(ClockView6);
+
+
+</script>
+
+</body>
+</html>

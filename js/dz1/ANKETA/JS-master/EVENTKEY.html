@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type='text' id='EEE'>
+
+<script>
+  AddEventHandler(document.getElementById('EEE'),"keypress",InputKey);
+
+  function InputKey(EO)
+  {
+    EO=EO||window.event;
+    var PressedChar=GetKeyboardChar(EO);
+    if(PressedChar=="z"|| PressedChar=="Z"){
+      EO.preventDefault();
+    }
+    console.log('input '+PressedChar);
+  }
+
+  function AddEventHandler(Elem,EventName,HandlerFunc,CaptureFlag)
+  {
+    if ( Elem.addEventListener )
+      Elem.addEventListener(EventName,HandlerFunc,CaptureFlag); // современные браузеры и IE >=9
+    else
+    if ( !CaptureFlag ) // перехват вообще невозможен
+    {
+      var EventName2='on'+EventName;
+      if ( Elem.attachEvent ) // IE <=8
+      {
+        // создаём обёртку для обработчика, чтобы обработчику правильно передавался this
+        var IEHandlerF=function() { HandlerFunc.call(Elem); }
+        Elem.attachEvent(EventName2,IEHandlerF);
+        var StoreName="__IEHandlerF_"+EventName;
+        Elem[StoreName]=IEHandlerF; // сохраняем ссылку на обёртку, чтобы найти её при удалении обработчика
+      }
+      else // устаревшие браузеры
+      if ( !Elem[EventName2] )
+        Elem[EventName2]=HandlerFunc; // не сработает если несколько обработчиков одного события
+    }
+  }
+
+  function GetKeyboardChar(EO)
+  {
+    if ( EO.which==null )   // IE
+    {
+      if ( EO.keyCode<32) return null; // управляющая клавиша
+      return String.fromCharCode(EO.keyCode); // печатный символ
+    }
+    if ( EO.which!=0 && EO.charCode!=0 )   // остальные браузеры
+    {
+      if ( EO.which<32 ) return null; // управляющая клавиша
+      return String.fromCharCode(EO.which); // печатный символ
+    }
+    return null; // управляющая клавиша
+  }
+
+  function PreventDefault(EO)
+  {
+    if ( EO.preventDefault )
+      EO.preventDefault();
+    else
+      EO.returnValue=false;
+  }
+</script>
+</body>
+</html>

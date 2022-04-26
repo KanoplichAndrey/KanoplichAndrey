@@ -1,0 +1,29 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "concurrently \"node app.js\" \"gulp watch\"",
+    "pack": "gulp pack",
+    "start-prod": "gulp pack && PORT=3001 node app.js",
+    "html-lint": "gulp html-lint || true",
+    "build": "webpack -p",
+    "watch": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "ejs": "2.5.7",
+    "express": "4.15.3"
+  },
+  "devDependencies": {
+    "browser-sync": "2.18.13",
+    "concurrently": "3.5.0",
+    "gulp": "3.9.1",
+    "gulp-htmlhint": "0.3.1",
+    "gulp-minifier": "0.2.2",
+    "webpack": "^4.19.1"
+  }
+}
