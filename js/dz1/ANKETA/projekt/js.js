@@ -300,12 +300,22 @@ gameOver.style.display = 'block'
 // form.style.display = 'block'
 // form.style.transition=  'all' + 3 + 's ease-out'
 // form.style.transform =  'scale(2)';
-form.style.top= 20 +"px"
-form.style.transition= 3 +'s'
+
 nextTetroElem.style.display = 'none'
+
+
+if(window.innerWidth <1160){
+    form.style.top= 190 +"px"
+    form.style.transition= 3 +'s'
+    menu.style.left= 490 +"px"
+    menu.style.transition= 3 +'s'
+
+} else{
+    form.style.top= 20 +"px"
+form.style.transition= 3 +'s'
 menu.style.left= 10 +"px"
 menu.style.transition= 3 +'s'
-
+}
 
  }
 // }
@@ -378,9 +388,18 @@ updateStateGame()
     numbers.id='ss'
     numbers.textContent ='Pause';
     numbers.style.position='absolute'
-    numbers.style.fontSize=330 + 'px'
+   
+
+    if(window.innerWidth < 1160){
+        
+        numbers.style.top = 370 +'px'
+        numbers.style.left = 390 +'px'
+        numbers.style.fontSize = 100 +'px'   
+    }else{
+         numbers.style.fontSize=330 + 'px'
     numbers.style.top = 280 +'px'
     numbers.style.left = 515 +'px'
+    }
     body.prepend(numbers)
 
   }
