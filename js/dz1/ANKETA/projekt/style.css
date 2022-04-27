@@ -3,12 +3,20 @@
           box-sizing: border-box;
 }
 
-body {
+.cont {
   margin: 0;
   background: #b38a7c;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
+}
+
+@media all and (max-width: 400px) {
+  .cont {
+    width: 375px;
+    margin: auto;
+    background-color: aqua;
+  }
 }
 
 #game-over {
