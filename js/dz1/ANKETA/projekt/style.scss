@@ -20,10 +20,15 @@ body{
 //     border: 10px solid rgb(68, 6, 139);
 
 // }
+@include media(400px) {
 
+    width: 375px;
+    margin: auto;
+    background-color: aqua;
+}
 }
 .cont{
-    @include media(400px) {
+    @include media(600px) {
 
         width: 375px;
         margin: auto;

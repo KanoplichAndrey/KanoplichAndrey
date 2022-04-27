@@ -3,6 +3,14 @@
           box-sizing: border-box;
 }
 
+@media all and (max-width: 400px) {
+  body {
+    width: 375px;
+    margin: auto;
+    background-color: aqua;
+  }
+}
+
 .cont {
   margin: 0;
   background: #b38a7c;
@@ -11,7 +19,7 @@
   position: relative;
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 600px) {
   .cont {
     width: 375px;
     margin: auto;
