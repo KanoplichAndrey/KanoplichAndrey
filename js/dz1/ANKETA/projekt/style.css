@@ -3,7 +3,7 @@
           box-sizing: border-box;
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 420px) {
   body {
     width: 375px;
     margin: auto;
