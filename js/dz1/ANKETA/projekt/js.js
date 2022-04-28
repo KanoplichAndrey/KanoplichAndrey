@@ -134,7 +134,7 @@ function draw() { // отвечает за отображение фигуры
 
         }
     }
-    // console.log(mainInerHTML)
+    
     main.innerHTML = mainInerHTML
 
 }
@@ -241,7 +241,7 @@ function removeFullLines() {
     }
 
         scoreElem.innerHTML= score
-        // localStorage.setItem('name', score)
+        
     if(score>= possibleLevels[currentLevel].nextLevelScore){
         currentLevel ++
         levelElem.innerHTML = currentLevel
@@ -274,7 +274,7 @@ function fixTetro() {
 
 }
 function moveTetroDown(){
-    // if(!isPause){
+    
         activeTetro.y += 1
     if (hasCllisions()) {
         activeTetro.y -= 1
@@ -283,7 +283,7 @@ function moveTetroDown(){
         activeTetro = nextTetro;
         nextTetro = getNevTetro()
         if(hasCllisions()){
-            // alert('game-over')
+           
             reset()
         }
 
@@ -302,22 +302,67 @@ gameOver.style.display = 'block'
 // form.style.transform =  'scale(2)';
 
 nextTetroElem.style.display = 'none'
+//////////////////////////////////////////////////////////////////
+let menuO ={
+    posX : 20,
+    posY : 100,
+    update : function() {
+        // var ballElem=document.getElementById('IBall');
 
-
-if(window.innerWidth <1160){
-    form.style.top= 190 +"px"
-    form.style.transition= 3 +'s'
-    menu.style.left= 490 +"px"
-    menu.style.transition= 3 +'s'
-
-} else{
-    form.style.top= 20 +"px"
-form.style.transition= 3 +'s'
-menu.style.left= 10 +"px"
-menu.style.transition= 3 +'s'
+        form.style.top=this.posX+"px";
+        form.style.left=this.posY+"px";
+       
+        // form.style.position = "fixit";
+       
+    }
 }
 
+
+
+menuO.update()
+//////////////////////////////////////////////////////////////////
+ 
+
+function formMenu(){
+    if(window.innerWidth <1160){
+       
+    // form.style.top= 190 +"px"
+    // form.style.left= 426 +"px"
+    
+
+    form.style.transition= 3 +'s'
+    //  menu.style.top= 10 +"%"
+    //  menu.style.left= 0 +"%"
+    menu.style.transition= 3 +'s'
+
+    //  function toTop( ) {
+        
+    //   let g=  
+      form.style.top=(menu.offsetTop + 185  - form.offsetHeight)+'px';
+    //    let f = 
+       form.style.left=(menu.offsetLeft + 737  + menu.offsetWidth/2-form.offsetWidth/2)+'px';
+       console.log(g)
+       console.log(f)
+       menuO.update()
+    //    45
+    //    37
+    // }
+    // toTop( )
+    
+} else{
+   
+
+    form.style.top= 20 +"px"
+    form.style.transition= 3 +'s'
+    menu.style.left= 10 +"px"
+    menu.style.transition= 3 +'s'
+
+}
+}
+formMenu()
+
  }
+ console.log(form.getBoundingClientRect())
 // }
 
 // function dropTetro(){
@@ -361,10 +406,10 @@ document.onkeydown = function (e) { // управление
     //         dropTetro()
 
     // }
+///////////////////////////////////////////////////////////////////////
+// console.log(e)
 
-console.log(e)
-
-
+//////////////////////////////////////////////////////////////////////////////////////////
 
 updateStateGame()
 
@@ -373,7 +418,7 @@ updateStateGame()
   function updateStateGame(){
       if(!isPause){
       addActiveTetro();
-    draw() // отрисовываем заново для более плавного движения
+    draw() 
     drawNextTetro();
 
   }
@@ -390,15 +435,15 @@ updateStateGame()
     numbers.style.position='absolute'
    
 
-    if(window.innerWidth < 1160){
+    if(window.innerWidth < 900){
         
         numbers.style.top = 370 +'px'
         numbers.style.left = 390 +'px'
         numbers.style.fontSize = 100 +'px'   
     }else{
-         numbers.style.fontSize=330 + 'px'
-    numbers.style.top = 280 +'px'
-    numbers.style.left = 515 +'px'
+        numbers.style.fontSize=330 + 'px'
+        numbers.style.top = 280 +'px'
+        numbers.style.left = 515 +'px'
     }
     body.prepend(numbers)
 

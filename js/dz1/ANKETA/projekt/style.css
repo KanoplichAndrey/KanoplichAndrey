@@ -1,14 +1,7 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-@media all and (max-width: 420px) {
-  body {
-    width: 375px;
-    margin: auto;
-    background-color: aqua;
-  }
+  padding: 0px;
 }
 
 .cont {
@@ -17,14 +10,7 @@
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-}
-
-@media all and (max-width: 600px) {
-  .cont {
-    width: 375px;
-    margin: auto;
-    background-color: aqua;
-  }
+  min-height: 100vh;
 }
 
 #game-over {
@@ -40,6 +26,13 @@
           transform: translate(-50%, -50%);
 }
 
+@media all and (max-width: 900px) {
+  #game-over {
+    font-size: 85px;
+    top: 10%;
+  }
+}
+
 #game {
   padding-top: 20px;
   font-size: 40px;
@@ -47,9 +40,9 @@
   margin: auto;
 }
 
-@media all and (max-width: 1161px) {
+@media all and (max-width: 900px) {
   #game {
-    margin: 0px;
+    margin: 0;
   }
 }
 
@@ -88,9 +81,10 @@
   font-size: 0;
 }
 
-@media all and (max-width: 1161px) {
+@media all and (max-width: 900px) {
   #next-tetro {
-    top: 55px;
+    top: 60px;
+    left: 200px;
   }
 }
 
@@ -109,20 +103,13 @@
   overflow: hidden;
   -webkit-box-shadow: 0px 0px 8px blue;
           box-shadow: 0px 0px 8px blue;
+  z-index: 1;
 }
 
-@media all and (max-width: 1450px) {
+@media all and (max-width: 1470px) {
   #menu {
     width: 400px;
     background-color: aqua;
-  }
-}
-
-@media all and (max-width: 1450px) and (max-width: 1161px) {
-  #menu {
-    width: 400px;
-    background-color: aqua;
-    top: 386px;
   }
 }
 
@@ -140,17 +127,16 @@
           box-shadow: 0px 0px 8px blue;
 }
 
-@media all and (max-width: 1161px) {
+@media all and (max-width: 1470px) {
   #form {
-    width: 400px;
+    width: 270px;
     background-color: aqua;
-    left: 490px;
   }
 }
 
 .but {
   height: 50px;
-  width: 300px;
+  width: 94%;
   border-radius: 10px;
   margin-left: 8px;
   margin-top: 10px;
@@ -160,7 +146,7 @@
 
 .in {
   height: 50px;
-  width: 300px;
+  width: 94%;
   border-radius: 10px;
   margin-left: 8px;
   font-size: 30px;

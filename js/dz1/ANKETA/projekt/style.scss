@@ -1,45 +1,22 @@
 @import 'mixin';
 *{
     box-sizing: border-box;
-
+    padding: 0px;
 }  
 
 body{
 
 
-    // @include media(1200px) {
-
-    //     width: 1170px;
-    //     background-color: black;
-
-    // }
-
-// @include media(900px) {
-
-//     width: 920px;
-//     border: 10px solid rgb(68, 6, 139);
-
-// }
-@include media(375px) {
-
-    width: 375px;
-    margin: auto;
-    background-color: aqua;
-}
 }
 .cont{
-    @include media(375px) {
-
-        width: 375px;
-        margin: auto;
-        background-color: rgb(32, 4, 97);
-    }
+   
 
 margin: 0;
 background: rgb(179, 138, 124);
 color: white;
 font-family: Arial, Helvetica, sans-serif;
 position: relative;
+min-height: 100vh;
 
     
 }
@@ -54,18 +31,25 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
+@include media(900px) {
+
+    font-size: 85px;
+    top: 10%;
+ }
+
+
 }
 #game{
 padding-top: 20px;
 font-size: 40px;
 width: 320px;
 margin:  auto;
-@include media(1161px) {
+@include media(900px) {
 
-    margin: 0px;
-    
+   margin: 0;
+
 }
-
+  
 }
 .main{
 
@@ -104,36 +88,34 @@ background-color: rgb(29, 17, 2);
    
 }
 #next-tetro {
-    @include media(1161px) {
-
-       
-        top: 55px;
-        
-        
-    }
+   
 position: absolute;
 top: 200px;
 left: 200px;
 font-size: 0;
+@media all and (max-width: 900px) {
+    top: 60px;
+    left: 200px;
+  }
 }
 #menu{
 
-    @include media(1450px) {
+    @include media(1470px) {
 
         width: 400px;
         background-color: aqua;
+    }
     
-    
-    @include media(1161px) {
+    // @include media(1161px) {
 
-        width: 400px;
-        background-color: aqua;
-        // left: 490px;
-        top: 386px;
+    //     width: 400px;
+    //     background-color: aqua;
+    //     // left: 490px;
+    //     top: 386px;
         
         // transition: all 3s ease 0s;
-    }
-}
+    // }
+// }
 // @include media(900px) {
 
 //     width: 414px;
@@ -153,19 +135,21 @@ color: black;
 font-size: 30px;
 overflow: hidden;
 box-shadow: 0px 0px 8px blue;
+z-index: 1;
 
 }
 
 #form{
-    @include media(1161px) {
+    @include media(1470px) {
 
-        width: 400px;
+        width: 270px;
         background-color: aqua;
-        left: 490px;
-        // top: 386px;
-        
-        // transition: all 3s ease 0s;
     }
+    //     left: 490px;
+    //     top: 386px;
+        
+    //     transition: all 3s ease 0s;
+    // }
 border: solid 1px rgb(29, 17, 2);
 width: 325px;
 height: 190px;
@@ -182,7 +166,7 @@ box-shadow: 0px 0px 8px blue;
 .but{
 
 height: 50px;
-width: 300px;
+width: 94%;
 border-radius: 10px;
 margin-left: 8px;
 margin-top: 10px;
@@ -191,7 +175,7 @@ box-shadow: 0px 0px 8px blue;
 
 .in{
 height: 50px;
-width: 300px;
+width: 94%;
 border-radius: 10px;
 margin-left: 8px;
 font-size: 30px;
