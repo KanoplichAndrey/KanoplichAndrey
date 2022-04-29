@@ -320,13 +320,13 @@ function reset() {
             menu.style.transition = 3 + 's'
 
             let g = form.style.top = (menu.offsetTop + 500) - (form.offsetHeight) + 'px';
-            let f = form.style.left = (menu.offsetLeft + 955) + (menu.offsetWidth / 2 - form.offsetWidth / 2) + 'px';
+            let f = form.style.left = (menu.offsetLeft + 635) + (menu.offsetWidth / 2 - form.offsetWidth / 2) + 'px';
 
             menu.style.top = g
             menu.style.left = f
             menuO.posX = 180
             menuO.posY = 380
-
+            menu.style.width = 310 + "px"
             console.log(form.offsetHeight)
             console.log(f)
 

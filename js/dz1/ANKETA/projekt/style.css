@@ -28,8 +28,12 @@
 
 @media all and (max-width: 1166px) {
   #game-over {
-    font-size: 85px;
-    top: 10%;
+    top: 50%;
+    left: 0%;
+    font-size: 61px;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    z-index: 1;
   }
 }
 

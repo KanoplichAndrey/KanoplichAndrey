@@ -33,12 +33,17 @@ left: 50%;
 transform: translate(-50%, -50%);
 @include media(1166px) {
 
-    font-size: 85px;
-    top: 10%;
+    // font-size: 85px;
+    top: 50%;
+    left: 0%;
+    font-size: 61px;
+    transform: translate(0%, 0%);
+    z-index: 1;
+}
  }
 
 
-}
+
 #game{
 padding-top: 20px;
 font-size: 40px;
@@ -175,8 +180,6 @@ z-index: 1;
 
         width: 270px;
         background-color: aqua;
-
- 
 
     }
    
