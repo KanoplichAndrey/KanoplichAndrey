@@ -146,13 +146,11 @@ function drawNextTetro() {
             } else {
                 nextTetroInnerHTML += '<div class="cell"></div>'
             }
-
         }
         nextTetroInnerHTML += '<br/>'
     }
     nextTetroElem.innerHTML = nextTetroInnerHTML
 }
-
 
 function removePrevActiveTetro() {
     for (let y = 0; y < playfield.length; y++) {
@@ -176,7 +174,7 @@ function addActiveTetro() {
     }
 }
 
-function rotateTetro() {
+function rotateTetro() { // вращение фигуры
     const prevTetroState = activeTetro.shape;
     activeTetro.shape = activeTetro.shape[0].map((val, index) =>
         activeTetro.shape.map((row) => row[index]).reverse()
@@ -205,7 +203,7 @@ function hasCllisions() {
 
 
 
-function removeFullLines() {
+function removeFullLines() { // удаленине заполненого поля
     let canRemoveLine = true;
     filledLine = 0
     for (let y = 0; y < playfield.length; y++) {
@@ -247,7 +245,7 @@ function removeFullLines() {
     }
 }
 
-function getNevTetro() {
+function getNevTetro() { // получаем новую фигуру
     const possibleFigures = 'OISZLJT';
     const rand = Math.floor(Math.random() * 7);
     const nevTetro = figures[possibleFigures[rand]];
@@ -274,7 +272,7 @@ function fixTetro() {
 
 }
 
-function moveTetroDown() {
+function moveTetroDown() { //движение фигуры
 
     activeTetro.y += 1
     if (hasCllisions()) {
@@ -294,16 +292,12 @@ function moveTetroDown() {
 function reset() {
     isPause = true
     clearTimeout(gameTimerId)
-
     init()
     draw()
     audio.pause()
     gameOver.style.display = 'block'
-    // form.style.display = 'block'
-    // form.style.transition=  'all' + 3 + 's ease-out'
-    // form.style.transform =  'scale(2)';
-
     nextTetroElem.style.display = 'none'
+
     //////////////////////////////////////////////////////////////////
     let menuO = {
         posX: 20,
@@ -313,11 +307,8 @@ function reset() {
             form.style.top = this.posX + "px";
             form.style.left = this.posY + "px";
 
-
         }
     }
-
-
 
     menuO.update()
     //////////////////////////////////////////////////////////////////
@@ -325,17 +316,9 @@ function reset() {
 
     function formMenu() {
         if (window.innerWidth < 1160) {
-
-            // form.style.top= 190 +"px"
-            // form.style.left= 426 +"px"
-
-
             form.style.transition = 3 + 's'
             menu.style.transition = 3 + 's'
 
-            //  function toTop( ) {
-            // left: 32%;
-            // top: 50%;  
             let g = form.style.top = (menu.offsetTop + 500) - (form.offsetHeight) + 'px';
             let f = form.style.left = (menu.offsetLeft + 955) + (menu.offsetWidth / 2 - form.offsetWidth / 2) + 'px';
 
@@ -346,8 +329,6 @@ function reset() {
 
             console.log(form.offsetHeight)
             console.log(f)
-
-
 
         } else {
             form.style.top = 20 + "px"
@@ -391,7 +372,7 @@ document.onkeydown = function (e) { // управление
         ///////////////////////////////////////////////////////////////////////
         // console.log(e)
 
-        //////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
 
         updateStateGame()
 
