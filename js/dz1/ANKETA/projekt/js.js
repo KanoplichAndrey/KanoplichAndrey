@@ -446,17 +446,17 @@ function soundClick() { // функция  запуска музыки
     audio.loop = true //  зацикливание музыки
 }
 /////////////////////////////////////////////////////////////////////////////////////
-res.addEventListener('click', () => {
+// res.addEventListener('click', () => {
 
-    menu.style.left = 10 + "px"
-    menu.style.transition = 3 + 's'
-    iSres = !iSres
-    if (!iSres) {
-        console.log(res)
-        menu.style.left = -700 + 'px'
-    }
+//     menu.style.left = 10 + "px"
+//     menu.style.transition = 3 + 's'
+//     iSres = !iSres
+//     if (!iSres) {
+//         console.log(res)
+//         menu.style.left = -700 + 'px'
+//     }
 
-})
+// })
 //////////////////////////////////////////////////////////////////////////////////
 scoreElem.innerHTML = score
 levelElem.innerHTML = currentLevel
@@ -475,8 +475,8 @@ function startGame() {
 let list = [];
 window.list = list
 const container = document.querySelector('.container')
-var record = 0
-let kano
+// var record = 0
+// let kano
 
 function refresh() {
     const usersListFromLS = localStorage.getItem('users');

@@ -4,6 +4,10 @@
   padding: 0px;
 }
 
+body {
+  min-height: 100vh;
+}
+
 .cont {
   margin: 0;
   background: #b38a7c;
@@ -20,7 +24,7 @@
   line-height: .6;
   display: none;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
