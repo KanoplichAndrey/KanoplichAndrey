@@ -6,19 +6,23 @@
 
 body{
     // height: 100vh;
-min-height: 100vh;
 
+background-image: url('lion.jpg');
+// width: 100%;
+// min-width: 100%;
+// height: auto;
 }
 .cont{
    
 
 margin: 0;
-background: rgb(179, 138, 124);
+// background: rgb(179, 138, 124);
 color: white;
 font-family: Arial, Helvetica, sans-serif;
 position: relative;
 
-height: 100%;
+// height: 100%;
+// height: auto;
 
     
 }
@@ -36,7 +40,7 @@ transform: translate(-50%, -50%);
 @include media(1166px) {
 
     // font-size: 85px;
-    top: 50%;
+    top: 25%;
     left: 0%;
     font-size: 61px;
     transform: translate(0%, 0%);
@@ -156,7 +160,7 @@ font-size: 0;
     @include media(1470px) {
 
         width: 400px;
-        background-color: aqua;
+        background-color: #E9E9E9;
     }
     
    

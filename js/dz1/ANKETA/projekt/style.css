@@ -5,16 +5,14 @@
 }
 
 body {
-  min-height: 100vh;
+  background-image: url("lion.jpg");
 }
 
 .cont {
   margin: 0;
-  background: #b38a7c;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  height: 100%;
 }
 
 #game-over {
@@ -32,7 +30,7 @@ body {
 
 @media all and (max-width: 1166px) {
   #game-over {
-    top: 50%;
+    top: 25%;
     left: 0%;
     font-size: 61px;
     -webkit-transform: translate(0%, 0%);
@@ -159,7 +157,7 @@ body {
 @media all and (max-width: 1470px) {
   #menu {
     width: 400px;
-    background-color: aqua;
+    background-color: #E9E9E9;
   }
 }
 

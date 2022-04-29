@@ -16,7 +16,7 @@ const res = document.querySelector('#res');
 let playfield = [] //рисую поле
 function init() {
     let x = 10
-    let y = 20
+    let y = 19
     for (let i = 0; i < y; i++) {
         playfield[i] = []
         for (let j = 0; j < x; j++) {
