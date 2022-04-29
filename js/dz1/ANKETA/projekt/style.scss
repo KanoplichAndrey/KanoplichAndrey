@@ -31,7 +31,7 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-@include media(900px) {
+@include media(1166px) {
 
     font-size: 85px;
     top: 10%;
@@ -44,13 +44,59 @@ padding-top: 20px;
 font-size: 40px;
 width: 320px;
 margin:  auto;
-@include media(900px) {
+@include media(1166px) {
 
    margin: 0;
 
 }
   
 }
+
+#START, 
+#PAUSE
+{
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    padding: 10px 30px;
+    // margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #332a28;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fe6637;
+    transition: .2s ease-in-out;
+
+}
+#START:before,
+#PAUSE:before
+{
+    content: "";
+    background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -8px;
+    left: -75px;
+    transform: skewX(-45deg);
+ }
+ #START:hover,
+ #PAUSE:hover
+ {
+    background-color: #6b2f68;
+    color: #fff;
+
+ }
+ #START:hover:before,
+ #PAUSE:hover:before
+ {
+    left: 150px;
+    transition: .5s ease-in-out;
+}
+
+
+
 .main{
 
 /* width: 320px; */
@@ -93,7 +139,7 @@ position: absolute;
 top: 200px;
 left: 200px;
 font-size: 0;
-@media all and (max-width: 900px) {
+@media all and (max-width: 1166px) {
     top: 60px;
     left: 200px;
   }
@@ -106,22 +152,7 @@ font-size: 0;
         background-color: aqua;
     }
     
-    // @include media(1161px) {
-
-    //     width: 400px;
-    //     background-color: aqua;
-    //     // left: 490px;
-    //     top: 386px;
-        
-        // transition: all 3s ease 0s;
-    // }
-// }
-// @include media(900px) {
-
-//     width: 414px;
-//     border: 10px solid rgb(68, 6, 139);
-
-// }
+   
 width: 550px;
 margin: 0 auto;
 height: 50%;
@@ -144,12 +175,12 @@ z-index: 1;
 
         width: 270px;
         background-color: aqua;
+
+ 
+
     }
-    //     left: 490px;
-    //     top: 386px;
-        
-    //     transition: all 3s ease 0s;
-    // }
+   
+   
 border: solid 1px rgb(29, 17, 2);
 width: 325px;
 height: 190px;
@@ -171,6 +202,8 @@ border-radius: 10px;
 margin-left: 8px;
 margin-top: 10px;
 box-shadow: 0px 0px 8px blue;
+
+
 }
 
 .in{
@@ -181,11 +214,3 @@ margin-left: 8px;
 font-size: 30px;
 box-shadow: 0px 0px 8px rgb(161, 5, 135);
 }
-/* @keyframes showBlock {
-0% {
-  opacity: 0;
-}
-100% {
-  opacity: 1;
-}
-} */ 
