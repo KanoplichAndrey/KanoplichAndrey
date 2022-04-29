@@ -315,7 +315,7 @@ function reset() {
 
 
     function formMenu() {
-       
+
 
         if (window.innerWidth < 1160) {
             form.style.transition = 3 + 's'
@@ -342,6 +342,14 @@ function reset() {
     formMenu()
 
 }
+document.querySelector('#menu').addEventListener('touchstart', myTouch)
+
+function myTouch(event) {
+    console.log('touch')
+    console.log(event)
+    res1()
+}
+
 console.log(form.getBoundingClientRect())
 
 document.onkeydown = function (e) { // управление
@@ -400,7 +408,7 @@ pauseBtn.addEventListener('click', (e) => {
         let numbers = document.createElement('div');
         let body = document.querySelector('#game')
         numbers.id = 'ss'
-        numbers.textContent = 'Pause';  
+        numbers.textContent = 'Pause';
         numbers.style.position = 'absolute'
         audio.pause()
 
@@ -411,7 +419,7 @@ pauseBtn.addEventListener('click', (e) => {
             numbers.style.left = 390 + 'px'
             numbers.style.fontSize = 100 + 'px'
         } else {
-            numbers.style.fontSize = 155 +'px'
+            numbers.style.fontSize = 155 + 'px'
             // numbers.style.fontSize = 330 + 'px'
             numbers.style.top = 280 + 'px'
             numbers.style.left = 515 + 'px'
@@ -450,6 +458,11 @@ function soundClick() { // функция  запуска музыки
 /////////////////////////////////////////////////////////////////////////////////////
 res.addEventListener('click', () => {
 
+    res1()
+
+})
+
+function res1() {
     menu.style.left = 10 + "px"
     menu.style.transition = 3 + 's'
     iSres = !iSres
@@ -459,13 +472,8 @@ res.addEventListener('click', () => {
     }
 
 
+}
 
-
-
-
-
-
-})
 //////////////////////////////////////////////////////////////////////////////////
 scoreElem.innerHTML = score
 levelElem.innerHTML = currentLevel
@@ -518,7 +526,7 @@ function refresh() {
 }
 refresh();
 
-    button.addEventListener('click', () => {
+button.addEventListener('click', () => {
     const input = document.querySelector('.in');
     form.style.top = -700 + 'px';
 
