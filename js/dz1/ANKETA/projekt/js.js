@@ -315,6 +315,52 @@ function reset() {
 
 
     function formMenu() {
+        document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+var xDown = null;
+var yDown = null;
+ 
+function getTouches(evt) {
+return evt.touches || // чистый API JS
+evt.originalEvent.touches; // jQuery
+}
+ 
+function handleTouchStart(evt) {
+const firstTouch = getTouches(evt)[0];
+xDown = firstTouch.clientX;
+yDown = firstTouch.clientY;
+};
+ 
+function handleTouchMove(evt) {
+if ( ! xDown || ! yDown ) {
+return;
+}
+ 
+var xUp = evt.touches[0].clientX;
+var yUp = evt.touches[0].clientY;
+ 
+var xDiff = xDown - xUp;
+var yDiff = yDown - yUp;
+ 
+if ( Math.abs( xDiff ) &gt, Math.abs( yDiff ) ) {/* отлавливаем разницу в движении */
+if ( xDiff &gt, 0 ) {
+/* swipe влево */
+} else {
+/* swipe вправо */
+}
+} else {
+if ( yDiff &gt, 0 ) {
+/* swipe вверх */
+} else {
+/* swipe вниз */
+}
+}
+/* свайп был, обнуляем координаты */
+xDown = null;
+yDown = null;
+};
+
+
         if (window.innerWidth < 1160) {
             form.style.transition = 3 + 's'
             menu.style.transition = 3 + 's'
@@ -446,17 +492,24 @@ function soundClick() { // функция  запуска музыки
     audio.loop = true //  зацикливание музыки
 }
 /////////////////////////////////////////////////////////////////////////////////////
-// res.addEventListener('click', () => {
+res.addEventListener('click', () => {
 
-//     menu.style.left = 10 + "px"
-//     menu.style.transition = 3 + 's'
-//     iSres = !iSres
-//     if (!iSres) {
-//         console.log(res)
-//         menu.style.left = -700 + 'px'
-//     }
+    menu.style.left = 10 + "px"
+    menu.style.transition = 3 + 's'
+    iSres = !iSres
+    if (!iSres) {
+        console.log(res)
+        menu.style.left = -700 + 'px'
+    }
 
-// })
+
+
+
+
+
+
+
+})
 //////////////////////////////////////////////////////////////////////////////////
 scoreElem.innerHTML = score
 levelElem.innerHTML = currentLevel
