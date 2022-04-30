@@ -342,6 +342,7 @@ function reset() {
     formMenu()
 
 }
+///////////////////////жесты///////////////////////////////////////////
 document.querySelector('#menu').addEventListener('touchstart', myTouch)
 
 function myTouch(event) {
@@ -349,6 +350,55 @@ function myTouch(event) {
     console.log(event)
     res1()
 }
+document.addEventListener('touchstart', handleTouchStart, false);     
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;                                                        
+var yDown = null;                                                        
+
+function handleTouchStart(evt) {                                         
+    xDown = evt.touches[0].clientX;                                      
+    yDown = evt.touches[0].clientY;                                      
+};                                                
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+    
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+        if ( xDiff > 0 ) {
+            /* left swipe */ 
+            activeTetro.x -= 1
+            console.log('left')
+        } else {
+            /* right swipe */
+            activeTetro.x += 1
+            console.log('right')
+        }                       
+    } else { 
+        if ( yDiff > 0 ) {
+            /* up swipe */ 
+            activeTetro.y += 1
+            rotateTetro()
+            console.log('up')
+        } else { 
+            /* down swipe */
+            moveTetroDown()
+            console.log('down')
+        }                                                                 
+    }
+    
+    xDown = null;
+    yDown = null;                                             
+};
+////////////////////////////////////////////////////////////////
 
 console.log(form.getBoundingClientRect())
 
@@ -558,3 +608,101 @@ button.addEventListener('click', () => {
     input.value = '';
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const div = document.querySelector('.div')
+
+// const btn = document.querySelector('button')
+
+// function getPosts(cb){
+//     const xhr = new XMLHttpRequest()
+// // console.log(xhr)
+// xhr.open('GET','https://fe.it-academy.by/AjaxStringStorage2.php')
+// xhr.addEventListener('load',() => {
+//     // console.log(xhr.responseText)
+//     const response = JSON.parse(xhr.responseText)
+//     // console.log(response)
+//     cb(response)
+// })
+
+
+// xhr.addEventListener('error', () => {
+//     crossOriginIsolated.log('error')
+// })
+
+// xhr.send()
+
+// }
+
+// btn.addEventListener('click', e => {
+//     getPosts(response => {
+//     console.log(response)
+//         const fragment = document.createDocumentFragment();
+
+//     response.forEach(post => {
+//         const card =document.createElement('div')
+//         card.classList.add('card')
+//         const cardBody  =document.createElement('div')
+//         cardBody.classList.add('cardBody')
+//         const title = document.createElement('h5')
+//         title.classList.add('card-title')
+//         title.textContent = post.title
+//         const article = document.createElement('p')
+//         article.classList.add('card-text')
+//         article.textContent = post.body
+//         cardBody.appendChild(title)
+//         cardBody.appendChild(article)
+//         card.appendChild(cardBody)
+//         fragment.appendChild(card)
+//     console.log(cardBody)
+
+//     });
+//     div.appendChild(fragment)
+// });
+
+// });
+
+// 'https://fe.it-academy.by/AjaxStringStorage2.php'
+
+/////////////////////////////////////////////////
+
+// let xhttp = new XMLHttpRequest()
+// var updatePassword;
+// var stringName='KANO_TEST_INFO';
+
+
+// xhttp.onreadystatechange = function () {
+//    if(this.readyState == 4 && this.status == 200){
+// // console.log(readyState)
+//     muFunction(this.responseText)
+//    }
+// } 
+// xhttp.open('GET','https://fe.it-academy.by/AjaxStringStorage2.php', true)
+// xhttp.send()
+
+// function muFunction(data){
+//     console.log(data)
+// }
+////////////////////////////////////////////////////////
+
+
+
+
