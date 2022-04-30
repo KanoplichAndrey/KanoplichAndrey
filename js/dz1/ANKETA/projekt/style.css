@@ -40,7 +40,6 @@ body {
 }
 
 #game {
-  padding-top: 20px;
   width: 320px;
   margin: auto;
 }
@@ -115,7 +114,7 @@ body {
 }
 
 .fixedcell {
-  background-color: #1d1102;
+  background-color: #7a490c;
 }
 
 #ss {
@@ -131,8 +130,15 @@ body {
 
 @media all and (max-width: 1166px) {
   #next-tetro {
-    top: 60px;
-    left: 200px;
+    top: 95px;
+    left: 375px;
+  }
+}
+
+@media (max-width: 500px) {
+  #next-tetro {
+    top: 0px;
+    left: 222px;
   }
 }
 
@@ -148,7 +154,6 @@ body {
   left: -700px;
   color: black;
   font-size: 30px;
-  overflow: hidden;
   -webkit-box-shadow: 0px 0px 8px blue;
           box-shadow: 0px 0px 8px blue;
   z-index: 1;

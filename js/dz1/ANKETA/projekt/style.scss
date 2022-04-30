@@ -51,7 +51,7 @@ transform: translate(-50%, -50%);
 
 
 #game{
-padding-top: 20px;
+// padding-top: 20px;
 // font-size: 40px;
 width: 320px;
 margin:  auto;
@@ -129,7 +129,7 @@ display: inline-block;
 background-color: rgb(53, 53, 126);
 }
 .fixedcell{
-background-color: rgb(29, 17, 2);
+background-color: rgb(122, 73, 12);
 }
 #ss{
 
@@ -151,9 +151,14 @@ top: 200px;
 left: 200px;
 font-size: 0;
 @media all and (max-width: 1166px) {
-    top: 60px;
-    left: 200px;
+    top: 95px;
+    left: 375px;
   }
+  @media (max-width: 500px){
+
+    top: 0px;
+    left: 222px
+}
 }
 #menu{
 
@@ -175,7 +180,7 @@ top: 50px;
 left: -700px;
 color: black;
 font-size: 30px;
-overflow: hidden;
+// overflow: hidden;
 box-shadow: 0px 0px 8px blue;
 z-index: 1;
 
