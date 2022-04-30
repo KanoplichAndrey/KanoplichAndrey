@@ -6,7 +6,7 @@
 
 body{
     // height: 100vh;
-
+// overflow-y: hidden;
 background-image: url('lion.jpg');
 // width: 100%;
 // min-width: 100%;
@@ -16,9 +16,8 @@ background-image: url('lion.jpg');
    
 
 margin: 0;
-// background: rgb(179, 138, 124);
+
 color: white;
-font-family: Arial, Helvetica, sans-serif;
 position: relative;
 
 // height: 100%;
@@ -70,7 +69,6 @@ margin:  auto;
     outline: none;
     display: inline-block;
     padding: 10px 30px;
-    // margin: 10px 20px;
     position: relative;
     overflow: hidden;
     border: 2px solid #332a28;
@@ -115,7 +113,6 @@ margin:  auto;
 
 margin: 20px auto 0;
 border: 10px solid rgb(219, 20, 20);
-/* display: flex; */
 font-size: 0;
 
 }
@@ -132,16 +129,29 @@ background-color: rgb(53, 53, 126);
 background-color: rgb(122, 73, 12);
 }
 #ss{
-
-    color: black;
-    // @include media(1161px) {
+    position: absolute;
+    font-size: 155px;
+    top: 280px;
+    left: 330px;
+    color:red;
+    @include media(900px) {
 
        
-    //     font-size: 10px;
-    //     top: 370px;
-    //     left: 390px;
+        position: absolute;
+        font-size: 100px;
+        top: 280px;
+        left: 330px;
+        color: red;
         
-    // }
+    }
+    @include media(580px) {
+
+       
+        font-size: 78px;
+        top: 350px;
+        left: 67px
+        
+    }
    
 }
 #next-tetro {
@@ -154,7 +164,7 @@ font-size: 0;
     top: 95px;
     left: 375px;
   }
-  @media (max-width: 500px){
+  @media (max-width: 520px){
 
     top: 0px;
     left: 222px

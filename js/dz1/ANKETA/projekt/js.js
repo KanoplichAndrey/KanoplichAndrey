@@ -16,7 +16,7 @@ const res = document.querySelector('#res');
 let playfield = [] //рисую поле
 function init() {
     let x = 10
-    let y = 20
+    let y = 18
     for (let i = 0; i < y; i++) {
         playfield[i] = []
         for (let j = 0; j < x; j++) {
@@ -316,7 +316,6 @@ function reset() {
 
     function formMenu() {
 
-
         if (window.innerWidth < 1160) {
             form.style.transition = 3 + 's'
             menu.style.transition = 3 + 's'
@@ -329,8 +328,8 @@ function reset() {
             menuO.posX = 180
             menuO.posY = 380
             menu.style.width = 310 + "px"
-            console.log(form.offsetHeight)
-            console.log(f)
+            // console.log(form.offsetHeight)
+            // console.log(f)
 
         } else {
             form.style.top = 20 + "px"
@@ -400,7 +399,7 @@ function handleTouchMove(evt) {
 };
 ////////////////////////////////////////////////////////////////
 
-console.log(form.getBoundingClientRect())
+// console.log(form.getBoundingClientRect())
 
 document.onkeydown = function (e) { // управление
     if (!isPause) {
@@ -460,19 +459,27 @@ pauseBtn.addEventListener('click', (e) => {
         numbers.id = 'ss'
         numbers.textContent = 'Pause';
         numbers.style.position = 'absolute'
+
+        // numbers.style.fontSize = 330 + 'px'
+        // numbers.style.top = 280 + 'px'
+        // numbers.style.left = 515 + 'px'
         audio.pause()
 
 
         if (window.innerWidth < 900) {
-
-            numbers.style.top = 370 + 'px'
-            numbers.style.left = 390 + 'px'
-            numbers.style.fontSize = 100 + 'px'
+            // position: absolute;
+            // font-size: 155px;
+            // top: 280px;
+            // left: 330px;
+            // numbers.style.color: red;
+            // numbers.style.top = 370 + 'px'
+            // numbers.style.left = 330 + 'px'
+            // numbers.style.fontSize = 100 + 'px'
         } else {
-            numbers.style.fontSize = 155 + 'px'
-            // numbers.style.fontSize = 330 + 'px'
-            numbers.style.top = 280 + 'px'
-            numbers.style.left = 515 + 'px'
+            // numbers.style.fontSize = 155 + 'px'
+            // // numbers.style.fontSize = 330 + 'px'
+            // numbers.style.top = 280 + 'px'
+            // numbers.style.left = 515 + 'px'
         }
         body.prepend(numbers)
 

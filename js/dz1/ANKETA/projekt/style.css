@@ -11,7 +11,6 @@ body {
 .cont {
   margin: 0;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
   position: relative;
 }
 
@@ -98,7 +97,6 @@ body {
   /* height: 620px; */
   margin: 20px auto 0;
   border: 10px solid #db1414;
-  /* display: flex; */
   font-size: 0;
 }
 
@@ -118,7 +116,29 @@ body {
 }
 
 #ss {
-  color: black;
+  position: absolute;
+  font-size: 155px;
+  top: 280px;
+  left: 330px;
+  color: red;
+}
+
+@media all and (max-width: 900px) {
+  #ss {
+    position: absolute;
+    font-size: 100px;
+    top: 280px;
+    left: 330px;
+    color: red;
+  }
+}
+
+@media all and (max-width: 580px) {
+  #ss {
+    font-size: 78px;
+    top: 350px;
+    left: 67px;
+  }
 }
 
 #next-tetro {
@@ -135,7 +155,7 @@ body {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 520px) {
   #next-tetro {
     top: 0px;
     left: 222px;
