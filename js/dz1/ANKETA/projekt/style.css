@@ -6,6 +6,7 @@
 
 body {
   background-image: url("lion.jpg");
+  height: auto;
 }
 
 .cont {

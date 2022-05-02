@@ -111,6 +111,7 @@ let figures = {
 
 }
 
+
 let activeTetro = getNevTetro()
 let nextTetro = getNevTetro()
 // ячейка 1 это движущиеся
@@ -136,7 +137,6 @@ function draw() { // отвечает за отображение фигуры
     main.innerHTML = mainInerHTML
 
 }
-
 function drawNextTetro() {
     let nextTetroInnerHTML = ''
     for (let y = 0; y < nextTetro.shape.length; y++) {
@@ -341,70 +341,7 @@ function reset() {
     formMenu()
 
 }
-///////////////////////жесты///////////////////////////////////////////
-document.querySelector('#menu').addEventListener('touchstart', myTouch)
 
-function myTouch(event) {
-    console.log('touch')
-    console.log(event)
-    res1()
-}
-document.addEventListener('touchstart', handleTouchStart, false);     
-document.addEventListener('touchmove', handleTouchMove, false);
-
-var xDown = null;                                                        
-var yDown = null;                                                        
-
-function handleTouchStart(evt) {                                         
-    xDown = evt.touches[0].clientX;                                      
-    yDown = evt.touches[0].clientY;                                      
-};                                                
-
-function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
-        return;
-    }
-
-    var xUp = evt.touches[0].clientX;                                    
-    var yUp = evt.touches[0].clientY;
-
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-    
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-        if ( xDiff > 0 ) {
-            /* left swipe */ 
-            if (hasCllisions()) {
-                activeTetro.x += 1
-            }
-            activeTetro.x -= 1
-            console.log('left')
-        } else {
-            /* right swipe */
-            activeTetro.x += 1
-            console.log('right')
-            if (hasCllisions()) {
-                activeTetro.x -= 1
-            }
-
-        }                       
-    } else { 
-        if ( yDiff > 0 ) {
-            /* up swipe */ 
-            activeTetro.y += 1
-            rotateTetro()
-            console.log('up')
-        } else { 
-            /* down swipe */
-            moveTetroDown()
-            console.log('down')
-        }                                                                 
-    }
-    
-    xDown = null;
-    yDown = null;                                             
-};
-////////////////////////////////////////////////////////////////
 
 // console.log(form.getBoundingClientRect())
 
@@ -444,6 +381,71 @@ document.onkeydown = function (e) { // управление
 
     }
 }
+
+///////////////////////жесты///////////////////////////////////////////
+document.querySelector('#menu').addEventListener('touchstart', myTouch)
+
+function myTouch(event) {
+    console.log('touch')
+    console.log(event)
+    res1()
+}
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;
+var yDown = null;
+
+function handleTouchStart(evt) {
+    xDown = evt.touches[0].clientX;
+    yDown = evt.touches[0].clientY;
+};
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 0) {
+            /* left swipe */
+            if (hasCllisions()) {
+                activeTetro.x += 1
+            }
+            activeTetro.x -= 1
+            console.log('left')
+        } else {
+            /* right swipe */
+            activeTetro.x += 1
+            console.log('right')
+            if (hasCllisions()) {
+                activeTetro.x -= 1
+            }
+
+        }
+    } else {
+        if (yDiff > 0) {
+            /* up swipe */
+            activeTetro.y += 1
+            rotateTetro()
+            console.log('up')
+        } else {
+            /* down swipe */
+            moveTetroDown()
+            console.log('down')
+        }
+    }
+
+    xDown = null;
+    yDown = null;
+};
+////////////////////////////////////////////////////////////////
 
 function updateStateGame() {
     if (!isPause) {
@@ -556,8 +558,7 @@ function startGame() {
 let list = [];
 window.list = list
 const container = document.querySelector('.container')
-// var record = 0
-// let kano
+
 
 function refresh() {
     const usersListFromLS = localStorage.getItem('users');
@@ -570,17 +571,7 @@ function refresh() {
         item.innerHTML = user.num + ':  ' + user.title + '  ' + user.cost;
         container.appendChild(item);
 
-        // function recor() {
-        //     let item1 = document.querySelectorAll('#hg')
-        //     if (item1.length > 1) {
-        //         localStorage.clear()
-        //     }
-        //     if (user.cost > record) {
-        //         record = user.cost
-        //         kano = user.title
-        //     }
-        // }
-        // recor()
+
 
     })
 
@@ -622,28 +613,3 @@ button.addEventListener('click', () => {
     input.value = '';
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
