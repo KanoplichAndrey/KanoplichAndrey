@@ -374,12 +374,19 @@ function handleTouchMove(evt) {
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
         if ( xDiff > 0 ) {
             /* left swipe */ 
+            if (hasCllisions()) {
+                activeTetro.x += 1
+            }
             activeTetro.x -= 1
             console.log('left')
         } else {
             /* right swipe */
             activeTetro.x += 1
             console.log('right')
+            if (hasCllisions()) {
+                activeTetro.x -= 1
+            }
+
         }                       
     } else { 
         if ( yDiff > 0 ) {
@@ -689,26 +696,26 @@ button.addEventListener('click', () => {
 
 // 'https://fe.it-academy.by/AjaxStringStorage2.php'
 
-/////////////////////////////////////////////////
+///////////////////////////////////////////////
 
-// let xhttp = new XMLHttpRequest()
-// var updatePassword;
-// var stringName='KANO_TEST_INFO';
+let xhttp = new XMLHttpRequest()
+var updatePassword;
+var stringName='KANO_TEST_INFO';
 
 
-// xhttp.onreadystatechange = function () {
-//    if(this.readyState == 4 && this.status == 200){
-// // console.log(readyState)
-//     muFunction(this.responseText)
-//    }
-// } 
-// xhttp.open('GET','https://fe.it-academy.by/AjaxStringStorage2.php', true)
-// xhttp.send()
+xhttp.onreadystatechange = function () {
+   if(this.readyState == 4 && this.status == 200){
+// console.log(readyState)
+    muFunction(this.responseText)
+   }
+} 
+xhttp.open('GET','https://fe.it-academy.by/AjaxStringStorage2.php', true)
+xhttp.send()
 
-// function muFunction(data){
-//     console.log(data)
-// }
-////////////////////////////////////////////////////////
+function muFunction(data){
+    console.log(data)
+}
+//////////////////////////////////////////////////////
 
 
 
