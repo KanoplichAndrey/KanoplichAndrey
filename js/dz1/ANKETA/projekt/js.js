@@ -137,6 +137,7 @@ function draw() { // отвечает за отображение фигуры
     main.innerHTML = mainInerHTML
 
 }
+
 function drawNextTetro() {
     let nextTetroInnerHTML = ''
     for (let y = 0; y < nextTetro.shape.length; y++) {
@@ -531,6 +532,7 @@ res.addEventListener('click', () => {
 function res1() {
     menu.style.left = 10 + "px"
     menu.style.transition = 3 + 's'
+
     iSres = !iSres
     if (!iSres) {
         console.log(res)
@@ -581,6 +583,9 @@ function refresh() {
 }
 refresh();
 
+
+
+
 button.addEventListener('click', () => {
     const input = document.querySelector('.in');
     form.style.top = -700 + 'px';
@@ -611,5 +616,112 @@ button.addEventListener('click', () => {
     localStorage.setItem('users', JSON.stringify(newUserList));
     refresh();
     input.value = '';
+
+
+
+
+
+
+
+    var ajaxHandlerScript = "https://fe.it-academy.by/AjaxStringStorage2.php";
+    var updatePassword;
+    var stringName = 'KANNO_TETRIS_INFO';
+    storeInfo()
+
+    function storeInfo() {
+        updatePassword = Math.random();
+        $.ajax({
+            url: ajaxHandlerScript,
+            type: 'POST',
+            cache: false,
+            dataType: 'json',
+            data: {
+                f: 'LOCKGET',
+                n: stringName,
+                p: updatePassword
+            },
+            success: lockGetReady,
+            error: errorHandler
+        });
+    }
+
+    function lockGetReady(callresult) {
+        if (callresult.error != undefined)
+            alert(callresult.error);
+        else {
+
+            newUserList
+            $.ajax({
+                url: ajaxHandlerScript,
+                type: 'POST',
+                cache: false,
+                dataType: 'json',
+                data: {
+                    f: 'UPDATE',
+                    n: stringName,
+                    v: JSON.stringify(newUserList),
+                    p: updatePassword
+                },
+                success: updateReady,
+                error: errorHandler
+            });
+        }
+    }
+
+    function updateReady(callresult) {
+        if (callresult.error != undefined)
+            alert(callresult.error);
+    }
+
+    function restoreInfo() {
+        $.ajax({
+            url: ajaxHandlerScript,
+            type: 'POST',
+            cache: false,
+            dataType: 'json',
+            data: {
+                f: 'READ',
+                n: stringName
+            },
+            success: readReady,
+            error: errorHandler
+        });
+    }
+    container.innerHTML = '';
+
+    function readReady(callresult) {
+        if (callresult.error != undefined)
+            alert(callresult.error);
+        else if (callresult.result != "") {
+
+            var info = JSON.parse(callresult.result);
+            // newUserList 
+
+            console.log(info)
+
+            if (list = []) {
+
+                info.forEach((user) => {
+                    const item = document.createElement('div');
+                    item.id = 'hg'
+                    item.innerHTML = user.num + ':  ' + user.title + '  ' + user.cost;
+                    container.appendChild(item);
+                   
+                })
+                
+            }
+
+        }
+        
+        console.log(info)
+    }
+
+    function errorHandler(jqXHR, statusStr, errorStr) {
+        alert(statusStr + ' ' + errorStr);
+    }
+
+    restoreInfo();
+
+
 
 })

@@ -5,8 +5,12 @@
 }
 
 body {
+  position: relative;
+  width: 100vMin;
+  margin: 0 auto;
   background-image: url("lion.jpg");
-  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .cont {
