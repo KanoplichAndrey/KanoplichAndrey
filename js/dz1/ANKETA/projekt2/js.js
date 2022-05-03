@@ -310,7 +310,7 @@ function reset() {
 
         }
     }
-
+  
     menuO.update()
     //////////////////////////////////////////////////////////////////
 
@@ -525,24 +525,6 @@ function soundClick() { // функция  запуска музыки
 /////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////
 scoreElem.innerHTML = score
 levelElem.innerHTML = currentLevel
@@ -573,8 +555,6 @@ function refresh() {
         item.id = 'hg'
         item.innerHTML = user.num + ':  ' + user.title + '  ' + user.cost;
         container.appendChild(item);
-
-
 
     })
 
@@ -683,7 +663,7 @@ button.addEventListener('click', () => {
         else if (callresult.result != "") {
 
             var info = JSON.parse(callresult.result);
-            // newUserList 
+            newUserList 
 
            
 
