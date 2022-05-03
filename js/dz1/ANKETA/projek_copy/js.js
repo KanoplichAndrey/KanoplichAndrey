@@ -562,26 +562,26 @@ window.list = list
 const container = document.querySelector('.container')
 
 
-function refresh() {
-    const usersListFromLS = localStorage.getItem('users');
-    const users = usersListFromLS ? JSON.parse(usersListFromLS) : [];
-    container.innerHTML = '';
+// function refresh() {
+//     const usersListFromLS = localStorage.getItem('users');
+//     const users = usersListFromLS ? JSON.parse(usersListFromLS) : [];
+//     container.innerHTML = '';
 
-    users.forEach((user) => {
-        const item = document.createElement('div');
-        item.id = 'hg'
-        item.innerHTML = user.num + ':  ' + user.title + '  ' + user.cost;
-        container.appendChild(item);
+//     users.forEach((user) => {
+//         const item = document.createElement('div');
+//         item.id = 'hg'
+//         item.innerHTML = user.num + ':  ' + user.title + '  ' + user.cost;
+//         container.appendChild(item);
 
 
 
-    })
+//     })
 
     let PageHTML = "";
     PageHTML += '<tr><th> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   <tr><th> Место </th><th> Имя </th><th> Очки </th></tr>';
     let span = document.querySelector('#span').innerHTML = PageHTML
-}
-refresh();
+// }
+// refresh();
 
 
 
@@ -590,8 +590,8 @@ button.addEventListener('click', () => {
     const input = document.querySelector('.in');
     form.style.top = -700 + 'px';
 
-    const usersListFromLS = localStorage.getItem('users');
-    const users = usersListFromLS ? JSON.parse(usersListFromLS) : [];
+    // const usersListFromLS = localStorage.getItem('users');
+    // const users = usersListFromLS ? JSON.parse(usersListFromLS) : [];
 
     const newUser = {
         num: users.length + 1,
@@ -599,23 +599,23 @@ button.addEventListener('click', () => {
         cost: score,
     };
 
-    const userFromLS = users.find((u) => u.title === newUser.title);
-    const isUserExist = !!userFromLS;
+    // const userFromLS = users.find((u) => u.title === newUser.title);
+    // const isUserExist = !!userFromLS;
 
-    if (isUserExist) {
-        newUser.score = newUser.score + userFromLS.score;
-    }
+    // if (isUserExist) {
+    //     newUser.score = newUser.score + userFromLS.score;
+    // }
 
-    const newUserList = [
-        ...users, ...users.filter((u) => u.score !== newUser.score),
-        newUser,
-    ]
+    // const newUserList = [
+        // ...users, ...users.filter((u) => u.score !== newUser.score),
+        // newUser,
+    // ]
 
-    list = newUserList;
+    // list = newUserList;
 
-    localStorage.setItem('users', JSON.stringify(newUserList));
-    refresh();
-    input.value = '';
+    // localStorage.setItem('users', JSON.stringify(newUserList));
+    // refresh();
+    // input.value = '';
 
 
 
@@ -697,18 +697,18 @@ button.addEventListener('click', () => {
             var info = JSON.parse(callresult.result);
             // newUserList 
 
-            console.log(info)
+           
 
-            if (list = []) {
+            if (list=[] ) {
 
                 info.forEach((user) => {
                     const item = document.createElement('div');
                     item.id = 'hg'
                     item.innerHTML = user.num + ':  ' + user.title + '  ' + user.cost;
                     container.appendChild(item);
-                   
+                    
                 })
-                
+               
             }
 
         }
