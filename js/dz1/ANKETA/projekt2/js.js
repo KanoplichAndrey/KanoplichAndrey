@@ -11,6 +11,8 @@ const form = document.getElementById('form')
 const button = document.querySelector('.but');
 const res = document.querySelector('#res');
 
+const serverUrl = "https://fe.it-academy.by/AjaxStringStorage2.php";
+const  stringName = 'KANNO_TETRIS_INFO';
 
 
 let playfield = [] //рисую поле
@@ -27,8 +29,8 @@ function init() {
     }
     // console.log(playfield)
 }
-init()
 
+init()
 
 
 // activeTetro.shape = activeTetro.shape[0].map((val,index) => activeTetro.shape.map((row) =>row[index]).reverse());
@@ -39,7 +41,7 @@ let score = 0
 let gameTimerId
 let currentLevel = 1
 let isPause = true;
-let iSres = true
+let isShowResults = false;
 let possibleLevels = {
     1: {
         scorePerLine: 10,
@@ -83,30 +85,30 @@ let figures = {
         [0, 1, 0, 0],
     ],
     S: [
-        [0, 1, 1, ],
-        [1, 1, 0, ],
-        [0, 0, 0, ],
+        [0, 1, 1,],
+        [1, 1, 0,],
+        [0, 0, 0,],
 
     ],
     Z: [
-        [1, 1, 0, ],
-        [0, 1, 1, ],
-        [0, 0, 0, ],
+        [1, 1, 0,],
+        [0, 1, 1,],
+        [0, 0, 0,],
     ],
     L: [
-        [1, 0, 0, ],
-        [1, 1, 1, ],
-        [0, 0, 0, ],
+        [1, 0, 0,],
+        [1, 1, 1,],
+        [0, 0, 0,],
     ],
     J: [
-        [0, 0, 1, ],
-        [1, 1, 1, ],
-        [0, 0, 0, ],
+        [0, 0, 1,],
+        [1, 1, 1,],
+        [0, 0, 0,],
     ],
     T: [
-        [1, 1, 1, ],
-        [0, 1, 0, ],
-        [0, 0, 0, ],
+        [1, 1, 1,],
+        [0, 1, 0,],
+        [0, 0, 0,],
     ],
 
 }
@@ -203,7 +205,6 @@ function hasCllisions() {
 }
 
 
-
 function removeFullLines() { // удаленине заполненого поля
     let canRemoveLine = true;
     filledLine = 0
@@ -270,7 +271,6 @@ function fixTetro() {
     }
 
 
-
 }
 
 function moveTetroDown() { //движение фигуры
@@ -310,16 +310,17 @@ function reset() {
 
         }
     }
-  
+
     menuO.update()
+
     //////////////////////////////////////////////////////////////////
 
 
     function formMenu() {
 
         if (window.innerWidth < 1160) {
-            form.style.transition = 3 + 's'
-            menu.style.transition = 3 + 's'
+            form.style.transition = 1 + 's'
+            menu.style.transition = 1 + 's'
 
             let g = form.style.top = (menu.offsetTop + 500) - (form.offsetHeight) + 'px';
             let f = form.style.left = (menu.offsetLeft + 635) + (menu.offsetWidth / 2 - form.offsetWidth / 2) + 'px';
@@ -334,11 +335,12 @@ function reset() {
 
         } else {
             form.style.top = 20 + "px"
-            form.style.transition = 3 + 's'
+            form.style.transition = 1 + 's'
             menu.style.left = 10 + "px"
-            menu.style.transition = 3 + 's'
+            menu.style.transition = 1 + 's'
         }
     }
+
     formMenu()
 
 }
@@ -389,8 +391,9 @@ document.querySelector('#menu').addEventListener('touchstart', myTouch)
 function myTouch(event) {
     console.log('touch')
     console.log(event)
-    res1()
+    toggleMenu()
 }
+
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 
@@ -446,6 +449,7 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;
 };
+
 ////////////////////////////////////////////////////////////////
 
 function updateStateGame() {
@@ -522,6 +526,7 @@ function soundClick() { // функция  запуска музыки
     audio.autoplay = true // Автоматически запускаем
     audio.loop = true //  зацикливание музыки
 }
+
 /////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -545,29 +550,26 @@ window.list = list
 const container = document.querySelector('.container')
 
 
-function refresh() {
+function refreshFromLocalStorage() {
     const usersListFromLS = localStorage.getItem('users');
-    const users = usersListFromLS ? JSON.parse(usersListFromLS) : [];
+    const list = usersListFromLS ? JSON.parse(usersListFromLS) : [];
     container.innerHTML = '';
 
-    users.forEach((user) => {
-        const item = document.createElement('div');
-        item.id = 'hg'
-        item.innerHTML = user.num + ':  ' + user.title + '  ' + user.cost;
-        container.appendChild(item);
-
-    })
+    reRenderResults(list)
 
     let PageHTML = "";
     PageHTML += '<tr><th> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   <tr><th> Место </th><th> Имя </th><th> Очки </th></tr>';
     let span = document.querySelector('#span').innerHTML = PageHTML
 }
-refresh();
+
+refreshFromLocalStorage();
+
+function errorHandler(jqXHR, statusStr, errorStr) {
+    alert(statusStr + ' ' + errorStr);
+}
 
 
-
-
-button.addEventListener('click', () => {
+button.addEventListener('click', async() => {
     const input = document.querySelector('.in');
     form.style.top = -700 + 'px';
 
@@ -595,120 +597,40 @@ button.addEventListener('click', () => {
     list = newUserList;
 
     localStorage.setItem('users', JSON.stringify(newUserList));
-    refresh();
+    refreshFromLocalStorage();
     input.value = '';
-
-
-
-
     container.innerHTML = '';
+    const result = await window.ajax.handleUpdateData(newUserList)
+    console.log(result)
+    reRenderResults(result)
 
-    var ajaxHandlerScript = "https://fe.it-academy.by/AjaxStringStorage2.php";
-    var updatePassword;
-    var stringName = 'KANNO_TETRIS_INFO';
-    storeInfo()
-
-    function storeInfo() {
-        updatePassword = Math.random();
-        $.ajax({url: ajaxHandlerScript, type: 'POST', cache: false,dataType: 'json',
-            data: { f: 'LOCKGET', n: stringName, p: updatePassword
-            },
-            success: lockGetReady,
-            error: errorHandler
-        });
-    }
-
-    function lockGetReady(callresult) {
-        if (callresult.error != undefined)
-            alert(callresult.error);
-        else {
-
-            newUserList
-            $.ajax({url: ajaxHandlerScript, type: 'POST',cache: false,dataType: 'json',
-
-                data: {f: 'UPDATE',n: stringName,v: JSON.stringify(newUserList),p: updatePassword 
-                    
-                },
-                success: updateReady,
-                error: errorHandler
-            });
-        }
-    }
-
-    function updateReady(callresult) {
-        if (callresult.error != undefined)
-            alert(callresult.error);
-    }
-
-    function restoreInfo() {
-        $.ajax({
-            url: ajaxHandlerScript,
-            type: 'POST',
-            cache: false,
-            dataType: 'json',
-            data: {
-                f: 'READ',
-                n: stringName
-            },
-            success: readReady,
-            error: errorHandler
-        });
-    }
-     
-
-    function readReady(callresult) {
-        
-        if (callresult.error != undefined)
-            alert(callresult.error);
-        else if (callresult.result != "") {
-
-            var info = JSON.parse(callresult.result);
-            newUserList 
-
-           
-
-            // if (list=[] ) {
-
-                info.forEach((user) => {
-                    const item = document.createElement('div');
-                    item.id = 'hg'
-                    item.innerHTML = user.num + ':  ' + user.title + '  ' + user.cost;
-                    container.appendChild(item);
-                    
-                })
-               
-            // }
-
-        }
-        
-        console.log(info)
-    }
-   
-
-
-    function errorHandler(jqXHR, statusStr, errorStr) {
-        alert(statusStr + ' ' + errorStr);
-    }
-
-    restoreInfo();
-    
- res.addEventListener('click', () => {
-    container.innerHTML = '';
-        res1()
-    
-    })
-    
-    function res1() {
-        menu.style.left = 10 + "px"
-        menu.style.transition = 3 + 's'
-        restoreInfo()
-        iSres = !iSres
-        if (!iSres) {
-            console.log(res)
-            menu.style.left = -700 + 'px'
-        }
-    
-    
-    }
 
 })
+
+res.addEventListener('click', async () => {
+    console.log(1)
+    container.innerHTML = '';
+    await toggleMenu()
+})
+
+async function toggleMenu() {
+    menu.style.left = 10 + "px"
+    menu.style.transition = 1 + 's'
+    isShowResults = !isShowResults
+    if (!isShowResults) {
+        menu.style.left = -700 + 'px'
+        return;
+    }
+    const list = await window.ajax.handleReedData()
+    reRenderResults(list)
+}
+
+function reRenderResults(list){
+    container.innerHTML = '';
+    list.forEach((user) => {
+        const item = document.createElement('div');
+        item.id = 'hg'
+        item.innerHTML = user.num + ':  ' + user.title + '  ' + user.cost;
+        container.appendChild(item);
+    })
+}
