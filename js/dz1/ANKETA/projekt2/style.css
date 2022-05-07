@@ -7,7 +7,7 @@
 body {
   display: block;
   position: relative;
-  background-image: url("lion.jpg");
+  background-image: url("d.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -195,6 +195,7 @@ body {
   #menu {
     width: 292px;
     background-color: #E9E9E9;
+    font-size: 20px;
   }
 }
 

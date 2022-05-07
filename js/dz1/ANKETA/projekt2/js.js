@@ -12,7 +12,7 @@ const button = document.querySelector('.but');
 const res = document.querySelector('#res');
 
 const serverUrl = "https://fe.it-academy.by/AjaxStringStorage2.php";
-const  stringName = 'KANNO_TETRIS_INFO';
+const stringName = 'KANNO_TETRIS_INFO';
 
 
 let playfield = [] //рисую поле
@@ -27,16 +27,11 @@ function init() {
         }
 
     }
-    // console.log(playfield)
+
 }
 
 init()
 
-
-// activeTetro.shape = activeTetro.shape[0].map((val,index) => activeTetro.shape.map((row) =>row[index]).reverse());
-
-
-// let gameSpeed = 400
 let score = 0
 let gameTimerId
 let currentLevel = 1
@@ -85,30 +80,30 @@ let figures = {
         [0, 1, 0, 0],
     ],
     S: [
-        [0, 1, 1,],
-        [1, 1, 0,],
-        [0, 0, 0,],
+        [0, 1, 1, ],
+        [1, 1, 0, ],
+        [0, 0, 0, ],
 
     ],
     Z: [
-        [1, 1, 0,],
-        [0, 1, 1,],
-        [0, 0, 0,],
+        [1, 1, 0, ],
+        [0, 1, 1, ],
+        [0, 0, 0, ],
     ],
     L: [
-        [1, 0, 0,],
-        [1, 1, 1,],
-        [0, 0, 0,],
+        [1, 0, 0, ],
+        [1, 1, 1, ],
+        [0, 0, 0, ],
     ],
     J: [
-        [0, 0, 1,],
-        [1, 1, 1,],
-        [0, 0, 0,],
+        [0, 0, 1, ],
+        [1, 1, 1, ],
+        [0, 0, 0, ],
     ],
     T: [
-        [1, 1, 1,],
-        [0, 1, 0,],
-        [0, 0, 0,],
+        [1, 1, 1, ],
+        [0, 1, 0, ],
+        [0, 0, 0, ],
     ],
 
 }
@@ -204,7 +199,6 @@ function hasCllisions() {
     return false
 }
 
-
 function removeFullLines() { // удаленине заполненого поля
     let canRemoveLine = true;
     filledLine = 0
@@ -215,12 +209,11 @@ function removeFullLines() { // удаленине заполненого пол
                 break;
             }
         }
+
         if (canRemoveLine) {
             playfield.splice(y, 1);
             playfield.splice(0, 0, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
             filledLine += 1
-
-
         }
         canRemoveLine = true
     }
@@ -266,11 +259,8 @@ function fixTetro() {
             if (playfield[y][x] === 1) { // если встретили на пути фигуру
                 playfield[y][x] = 2 // меняем ей цвет, фиксируем фигуру
             }
-
         }
     }
-
-
 }
 
 function moveTetroDown() { //движение фигуры
@@ -286,7 +276,6 @@ function moveTetroDown() { //движение фигуры
 
             reset()
         }
-
     }
 }
 
@@ -300,54 +289,30 @@ function reset() {
     nextTetroElem.style.display = 'none'
 
     //////////////////////////////////////////////////////////////////
-    let menuO = {
-        posX: 20,
-        posY: 100,
-        update: function () {
-
-            form.style.top = this.posX + "px";
-            form.style.left = this.posY + "px";
-
-        }
-    }
-
-    menuO.update()
-
+    form.style.top = 20 + "px";
+    form.style.left = 23 + "px";
+    form.style.transition = 3 + 's'
+    menu.style.transition = 3 + 's'
+    menu.style.top = 20 + "px";
+    menu.style.left = 23 + "px";
     //////////////////////////////////////////////////////////////////
-
-
     function formMenu() {
 
         if (window.innerWidth < 1160) {
-            form.style.transition = 1 + 's'
-            menu.style.transition = 1 + 's'
-
-            let g = form.style.top = (menu.offsetTop + 500) - (form.offsetHeight) + 'px';
-            let f = form.style.left = (menu.offsetLeft + 635) + (menu.offsetWidth / 2 - form.offsetWidth / 2) + 'px';
-
-            menu.style.top = g
-            menu.style.left = f
-            menuO.posX = 180
-            menuO.posY = 380
+            form.style.transition = 3 + 's'
+            menu.style.transition = 3 + 's'
+            menu.posX = 180
+            menu.posY = 380
             menu.style.width = 310 + "px"
-            // console.log(form.offsetHeight)
-            // console.log(f)
-
         } else {
             form.style.top = 20 + "px"
-            form.style.transition = 1 + 's'
+            form.style.transition = 3 + 's'
             menu.style.left = 10 + "px"
-            menu.style.transition = 1 + 's'
+            menu.style.transition = 3 + 's'
         }
     }
-
     formMenu()
-
 }
-
-
-// console.log(form.getBoundingClientRect())
-
 document.onkeydown = function (e) { // управление
     if (!isPause) {
         if (e.key === 'ArrowLeft') {
@@ -356,10 +321,8 @@ document.onkeydown = function (e) { // управление
             if (hasCllisions()) {
                 activeTetro.x += 1
             }
-
         }
         if (e.key === 'ArrowRight') {
-
             activeTetro.x += 1
             if (hasCllisions()) {
                 activeTetro.x -= 1
@@ -377,20 +340,14 @@ document.onkeydown = function (e) { // управление
 
         ///////////////////////////////////////////////////////////////////////
         // console.log(e)
-
         //////////////////////////////////////////////////////////////////////////////////////
-
         updateStateGame()
-
     }
 }
-
 ///////////////////////жесты///////////////////////////////////////////
 document.querySelector('#menu').addEventListener('touchstart', myTouch)
 
 function myTouch(event) {
-    console.log('touch')
-    console.log(event)
     toggleMenu()
 }
 
@@ -418,14 +375,15 @@ function handleTouchMove(evt) {
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
         if (xDiff > 0) {
-            /* left swipe */
+            // left 
+            activeTetro.x -= 1
             if (hasCllisions()) {
                 activeTetro.x += 1
+                console.log('left')
             }
-            activeTetro.x -= 1
-            console.log('left')
+
         } else {
-            /* right swipe */
+            //right 
             activeTetro.x += 1
             console.log('right')
             if (hasCllisions()) {
@@ -435,13 +393,12 @@ function handleTouchMove(evt) {
         }
     } else {
         if (yDiff > 0) {
-            /* up swipe */
-            activeTetro.y += 1
+            // up
             rotateTetro()
             console.log('up')
         } else {
-            /* down swipe */
-            moveTetroDown()
+            // down 
+            // moveTetroDown()
             console.log('down')
         }
     }
@@ -460,7 +417,6 @@ function updateStateGame() {
 
     }
 }
-
 pauseBtn.addEventListener('click', (e) => {
 
     clearTimeout(gameTimerId)
@@ -473,38 +429,17 @@ pauseBtn.addEventListener('click', (e) => {
         numbers.id = 'ss'
         numbers.textContent = 'Pause';
         numbers.style.position = 'absolute'
-
-        // numbers.style.fontSize = 330 + 'px'
-        // numbers.style.top = 280 + 'px'
-        // numbers.style.left = 515 + 'px'
         audio.pause()
-
-
-        if (window.innerWidth < 900) {
-            // position: absolute;
-            // font-size: 155px;
-            // top: 280px;
-            // left: 330px;
-            // numbers.style.color: red;
-            // numbers.style.top = 370 + 'px'
-            // numbers.style.left = 330 + 'px'
-            // numbers.style.fontSize = 100 + 'px'
-        } else {
-            // numbers.style.fontSize = 155 + 'px'
-            // // numbers.style.fontSize = 330 + 'px'
-            // numbers.style.top = 280 + 'px'
-            // numbers.style.left = 515 + 'px'
-        }
-        body.prepend(numbers)
-
+        // if (window.innerWidth < 900) {
+        // } else {   
+        // }
+        // body.prepend(numbers)
     }
     if (!isPause) {
         let ss = document.getElementById('ss')
         ss.textContent = ''
         gameTimerId = setTimeout(startGame, possibleLevels[currentLevel].speed)
-
     }
-
 });
 ///////////////////////////////////////////////////////////////////
 var audio = new Audio(); // Создаём новый элемент Audio
@@ -526,14 +461,10 @@ function soundClick() { // функция  запуска музыки
     audio.autoplay = true // Автоматически запускаем
     audio.loop = true //  зацикливание музыки
 }
-
 /////////////////////////////////////////////////////////////////////////////////////
-
-
 //////////////////////////////////////////////////////////////////////////////////
 scoreElem.innerHTML = score
 levelElem.innerHTML = currentLevel
-
 draw();
 
 function startGame() {
@@ -545,6 +476,7 @@ function startGame() {
     }
 }
 
+////////////////////////////////localStorage////////////////////////////////////
 let list = [];
 window.list = list
 const container = document.querySelector('.container')
@@ -567,7 +499,6 @@ refreshFromLocalStorage();
 function errorHandler(jqXHR, statusStr, errorStr) {
     alert(statusStr + ' ' + errorStr);
 }
-
 
 button.addEventListener('click', async() => {
     const input = document.querySelector('.in');
