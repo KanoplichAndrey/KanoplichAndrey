@@ -15,6 +15,7 @@ const serverUrl = "https://fe.it-academy.by/AjaxStringStorage2.php";
 const stringName = 'KANNO_TETRIS_INFO';
 
 
+
 let playfield = [] //рисую поле
 function init() {
     let x = 10
@@ -149,6 +150,7 @@ function drawNextTetro() {
     }
     nextTetroElem.innerHTML = nextTetroInnerHTML
 }
+
 
 function removePrevActiveTetro() {
     for (let y = 0; y < playfield.length; y++) {
@@ -286,7 +288,7 @@ function reset() {
     draw()
     audio.pause()
     gameOver.style.display = 'block'
-    nextTetroElem.style.display = 'none'
+    nextTetroElem.style.display= 'none'
     startBtn.removeAttribute('disabled')
     pauseBtn.setAttribute('disabled', true)
     //////////////////////////////////////////////////////////////////
@@ -425,7 +427,7 @@ pauseBtn.addEventListener('click', (e) => {
     pauseBtn.blur()
     clearTimeout(gameTimerId)
     soundClick()
-    
+    nextTetroElem.style.display= 'none'
     isPause = !isPause
     if (isPause) {
         let numbers = document.createElement('div');
@@ -433,6 +435,7 @@ pauseBtn.addEventListener('click', (e) => {
         numbers.id = 'ss'
         numbers.textContent = 'Pause';
         numbers.style.position = 'absolute'
+       
         audio.pause()
         body.prepend(numbers)
         // if (window.innerWidth < 900) {
@@ -444,6 +447,7 @@ pauseBtn.addEventListener('click', (e) => {
         let ss = document.getElementById('ss')
         ss.textContent = ''
         gameTimerId = setTimeout(startGame, possibleLevels[currentLevel].speed)
+        nextTetroElem.style.display= 'block'
     }
 });
 ///////////////////////////////////////////////////////////////////
@@ -457,7 +461,8 @@ startBtn.addEventListener('click', (e) => {
     gameTimerId = setTimeout(startGame, possibleLevels[currentLevel].speed)
     gameOver.style.display = 'none'
     form.style.top = -700 + "px"
-    nextTetroElem.style.display = 'block'
+    nextTetroElem.style.display= 'block'
+   
     menu.style.left = -700 + "px"
     soundClick();
 });
