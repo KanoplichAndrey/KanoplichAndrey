@@ -4,19 +4,29 @@
   padding: 0px;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: block;
   position: relative;
-  background-image: url("d.jpg");
+  background-color: black;
   background-size: cover;
-  background-repeat: no-repeat;
+  min-height: 0;
 }
 
 .cont {
   margin: 0;
   color: white;
   position: relative;
-  height: 100%;
 }
 
 #game-over {
@@ -101,7 +111,6 @@ body {
 .main {
   /* width: 320px; */
   /* height: 620px; */
-  margin: 20px auto 0;
   border: 10px solid #db1414;
   font-size: 0;
 }

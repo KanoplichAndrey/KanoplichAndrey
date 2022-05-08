@@ -288,7 +288,7 @@ function reset() {
     draw()
     audio.pause()
     gameOver.style.display = 'block'
-    nextTetroElem.style.display= 'none'
+    nextTetroElem.style.display = 'none'
     startBtn.removeAttribute('disabled')
     pauseBtn.setAttribute('disabled', true)
     //////////////////////////////////////////////////////////////////
@@ -401,7 +401,7 @@ function handleTouchMove(evt) {
             console.log('up')
         } else {
             // down 
-            // moveTetroDown()
+           
             console.log('down')
         }
     }
@@ -427,7 +427,7 @@ pauseBtn.addEventListener('click', (e) => {
     pauseBtn.blur()
     clearTimeout(gameTimerId)
     soundClick()
-    nextTetroElem.style.display= 'none'
+    nextTetroElem.style.display = 'none'
     isPause = !isPause
     if (isPause) {
         let numbers = document.createElement('div');
@@ -435,19 +435,19 @@ pauseBtn.addEventListener('click', (e) => {
         numbers.id = 'ss'
         numbers.textContent = 'Pause';
         numbers.style.position = 'absolute'
-       
+
         audio.pause()
         body.prepend(numbers)
         // if (window.innerWidth < 900) {
         // } else {   
         // }
-        
+
     }
     if (!isPause) {
         let ss = document.getElementById('ss')
         ss.textContent = ''
         gameTimerId = setTimeout(startGame, possibleLevels[currentLevel].speed)
-        nextTetroElem.style.display= 'block'
+        nextTetroElem.style.display = 'block'
     }
 });
 ///////////////////////////////////////////////////////////////////
@@ -457,12 +457,12 @@ startBtn.addEventListener('click', (e) => {
     pauseBtn.removeAttribute('disabled')
     scoreElem.innerHTML = 0
     score = 0
-     isPause = false
+    isPause = false
     gameTimerId = setTimeout(startGame, possibleLevels[currentLevel].speed)
     gameOver.style.display = 'none'
     form.style.top = -700 + "px"
-    nextTetroElem.style.display= 'block'
-   
+    nextTetroElem.style.display = 'block'
+
     menu.style.left = -700 + "px"
     soundClick();
 });
@@ -479,7 +479,7 @@ levelElem.innerHTML = currentLevel
 draw();
 
 function startGame() {
-startBtn.setAttribute('disabled', true)
+    startBtn.setAttribute('disabled', true)
     moveTetroDown()
     if (!isPause) {
         updateStateGame()
@@ -511,7 +511,7 @@ function errorHandler(jqXHR, statusStr, errorStr) {
     alert(statusStr + ' ' + errorStr);
 }
 
-button.addEventListener('click', async() => {
+button.addEventListener('click', async () => {
     const input = document.querySelector('.in');
     form.style.top = -700 + 'px';
 
@@ -567,7 +567,7 @@ async function toggleMenu() {
     reRenderResults(list)
 }
 
-function reRenderResults(list){
+function reRenderResults(list) {
     container.innerHTML = '';
     list.forEach((user) => {
         const item = document.createElement('div');
@@ -576,3 +576,6 @@ function reRenderResults(list){
         container.appendChild(item);
     })
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
