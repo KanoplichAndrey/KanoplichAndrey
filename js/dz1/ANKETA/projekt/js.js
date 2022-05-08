@@ -288,6 +288,7 @@ function reset() {
     gameOver.style.display = 'block'
     nextTetroElem.style.display = 'none'
     startBtn.removeAttribute('disabled')
+    pauseBtn.setAttribute('disabled', true)
     //////////////////////////////////////////////////////////////////
     form.style.top = 20 + "px";
     form.style.left = 23 + "px";
@@ -417,11 +418,14 @@ function updateStateGame() {
 
     }
 }
-pauseBtn.addEventListener('click', (e) => {
 
+pauseBtn.setAttribute('disabled', true)
+
+pauseBtn.addEventListener('click', (e) => {
+    pauseBtn.blur()
     clearTimeout(gameTimerId)
     soundClick()
-
+    
     isPause = !isPause
     if (isPause) {
         let numbers = document.createElement('div');
@@ -446,7 +450,7 @@ pauseBtn.addEventListener('click', (e) => {
 var audio = new Audio(); // Создаём новый элемент Audio
 ///////////////////////////////////////////////////////////////////
 startBtn.addEventListener('click', (e) => {
-    
+    pauseBtn.removeAttribute('disabled')
     scoreElem.innerHTML = 0
     score = 0
      isPause = false
