@@ -462,7 +462,7 @@ startBtn.addEventListener('click', (e) => {
     gameOver.style.display = 'none'
     form.style.top = -700 + "px"
     nextTetroElem.style.display = 'block'
-
+    currentLevel = 1
     menu.style.left = -700 + "px"
     soundClick();
 });
@@ -486,7 +486,7 @@ function startGame() {
         gameTimerId = setTimeout(startGame, possibleLevels[currentLevel].speed)
     }
 }
-
+Level
 ////////////////////////////////localStorage////////////////////////////////////
 let list = [];
 window.list = list
