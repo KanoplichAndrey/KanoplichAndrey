@@ -8,18 +8,9 @@
 body{
     display: block;
 position: relative;
-// width: 100vMin;
-// margin: 0 auto;
 background-image: url('d.jpg');
 background-size: cover;
 background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    // position: absolute;
-    top: 0;
-    left: 0;
-    overflow: auto;
-
 
 }
 .cont{
@@ -27,8 +18,8 @@ margin: 0;
 color: white;
 position: relative;
 // height: auto;
+height: 100%;
 
-    
 }
 #game-over{
 
@@ -55,12 +46,11 @@ transform: translate(-50%, -50%);
 
 
 #game{
-// padding-top: 20px;
-// font-size: 40px;
+
 width: 320px;
-// min-width: 20.5%;
 height: 100%;
 margin:  auto;
+
 @include media(1166px) {
 
    margin: 0;
@@ -138,17 +128,12 @@ background-color: rgb(122, 73, 12);
 #ss{
     position: absolute;
     font-size: 155px;
-    // top: 280px;
-    // left: 330px;
     color:red;
-    
     top: 50%;
     left: 50%;
-    
     margin: -3.5% 0 0 -10.5%;
 
     @include media(900px) {
-
        
         position: absolute;
         font-size: 100px;
@@ -158,7 +143,6 @@ background-color: rgb(122, 73, 12);
         
     }
     @include media(580px) {
-
        
         font-size: 78px;
         top: 350px;
@@ -170,10 +154,7 @@ background-color: rgb(122, 73, 12);
 #next-tetro {
    
 position: absolute;
-// top: 200px;
-// left: 200px;
 font-size: 0;
-
     top: 20%;
     left: 20%;
     
@@ -192,7 +173,7 @@ font-size: 0;
 #menu{
 
     @include media(1470px) {
-
+       
         width: 292px;
         background-color: #E9E9E9;
         font-size: 20px;

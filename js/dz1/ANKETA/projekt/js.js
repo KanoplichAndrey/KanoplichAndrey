@@ -430,10 +430,11 @@ pauseBtn.addEventListener('click', (e) => {
         numbers.textContent = 'Pause';
         numbers.style.position = 'absolute'
         audio.pause()
+        body.prepend(numbers)
         // if (window.innerWidth < 900) {
         // } else {   
         // }
-        // body.prepend(numbers)
+        
     }
     if (!isPause) {
         let ss = document.getElementById('ss')
