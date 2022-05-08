@@ -287,7 +287,7 @@ function reset() {
     audio.pause()
     gameOver.style.display = 'block'
     nextTetroElem.style.display = 'none'
-
+    startBtn.removeAttribute('disabled')
     //////////////////////////////////////////////////////////////////
     form.style.top = 20 + "px";
     form.style.left = 23 + "px";
@@ -445,10 +445,11 @@ pauseBtn.addEventListener('click', (e) => {
 ///////////////////////////////////////////////////////////////////
 var audio = new Audio(); // Создаём новый элемент Audio
 ///////////////////////////////////////////////////////////////////
-startBtn.addEventListener('click', () => {
+startBtn.addEventListener('click', (e) => {
+    
     scoreElem.innerHTML = 0
     score = 0
-    isPause = false
+     isPause = false
     gameTimerId = setTimeout(startGame, possibleLevels[currentLevel].speed)
     gameOver.style.display = 'none'
     form.style.top = -700 + "px"
@@ -469,7 +470,7 @@ levelElem.innerHTML = currentLevel
 draw();
 
 function startGame() {
-
+startBtn.setAttribute('disabled', true)
     moveTetroDown()
     if (!isPause) {
         updateStateGame()
