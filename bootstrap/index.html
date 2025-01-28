@@ -1,28 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин с корзиной</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .products {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .product {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    .product button {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product button:hover {
+      background: #218838;
+    }
+    .cart {
+      margin-top: 40px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+    }
+    .cart h2 {
+      margin-top: 0;
+    }
+    .cart ul {
+      list-style: none;
+      padding: 0;
+    }
+    .cart ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart ul li:last-child {
+      border-bottom: none;
+    }
+    .cart ul li button {
+      background: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cart ul li button:hover {
+      background: #c82333;
+    }
+    .total {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .checkout {
+      margin-top: 20px;
+      text-align: right;
+    }
+    .checkout button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .checkout button:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../flex-copia/img/a.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item ">
-            <img src="../flex-copia/img/a.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item ">
-            <img src="../flex-copia/img/a.png" class="d-block w-100" alt="...">
-          </div>
-        </div>
-      </div>
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <h1>Магазин</h1>
 
+  <!-- Секция с товарами -->
+  <div class="products">
+    <div class="product" data-id="1" data-name="Товар 1" data-price="1000">
+      <h3>Товар 1</h3>
+      <p>1000 руб.</p>
+      <button onclick="addToCart(1)">Добавить в корзину</button>
+    </div>
+    <div class="product" data-id="2" data-name="Товар 2" data-price="1500">
+      <h3>Товар 2</h3>
+      <p>1500 руб.</p>
+      <button onclick="addToCart(2)">Добавить в корзину</button>
+    </div>
+    <div class="product" data-id="3" data-name="Товар 3" data-price="2000">
+      <h3>Товар 3</h3>
+      <p>2000 руб.</p>
+      <button onclick="addToCart(3)">Добавить в корзину</button>
+    </div>
+  </div>
+
+  <!-- Корзина -->
+  <div class="cart">
+    <h2>Корзина</h2>
+    <ul id="cart-items">
+      <!-- Товары будут добавляться сюда -->
+    </ul>
+    <div class="total">Итого: <span id="cart-total">0</span> руб.</div>
+    <div class="checkout">
+      <button onclick="checkout()">Оформить заказ</button>
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Функция добавления товара в корзину
+    function addToCart(productId) {
+      const product = document.querySelector(`.product[data-id="${productId}"]`);
+      const productName = product.getAttribute('data-name');
+      const productPrice = parseFloat(product.getAttribute('data-price'));
+
+      // Проверяем, есть ли товар уже в корзине
+      const existingItem = cart.find(item => item.id === productId);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
+      }
+
+      updateCart();
+      saveCartToLocalStorage();
+    }
+
+    // Функция удаления товара из корзины
+    function removeFromCart(productId) {
+      cart = cart.filter(item => item.id !== productId);
+      updateCart();
+      saveCartToLocalStorage();
+    }
+
+    // Функция обновления корзины
+    function updateCart() {
+      const cartItems = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+
+      // Очищаем корзину перед обновлением
+      cartItems.innerHTML = '';
+
+      let total = 0;
+
+      // Добавляем товары в корзину
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          ${item.name} - ${item.quantity} x ${item.price} руб. = ${item.quantity * item.price} руб.
+          <button onclick="removeFromCart(${item.id})">Удалить</button>
+        `;
+        cartItems.appendChild(li);
+        total += item.quantity * item.price;
+      });
+
+      // Обновляем итоговую сумму
+      cartTotal.textContent = total;
+    }
+
+    // Функция сохранения корзины в LocalStorage
+    function saveCartToLocalStorage() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Функция оформления заказа
+    function checkout() {
+      if (cart.length === 0) {
+        alert('Корзина пуста!');
+        return;
+      }
+
+      // Имитация отправки данных на сервер
+      alert('Заказ оформлен! Спасибо за покупку.');
+      cart = [];
+      updateCart();
+      saveCartToLocalStorage();
+    }
+
+    // Инициализация корзины при загрузке страницы
+    window.onload = updateCart;
+  </script>
 </body>
 </html>
